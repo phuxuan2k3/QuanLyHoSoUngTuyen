@@ -135,8 +135,10 @@
             dsDNHetHan.Location = new Point(7, 61);
             dsDNHetHan.Name = "dsDNHetHan";
             dsDNHetHan.RowHeadersWidth = 51;
+            dsDNHetHan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dsDNHetHan.Size = new Size(362, 298);
             dsDNHetHan.TabIndex = 0;
+            dsDNHetHan.CellClick += dsDNHetHan_CellClick;
             // 
             // tabPage2
             // 
