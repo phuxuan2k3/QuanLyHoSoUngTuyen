@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ctrler\Ctrler.csproj" />
+    <ProjectReference Include="..\Utilis\Utilis.csproj" />
   </ItemGroup>
 
 </Project>

@@ -73,7 +73,7 @@
             // 
             // btnGiaHan
             // 
-            btnGiaHan.BackColor = Color.DodgerBlue;
+            btnGiaHan.BackColor = SystemColors.MenuHighlight;
             btnGiaHan.ForeColor = Color.White;
             btnGiaHan.Location = new Point(679, 378);
             btnGiaHan.Name = "btnGiaHan";
@@ -81,6 +81,7 @@
             btnGiaHan.TabIndex = 6;
             btnGiaHan.Text = "Gia hạn";
             btnGiaHan.UseVisualStyleBackColor = false;
+            btnGiaHan.Click += btnGiaHan_Click;
             // 
             // dsKetQuaUngTuyen
             // 

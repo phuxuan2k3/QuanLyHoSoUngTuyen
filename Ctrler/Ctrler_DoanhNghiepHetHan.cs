@@ -1,7 +1,6 @@
 ﻿using BUS;
 using DAO;
 using DTO;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Ctrler
 {
@@ -23,11 +22,6 @@ namespace Ctrler
                 lsKQUT.Add(ketQuaUngTuyen);
             }
             lsKetQuaUngTuyen = lsKQUT;
-        }
-
-        public static void TienHanhGiaHan()
-        {
-
         }
     }
 }
