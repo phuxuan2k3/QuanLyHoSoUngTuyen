@@ -13,6 +13,7 @@
         DaDangTuyen,
         CanHieuChinh
     }
+
     public class DTO_ThongTinDangTuyen(string maTTDT = "", string maDN = "", int soNgayDangTuyen = 0, string maHTDT = "", DateTime? thoiGianDangTuyen = null, string tenViTri = "", int soLuong = 0, string yeuCau = "")
     {
         public string MaTTDT { get; set; } = maTTDT;

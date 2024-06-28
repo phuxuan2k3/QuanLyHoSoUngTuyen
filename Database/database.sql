@@ -8,7 +8,9 @@ ID tu dong tang
 
 */
 create database QL_DangTuyen;
+go
 use QL_DangTuyen;
+go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
