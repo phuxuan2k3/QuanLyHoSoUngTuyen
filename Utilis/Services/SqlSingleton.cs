@@ -1,5 +1,8 @@
-﻿using System.Data;
+﻿using System;
+using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
+using Utilis;
 
 public sealed class SqlSingleton
 {
@@ -7,12 +10,14 @@ public sealed class SqlSingleton
 		new Lazy<SqlSingleton>(() => new SqlSingleton());
 
 	private SqlConnection connection;
-	private SqlTransaction? transaction;
 
 	private SqlSingleton()
 	{
-		// Replace the connection string with your own.
-		string connectionString = "your_connection_string_here";
+		// Replace the connection string with your own in App.config.
+		// Replace the connection string with your own in App.config.
+		// Replace the connection string with your own in App.config.
+
+		string connectionString = ConfigurationHelper.GetConnectionString();
 		connection = new SqlConnection(connectionString);
 	}
 
@@ -42,87 +47,80 @@ public sealed class SqlSingleton
 
 	private void EnsureConnectionClosed()
 	{
-		if (connection.State != ConnectionState.Closed && transaction == null)
+		if (connection.State != ConnectionState.Closed)
 		{
 			connection.Close();
 		}
 	}
 
-	public void BeginTransaction()
-	{
-		EnsureConnectionOpen();
-		transaction = connection.BeginTransaction();
-	}
-
-	public void CommitTransaction()
-	{
-		if (transaction != null)
-		{
-			transaction.Commit();
-			transaction.Dispose();
-			transaction = null;
-			EnsureConnectionClosed();
-		}
-	}
-
-	public void RollbackTransaction()
-	{
-		if (transaction != null)
-		{
-			transaction.Rollback();
-			transaction.Dispose();
-			transaction = null;
-			EnsureConnectionClosed();
-		}
-	}
-
 	public int ExecuteNonQuery(string query, params SqlParameter[] parameters)
 	{
-		EnsureConnectionOpen();
-
-		using (SqlCommand cmd = new SqlCommand(query, connection, transaction))
+		try
 		{
-			if (parameters != null)
-			{
-				cmd.Parameters.AddRange(parameters);
-			}
+			EnsureConnectionOpen();
 
-			return cmd.ExecuteNonQuery();
+			using (SqlCommand cmd = new SqlCommand(query, connection))
+			{
+				if (parameters != null)
+				{
+					cmd.Parameters.AddRange(parameters);
+				}
+
+				return cmd.ExecuteNonQuery();
+			}
+		}
+		finally
+		{
+			EnsureConnectionClosed();
 		}
 	}
 
 	public object ExecuteScalar(string query, params SqlParameter[] parameters)
 	{
-		EnsureConnectionOpen();
-
-		using (SqlCommand cmd = new SqlCommand(query, connection, transaction))
+		try
 		{
-			if (parameters != null)
-			{
-				cmd.Parameters.AddRange(parameters);
-			}
+			EnsureConnectionOpen();
 
-			return cmd.ExecuteScalar();
+			using (SqlCommand cmd = new SqlCommand(query, connection))
+			{
+				if (parameters != null)
+				{
+					cmd.Parameters.AddRange(parameters);
+				}
+
+				return cmd.ExecuteScalar();
+			}
+		}
+		finally
+		{
+			EnsureConnectionClosed();
 		}
 	}
 
 	public DataTable ExecuteQuery(string query, params SqlParameter[] parameters)
 	{
-		EnsureConnectionOpen();
-
-		using (SqlCommand cmd = new SqlCommand(query, connection, transaction))
+		try
 		{
-			if (parameters != null)
-			{
-				cmd.Parameters.AddRange(parameters);
-			}
+			EnsureConnectionOpen();
 
-			using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+			using (SqlCommand cmd = new SqlCommand(query, connection))
 			{
-				DataTable resultTable = new DataTable();
-				adapter.Fill(resultTable);
-				return resultTable;
+				if (parameters != null)
+				{
+					cmd.Parameters.AddRange(parameters);
+				}
+
+				using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+				{
+					DataTable resultTable = new DataTable();
+					adapter.Fill(resultTable);
+					return resultTable;
+				}
 			}
+		}
+		finally
+		{
+			EnsureConnectionClosed();
 		}
 	}
 }
