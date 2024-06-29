@@ -17,11 +17,11 @@ public class Ctrler_DanhSachThongTinDangTuyen
 		thongTinDangTuyen = BUS_ThongTinDangTuyen.LayTatCaCuaDoanhNghiep(_maDN);
 	}
 
-	public static Ctrler_ChiTietThongTinDangTuyen ChiTietThongTinDangTuyen(string maTTDT)
+	public Ctrler_ChiTietThongTinDangTuyen ChiTietThongTinDangTuyen(string maTTDT)
 	{
 		var ttdt = BUS_ThongTinDangTuyen.Lay(maTTDT);
 		var hoaDon = BUS_HoaDon.Lay(maTTDT);
 		var hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(ttdt.MaHTDT);
-		return new Ctrler_ChiTietThongTinDangTuyen(ttdt, hoaDon, hinhThucDangTuyen);
+		return new Ctrler_ChiTietThongTinDangTuyen(ttdt, hoaDon, hinhThucDangTuyen, this);
 	}
 }

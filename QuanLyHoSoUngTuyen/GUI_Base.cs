@@ -1,17 +1,21 @@
 ﻿using Ctrler;
+using GUI.Styles;
 using GUI.UC;
 
 namespace GUI;
 
 public partial class GUI_Base : Form
 {
-	// Thay bang tai khoan duoc dang nhap
-	private string maDN = "1";
+	// todo: Thay bang tai khoan duoc dang nhap
+	private string _maDN = "1";
+	public string MaDN { get => _maDN; set => _maDN = value; }
 
 	public GUI_Base()
 	{
-		InitializeComponent();
+		Style.ApplyStylingEventOnChildControlAdded(this,
+			ButtonStyle.Apply);
 		_instance = this;
+		InitializeComponent();
 	}
 
 	private void btnTaoYeuCau_Click(object sender, EventArgs e)
@@ -21,10 +25,8 @@ public partial class GUI_Base : Form
 
 	private void btnDanhSachThongTinDangTuyen_Click(object sender, EventArgs e)
 	{
-		GUI_DanhSachThongTinDangTuyen content = new()
-		{
-			Ctrler_DanhSachThongTinDangTuyen = new Ctrler_DanhSachThongTinDangTuyen(maDN)
-		};
+		GUI_DanhSachThongTinDangTuyen content = new();
+		content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
 		SwitchContent(content);
 	}
 

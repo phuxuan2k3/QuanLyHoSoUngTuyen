@@ -1,22 +1,28 @@
 ﻿using Ctrler;
 using DTO;
+using GUI.GUIException;
 using System.Windows.Forms;
 
 namespace GUI.UC;
 
 public partial class GUI_DanhSachThongTinDangTuyen : UserControl
 {
-	public Ctrler_DanhSachThongTinDangTuyen Ctrler_DanhSachThongTinDangTuyen { get; set; }
+	private Ctrler_DanhSachThongTinDangTuyen? _ctrler_DanhSachThongTinDangTuyen;
+
+	public Ctrler_DanhSachThongTinDangTuyen Ctrler_DanhSachThongTinDangTuyen
+	{
+		get => _ctrler_DanhSachThongTinDangTuyen ?? throw new ControllerNotFoundException();
+		set => _ctrler_DanhSachThongTinDangTuyen = value;
+	}
 
 	public GUI_DanhSachThongTinDangTuyen()
 	{
 		InitializeComponent();
-		Ctrler_DanhSachThongTinDangTuyen = new Ctrler_DanhSachThongTinDangTuyen(string.Empty);
-		HienThi();
 	}
 
-	public void HienThi()
+	public void HienThi(Ctrler_DanhSachThongTinDangTuyen ctrler_DanhSachThongTinDangTuyen)
 	{
+		_ctrler_DanhSachThongTinDangTuyen = ctrler_DanhSachThongTinDangTuyen;
 		var dsTTDT = new List<DTO_ThongTinDangTuyen>();
 		Ctrler_DanhSachThongTinDangTuyen.Load(ref dsTTDT);
 		foreach (var ttdt in dsTTDT)
@@ -39,9 +45,8 @@ public partial class GUI_DanhSachThongTinDangTuyen : UserControl
 		{
 			var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyen(maTTDT);
 			GUI_ChiTietThongTinDangTuyen content = new();
+			content.HienThi(ctrler);
 			GUI_Base.Instance.SwitchContent(content);
-			content.Ctrler_ChiTietThongTinDangTuyen = ctrler;
 		}
-
 	}
 }
