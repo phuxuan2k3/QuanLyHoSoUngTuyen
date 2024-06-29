@@ -1,6 +1,6 @@
 ﻿namespace GUI.UC
 {
-	partial class GUI_TaoYeuCauDangTuyen
+	partial class GUI_DienThongTinDangTuyen
 	{
 		/// <summary> 
 		/// Required designer variable.

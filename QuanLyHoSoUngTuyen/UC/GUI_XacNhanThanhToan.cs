@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.UC
 {
-	public partial class GUI_TaoYeuCauDangTuyen : UserControl
+	public partial class GUI_XacNhanThanhToan : UserControl
 	{
-		public GUI_TaoYeuCauDangTuyen()
+		public GUI_XacNhanThanhToan()
 		{
 			InitializeComponent();
 		}

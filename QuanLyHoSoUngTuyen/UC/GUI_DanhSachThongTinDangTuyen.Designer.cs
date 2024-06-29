@@ -31,7 +31,8 @@
 			tableLayoutPanel1 = new TableLayoutPanel();
 			label1 = new Label();
 			dsThongTinDangTuyen = new DataGridView();
-			viTri = new DataGridViewTextBoxColumn();
+			_id = new DataGridViewTextBoxColumn();
+			_viTri = new DataGridViewTextBoxColumn();
 			_soLuong = new DataGridViewTextBoxColumn();
 			_thoiGianDang = new DataGridViewTextBoxColumn();
 			_soNgayDang = new DataGridViewTextBoxColumn();
@@ -71,10 +72,10 @@
 			// 
 			dsThongTinDangTuyen.AllowUserToAddRows = false;
 			dsThongTinDangTuyen.AllowUserToDeleteRows = false;
-			dsThongTinDangTuyen.Anchor = AnchorStyles.None;
 			dsThongTinDangTuyen.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
 			dsThongTinDangTuyen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dsThongTinDangTuyen.Columns.AddRange(new DataGridViewColumn[] { viTri, _soLuong, _thoiGianDang, _soNgayDang, _trangThai, _tinhTrang });
+			dsThongTinDangTuyen.Columns.AddRange(new DataGridViewColumn[] { _id, _viTri, _soLuong, _thoiGianDang, _soNgayDang, _trangThai, _tinhTrang });
+			dsThongTinDangTuyen.Dock = DockStyle.Fill;
 			dsThongTinDangTuyen.Location = new Point(30, 102);
 			dsThongTinDangTuyen.Margin = new Padding(30);
 			dsThongTinDangTuyen.Name = "dsThongTinDangTuyen";
@@ -82,15 +83,24 @@
 			dsThongTinDangTuyen.RowHeadersWidth = 51;
 			dsThongTinDangTuyen.Size = new Size(740, 352);
 			dsThongTinDangTuyen.TabIndex = 1;
+			dsThongTinDangTuyen.CellClick += dsThongTinDangTuyen_CellClick;
 			// 
-			// viTri
+			// _id
 			// 
-			viTri.Frozen = true;
-			viTri.HeaderText = "Vị trí";
-			viTri.MinimumWidth = 6;
-			viTri.Name = "viTri";
-			viTri.ReadOnly = true;
-			viTri.Width = 77;
+			_id.HeaderText = "_id";
+			_id.MinimumWidth = 6;
+			_id.Name = "_id";
+			_id.ReadOnly = true;
+			_id.Visible = false;
+			_id.Width = 63;
+			// 
+			// _viTri
+			// 
+			_viTri.HeaderText = "Vị trí";
+			_viTri.MinimumWidth = 6;
+			_viTri.Name = "_viTri";
+			_viTri.ReadOnly = true;
+			_viTri.Width = 77;
 			// 
 			// _soLuong
 			// 
@@ -150,7 +160,8 @@
 		private TableLayoutPanel tableLayoutPanel1;
 		private Label label1;
 		private DataGridView dsThongTinDangTuyen;
-		private DataGridViewTextBoxColumn viTri;
+		private DataGridViewTextBoxColumn _id;
+		private DataGridViewTextBoxColumn _viTri;
 		private DataGridViewTextBoxColumn _soLuong;
 		private DataGridViewTextBoxColumn _thoiGianDang;
 		private DataGridViewTextBoxColumn _soNgayDang;
