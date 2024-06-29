@@ -1,3 +1,5 @@
+using GUI;
+
 namespace QuanLyHoSoUngTuyen
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace QuanLyHoSoUngTuyen
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new GUI_DoanhNghiepHetHan());
+            Application.Run(new GUI_Base());
         }
     }
 }
