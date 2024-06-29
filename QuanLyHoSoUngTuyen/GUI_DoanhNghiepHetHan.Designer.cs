@@ -38,10 +38,21 @@
             label1 = new Label();
             dsDNHetHan = new DataGridView();
             tabPage2 = new TabPage();
+            btnXoaUuDai = new Button();
+            btnSuaUuDai = new Button();
+            btnThemUuDai = new Button();
+            txtMoTaUuDai = new TextBox();
+            txtTenUuDai = new TextBox();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            dsChienLuocUuDai = new DataGridView();
             tCtrGiaHanHopDong.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dsKetQuaUngTuyen).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dsDNHetHan).BeginInit();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dsChienLuocUuDai).BeginInit();
             SuspendLayout();
             // 
             // tCtrGiaHanHopDong
@@ -143,6 +154,15 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnXoaUuDai);
+            tabPage2.Controls.Add(btnSuaUuDai);
+            tabPage2.Controls.Add(btnThemUuDai);
+            tabPage2.Controls.Add(txtMoTaUuDai);
+            tabPage2.Controls.Add(txtTenUuDai);
+            tabPage2.Controls.Add(label6);
+            tabPage2.Controls.Add(label5);
+            tabPage2.Controls.Add(label4);
+            tabPage2.Controls.Add(dsChienLuocUuDai);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -150,6 +170,95 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Chiến lược ưu đãi";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnXoaUuDai
+            // 
+            btnXoaUuDai.BackColor = Color.Red;
+            btnXoaUuDai.ForeColor = Color.White;
+            btnXoaUuDai.Location = new Point(664, 303);
+            btnXoaUuDai.Name = "btnXoaUuDai";
+            btnXoaUuDai.Size = new Size(94, 29);
+            btnXoaUuDai.TabIndex = 10;
+            btnXoaUuDai.Text = "Xoá";
+            btnXoaUuDai.UseVisualStyleBackColor = false;
+            btnXoaUuDai.Click += btnXoaUuDai_Click;
+            // 
+            // btnSuaUuDai
+            // 
+            btnSuaUuDai.BackColor = SystemColors.MenuHighlight;
+            btnSuaUuDai.ForeColor = Color.White;
+            btnSuaUuDai.Location = new Point(564, 303);
+            btnSuaUuDai.Name = "btnSuaUuDai";
+            btnSuaUuDai.Size = new Size(94, 29);
+            btnSuaUuDai.TabIndex = 9;
+            btnSuaUuDai.Text = "Chỉnh sửa";
+            btnSuaUuDai.UseVisualStyleBackColor = false;
+            btnSuaUuDai.Click += btnSuaUuDai_Click;
+            // 
+            // btnThemUuDai
+            // 
+            btnThemUuDai.BackColor = Color.Green;
+            btnThemUuDai.ForeColor = Color.White;
+            btnThemUuDai.Location = new Point(462, 303);
+            btnThemUuDai.Name = "btnThemUuDai";
+            btnThemUuDai.Size = new Size(94, 29);
+            btnThemUuDai.TabIndex = 8;
+            btnThemUuDai.Text = "Thêm";
+            btnThemUuDai.UseVisualStyleBackColor = false;
+            btnThemUuDai.Click += btnThemUuDai_Click;
+            // 
+            // txtMoTaUuDai
+            // 
+            txtMoTaUuDai.Location = new Point(462, 158);
+            txtMoTaUuDai.Multiline = true;
+            txtMoTaUuDai.Name = "txtMoTaUuDai";
+            txtMoTaUuDai.Size = new Size(297, 124);
+            txtMoTaUuDai.TabIndex = 7;
+            // 
+            // txtTenUuDai
+            // 
+            txtTenUuDai.Location = new Point(462, 117);
+            txtTenUuDai.Name = "txtTenUuDai";
+            txtTenUuDai.Size = new Size(297, 27);
+            txtTenUuDai.TabIndex = 6;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(390, 158);
+            label6.Name = "label6";
+            label6.Size = new Size(51, 20);
+            label6.TabIndex = 5;
+            label6.Text = "Mô tả:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(406, 117);
+            label5.Name = "label5";
+            label5.Size = new Size(35, 20);
+            label5.TabIndex = 4;
+            label5.Text = "Tên:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(7, 43);
+            label4.Name = "label4";
+            label4.Size = new Size(195, 20);
+            label4.TabIndex = 3;
+            label4.Text = "Danh sách chiến lược ưu đãi";
+            // 
+            // dsChienLuocUuDai
+            // 
+            dsChienLuocUuDai.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dsChienLuocUuDai.Location = new Point(7, 66);
+            dsChienLuocUuDai.Name = "dsChienLuocUuDai";
+            dsChienLuocUuDai.RowHeadersWidth = 51;
+            dsChienLuocUuDai.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dsChienLuocUuDai.Size = new Size(362, 298);
+            dsChienLuocUuDai.TabIndex = 2;
+            dsChienLuocUuDai.CellClick += dsChienLuocUuDai_CellClick;
             // 
             // GUI_DoanhNghiepHetHan
             // 
@@ -164,6 +273,9 @@
             tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dsKetQuaUngTuyen).EndInit();
             ((System.ComponentModel.ISupportInitialize)dsDNHetHan).EndInit();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dsChienLuocUuDai).EndInit();
             ResumeLayout(false);
         }
 
@@ -179,5 +291,14 @@
         private Button btnGiaHan;
         private DataGridView dsKetQuaUngTuyen;
         private Label lbTenDoanhNghiep;
+        private Label label4;
+        private DataGridView dsChienLuocUuDai;
+        private Label label5;
+        private Button btnSuaUuDai;
+        private Button btnThemUuDai;
+        private TextBox txtMoTaUuDai;
+        private TextBox txtTenUuDai;
+        private Label label6;
+        private Button btnXoaUuDai;
     }
 }

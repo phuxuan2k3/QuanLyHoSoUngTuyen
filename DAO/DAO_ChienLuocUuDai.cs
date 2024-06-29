@@ -38,5 +38,18 @@ namespace DAO
         {
             throw new NotImplementedException();
         }
+
+        public static void SuaUD(DTO_ChienLuocUuDai ud)
+        {
+            throw new NotImplementedException();
+        }
+        public static void XoaUD(string maUD)
+        {
+            throw new NotImplementedException();
+        }
+        public static void ThemUD(DTO_ChienLuocUuDai ud)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

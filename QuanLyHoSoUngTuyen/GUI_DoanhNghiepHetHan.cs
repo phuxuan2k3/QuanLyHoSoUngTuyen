@@ -1,6 +1,7 @@
 using Ctrler;
 using DTO;
 using GUI;
+using GUI.Utilis;
 
 namespace QuanLyHoSoUngTuyen
 {
@@ -12,15 +13,25 @@ namespace QuanLyHoSoUngTuyen
         public GUI_DoanhNghiepHetHan()
         {
             InitializeComponent();
-            HienThi();
+
+            HienThiDoanhNghiepHetHan();
+            HienThiChienLuocUuDai();
         }
 
-        private void HienThi()
+        private void HienThiDoanhNghiepHetHan()
         {
             List<DTO_DoanhNghiep> lsDoanhNghiepHetHan;
             Ctrler_DoanhNghiepHetHan.LoadDanhSachDNHetHan(out lsDoanhNghiepHetHan);
 
             dsDNHetHan.DataSource = lsDoanhNghiepHetHan;
+        }
+
+        private void HienThiChienLuocUuDai()
+        {
+            List<DTO_ChienLuocUuDai> lsChienLuocUuDai;
+            Ctrler_ChienLuocUuDai.LoadChienLuocUuDai(out lsChienLuocUuDai);
+
+            dsChienLuocUuDai.DataSource = lsChienLuocUuDai;
         }
 
         private void dsDNHetHan_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -44,6 +55,31 @@ namespace QuanLyHoSoUngTuyen
             }
             GUI_XacNhanGiaHanHopDong ui_XacNhanGiaHanHopDong = new GUI_XacNhanGiaHanHopDong(_maDNHienTai);
             ui_XacNhanGiaHanHopDong.ShowDialog();
+        }
+
+        private void btnThemUuDai_Click(object sender, EventArgs e)
+        {
+            var ud = new DTO_ChienLuocUuDai("", txtTenUuDai.Text, txtMoTaUuDai.Text);
+
+            TryCatchShowMessageBox.ExecuteWithTryCatch(
+                () =>
+                { Ctrler_ChienLuocUuDai.ThemCLUD(ud); }
+                 );
+        }
+
+        private void btnSuaUuDai_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoaUuDai_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dsChienLuocUuDai_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

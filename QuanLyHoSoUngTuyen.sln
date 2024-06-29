@@ -13,7 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAO", "DAO\DAO.csproj", "{5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ctrler", "Ctrler\Ctrler.csproj", "{C9F6A06F-C089-4F95-BA7B-C74AC89F336D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilis", "Utilis\Utilis.csproj", "{0C1A8E89-1EE2-4385-A61E-FDB61EA05FF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilis", "Utilis\Utilis.csproj", "{0C1A8E89-1EE2-4385-A61E-FDB61EA05FF2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E756025-0D87-4D34-9C4D-916E62A3C1F4}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
