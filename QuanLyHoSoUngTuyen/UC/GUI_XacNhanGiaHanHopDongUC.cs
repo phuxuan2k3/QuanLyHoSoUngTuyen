@@ -1,17 +1,26 @@
 ﻿using Ctrler;
 using DTO;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using Utilis;
 
-namespace GUI
+namespace GUI.UC
 {
-    public partial class GUI_XacNhanGiaHanHopDong : Form
+    public partial class GUI_XacNhanGiaHanHopDongUC : UserControl
     {
         private string _maDNHienTai = string.Empty;
+        public event EventHandler HuyGiaHan;
 
-        public GUI_XacNhanGiaHanHopDong(string maDNHienTai)
+        public GUI_XacNhanGiaHanHopDongUC(EventHandler huyGiaHan, string maDNHienTai)
         {
+            HuyGiaHan += huyGiaHan;
             _maDNHienTai = maDNHienTai;
 
             InitializeComponent();
@@ -29,8 +38,9 @@ namespace GUI
 
             var bdls_ChienLuocUuDaiHienTai = new BindingList<DTO_ChienLuocUuDai>(ls_ChienLuocUuDaiHienTai);
             dsChienLuocUuDaiHienTai.DataSource = bdls_ChienLuocUuDaiHienTai;
-        }
 
+            lbMaDoanhNghiep.Text = _maDNHienTai;
+        }
         private void btnApDung_Click(object sender, EventArgs e)
         {
             var dsChienLuocUuDaiSource = dsChienLuocUuDai.DataSource as List<DTO_ChienLuocUuDai>;
@@ -40,7 +50,7 @@ namespace GUI
             for (int i = 0; i < dsChienLuocUuDai.SelectedRows.Count; i++)
             {
                 var index = dsChienLuocUuDai.SelectedRows[i].Index;
-                if (!dsMaChienLuocUuDaiHienTai.Contains(dsChienLuocUuDaiSource[index].MaChienLuoc))
+                if (!dsMaChienLuocUuDaiHienTai.Contains(dsChienLuocUuDaiSource![index].MaChienLuoc))
                 {
                     dsChienLuocUuDaiHienTaiSource!.Add(dsChienLuocUuDaiSource[index]);
                 }
@@ -65,7 +75,7 @@ namespace GUI
         {
             if (MessageBox.Show("Rời khỏi mà không có bất kỳ thay đổi nào?", "Không gia hạn", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Close();
+                HuyGiaHan?.Invoke(this, EventArgs.Empty);
             }
         }
 
