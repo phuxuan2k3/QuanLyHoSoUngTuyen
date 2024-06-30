@@ -9,4 +9,9 @@ public class BUS_HoaDon
 	{
 		return DAO_HoaDon.Lay(maTTDT);
 	}
+
+	public static List<DTO_ChiTietHoaDon> LayTatCaChiTiet(string maTTDT)
+	{
+		return DAO_ChiTietHoaDon.LayTatCaCuaHoaDon(maTTDT);
+	}
 }

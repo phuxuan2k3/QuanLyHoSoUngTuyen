@@ -17,7 +17,7 @@ public class DTO_HoaDon(string maTTDT = "", float tongTien = 0, DateTime? ngayLa
 {
 	public string MaTTDT { get; set; } = maTTDT;
 	public float TongTien { get; set; } = tongTien;
-	public DateTime NgayLap { get; set; } = ngayLap ?? DateTime.UtcNow;
+	public DateTime? NgayLap { get; set; } = ngayLap;
 	public TrangThaiThanhToan TrangThaiThanhToan { get; set; } = trangThaiThanhToan;
 	public CachThucThanhToan CachThucThanhToan { get; set; } = cachThucThanhToan;
 }

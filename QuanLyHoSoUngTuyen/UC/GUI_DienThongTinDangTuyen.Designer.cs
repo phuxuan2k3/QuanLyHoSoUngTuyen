@@ -64,11 +64,11 @@
 			label2.Anchor = AnchorStyles.None;
 			label2.AutoSize = true;
 			label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label2.Location = new Point(280, 18);
+			label2.Location = new Point(316, 23);
 			label2.Name = "label2";
-			label2.Size = new Size(141, 31);
+			label2.Size = new Size(305, 31);
 			label2.TabIndex = 0;
-			label2.Text = "Điền thông ";
+			label2.Text = "Điền thông tin đăng tuyển ";
 			// 
 			// tableLayoutPanel2
 			// 
@@ -81,7 +81,7 @@
 			tableLayoutPanel2.RowCount = 2;
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 85F));
-			tableLayoutPanel2.Size = new Size(702, 452);
+			tableLayoutPanel2.Size = new Size(938, 515);
 			tableLayoutPanel2.TabIndex = 2;
 			// 
 			// GUI_DienThongTinDangTuyen
@@ -90,7 +90,7 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			Controls.Add(tableLayoutPanel2);
 			Name = "GUI_DienThongTinDangTuyen";
-			Size = new Size(702, 452);
+			Size = new Size(938, 515);
 			tableLayoutPanel2.ResumeLayout(false);
 			tableLayoutPanel2.PerformLayout();
 			ResumeLayout(false);

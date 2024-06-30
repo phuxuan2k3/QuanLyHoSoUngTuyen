@@ -34,13 +34,16 @@ public partial class GUI_ChiTietThongTinDangTuyen : UserControl
 		_soLuong.Text = ttdt.SoLuong.ToString();
 		_yeuCau.Text = ttdt.YeuCau;
 		_trangThai.Text = ttdt.TrangThai.ToString();
-		_hoaDon.Text = hoaDon.TrangThaiThanhToan.ToString();
+		_trangThaiThanhToan.Text = hoaDon.TrangThaiThanhToan.ToString();
 		_tinhTrang.Text = ttdt.TinhTrang.ToString();
 	}
 
 	private void btnXemHoaDon_Click(object sender, EventArgs e)
 	{
-		Ctrler_ChiTietThongTinDangTuyen.HienThi_HoaDon();
+		var ctrler = Ctrler_ChiTietThongTinDangTuyen.HienThi_HoaDon();
+		var gui = new GUI_HoaDonThongTinDangTuyen();
+		gui.HienThi(ctrler);
+		GUI_Base.Instance.SwitchContent(gui);
 	}
 
 	private void btnHieuChinh_Click(object sender, EventArgs e)
@@ -50,8 +53,9 @@ public partial class GUI_ChiTietThongTinDangTuyen : UserControl
 
 	private void btnQuayLai_Click(object sender, EventArgs e)
 	{
-		GUI_DanhSachThongTinDangTuyen content = new();
-		GUI_Base.Instance.SwitchContent(content);
-		content.HienThi(Ctrler_ChiTietThongTinDangTuyen.Owner);
+		var gui = new GUI_DanhSachThongTinDangTuyen();
+		var maDN = GUI_Base.Instance.MaDN;
+		gui.HienThi(new Ctrler_DanhSachThongTinDangTuyen(maDN));
+		GUI_Base.Instance.SwitchContent(gui);
 	}
 }

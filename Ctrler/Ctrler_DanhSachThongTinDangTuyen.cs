@@ -5,7 +5,7 @@ namespace Ctrler;
 
 public class Ctrler_DanhSachThongTinDangTuyen
 {
-	private string _maDN;
+	private readonly string _maDN;
 
 	public Ctrler_DanhSachThongTinDangTuyen(string maDN)
 	{
@@ -17,11 +17,11 @@ public class Ctrler_DanhSachThongTinDangTuyen
 		thongTinDangTuyen = BUS_ThongTinDangTuyen.LayTatCaCuaDoanhNghiep(_maDN);
 	}
 
-	public Ctrler_ChiTietThongTinDangTuyen ChiTietThongTinDangTuyen(string maTTDT)
+	public Ctrler_ChiTietThongTinDangTuyen HienThi_ChiTiet(string maTTDT)
 	{
 		var ttdt = BUS_ThongTinDangTuyen.Lay(maTTDT);
 		var hoaDon = BUS_HoaDon.Lay(maTTDT);
 		var hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(ttdt.MaHTDT);
-		return new Ctrler_ChiTietThongTinDangTuyen(ttdt, hoaDon, hinhThucDangTuyen, this);
+		return new Ctrler_ChiTietThongTinDangTuyen(ttdt, hoaDon, hinhThucDangTuyen);
 	}
 }

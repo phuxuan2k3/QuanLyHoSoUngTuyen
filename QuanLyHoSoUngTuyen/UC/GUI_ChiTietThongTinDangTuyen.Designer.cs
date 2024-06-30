@@ -45,7 +45,7 @@
 			_tinhTrang = new Label();
 			flowLayoutPanel8 = new FlowLayoutPanel();
 			label15 = new Label();
-			_hoaDon = new Label();
+			_trangThaiThanhToan = new Label();
 			flowLayoutPanel5 = new FlowLayoutPanel();
 			label9 = new Label();
 			_tenViTri = new Label();
@@ -257,7 +257,7 @@
 			flowLayoutPanel9.Controls.Add(_tinhTrang);
 			flowLayoutPanel9.Location = new Point(480, 107);
 			flowLayoutPanel9.Name = "flowLayoutPanel9";
-			flowLayoutPanel9.Size = new Size(177, 25);
+			flowLayoutPanel9.Size = new Size(279, 25);
 			flowLayoutPanel9.TabIndex = 2;
 			// 
 			// label17
@@ -266,14 +266,14 @@
 			label17.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			label17.Location = new Point(3, 0);
 			label17.Name = "label17";
-			label17.Size = new Size(106, 25);
+			label17.Size = new Size(208, 25);
 			label17.TabIndex = 0;
-			label17.Text = "Tình trạng:";
+			label17.Text = "Tình trạng đăng tuyển:";
 			// 
 			// _tinhTrang
 			// 
 			_tinhTrang.AutoSize = true;
-			_tinhTrang.Location = new Point(115, 0);
+			_tinhTrang.Location = new Point(217, 0);
 			_tinhTrang.Name = "_tinhTrang";
 			_tinhTrang.Size = new Size(59, 25);
 			_tinhTrang.TabIndex = 1;
@@ -284,10 +284,10 @@
 			flowLayoutPanel8.AutoSize = true;
 			flowLayoutPanel8.AutoSizeMode = AutoSizeMode.GrowAndShrink;
 			flowLayoutPanel8.Controls.Add(label15);
-			flowLayoutPanel8.Controls.Add(_hoaDon);
+			flowLayoutPanel8.Controls.Add(_trangThaiThanhToan);
 			flowLayoutPanel8.Location = new Point(480, 76);
 			flowLayoutPanel8.Name = "flowLayoutPanel8";
-			flowLayoutPanel8.Size = new Size(161, 25);
+			flowLayoutPanel8.Size = new Size(269, 25);
 			flowLayoutPanel8.TabIndex = 2;
 			// 
 			// label15
@@ -296,18 +296,18 @@
 			label15.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			label15.Location = new Point(3, 0);
 			label15.Name = "label15";
-			label15.Size = new Size(90, 25);
+			label15.Size = new Size(198, 25);
 			label15.TabIndex = 0;
-			label15.Text = "Hóa đơn:";
+			label15.Text = "Trạng thái thanh toán";
 			// 
-			// _hoaDon
+			// _trangThaiThanhToan
 			// 
-			_hoaDon.AutoSize = true;
-			_hoaDon.Location = new Point(99, 0);
-			_hoaDon.Name = "_hoaDon";
-			_hoaDon.Size = new Size(59, 25);
-			_hoaDon.TabIndex = 1;
-			_hoaDon.Text = "label3";
+			_trangThaiThanhToan.AutoSize = true;
+			_trangThaiThanhToan.Location = new Point(207, 0);
+			_trangThaiThanhToan.Name = "_trangThaiThanhToan";
+			_trangThaiThanhToan.Size = new Size(59, 25);
+			_trangThaiThanhToan.TabIndex = 1;
+			_trangThaiThanhToan.Text = "label3";
 			// 
 			// flowLayoutPanel5
 			// 
@@ -637,7 +637,7 @@
 		private Label _tinhTrang;
 		private FlowLayoutPanel flowLayoutPanel8;
 		private Label label15;
-		private Label _hoaDon;
+		private Label _trangThaiThanhToan;
 		private FlowLayoutPanel flowLayoutPanel6;
 		private Label label11;
 		private Label _soLuong;
