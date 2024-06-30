@@ -6,37 +6,47 @@ namespace GUI;
 
 public partial class GUI_Base : Form
 {
-	// todo: Thay bang tai khoan duoc dang nhap
-	private string _maDN = "1";
-	public string MaDN { get => _maDN; set => _maDN = value; }
+    // todo: Thay bang tai khoan duoc dang nhap
+    private string _maDN = "1";
+    public string MaDN { get => _maDN; set => _maDN = value; }
 
-	public GUI_Base()
-	{
-		Style.ApplyStylingEventOnChildControlAdded(this,
-			ButtonStyle.Apply);
-		_instance = this;
-		InitializeComponent();
-	}
+    public GUI_Base()
+    {
+        Style.ApplyStylingEventOnChildControlAdded(this,
+            ButtonStyle.Apply);
+        _instance = this;
+        InitializeComponent();
+    }
 
-	private void btnTaoYeuCau_Click(object sender, EventArgs e)
-	{
-		SwitchContent(new GUI_DienThongTinDangTuyen());
-	}
+    private void btnTaoYeuCau_Click(object sender, EventArgs e)
+    {
+        SwitchContent(new GUI_DienThongTinDangTuyen());
+    }
 
-	private void btnDanhSachThongTinDangTuyen_Click(object sender, EventArgs e)
-	{
-		GUI_DanhSachThongTinDangTuyen content = new();
-		content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
-		SwitchContent(content);
-	}
+    private void btnDanhSachThongTinDangTuyen_Click(object sender, EventArgs e)
+    {
+        GUI_DanhSachThongTinDangTuyen content = new();
+        content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
+        SwitchContent(content);
+    }
 
-	public void SwitchContent(UserControl content)
-	{
-		_contentPanel.Controls.Clear();
-		_contentPanel.Controls.Add(content);
-		content.Dock = DockStyle.Fill;
-	}
+    public void SwitchContent(UserControl content)
+    {
+        _contentPanel.Controls.Clear();
+        _contentPanel.Controls.Add(content);
+        content.Dock = DockStyle.Fill;
+    }
 
-	private static GUI_Base? _instance = null;
-	public static GUI_Base Instance => _instance ??= new GUI_Base();
+    private static GUI_Base? _instance = null;
+
+
+
+    private void btnXacThucDN_Click(object sender, EventArgs e)
+    {
+        GUI_XacThucThongTinDoanhNghiep content = new();
+        content.HienThi(new Ctrler_XacThucThongTinDoanhNghiep());
+        SwitchContent(content);
+    }
+
+    public static GUI_Base Instance => _instance ??= new GUI_Base();
 }
