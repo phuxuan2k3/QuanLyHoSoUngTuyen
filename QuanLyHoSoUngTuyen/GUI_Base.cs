@@ -20,14 +20,16 @@ public partial class GUI_Base : Form
 
 	private void btnTaoYeuCau_Click(object sender, EventArgs e)
 	{
-		SwitchContent(new GUI_DienThongTinDangTuyen());
+		var gui = new GUI_DienThongTinDangTuyen();
+		gui.HienThi(new Ctrler_DienThongTinDangTuyen());
+		SwitchContent(gui);
 	}
 
 	private void btnDanhSachThongTinDangTuyen_Click(object sender, EventArgs e)
 	{
-		GUI_DanhSachThongTinDangTuyen content = new();
-		content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
-		SwitchContent(content);
+		var gui = new GUI_DanhSachThongTinDangTuyen();
+		gui.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
+		SwitchContent(gui);
 	}
 
 	public void SwitchContent(UserControl content)

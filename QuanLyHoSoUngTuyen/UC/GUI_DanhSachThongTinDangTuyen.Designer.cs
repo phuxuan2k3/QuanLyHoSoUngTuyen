@@ -72,7 +72,7 @@
 			// 
 			dsThongTinDangTuyen.AllowUserToAddRows = false;
 			dsThongTinDangTuyen.AllowUserToDeleteRows = false;
-			dsThongTinDangTuyen.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+			dsThongTinDangTuyen.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			dsThongTinDangTuyen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dsThongTinDangTuyen.Columns.AddRange(new DataGridViewColumn[] { _id, _viTri, _soLuong, _thoiGianDang, _soNgayDang, _trangThai, _tinhTrang });
 			dsThongTinDangTuyen.Dock = DockStyle.Fill;
@@ -92,7 +92,6 @@
 			_id.Name = "_id";
 			_id.ReadOnly = true;
 			_id.Visible = false;
-			_id.Width = 63;
 			// 
 			// _viTri
 			// 
@@ -100,7 +99,6 @@
 			_viTri.MinimumWidth = 6;
 			_viTri.Name = "_viTri";
 			_viTri.ReadOnly = true;
-			_viTri.Width = 77;
 			// 
 			// _soLuong
 			// 
@@ -108,7 +106,6 @@
 			_soLuong.MinimumWidth = 6;
 			_soLuong.Name = "_soLuong";
 			_soLuong.ReadOnly = true;
-			_soLuong.Width = 114;
 			// 
 			// _thoiGianDang
 			// 
@@ -116,7 +113,6 @@
 			_thoiGianDang.MinimumWidth = 6;
 			_thoiGianDang.Name = "_thoiGianDang";
 			_thoiGianDang.ReadOnly = true;
-			_thoiGianDang.Width = 160;
 			// 
 			// _soNgayDang
 			// 
@@ -124,7 +120,6 @@
 			_soNgayDang.MinimumWidth = 6;
 			_soNgayDang.Name = "_soNgayDang";
 			_soNgayDang.ReadOnly = true;
-			_soNgayDang.Width = 152;
 			// 
 			// _trangThai
 			// 
@@ -132,7 +127,6 @@
 			_trangThai.MinimumWidth = 6;
 			_trangThai.Name = "_trangThai";
 			_trangThai.ReadOnly = true;
-			_trangThai.Width = 118;
 			// 
 			// _tinhTrang
 			// 
@@ -140,7 +134,6 @@
 			_tinhTrang.MinimumWidth = 6;
 			_tinhTrang.Name = "_tinhTrang";
 			_tinhTrang.ReadOnly = true;
-			_tinhTrang.Width = 121;
 			// 
 			// GUI_DanhSachThongTinDangTuyen
 			// 

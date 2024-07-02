@@ -9,4 +9,9 @@ public class BUS_HinhThucDangTuyen
 	{
 		return DAO_HinhThucDangTuyen.Lay(maHTDT);
 	}
+
+	public static List<DTO_HinhThucDangTuyen> LayTatCa()
+	{
+		return DAO_HinhThucDangTuyen.LayTatCa();
+	}
 }

@@ -9,7 +9,7 @@ public partial class GUI_DanhSachThongTinDangTuyen : UserControl
 {
 	private Ctrler_DanhSachThongTinDangTuyen? _ctrler_DanhSachThongTinDangTuyen;
 
-	public Ctrler_DanhSachThongTinDangTuyen Ctrler_DanhSachThongTinDangTuyen
+	private Ctrler_DanhSachThongTinDangTuyen Ctrler_DanhSachThongTinDangTuyen
 	{
 		get => _ctrler_DanhSachThongTinDangTuyen ?? throw new ControllerNotFoundException();
 		set => _ctrler_DanhSachThongTinDangTuyen = value;

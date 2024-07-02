@@ -10,7 +10,7 @@ public class BUS_ThongTinDangTuyen
 		var lsTTDT = DAO_ThongTinDangTuyen.LayDSTTDT();
 		var lsTTDTSapHetHan = lsTTDT.Where(ttdt =>
 		{
-			var ngayHetHan = ttdt.ThoiGianDangTuyen!.Value.AddDays(ttdt.SoNgayDangTuyen);
+			var ngayHetHan = ttdt.ThoiGianDangTuyen.AddDays(ttdt.SoNgayDangTuyen);
 			return (ngayHetHan - DateTime.Now).TotalDays < 3.0;
 		}).ToList();
 		return lsTTDTSapHetHan;
