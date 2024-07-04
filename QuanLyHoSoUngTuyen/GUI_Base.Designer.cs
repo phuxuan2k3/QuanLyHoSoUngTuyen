@@ -30,11 +30,12 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            btnXacThucDN = new Button();
             btnTaoYeuCau = new Button();
+            btnXacThucDN = new Button();
             btnDanhSachThongTinDangTuyen = new Button();
-            _contentPanel = new Panel();
             btnXetDuyetTTDT = new Button();
+            _contentPanel = new Panel();
+            btnDangTuyenTTDT = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -52,20 +53,22 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(819, 360);
+            tableLayoutPanel1.Size = new Size(1012, 360);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.ColumnCount = 4;
+            tableLayoutPanel2.ColumnCount = 5;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 175F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 101F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 193F));
+            tableLayoutPanel2.Controls.Add(btnXetDuyetTTDT, 4, 0);
+            tableLayoutPanel2.Controls.Add(btnDangTuyenTTDT, 3, 0);
             tableLayoutPanel2.Controls.Add(btnTaoYeuCau, 0, 0);
             tableLayoutPanel2.Controls.Add(btnXacThucDN, 2, 0);
             tableLayoutPanel2.Controls.Add(btnDanhSachThongTinDangTuyen, 1, 0);
-            tableLayoutPanel2.Controls.Add(btnXetDuyetTTDT, 3, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(2, 2);
             tableLayoutPanel2.Margin = new Padding(2);
@@ -73,21 +76,8 @@
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tableLayoutPanel2.Size = new Size(815, 35);
+            tableLayoutPanel2.Size = new Size(1008, 35);
             tableLayoutPanel2.TabIndex = 2;
-            // 
-            // btnXacThucDN
-            // 
-            btnXacThucDN.AutoSize = true;
-            btnXacThucDN.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnXacThucDN.Location = new Point(415, 2);
-            btnXacThucDN.Margin = new Padding(2);
-            btnXacThucDN.Name = "btnXacThucDN";
-            btnXacThucDN.Size = new Size(171, 30);
-            btnXacThucDN.TabIndex = 2;
-            btnXacThucDN.Text = "Xác thực doanh nghiệp";
-            btnXacThucDN.UseVisualStyleBackColor = true;
-            btnXacThucDN.Click += btnXacThucDN_Click;
             // 
             // btnTaoYeuCau
             // 
@@ -102,6 +92,19 @@
             btnTaoYeuCau.UseVisualStyleBackColor = true;
             btnTaoYeuCau.Click += btnTaoYeuCau_Click;
             // 
+            // btnXacThucDN
+            // 
+            btnXacThucDN.AutoSize = true;
+            btnXacThucDN.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnXacThucDN.Location = new Point(415, 2);
+            btnXacThucDN.Margin = new Padding(2);
+            btnXacThucDN.Name = "btnXacThucDN";
+            btnXacThucDN.Size = new Size(171, 30);
+            btnXacThucDN.TabIndex = 2;
+            btnXacThucDN.Text = "Xác thực doanh nghiệp";
+            btnXacThucDN.UseVisualStyleBackColor = true;
+            btnXacThucDN.Click += btnXacThucDN_Click;
+            // 
             // btnDanhSachThongTinDangTuyen
             // 
             btnDanhSachThongTinDangTuyen.AutoSize = true;
@@ -115,21 +118,11 @@
             btnDanhSachThongTinDangTuyen.UseVisualStyleBackColor = true;
             btnDanhSachThongTinDangTuyen.Click += btnDanhSachThongTinDangTuyen_Click;
             // 
-            // _contentPanel
-            // 
-            _contentPanel.BackColor = SystemColors.ControlLight;
-            _contentPanel.Dock = DockStyle.Fill;
-            _contentPanel.Location = new Point(2, 41);
-            _contentPanel.Margin = new Padding(2);
-            _contentPanel.Name = "_contentPanel";
-            _contentPanel.Size = new Size(815, 317);
-            _contentPanel.TabIndex = 0;
-            // 
             // btnXetDuyetTTDT
             // 
             btnXetDuyetTTDT.AutoSize = true;
             btnXetDuyetTTDT.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnXetDuyetTTDT.Location = new Point(590, 2);
+            btnXetDuyetTTDT.Location = new Point(691, 2);
             btnXetDuyetTTDT.Margin = new Padding(2);
             btnXetDuyetTTDT.Name = "btnXetDuyetTTDT";
             btnXetDuyetTTDT.Size = new Size(218, 30);
@@ -138,11 +131,34 @@
             btnXetDuyetTTDT.UseVisualStyleBackColor = true;
             btnXetDuyetTTDT.Click += btnXetDuyetTTDT_Click;
             // 
+            // _contentPanel
+            // 
+            _contentPanel.BackColor = SystemColors.ControlLight;
+            _contentPanel.Dock = DockStyle.Fill;
+            _contentPanel.Location = new Point(2, 41);
+            _contentPanel.Margin = new Padding(2);
+            _contentPanel.Name = "_contentPanel";
+            _contentPanel.Size = new Size(1008, 317);
+            _contentPanel.TabIndex = 0;
+            // 
+            // btnDangTuyenTTDT
+            // 
+            btnDangTuyenTTDT.AutoSize = true;
+            btnDangTuyenTTDT.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnDangTuyenTTDT.Location = new Point(590, 2);
+            btnDangTuyenTTDT.Margin = new Padding(2);
+            btnDangTuyenTTDT.Name = "btnDangTuyenTTDT";
+            btnDangTuyenTTDT.Size = new Size(95, 30);
+            btnDangTuyenTTDT.TabIndex = 4;
+            btnDangTuyenTTDT.Text = "Đăng tuyển";
+            btnDangTuyenTTDT.UseVisualStyleBackColor = true;
+            btnDangTuyenTTDT.Click += btnDangTuyenTTDT_Click;
+            // 
             // GUI_Base
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(819, 360);
+            ClientSize = new Size(1012, 360);
             Controls.Add(tableLayoutPanel1);
             Margin = new Padding(2);
             Name = "GUI_Base";
@@ -163,5 +179,6 @@
 		private Button btnDanhSachThongTinDangTuyen;
         private Button btnXacThucDN;
         private Button btnXetDuyetTTDT;
+        private Button btnDangTuyenTTDT;
     }
 }

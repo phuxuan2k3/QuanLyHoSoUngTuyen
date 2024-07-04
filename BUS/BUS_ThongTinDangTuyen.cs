@@ -36,8 +36,18 @@ public class BUS_ThongTinDangTuyen
         return DAO_ThongTinDangTuyen.LoadTTDTXD();
     }
 
-	public static void CapNhatTrangThaiTTDT(string MaTTDT, string TrangThai) { 
+    public static List<DTO_ThongTinDangTuyen> LayDSTTDTHopLe()
+    {
+        return DAO_ThongTinDangTuyen.LoadTTDTHopLe();
+    }
+
+    public static void CapNhatTrangThaiTTDT(string MaTTDT, string TrangThai) { 
 		DAO_ThongTinDangTuyen.CapNhatTrangThaiTTDT(MaTTDT, TrangThai);
 	
+	}
+
+	public static void CapNhatTrangThaiDangTuyen(string MaTTDT)
+	{
+		DAO_ThongTinDangTuyen.CapNhatTrangThaiDangTuyen(MaTTDT);
 	}
 }

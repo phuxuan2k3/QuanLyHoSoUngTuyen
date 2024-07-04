@@ -55,6 +55,12 @@ public partial class GUI_Base : Form
         SwitchContent(content);
     }
 
+    private void btnDangTuyenTTDT_Click(object sender, EventArgs e)
+    {
+        GUI_DanhSachTTDTCanDangTuyen content = new();
+        content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
+        SwitchContent(content);
+    }
 
     public static GUI_Base Instance => _instance ??= new GUI_Base();
 }
