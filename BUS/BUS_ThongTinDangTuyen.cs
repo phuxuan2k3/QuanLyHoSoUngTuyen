@@ -30,4 +30,14 @@ public class BUS_ThongTinDangTuyen
 	{
 		return DAO_ThongTinDangTuyen.LayTatCaCuaDoanhNghiep(maDN);
 	}
+
+    public static List<DTO_ThongTinDangTuyen> LayDSTTDTXD()
+    {
+        return DAO_ThongTinDangTuyen.LoadTTDTXD();
+    }
+
+	public static void CapNhatTrangThaiTTDT(string MaTTDT, string TrangThai) { 
+		DAO_ThongTinDangTuyen.CapNhatTrangThaiTTDT(MaTTDT, TrangThai);
+	
+	}
 }

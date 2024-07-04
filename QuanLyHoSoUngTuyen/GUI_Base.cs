@@ -44,9 +44,17 @@ public partial class GUI_Base : Form
     private void btnXacThucDN_Click(object sender, EventArgs e)
     {
         GUI_XacThucThongTinDoanhNghiep content = new();
-        content.HienThi(new Ctrler_XacThucThongTinDoanhNghiep());
+        content.HienThi();
         SwitchContent(content);
     }
+
+    private void btnXetDuyetTTDT_Click(object sender, EventArgs e)
+    {
+        GUI_DanhSachTTDTCanXetDuyet content = new();
+        content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
+        SwitchContent(content);
+    }
+
 
     public static GUI_Base Instance => _instance ??= new GUI_Base();
 }

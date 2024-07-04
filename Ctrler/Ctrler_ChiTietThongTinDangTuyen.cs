@@ -7,6 +7,7 @@ public class Ctrler_ChiTietThongTinDangTuyen
 	private readonly DTO_ThongTinDangTuyen _ttdt;
 	private readonly DTO_HoaDon _hoaDon;
 	private readonly DTO_HinhThucDangTuyen _hinhThucDangTuyen;
+	private readonly DTO_DoanhNghiep _DoanhNghiep;
 
 	public Ctrler_DanhSachThongTinDangTuyen Owner { get; set; }
 
@@ -19,14 +20,24 @@ public class Ctrler_ChiTietThongTinDangTuyen
 	}
 
 
-	public void Load(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HoaDon hoaDon, ref DTO_HinhThucDangTuyen hinhThucDangTuyen)
+
+
+    public void Load(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HoaDon hoaDon, ref DTO_HinhThucDangTuyen hinhThucDangTuyen)
 	{
 		thongTinDangTuyen = _ttdt;
 		hoaDon = _hoaDon;
 		hinhThucDangTuyen = _hinhThucDangTuyen;
 	}
 
-	public void HienThi_HoaDon()
+    public void Load2(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HoaDon hoaDon, ref DTO_HinhThucDangTuyen hinhThucDangTuyen, ref DTO_DoanhNghiep doanhNghiep)
+    {
+        thongTinDangTuyen = _ttdt;
+        hinhThucDangTuyen = _hinhThucDangTuyen;
+		hoaDon = _hoaDon;
+		doanhNghiep = _DoanhNghiep;
+    }
+
+    public void HienThi_HoaDon()
 	{
 		// todo
 	}
