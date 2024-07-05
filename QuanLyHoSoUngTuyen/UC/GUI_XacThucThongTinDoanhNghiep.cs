@@ -25,9 +25,17 @@ namespace GUI.UC
         {
             if (dsDoanhNghiep.Rows[e.RowIndex].Cells["ColumnMaDN"].Value is string MaDN)
             {
-                var ctrler = Ctrler_XacThucThongTinDoanhNghiep.LoadTTDN(MaDN);
-                
-                HienThiTTDN(ctrler);
+                string thoihan = dsDoanhNghiep.Rows[e.RowIndex].Cells["ColumnNgayConLai"].Value.ToString();
+                if (thoihan[0] != '-')
+                {
+                    var ctrler = Ctrler_XacThucThongTinDoanhNghiep.LoadTTDN(MaDN);
+
+                    HienThiTTDN(ctrler);
+                }
+                else
+                {
+                    MessageBox.Show("Doanh nghiệp đã quá hạn xác thực!");
+                }
             }
         }
 
@@ -38,6 +46,8 @@ namespace GUI.UC
             lbTenDN.Text = DN.TenDN.ToString();
             lbMST.Text = DN.MaSoThue.ToString();
             MaDN = DN.MaDN.ToString();
+            lbDiaChi.Text = DN.DiaChi.ToString();
+            lbNgDaiDien.Text = DN.NguoiDaiDien.ToString();
         }
 
 
@@ -55,6 +65,9 @@ namespace GUI.UC
                 row.Cells["ColumnTenDN"].Value = dn.TenDN;
                 row.Cells["ColumnDaiDienDN"].Value = dn.NguoiDaiDien;
                 row.Cells["ColumnTrangThai"].Value = dn.TrangThai;
+                TimeSpan ngayconlai = DateTime.Now.Date - Convert.ToDateTime(dn.NgayDangKy).Date;
+                row.Cells["ColumnNgayConLai"].Value =  7 - ngayconlai.Days + " ngày";
+                if( 7 - ngayconlai.Days <= 3) { dsDoanhNghiep.Rows[rowId].DefaultCellStyle.ForeColor = Color.Red; }
 
             }
         }

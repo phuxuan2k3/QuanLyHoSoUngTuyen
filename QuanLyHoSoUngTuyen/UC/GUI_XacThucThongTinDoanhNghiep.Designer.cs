@@ -34,6 +34,7 @@
             ColumnTenDN = new DataGridViewTextBoxColumn();
             ColumnDaiDienDN = new DataGridViewTextBoxColumn();
             ColumnTrangThai = new DataGridViewTextBoxColumn();
+            ColumnNgayConLai = new DataGridViewTextBoxColumn();
             lbDNXT = new Label();
             btnTuChoi = new Button();
             btnXacThuc = new Button();
@@ -41,6 +42,10 @@
             Ten = new Label();
             lbMST = new Label();
             lbTenDN = new Label();
+            lbNgDaiDien = new Label();
+            label2 = new Label();
+            lbDiaChi = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dsDoanhNghiep).BeginInit();
             SuspendLayout();
             // 
@@ -48,7 +53,7 @@
             // 
             dsDoanhNghiep.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dsDoanhNghiep.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dsDoanhNghiep.Columns.AddRange(new DataGridViewColumn[] { ColumnMaDN, ColumnMST, ColumnTenDN, ColumnDaiDienDN, ColumnTrangThai });
+            dsDoanhNghiep.Columns.AddRange(new DataGridViewColumn[] { ColumnMaDN, ColumnMST, ColumnTenDN, ColumnDaiDienDN, ColumnTrangThai, ColumnNgayConLai });
             dsDoanhNghiep.Location = new Point(54, 62);
             dsDoanhNghiep.Name = "dsDoanhNghiep";
             dsDoanhNghiep.RowHeadersWidth = 51;
@@ -85,6 +90,12 @@
             ColumnTrangThai.HeaderText = "Trạng thái";
             ColumnTrangThai.MinimumWidth = 6;
             ColumnTrangThai.Name = "ColumnTrangThai";
+            // 
+            // ColumnNgayConLai
+            // 
+            ColumnNgayConLai.HeaderText = "Thời hạn xác thực";
+            ColumnNgayConLai.MinimumWidth = 6;
+            ColumnNgayConLai.Name = "ColumnNgayConLai";
             // 
             // lbDNXT
             // 
@@ -156,10 +167,52 @@
             lbTenDN.TabIndex = 10;
             lbTenDN.Text = "label1";
             // 
+            // lbNgDaiDien
+            // 
+            lbNgDaiDien.AutoSize = true;
+            lbNgDaiDien.Location = new Point(843, 213);
+            lbNgDaiDien.Name = "lbNgDaiDien";
+            lbNgDaiDien.Size = new Size(50, 20);
+            lbNgDaiDien.TabIndex = 12;
+            lbNgDaiDien.Text = "label1";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(843, 193);
+            label2.Name = "label2";
+            label2.Size = new Size(116, 20);
+            label2.TabIndex = 11;
+            label2.Text = "Người đại diện:";
+            // 
+            // lbDiaChi
+            // 
+            lbDiaChi.AutoSize = true;
+            lbDiaChi.Location = new Point(843, 281);
+            lbDiaChi.Name = "lbDiaChi";
+            lbDiaChi.Size = new Size(50, 20);
+            lbDiaChi.TabIndex = 14;
+            lbDiaChi.Text = "label1";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(843, 261);
+            label3.Name = "label3";
+            label3.Size = new Size(60, 20);
+            label3.TabIndex = 13;
+            label3.Text = "Địa chỉ:";
+            // 
             // GUI_XacThucThongTinDoanhNghiep
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(lbDiaChi);
+            Controls.Add(label3);
+            Controls.Add(lbNgDaiDien);
+            Controls.Add(label2);
             Controls.Add(lbTenDN);
             Controls.Add(lbMST);
             Controls.Add(Ten);
@@ -190,5 +243,10 @@
         private Label Ten;
         private Label lbMST;
         private Label lbTenDN;
+        private DataGridViewTextBoxColumn ColumnNgayConLai;
+        private Label lbNgDaiDien;
+        private Label label2;
+        private Label lbDiaChi;
+        private Label label3;
     }
 }
