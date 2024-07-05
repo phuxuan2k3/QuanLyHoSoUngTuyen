@@ -19,6 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTest.An", "Console.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseInit", "DatabaseInit\DatabaseInit.csproj", "{1C525CC1-721E-4CDD-AD8C-DAF721E5FCCD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6BFD9B43-38F2-4952-A22D-2FFCD6A2EB28}"
+	ProjectSection(SolutionItems) = preProject
+		D:\Downloads\App.config = D:\Downloads\App.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
