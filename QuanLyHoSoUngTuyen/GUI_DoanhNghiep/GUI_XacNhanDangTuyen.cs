@@ -52,7 +52,7 @@ namespace GUI.UC
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
             GUI_DanhSachTTDTCanDangTuyen content = new();
-            GUI_Base.Instance.SwitchContent(content);
+            GUI_DoanhNghiep.Instance.SwitchContent(content);
             content.HienThi(Ctrler_ChiTietThongTinDangTuyen.Owner);
         }
 

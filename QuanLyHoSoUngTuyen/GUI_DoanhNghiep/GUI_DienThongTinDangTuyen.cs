@@ -67,7 +67,7 @@ namespace GUI.UC
 			{
 				DTO_ThongTinDangTuyen thongTinDangTuyen = new DTO_ThongTinDangTuyen(
 					"",
-					GUI_Base.Instance.MaDN,
+					GUI_DoanhNghiep.Instance.MaDN,
 					(int)_soNgayDangTuyen.Value,
 					_hinhThucDangTuyen.SelectedValue.ToString() ?? throw new Exception("Invalid HinhThucDangTuyen"),
 					_thoiGianDangTuyen.Value,
@@ -78,16 +78,16 @@ namespace GUI.UC
 				var gui = new GUI_XacNhanThanhToan();
 				var ctrler = Ctrler_DienThongTinDangTuyen.HienThi_XacNhanThanhToan(thongTinDangTuyen);
 				gui.HienThi(ctrler);
-				GUI_Base.Instance.SwitchContent(gui);
+				GUI_DoanhNghiep.Instance.SwitchContent(gui);
 			}
 		}
 
 		private void btnHuy_Click(object sender, EventArgs e)
 		{
 			var gui = new GUI_DanhSachThongTinDangTuyen();
-			var ctrler = new Ctrler_DanhSachThongTinDangTuyen(GUI_Base.Instance.MaDN);
+			var ctrler = new Ctrler_DanhSachThongTinDangTuyen(GUI_DoanhNghiep.Instance.MaDN);
 			gui.HienThi(ctrler);
-			GUI_Base.Instance.SwitchContent(gui);
+			GUI_DoanhNghiep.Instance.SwitchContent(gui);
 		}
 	}
 }

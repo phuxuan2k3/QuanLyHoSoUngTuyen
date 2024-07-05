@@ -45,7 +45,7 @@ public partial class GUI_DanhSachThongTinDangTuyen : UserControl
 			var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyen(maTTDT);
 			GUI_ChiTietThongTinDangTuyen content = new();
 			content.HienThi(ctrler);
-			GUI_Base.Instance.SwitchContent(content);
+			GUI_DoanhNghiep.Instance.SwitchContent(content);
 		}
 	}
 }

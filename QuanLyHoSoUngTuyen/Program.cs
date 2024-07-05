@@ -14,7 +14,7 @@ namespace QuanLyHoSoUngTuyen
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new GUI_Base());
-            Application.Run(new GUI_Base());
+            Application.Run(new GUI_DoanhNghiep());
         }
     }
 }

@@ -55,7 +55,7 @@ namespace GUI.UC
                 var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyenHopLe(maTTDT);
                 GUI_XacNhanDangTuyen content = new();
                 content.HienThi(ctrler);
-                GUI_Base.Instance.SwitchContent(content);
+                GUI_DoanhNghiep.Instance.SwitchContent(content);
             }
         }
 
