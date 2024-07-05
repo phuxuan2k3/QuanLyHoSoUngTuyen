@@ -3,9 +3,9 @@ using Utilis;
 
 namespace GUI
 {
-    public partial class GUI_BanLanhDao_Base : Form
+    public partial class GUI_BanLanhDao : Form
     {
-        public GUI_BanLanhDao_Base()
+        public GUI_BanLanhDao()
         {
             InitializeComponent();
             KhoiTaoManHinh();

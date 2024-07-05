@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class GUI_BanLanhDao_Base
+    partial class GUI_BanLanhDao
     {
         /// <summary>
         /// Required designer variable.
