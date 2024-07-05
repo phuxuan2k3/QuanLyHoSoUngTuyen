@@ -48,7 +48,10 @@ public partial class GUI_ChiTietThongTinDangTuyen : UserControl
 
 	private void btnHieuChinh_Click(object sender, EventArgs e)
 	{
-		Ctrler_ChiTietThongTinDangTuyen.HienThi_HieuChinh();
+		var ctrler = Ctrler_ChiTietThongTinDangTuyen.HienThi_HieuChinh();
+		var gui = new GUI_HieuChinhThongTinDangTuyen();
+		gui.HienThi(ctrler);
+		GUI_DoanhNghiep.Instance.SwitchContent(gui);
 	}
 
 	private void btnQuayLai_Click(object sender, EventArgs e)

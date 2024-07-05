@@ -64,11 +64,11 @@
 			label2.Anchor = AnchorStyles.None;
 			label2.AutoSize = true;
 			label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label2.Location = new Point(240, 20);
+			label2.Location = new Point(288, 20);
 			label2.Name = "label2";
-			label2.Size = new Size(343, 31);
+			label2.Size = new Size(246, 31);
 			label2.TabIndex = 0;
-			label2.Text = "Chi Tiết Thông Tin Đăng Tuyển";
+			label2.Text = "Xác Nhận Thanh Toán";
 			// 
 			// tableLayoutPanel2
 			// 

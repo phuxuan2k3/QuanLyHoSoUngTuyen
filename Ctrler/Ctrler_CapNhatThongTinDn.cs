@@ -1,14 +1,9 @@
 ﻿using BUS;
 using DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ctrler
 {
-    public class Ctrler_CapNhatThongTinDn
+	public class Ctrler_CapNhatThongTinDn
     {
         public DTO_DoanhNghiep Load(string MaDN)
         {
