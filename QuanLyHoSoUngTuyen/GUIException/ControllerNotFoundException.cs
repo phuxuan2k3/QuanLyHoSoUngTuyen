@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using DTO;
+using System.Runtime.Serialization;
 
 namespace GUI.GUIException;
 
@@ -15,5 +16,4 @@ public class ControllerNotFoundException : Exception
 	public ControllerNotFoundException(string? message, Exception? innerException) : base(message, innerException)
 	{
 	}
-
 }

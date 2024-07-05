@@ -49,7 +49,7 @@
 			tableLayoutPanel1.RowCount = 2;
 			tableLayoutPanel1.RowStyles.Add(new RowStyle());
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-			tableLayoutPanel1.Size = new Size(800, 450);
+			tableLayoutPanel1.Size = new Size(942, 593);
 			tableLayoutPanel1.TabIndex = 0;
 			// 
 			// tableLayoutPanel2
@@ -65,7 +65,7 @@
 			tableLayoutPanel2.RowCount = 1;
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-			tableLayoutPanel2.Size = new Size(794, 44);
+			tableLayoutPanel2.Size = new Size(936, 44);
 			tableLayoutPanel2.TabIndex = 2;
 			// 
 			// btnTaoYeuCau
@@ -76,6 +76,7 @@
 			btnTaoYeuCau.Name = "btnTaoYeuCau";
 			btnTaoYeuCau.Size = new Size(211, 35);
 			btnTaoYeuCau.TabIndex = 0;
+			btnTaoYeuCau.Tag = "";
 			btnTaoYeuCau.Text = "Tạo yêu cầu đăng tuyển";
 			btnTaoYeuCau.UseVisualStyleBackColor = true;
 			btnTaoYeuCau.Click += btnTaoYeuCau_Click;
@@ -98,14 +99,14 @@
 			_contentPanel.Dock = DockStyle.Fill;
 			_contentPanel.Location = new Point(3, 53);
 			_contentPanel.Name = "_contentPanel";
-			_contentPanel.Size = new Size(794, 394);
+			_contentPanel.Size = new Size(936, 537);
 			_contentPanel.TabIndex = 0;
 			// 
 			// GUI_Base
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(800, 450);
+			ClientSize = new Size(942, 593);
 			Controls.Add(tableLayoutPanel1);
 			Name = "GUI_Base";
 			Text = "GUI_Base";

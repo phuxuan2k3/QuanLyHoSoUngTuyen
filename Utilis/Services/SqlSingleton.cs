@@ -121,4 +121,26 @@ public sealed class SqlSingleton
 			EnsureConnectionClosed();
 		}
 	}
+
+	public void ExecuteNonQuery(IEnumerable<string> queries, params SqlParameter[] parameters)
+	{
+		try
+		{
+			EnsureConnectionOpen();
+			foreach (string query in queries)
+			{
+				if (!string.IsNullOrWhiteSpace(query.Trim()))
+				{
+					using (var command = new SqlCommand(query, Connection))
+					{
+						command.ExecuteNonQuery();
+					}
+				}
+			}
+		}
+		finally
+		{
+			EnsureConnectionClosed();
+		}
+	}
 }
