@@ -17,12 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilis", "Utilis\Utilis.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTest.An", "Console.An\ConsoleTest.An.csproj", "{C2DD8F8C-4F20-40AD-9D5D-689E83402B2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseInit", "DatabaseInit\DatabaseInit.csproj", "{1C525CC1-721E-4CDD-AD8C-DAF721E5FCCD}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B3572D21-AE7B-4496-A09D-4FD0326A3D54}"
-	ProjectSection(SolutionItems) = preProject
-		Database\database.sql = Database\database.sql
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseInit", "DatabaseInit\DatabaseInit.csproj", "{1C525CC1-721E-4CDD-AD8C-DAF721E5FCCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
