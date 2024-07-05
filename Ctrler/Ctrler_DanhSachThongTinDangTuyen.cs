@@ -17,11 +17,25 @@ public class Ctrler_DanhSachThongTinDangTuyen
 		thongTinDangTuyen = BUS_ThongTinDangTuyen.LayTatCaCuaDoanhNghiep(_maDN);
 	}
 
-	public Ctrler_ChiTietThongTinDangTuyen HienThi_ChiTiet(string maTTDT)
+    public void LoadTTDTXD(ref List<DTO_ThongTinDangTuyen> thongTinDangTuyen)
+    {
+        thongTinDangTuyen = BUS_ThongTinDangTuyen.LayDSTTDTXD();
+    }
+
+    public Ctrler_ChiTietThongTinDangTuyen ChiTietThongTinDangTuyen(string maTTDT)
 	{
 		var ttdt = BUS_ThongTinDangTuyen.Lay(maTTDT);
 		var hoaDon = BUS_HoaDon.Lay(maTTDT);
 		var hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(ttdt.MaHTDT);
 		return new Ctrler_ChiTietThongTinDangTuyen(ttdt, hoaDon, hinhThucDangTuyen);
 	}
+
+    public Ctrler_XetDuyetThongTinDangTuyen ChiTietThongTinDangTuyenXD(string maTTDT)
+    {
+        var ttdt = BUS_ThongTinDangTuyen.Lay(maTTDT);
+        var hoaDon = BUS_HoaDon.Lay(maTTDT);
+        var hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(ttdt.MaHTDT);
+		var doanhNghiep = BUS_DoanhNghiep.LoadTTDN(ttdt.MaDN);
+        return new Ctrler_XetDuyetThongTinDangTuyen(ttdt, hoaDon, hinhThucDangTuyen,doanhNghiep, this);
+    }
 }

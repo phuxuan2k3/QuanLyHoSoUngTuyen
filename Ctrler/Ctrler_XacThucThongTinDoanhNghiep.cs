@@ -10,19 +10,16 @@ using System.Threading.Tasks;
 namespace Ctrler
 {
     public class Ctrler_XacThucThongTinDoanhNghiep
-
     {
         public static void Load(ref List<DTO_DoanhNghiep> dsDNXT)
         {
             dsDNXT = BUS_DoanhNghiep.LayDNCanXacThuc();
-
         }
 
         public static DTO_DoanhNghiep LoadTTDN( string MaDN)
         {
             DTO_DoanhNghiep DNXT = BUS_DoanhNghiep.LoadTTDN(MaDN);
             return DNXT;
-
         }
 
         public static void CapNhatTrangThaiDN(string MaDN, string TrangThai) {

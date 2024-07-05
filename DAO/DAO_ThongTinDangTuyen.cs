@@ -1,4 +1,5 @@
 ﻿using DTO;
+using System.Data;
 
 namespace DAO;
 
@@ -19,8 +20,32 @@ public class DAO_ThongTinDangTuyen
 
 	public static DTO_ThongTinDangTuyen Lay(string maTTDT)
 	{
-		return new DTO_ThongTinDangTuyen { TenViTri = "Test", SoLuong = 1 };
-	}
+        string query = "select * from THONGTINDANGTUYEN where MATTDT =  " + maTTDT;
+        DataTable dataTable = new DataTable();
+        dataTable = SqlSingleton.Instance.ExecuteQuery(query);
+
+        if (dataTable.Rows.Count > 0)
+        {
+            DataRow row = dataTable.Rows[0];
+            DTO_ThongTinDangTuyen doanhNghiep = new DTO_ThongTinDangTuyen
+            {
+                MaTTDT = row["MATTDT"].ToString(),
+                MaDN = row["MADN"].ToString(),
+                SoNgayDangTuyen = Convert.ToInt32(row["SONGAYDT"]),
+                MaHTDT = row["MAHTDT"].ToString(),
+                ThoiGianDangTuyen = DateTime.Now.AddDays(-4),
+                TenViTri = row["TENVITRI"].ToString(),
+                SoLuong = Convert.ToInt32(row["SOLUONG"]),
+                YeuCau = row["YEUCAU"].ToString()
+            };
+
+            return doanhNghiep;
+        }
+        else
+        {
+            return null;
+        }
+    }
 
 	public static List<DTO_ThongTinDangTuyen> LayTatCaCuaDoanhNghiep(string maDN)
 	{
@@ -79,4 +104,44 @@ public class DAO_ThongTinDangTuyen
 };
 		return dtoArray.ToList();
 	}
+
+
+    public static List<DTO_ThongTinDangTuyen> LoadTTDTXD()
+    {
+        string query = "select * from THONGTINDANGTUYEN where TINHTRANG = N'Chưa xét duyệt' ";
+        DataTable dataTable = new DataTable();
+        dataTable = SqlSingleton.Instance.ExecuteQuery(query);
+
+        List<DTO_ThongTinDangTuyen> ds = new List<DTO_ThongTinDangTuyen>();
+
+        foreach (DataRow row in dataTable.Rows)
+        {
+            DTO_ThongTinDangTuyen ttdt = new DTO_ThongTinDangTuyen
+            {
+                MaTTDT = row["MATTDT"].ToString(),
+                MaDN = row["MADN"].ToString(),
+                SoNgayDangTuyen = Convert.ToInt32(row["SONGAYDT"]),
+                MaHTDT= row["MAHTDT"].ToString(),
+				ThoiGianDangTuyen= DateTime.Now.AddDays(-4),
+                TenViTri = row["TENVITRI"].ToString(),
+                SoLuong = Convert.ToInt32(row["SOLUONG"]),
+                YeuCau = row["YEUCAU"].ToString()
+            };
+
+            ds.Add(ttdt);
+        }
+
+        return ds;
+
+    }
+
+	public static void CapNhatTrangThaiTTDT(string MaTTDT, string TrangThai)
+	{
+		string query = "update THONGTINDANGTUYEN set TINHTRANG = N'" + TrangThai + "' where MATTDT = " + MaTTDT; 
+        SqlSingleton.Instance.ExecuteNonQuery(query);
+
+    }
+
+
+
 }

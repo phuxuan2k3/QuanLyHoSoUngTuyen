@@ -41,9 +41,9 @@ namespace GUI.UC
         }
 
 
-        public void HienThi(Ctrler_XacThucThongTinDoanhNghiep ctrler_DoanhNghiep)
+        public void HienThi()
         {
-            _Ctrler_XacThucThongTinDoanhNghiep = ctrler_DoanhNghiep;
+            //_Ctrler_XacThucThongTinDoanhNghiep = ctrler_DoanhNghiep;
             var dsDNXT = new List<DTO_DoanhNghiep>();
             Ctrler_XacThucThongTinDoanhNghiep.Load(ref dsDNXT);
             foreach (var dn in dsDNXT)
@@ -65,7 +65,7 @@ namespace GUI.UC
             dsDoanhNghiep.DataSource = null;
             dsDoanhNghiep.Rows.Clear();
             Ctrler_XacThucThongTinDoanhNghiep.CapNhatTrangThaiDN(MaDN, "Không hợp lệ");
-            HienThi(new Ctrler_XacThucThongTinDoanhNghiep());
+            HienThi();
         }
 
         private void btnXacThuc_Click_1(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace GUI.UC
             dsDoanhNghiep.Rows.Clear();
 
             Ctrler_XacThucThongTinDoanhNghiep.CapNhatTrangThaiDN(MaDN, "Hợp lệ");
-            HienThi(new Ctrler_XacThucThongTinDoanhNghiep());
+            HienThi();
 
 
         }
