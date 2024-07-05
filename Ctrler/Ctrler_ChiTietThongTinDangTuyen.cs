@@ -34,6 +34,7 @@ public class Ctrler_ChiTietThongTinDangTuyen
 		doanhNghiep = _DoanhNghiep;
     }
 
+
     public Ctrler_HoaDonThongTinDangTuyen HienThi_HoaDon()
 	{
 		return new Ctrler_HoaDonThongTinDangTuyen(_thongTinDangTuyen, _hoaDon, _hinhThucDangTuyen);

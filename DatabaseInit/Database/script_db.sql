@@ -1,4 +1,28 @@
-﻿USE QL_HSUT;
+﻿DECLARE @DatabaseName nvarchar(50)
+SET @DatabaseName = N'QL_HSUT'
+
+DECLARE @SQL varchar(max)
+
+SELECT @SQL = COALESCE(@SQL,'') + 'Kill ' + Convert(varchar, SPId) + ';'
+FROM MASTER..SysProcesses
+WHERE DBId = DB_ID(@DatabaseName) AND SPId <> @@SPId
+
+--SELECT @SQL 
+EXEC(@SQL)
+
+USE master
+IF EXISTS(select * from sys.databases where name='QL_HSUT')
+DROP DATABASE QL_HSUT
+GO
+
+/*==============================================================*/
+/*==============================================================*/
+
+create database QL_HSUT;
+go
+use QL_HSUT;
+go
+
 --use master;
 --CREATE DATABASE QL_HSUT;
 --drop DATABASE QL_HSUT;

@@ -18,13 +18,22 @@ namespace BUS
 
         public static DTO_DoanhNghiep LoadTTDN(string MaDN)
         {
-            return DAO_DoanhNghiep.LoadTTDN(MaDN);
-            
+            return DAO_DoanhNghiep.LoadTTDN(MaDN);  
         }
 
         public static void CapNhatTrangThaiDN(string MaDN,string TrangThai) {
             
             DAO_DoanhNghiep.CapNhatTrangThaiDN(MaDN, TrangThai);
+        }
+
+        public static void CapNhatThongTinDN(DTO_DoanhNghiep doanhNghiep)
+        {
+            DAO_DoanhNghiep.CapNhatThongTinDn(doanhNghiep);
+        }
+
+        public static int KiemTraTrangThaiDN(string maDN)
+        {
+            return DAO_DoanhNghiep.KiemTraTrangThai(maDN);
         }
     }
 

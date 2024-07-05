@@ -7,11 +7,9 @@ namespace DAO
     {
         public static List<DTO_DoanhNghiep> LayDN()
         {
-            return new List<DTO_DoanhNghiep>
-            {
-                new DTO_DoanhNghiep ("abc"),
-                new DTO_DoanhNghiep ("xyz")
-            };
+            var query = "select * from DOANHNGHIEP";
+            var dn = SqlSingleton.Instance.ExecuteQuery(query);
+            return null;
         }
 
         public static List<DTO_DoanhNghiep> LayDNChuaXacThuc()
@@ -77,6 +75,22 @@ namespace DAO
         public static void CapNhatTrangThaiDN(string MaDN, string TrangThai) {
             string query = "update DOANHNGHIEP set TRANGTHAI = N'" + TrangThai + "' where MaDoanhNghiep = " + MaDN;
             SqlSingleton.Instance.ExecuteNonQuery(query);
+        }
+
+        public static void CapNhatThongTinDn(DTO_DoanhNghiep doanhNghiep)
+        {
+            string query = "UPDATE DOANHNGHIEP set TenDoanhNghiep = N'" + doanhNghiep.TenDN + "', NGUOIDAIDIEN = N'" + doanhNghiep.NguoiDaiDien + "', DIACHI = N'" + doanhNghiep.DiaChi + "', EMAIL = '" + doanhNghiep.Email + "', NGAYDK = GETDATE(), TRANGTHAI = N'Chưa xác thực' where MaDoanhNghiep = " + doanhNghiep.MaDN;
+;
+            SqlSingleton.Instance.ExecuteNonQuery(query);
+        }
+
+        public static int KiemTraTrangThai(string MaDN)
+        {
+            string query = "SELECT * FROM DOANHNGHIEP where ((TRANGTHAI=N'Chưa xác thực' AND DATEDIFF(DAY,NGAYDK,GETDATE()) < 7 ) OR TRANGTHAI =N'Không hợp lệ') AND MaDoanhNghiep =" + MaDN;
+            if(SqlSingleton.Instance.ExecuteScalar(query) == null) {  return 1; }
+            return 0;
+
+
         }
 
     }

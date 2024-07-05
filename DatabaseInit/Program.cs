@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 try
 {
-	var script = File.ReadAllText(Path.Join(AppDomain.CurrentDomain.BaseDirectory, "Database", "database.sql"));
+	var script = File.ReadAllText(Path.Join(AppDomain.CurrentDomain.BaseDirectory, "Database", "script_db.sql"));
 	IEnumerable<string> commandStrings = Regex.Split(script, @"GO", RegexOptions.Multiline | RegexOptions.IgnoreCase);
 	SqlSingleton.Instance.ExecuteNonQuery(commandStrings);
 	Console.WriteLine("Sucessfully executed!");
