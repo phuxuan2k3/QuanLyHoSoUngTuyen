@@ -27,7 +27,7 @@ public class Ctrler_DanhSachThongTinDangTuyen
 	//	thongTinDangTuyen = BUS_ThongTinDangTuyen.LayDSTTDTHopLe();
 	//}
 
-	public Ctrler_ChiTietThongTinDangTuyen ChiTietThongTinDangTuyen(string maTTDT)
+	public Ctrler_ChiTietThongTinDangTuyen HienThi_ChiTiet(string maTTDT)
 	{
 		var ttdt = BUS_ThongTinDangTuyen.Lay(maTTDT);
 		var hoaDon = BUS_HoaDon.Lay(maTTDT);

@@ -1,4 +1,5 @@
 ﻿using BUS;
+using Ctrler.Sub;
 using DTO;
 
 namespace Ctrler
@@ -31,9 +32,9 @@ namespace Ctrler
 			return new Ctrler_ChiTietThongTinDangTuyen(_thongTinDangTuyen, _hoaDon, _hinhThucDangTuyen);
 		}
 
-		public void XuatPDF()
+		public void XuatPDF(string outPath)
 		{
-			// todo
+			Ctrler_PDF.Xuat(_thongTinDangTuyen, _hoaDon, outPath);
 		}
 	}
 }

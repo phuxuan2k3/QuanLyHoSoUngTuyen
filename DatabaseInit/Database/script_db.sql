@@ -92,11 +92,12 @@ create table CT_CLUD (
 );
 go
 
-
 -- Table HINHTHUCDANGTUYEN
 create table HINHTHUCDANGTUYEN (
     MaHinhThuc varchar(50) not null primary key,
-    TenHinhThuc nvarchar(100)
+    TenHinhThuc nvarchar(100),
+    MoTa nvarchar(100) null,
+    Gia float
 );
 go
 
@@ -106,13 +107,12 @@ create table THONGTINDANGTUYEN (
    MADN                 varchar(50)          null,
    SONGAYDT             int                  null,
    MAHTDT               varchar(50)          null,
-   THOIGIANXETTUYEN     int                  null,
-   TRANGTHAI            nvarchar(20)          null,
-   TINHTRANG            nvarchar(20)          null,
-   TENVITRI             nvarchar(50)          null,
+   THOIGIANDANGTUYEN    date                 null,
+   TRANGTHAI            nvarchar(20)         null,
+   TINHTRANG            nvarchar(20)         null,
+   TENVITRI             nvarchar(50)         null,
    SOLUONG              int                  null,
-   GIA              float                  null,
-   YEUCAU               nvarchar(100)         null,
+   YEUCAU               nvarchar(100)        null,
    constraint PK_THONGTINDANGTUYEN primary key (MATTDT),
    CONSTRAINT CK_TRANGTHAI_TTDT CHECK (TRANGTHAI IN (N'Chưa đăng tuyển', N'Đã đăng tuyển', N'Cần hiệu chỉnh')),
    CONSTRAINT CK_TINHTRANG_TTDT CHECK (TINHTRANG IN (N'Chưa xét duyệt', N'Không hợp lệ', N'Hợp lệ')),

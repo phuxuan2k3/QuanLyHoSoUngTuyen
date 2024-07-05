@@ -30,6 +30,8 @@ namespace GUI.UC
 			_hinhThucDangTuyen.ValueMember = "MaHTDT";
 			_hinhThucDangTuyen.DisplayMember = "TenHinhThuc";
 			_hinhThucDangTuyen.SelectedIndex = hinhThucDangTuyen.FindIndex(x => x.MaHTDT == thongTinDangTuyen.MaHTDT);
+			_hinhThucDangTuyen.DropDownStyle = ComboBoxStyle.DropDownList;
+			_hinhThucDangTuyen.SelectedIndex = 0;
 			_thoiGianDangTuyen.Value = thongTinDangTuyen.ThoiGianDangTuyen;
 			_tenViTri.Text = thongTinDangTuyen.TenViTri;
 			_soLuong.Value = thongTinDangTuyen.SoLuong;

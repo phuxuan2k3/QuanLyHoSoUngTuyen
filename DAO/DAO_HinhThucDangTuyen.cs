@@ -2,39 +2,37 @@
 using System.Data;
 
 namespace DAO;
-
 public class DAO_HinhThucDangTuyen
 {
+	const string tableName = "HINHTHUCDANGTUYEN";
+	private static DTO_HinhThucDangTuyen RowConvert(DataRow row)
+	{
+		DTO_HinhThucDangTuyen htdt = new DTO_HinhThucDangTuyen
+		{
+			MaHTDT = row["MAHINHTHUC"].ToString()!,
+			TenHinhThuc = row["TENHINHTHUC"]!.ToString()!,
+			MoTa = row["MOTA"].ToString()!,
+			Gia = row.IsNull("GIA") ? -1 : (float)row["GIA"]
+		};
+		return htdt;
+	}
+
 	public static DTO_HinhThucDangTuyen Lay(string maHTDT)
 	{
-        string query = "select * from HINHTHUCDANGTUYEN where MaHinhThuc = '" + maHTDT +"'";
-        DataTable dataTable = new DataTable();
-        dataTable = SqlSingleton.Instance.ExecuteQuery(query);
-
-        if (dataTable.Rows.Count > 0)
-        {
-            DataRow row = dataTable.Rows[0];
-            DTO_HinhThucDangTuyen ht = new DTO_HinhThucDangTuyen
-            {
-                MaHTDT = row["MAHINHTHUC"].ToString(),
-                TenHinhThuc = row["TENHINHTHUC"].ToString()
-            };
-
-            return ht;
-        }
-        else
-        {
-            return null;
-        }
+		var query = $@"select * from {tableName} where MaHinhThuc = '" + maHTDT + "'";
+		var dataTable = SqlSingleton.Instance.ExecuteQuery(query);
+		return RowConvert(dataTable.Rows[0]);
 	}
 
 	public static List<DTO_HinhThucDangTuyen> LayTatCa()
 	{
-		// todo
-		return [
-			new DTO_HinhThucDangTuyen("1", "Bao"),
-			new DTO_HinhThucDangTuyen("2", "mang"),
-			new DTO_HinhThucDangTuyen("3", "banner"),
-		];
+		var query = @$"select * from {tableName}";
+		var dataTable = SqlSingleton.Instance.ExecuteQuery(query);
+		var hinhThucDangTuyens = new List<DTO_HinhThucDangTuyen>();
+		foreach (DataRow row in dataTable.Rows)
+		{
+			hinhThucDangTuyens.Add(RowConvert(row));
+		}
+		return hinhThucDangTuyens;
 	}
 }

@@ -4,7 +4,7 @@ public enum TrangThaiThanhToan
 {
 	ChuaThanhToan = 1,
 	ChuaThanhToanHoanTat = 2,
-	ThanhToanHoaTat = 3,
+	ThanhToanHoanTat = 3,
 }
 
 public enum CachThucThanhToan
