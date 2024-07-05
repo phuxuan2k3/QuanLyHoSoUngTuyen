@@ -38,14 +38,14 @@ public partial class GUI_DanhSachThongTinDangTuyen : UserControl
         }
     }
 
-    private void dsThongTinDangTuyen_CellClick(object sender, DataGridViewCellEventArgs e)
-    {
-        if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_id"].Value is string maTTDT)
-        {
-            var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyen(maTTDT);
-            GUI_ChiTietThongTinDangTuyen content = new();
-            content.HienThi(ctrler);
-            GUI_Base.Instance.SwitchContent(content);
-        }
-    }
+	private void dsThongTinDangTuyen_CellClick(object sender, DataGridViewCellEventArgs e)
+	{
+		if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_id"].Value is string maTTDT)
+		{
+			var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyen(maTTDT);
+			GUI_DuyetPhDK_ChiTietThongTinDangTuyen content = new();
+			content.HienThi(ctrler);
+			GUI_Base.Instance.SwitchContent(content);
+		}
+	}
 }

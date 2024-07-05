@@ -5,6 +5,8 @@
         ChuaXetDuyet,
         KhongHopLe,
         HopLe,
+        DaXuLy,
+        Dat,
     }
 
     public class DTO_PhieuDangKyUngTuyen(TrangThaiPhieuDangKyUngTuyen trangThai, string maTTDT = "", string maUV = "" )

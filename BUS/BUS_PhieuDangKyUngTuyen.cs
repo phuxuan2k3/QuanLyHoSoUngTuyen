@@ -14,5 +14,6 @@ namespace BUS
 
             return new DTO_KetQuaUngTuyen(maTTDT, "", total, countHopLe, countDat);
         }
+        
     }
 }

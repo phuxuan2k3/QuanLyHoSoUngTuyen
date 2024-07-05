@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System.Data;
 
+
 namespace DAO;
 
 public class DAO_ThongTinDangTuyen
@@ -104,12 +105,10 @@ public class DAO_ThongTinDangTuyen
 };
 		return dtoArray.ToList();
 	}
-
-
-    public static List<DTO_ThongTinDangTuyen> LoadTTDTXD()
+    public static List<DTO_ThongTinDangTuyen> LayDSTTDTDuyet()
     {
 
-        string query = "select * from THONGTINDANGTUYEN where TINHTRANG = N'Chưa xét duyệt' ";
+        string query = "SELECT t.MATTDT, t.TENVITRI, t.SOLUONG, t.SONGAYDT\r\nFROM \r\n    THONGTINDANGTUYEN t\r\nLEFT JOIN \r\n    PHIEUDANGKYUNGTUYEN p ON t.MATTDT = p.MATTDT\r\nGROUP BY \r\n    t.MATTDT, t.TENVITRI, t.SOLUONG, t.SONGAYDT\r\nHAVING \r\n    COUNT(p.MAUV) >= t.SOLUONG ";
         DataTable dataTable = new DataTable();
         dataTable = SqlSingleton.Instance.ExecuteQuery(query);
 
@@ -120,30 +119,60 @@ public class DAO_ThongTinDangTuyen
             DTO_ThongTinDangTuyen ttdt = new DTO_ThongTinDangTuyen
             {
                 MaTTDT = row["MATTDT"].ToString(),
+                SoNgayDangTuyen = Convert.ToInt32(row["SONGAYDT"]),
+                ThoiGianDangTuyen = DateTime.Now.AddDays(-4),
+            };
+
+            ds.Add(ttdt);
+        }
+        return ds;
+
+    }
+    public static DTO_ThongTinDangTuyen LayCTTTDT(string maTTDT)
+    {
+        string query = "select * from THONGTINDANGTUYEN where MATTDT =  " + maTTDT;
+        DataTable dataTable = new DataTable();
+        dataTable = SqlSingleton.Instance.ExecuteQuery(query);
+
+        if (dataTable.Rows.Count > 0)
+        {
+            DataRow row = dataTable.Rows[0];
+            DTO_ThongTinDangTuyen doanhNghiep = new DTO_ThongTinDangTuyen
+            {
+                MaTTDT = row["MATTDT"].ToString(),
                 MaDN = row["MADN"].ToString(),
                 SoNgayDangTuyen = Convert.ToInt32(row["SONGAYDT"]),
-                MaHTDT= row["MAHTDT"].ToString(),
-				ThoiGianDangTuyen= DateTime.Now.AddDays(-4),
+                MaHTDT = row["MAHTDT"].ToString(),
+                ThoiGianDangTuyen = DateTime.Now.AddDays(-4),
                 TenViTri = row["TENVITRI"].ToString(),
                 SoLuong = Convert.ToInt32(row["SOLUONG"]),
                 YeuCau = row["YEUCAU"].ToString()
             };
 
-            ds.Add(ttdt);
+            return doanhNghiep;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    public static List<DTO_PhieuDangKyUngTuyen> LayDSPDK(string maTTDT)
+    {
+        string query = "SELECT \r\n    p.MAUV,\r\n    u.TenUngVien,\r\n    p.TRANGTHAI \r\nFROM \r\n    PHIEUDANGKYUNGTUYEN p\r\nJOIN \r\n    UNGVIEN u ON p.MAUV = u.MaUngVien\r\nWHERE \r\n    p.MATTDT = " + maTTDT;
+        DataTable dataTable = new DataTable();
+        dataTable = SqlSingleton.Instance.ExecuteQuery(query);
+
+        List<DTO_PhieuDangKyUngTuyen> dsPhDK = new List<DTO_PhieuDangKyUngTuyen>();
+
+        foreach (DataRow row in dataTable.Rows)
+        {
+            //TrangThaiPhieuDangKyUngTuyen trangThai = (TrangThaiPhieuDangKyUngTuyen)Enum.Parse(typeof(TrangThaiPhieuDangKyUngTuyen),row["TRANGTHAI"].ToString());
+
+            DTO_PhieuDangKyUngTuyen PhDK = new DTO_PhieuDangKyUngTuyen(TrangThaiPhieuDangKyUngTuyen.HopLe, maTTDT,row["MAUV"].ToString());
+
+            dsPhDK.Add(PhDK);
         }
 
-        return ds;
-
+        return dsPhDK;
     }
-
-	public static void CapNhatTrangThaiTTDT(string MaTTDT, string TrangThai)
-	{
-		string query = "update THONGTINDANGTUYEN set TINHTRANG = N'" + TrangThai + "' where MATTDT = " + MaTTDT; 
-;
-        SqlSingleton.Instance.ExecuteNonQuery(query);
-
-    }
-
-
-
 }
