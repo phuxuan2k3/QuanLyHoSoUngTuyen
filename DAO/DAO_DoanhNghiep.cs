@@ -79,5 +79,21 @@ namespace DAO
             SqlSingleton.Instance.ExecuteNonQuery(query);
         }
 
+        public static void CapNhatThongTinDn(DTO_DoanhNghiep doanhNghiep)
+        {
+            string query = "UPDATE DOANHNGHIEP set TenDoanhNghiep = N'" + doanhNghiep.TenDN + "', NGUOIDAIDIEN = N'" + doanhNghiep.NguoiDaiDien + "', DIACHI = N'" + doanhNghiep.DiaChi + "', EMAIL = '" + doanhNghiep.Email + "', NGAYDK = GETDATE(), TRANGTHAI = N'Chưa xác thực' where MaDoanhNghiep = " + doanhNghiep.MaDN;
+;
+            SqlSingleton.Instance.ExecuteNonQuery(query);
+        }
+
+        public static int KiemTraTrangThai(string MaDN)
+        {
+            string query = "SELECT * FROM DOANHNGHIEP where ((TRANGTHAI=N'Chưa xác thực' AND DATEDIFF(DAY,NGAYDK,GETDATE()) < 7 ) OR TRANGTHAI =N'Không hợp lệ') AND MaDoanhNghiep =" + MaDN;
+            if(SqlSingleton.Instance.ExecuteScalar(query) == null) {  return 1; }
+            return 0;
+
+
+        }
+
     }
 }

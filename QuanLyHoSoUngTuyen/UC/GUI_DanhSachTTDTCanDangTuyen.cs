@@ -59,10 +59,5 @@ namespace GUI.UC
             }
         }
 
-
-
-
-
-
     }
 }

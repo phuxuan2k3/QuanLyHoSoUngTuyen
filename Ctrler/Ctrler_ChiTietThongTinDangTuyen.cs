@@ -29,13 +29,7 @@ public class Ctrler_ChiTietThongTinDangTuyen
 		hinhThucDangTuyen = _hinhThucDangTuyen;
 	}
 
-    public void Load2(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HoaDon hoaDon, ref DTO_HinhThucDangTuyen hinhThucDangTuyen, ref DTO_DoanhNghiep doanhNghiep)
-    {
-        thongTinDangTuyen = _ttdt;
-        hinhThucDangTuyen = _hinhThucDangTuyen;
-		hoaDon = _hoaDon;
-		doanhNghiep = _DoanhNghiep;
-    }
+
 
     public void HienThi_HoaDon()
 	{
