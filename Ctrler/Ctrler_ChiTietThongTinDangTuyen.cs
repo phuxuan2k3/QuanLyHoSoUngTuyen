@@ -32,3 +32,4 @@ public class Ctrler_ChiTietThongTinDangTuyen
 		return new Ctrler_HieuChinhThongTinDangTuyen(_thongTinDangTuyen, _hoaDon, _hinhThucDangTuyen);
 	}
 }
+	

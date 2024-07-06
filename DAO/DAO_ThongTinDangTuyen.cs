@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System.Data;
 using System.Data.SqlClient;
+using Utilis;
 
 namespace DAO;
 
@@ -18,7 +19,9 @@ public class DAO_ThongTinDangTuyen
 			ThoiGianDangTuyen = DateTime.Now.AddDays(-4),
 			TenViTri = row["TENVITRI"].ToString()!,
 			SoLuong = Convert.ToInt32(row["SOLUONG"])!,
-			YeuCau = row["YEUCAU"].ToString()!
+			YeuCau = row["YEUCAU"].ToString()!,
+			TrangThai = row["TRANGTHAI"].ToString()!.ToTrangTraiThongTinDangTuyen(),
+			TinhTrang = row["TINHTRANG"].ToString()!.ToTinhTrangThongTinDangTuyen()
 		};
 	}
 
@@ -41,7 +44,19 @@ public class DAO_ThongTinDangTuyen
 		return thongTinDangTuyens;
 	}
 
-	public static void Them(DTO_ThongTinDangTuyen thongTinDangTuyen)
+    public static List<DTO_ThongTinDangTuyen> LayDSTTDT()
+    {
+        var query = $@"select * from {tableName} ";
+        var dataTable = SqlSingleton.Instance.ExecuteQuery(query);
+        var thongTinDangTuyens = new List<DTO_ThongTinDangTuyen>();
+        foreach (DataRow row in dataTable.Rows)
+        {
+            thongTinDangTuyens.Add(ConvertRow(row));
+        }
+        return thongTinDangTuyens;
+    }
+
+    public static void Them(DTO_ThongTinDangTuyen thongTinDangTuyen)
 	{
 		var query = $@"INSERT INTO {tableName} (MaDN, SoNgayDT, MaHTDT, ThoiGianDangTuyen, TrangThai, TinhTrang, TenViTri, SoLuong, YeuCau) VALUES (@MaDN, @SoNgayDT, @MaHTDT, @ThoiGianDangTuyen, @TrangThai, @TinhTrang, @TenViTri, @SoLuong, @YeuCau)";
 		SqlSingleton.Instance.ExecuteNonQuery(query, [
