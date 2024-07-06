@@ -54,7 +54,7 @@
 			tableLayoutPanel1.RowCount = 2;
 			tableLayoutPanel1.RowStyles.Add(new RowStyle());
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-			tableLayoutPanel1.Size = new Size(1217, 513);
+			tableLayoutPanel1.Size = new Size(882, 553);
 			tableLayoutPanel1.TabIndex = 0;
 			// 
 			// tableLayoutPanel2
@@ -78,7 +78,7 @@
 			tableLayoutPanel2.Name = "tableLayoutPanel2";
 			tableLayoutPanel2.RowCount = 1;
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-			tableLayoutPanel2.Size = new Size(1213, 44);
+			tableLayoutPanel2.Size = new Size(878, 44);
 			tableLayoutPanel2.TabIndex = 2;
 			// 
 			// btnXetDuyetTTDT
@@ -149,7 +149,7 @@
 			// btnCapNhatTTDN
 			// 
 			btnCapNhatTTDN.Location = new Point(1095, 4);
-			btnCapNhatTTDN.Margin = new Padding(4, 4, 4, 4);
+			btnCapNhatTTDN.Margin = new Padding(4);
 			btnCapNhatTTDN.Name = "btnCapNhatTTDN";
 			btnCapNhatTTDN.Size = new Size(199, 36);
 			btnCapNhatTTDN.TabIndex = 5;
@@ -164,18 +164,18 @@
 			_contentPanel.Location = new Point(2, 50);
 			_contentPanel.Margin = new Padding(2);
 			_contentPanel.Name = "_contentPanel";
-			_contentPanel.Size = new Size(1213, 461);
+			_contentPanel.Size = new Size(878, 501);
 			_contentPanel.TabIndex = 0;
 			// 
-			// GUI_Base
+			// GUI_DoanhNghiep
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(1217, 513);
+			ClientSize = new Size(882, 553);
 			Controls.Add(tableLayoutPanel1);
 			Margin = new Padding(2);
-			Name = "GUI_Base";
-			Text = "GUI_Base";
+			Name = "GUI_DoanhNghiep";
+			Text = "Doanh nghiệp";
 			Click += btnTaoYeuCau_Click;
 			tableLayoutPanel1.ResumeLayout(false);
 			tableLayoutPanel2.ResumeLayout(false);

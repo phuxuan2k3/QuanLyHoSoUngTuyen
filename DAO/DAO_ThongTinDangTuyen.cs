@@ -57,6 +57,23 @@ public class DAO_ThongTinDangTuyen
 		]);
 	}
 
+	public static void CapNhat(DTO_ThongTinDangTuyen thongTinDangTuyen)
+	{
+		var query = $@"UPDATE {tableName} SET MaDN = @MaDN, SoNgayDT = @SoNgayDT, MaHTDT = @MaHTDT, ThoiGianDangTuyen = @ThoiGianDangTuyen, TrangThai = @TrangThai, TinhTrang = @TinhTrang, TenViTri = @TenViTri, SoLuong = @SoLuong, YeuCau = @YeuCau WHERE MaTTDT = @MaTTDT";
+		SqlSingleton.Instance.ExecuteNonQuery(query, [
+			new SqlParameter("MaTTDT", thongTinDangTuyen.MaTTDT),
+			new SqlParameter("MaDN", thongTinDangTuyen.MaDN),
+			new SqlParameter("SoNgayDT", thongTinDangTuyen.SoNgayDangTuyen),
+			new SqlParameter("ThoiGianDangTuyen", thongTinDangTuyen.ThoiGianDangTuyen.ToString()),
+			new SqlParameter("MaHTDT", thongTinDangTuyen.MaHTDT),
+			new SqlParameter("TrangThai", thongTinDangTuyen.TrangThai.ToString()),
+			new SqlParameter("TinhTrang", thongTinDangTuyen.TinhTrang.ToString()),
+			new SqlParameter("TenViTri", thongTinDangTuyen.TenViTri),
+			new SqlParameter("SoLuong", thongTinDangTuyen.SoLuong),
+			new SqlParameter("YeuCau", thongTinDangTuyen.YeuCau),
+		]);
+	}
+
 	public static List<DTO_ThongTinDangTuyen> LoadTTDTXD()
 	{
 		string query = "select * from THONGTINDANGTUYEN where TINHTRANG = N'Chưa xét duyệt' ";
@@ -77,7 +94,6 @@ public class DAO_ThongTinDangTuyen
 	{
 		string query = "update THONGTINDANGTUYEN set TINHTRANG = N'" + TrangThai + "' where MATTDT = " + MaTTDT;
 		SqlSingleton.Instance.ExecuteNonQuery(query);
-
 	}
 
 	public static void CapNhatTrangThaiDangTuyen(string MaTTDT)
@@ -89,7 +105,6 @@ public class DAO_ThongTinDangTuyen
 
 	public static List<DTO_ThongTinDangTuyen> LoadTTDTHopLe()
 	{
-
 		string query = "select * from THONGTINDANGTUYEN where TINHTRANG = N'Hợp lệ' AND TRANGTHAI <> N'Đã đăng tuyển'";
 		DataTable dataTable = new DataTable();
 		dataTable = SqlSingleton.Instance.ExecuteQuery(query);

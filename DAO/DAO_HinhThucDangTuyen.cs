@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using DAO.Exceptions;
+using DTO;
 using System.Data;
 
 namespace DAO;
@@ -7,20 +8,27 @@ public class DAO_HinhThucDangTuyen
 	const string tableName = "HINHTHUCDANGTUYEN";
 	private static DTO_HinhThucDangTuyen RowConvert(DataRow row)
 	{
-		DTO_HinhThucDangTuyen htdt = new DTO_HinhThucDangTuyen
+		try
 		{
-			MaHTDT = row["MAHINHTHUC"].ToString()!,
-			TenHinhThuc = row["TENHINHTHUC"]!.ToString()!,
-			MoTa = row["MOTA"].ToString()!,
-			Gia = row.IsNull("GIA") ? -1 : (float)row["GIA"]
-		};
-		return htdt;
+			DTO_HinhThucDangTuyen htdt = new DTO_HinhThucDangTuyen
+			{
+				MaHTDT = row["MAHINHTHUC"].ToString()!,
+				TenHinhThuc = row["TENHINHTHUC"]!.ToString()!,
+				MoTa = row["MOTA"].ToString()!,
+				Gia = row.IsNull("GIA") ? -1 : (float)row["GIA"]
+			};
+			return htdt;
+		}
+		catch (NullReferenceException)
+		{
+			throw new NullDatarowException();
+		}
 	}
 
 	public static DTO_HinhThucDangTuyen Lay(string maHTDT)
 	{
-		var query = $@"select * from {tableName} where MaHinhThuc = '" + maHTDT + "'";
-		var dataTable = SqlSingleton.Instance.ExecuteQuery(query);
+		var query = $@"select * from {tableName} where MaHinhThuc = @MaHinhThuc";
+		var dataTable = SqlSingleton.Instance.ExecuteQuery(query, [new("MaHinhThuc", maHTDT)]);
 		return RowConvert(dataTable.Rows[0]);
 	}
 

@@ -29,6 +29,6 @@ public class Ctrler_ChiTietThongTinDangTuyen
 
 	public Ctrler_HieuChinhThongTinDangTuyen HienThi_HieuChinh()
 	{
-		return new Ctrler_HieuChinhThongTinDangTuyen(_thongTinDangTuyen, _hinhThucDangTuyen);
+		return new Ctrler_HieuChinhThongTinDangTuyen(_thongTinDangTuyen, _hoaDon, _hinhThucDangTuyen);
 	}
 }
