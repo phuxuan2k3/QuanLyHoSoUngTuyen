@@ -37,9 +37,6 @@
             _soNgayDangTuyen = new Label();
             btnTuChoi = new Button();
             btnQuayLai = new Button();
-            flowLayoutPanel9 = new FlowLayoutPanel();
-            label17 = new Label();
-            _tinhTrang = new Label();
             flowLayoutPanel8 = new FlowLayoutPanel();
             label15 = new Label();
             _hoaDon = new Label();
@@ -65,11 +62,13 @@
             flowLayoutPanel10 = new FlowLayoutPanel();
             label6 = new Label();
             _TenDN = new Label();
+            flowLayoutPanel9 = new FlowLayoutPanel();
+            label17 = new Label();
+            _tinhTrang = new Label();
             label1 = new Label();
             tableLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
-            flowLayoutPanel9.SuspendLayout();
             flowLayoutPanel8.SuspendLayout();
             flowLayoutPanel5.SuspendLayout();
             flowLayoutPanel3.SuspendLayout();
@@ -78,6 +77,7 @@
             flowLayoutPanel6.SuspendLayout();
             flowLayoutPanel12.SuspendLayout();
             flowLayoutPanel10.SuspendLayout();
+            flowLayoutPanel9.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -92,7 +92,6 @@
             tableLayoutPanel2.Controls.Add(flowLayoutPanel2, 1, 2);
             tableLayoutPanel2.Controls.Add(btnTuChoi, 4, 9);
             tableLayoutPanel2.Controls.Add(btnQuayLai, 1, 9);
-            tableLayoutPanel2.Controls.Add(flowLayoutPanel9, 2, 3);
             tableLayoutPanel2.Controls.Add(flowLayoutPanel8, 2, 2);
             tableLayoutPanel2.Controls.Add(flowLayoutPanel5, 1, 5);
             tableLayoutPanel2.Controls.Add(flowLayoutPanel3, 1, 3);
@@ -102,11 +101,12 @@
             tableLayoutPanel2.Controls.Add(flowLayoutPanel12, 1, 7);
             tableLayoutPanel2.Controls.Add(btnXetDuyet, 3, 9);
             tableLayoutPanel2.Controls.Add(flowLayoutPanel10, 1, 0);
+            tableLayoutPanel2.Controls.Add(flowLayoutPanel9, 2, 3);
             tableLayoutPanel2.Location = new Point(2, 61);
             tableLayoutPanel2.Margin = new Padding(2);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 11;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 39.673912F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 26.2195129F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
@@ -114,7 +114,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 60.326088F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 73.78049F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 56F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 43F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
@@ -127,7 +127,7 @@
             flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.Controls.Add(label2);
             flowLayoutPanel1.Controls.Add(_maTTDT);
-            flowLayoutPanel1.Location = new Point(30, 67);
+            flowLayoutPanel1.Location = new Point(30, 45);
             flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(152, 25);
@@ -160,7 +160,7 @@
             flowLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel2.Controls.Add(label3);
             flowLayoutPanel2.Controls.Add(_soNgayDangTuyen);
-            flowLayoutPanel2.Location = new Point(30, 96);
+            flowLayoutPanel2.Location = new Point(30, 74);
             flowLayoutPanel2.Margin = new Padding(2);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(245, 25);
@@ -215,46 +215,13 @@
             btnQuayLai.UseVisualStyleBackColor = true;
             btnQuayLai.Click += btnQuayLai_Click;
             // 
-            // flowLayoutPanel9
-            // 
-            flowLayoutPanel9.AutoSize = true;
-            flowLayoutPanel9.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel9.Controls.Add(label17);
-            flowLayoutPanel9.Controls.Add(_tinhTrang);
-            flowLayoutPanel9.Location = new Point(397, 125);
-            flowLayoutPanel9.Margin = new Padding(2);
-            flowLayoutPanel9.Name = "flowLayoutPanel9";
-            flowLayoutPanel9.Size = new Size(110, 45);
-            flowLayoutPanel9.TabIndex = 2;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(2, 0);
-            label17.Margin = new Padding(2, 0, 2, 0);
-            label17.Name = "label17";
-            label17.Size = new Size(106, 25);
-            label17.TabIndex = 0;
-            label17.Text = "Tình trạng:";
-            // 
-            // _tinhTrang
-            // 
-            _tinhTrang.AutoSize = true;
-            _tinhTrang.Location = new Point(2, 25);
-            _tinhTrang.Margin = new Padding(2, 0, 2, 0);
-            _tinhTrang.Name = "_tinhTrang";
-            _tinhTrang.Size = new Size(50, 20);
-            _tinhTrang.TabIndex = 1;
-            _tinhTrang.Text = "label3";
-            // 
             // flowLayoutPanel8
             // 
             flowLayoutPanel8.AutoSize = true;
             flowLayoutPanel8.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel8.Controls.Add(label15);
             flowLayoutPanel8.Controls.Add(_hoaDon);
-            flowLayoutPanel8.Location = new Point(397, 96);
+            flowLayoutPanel8.Location = new Point(397, 74);
             flowLayoutPanel8.Margin = new Padding(2);
             flowLayoutPanel8.Name = "flowLayoutPanel8";
             flowLayoutPanel8.Size = new Size(148, 25);
@@ -287,7 +254,7 @@
             flowLayoutPanel5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel5.Controls.Add(label9);
             flowLayoutPanel5.Controls.Add(_tenViTri);
-            flowLayoutPanel5.Location = new Point(30, 203);
+            flowLayoutPanel5.Location = new Point(30, 181);
             flowLayoutPanel5.Margin = new Padding(2);
             flowLayoutPanel5.Name = "flowLayoutPanel5";
             flowLayoutPanel5.Size = new Size(149, 25);
@@ -320,7 +287,7 @@
             flowLayoutPanel3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel3.Controls.Add(label5);
             flowLayoutPanel3.Controls.Add(_thoiGianDangTuyen);
-            flowLayoutPanel3.Location = new Point(30, 125);
+            flowLayoutPanel3.Location = new Point(30, 103);
             flowLayoutPanel3.Margin = new Padding(2);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
             flowLayoutPanel3.Size = new Size(257, 25);
@@ -353,7 +320,7 @@
             flowLayoutPanel4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel4.Controls.Add(label7);
             flowLayoutPanel4.Controls.Add(_hinhThuc);
-            flowLayoutPanel4.Location = new Point(30, 174);
+            flowLayoutPanel4.Location = new Point(30, 152);
             flowLayoutPanel4.Margin = new Padding(2);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
             flowLayoutPanel4.Size = new Size(160, 25);
@@ -386,7 +353,7 @@
             flowLayoutPanel7.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel7.Controls.Add(label13);
             flowLayoutPanel7.Controls.Add(_trangThai);
-            flowLayoutPanel7.Location = new Point(397, 67);
+            flowLayoutPanel7.Location = new Point(397, 45);
             flowLayoutPanel7.Margin = new Padding(2);
             flowLayoutPanel7.Name = "flowLayoutPanel7";
             flowLayoutPanel7.Size = new Size(162, 25);
@@ -419,7 +386,7 @@
             flowLayoutPanel6.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel6.Controls.Add(label11);
             flowLayoutPanel6.Controls.Add(_soLuong);
-            flowLayoutPanel6.Location = new Point(30, 232);
+            flowLayoutPanel6.Location = new Point(30, 210);
             flowLayoutPanel6.Margin = new Padding(2);
             flowLayoutPanel6.Name = "flowLayoutPanel6";
             flowLayoutPanel6.Size = new Size(151, 25);
@@ -452,7 +419,7 @@
             flowLayoutPanel12.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel12.Controls.Add(label4);
             flowLayoutPanel12.Controls.Add(_yeuCau);
-            flowLayoutPanel12.Location = new Point(30, 261);
+            flowLayoutPanel12.Location = new Point(30, 239);
             flowLayoutPanel12.Margin = new Padding(2);
             flowLayoutPanel12.Name = "flowLayoutPanel12";
             flowLayoutPanel12.Size = new Size(140, 25);
@@ -494,7 +461,7 @@
             flowLayoutPanel10.Controls.Add(label6);
             flowLayoutPanel10.Controls.Add(_TenDN);
             flowLayoutPanel10.Dock = DockStyle.Bottom;
-            flowLayoutPanel10.Location = new Point(31, 30);
+            flowLayoutPanel10.Location = new Point(31, 8);
             flowLayoutPanel10.Name = "flowLayoutPanel10";
             flowLayoutPanel10.Size = new Size(361, 32);
             flowLayoutPanel10.TabIndex = 9;
@@ -519,6 +486,39 @@
             _TenDN.Size = new Size(50, 20);
             _TenDN.TabIndex = 2;
             _TenDN.Text = "label3";
+            // 
+            // flowLayoutPanel9
+            // 
+            flowLayoutPanel9.AutoSize = true;
+            flowLayoutPanel9.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayoutPanel9.Controls.Add(label17);
+            flowLayoutPanel9.Controls.Add(_tinhTrang);
+            flowLayoutPanel9.Location = new Point(397, 103);
+            flowLayoutPanel9.Margin = new Padding(2);
+            flowLayoutPanel9.Name = "flowLayoutPanel9";
+            flowLayoutPanel9.Size = new Size(110, 45);
+            flowLayoutPanel9.TabIndex = 2;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.Location = new Point(2, 0);
+            label17.Margin = new Padding(2, 0, 2, 0);
+            label17.Name = "label17";
+            label17.Size = new Size(106, 25);
+            label17.TabIndex = 0;
+            label17.Text = "Tình trạng:";
+            // 
+            // _tinhTrang
+            // 
+            _tinhTrang.AutoSize = true;
+            _tinhTrang.Location = new Point(2, 25);
+            _tinhTrang.Margin = new Padding(2, 0, 2, 0);
+            _tinhTrang.Name = "_tinhTrang";
+            _tinhTrang.Size = new Size(50, 20);
+            _tinhTrang.TabIndex = 1;
+            _tinhTrang.Text = "label3";
             // 
             // label1
             // 
@@ -546,8 +546,6 @@
             flowLayoutPanel1.PerformLayout();
             flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel2.PerformLayout();
-            flowLayoutPanel9.ResumeLayout(false);
-            flowLayoutPanel9.PerformLayout();
             flowLayoutPanel8.ResumeLayout(false);
             flowLayoutPanel8.PerformLayout();
             flowLayoutPanel5.ResumeLayout(false);
@@ -564,6 +562,8 @@
             flowLayoutPanel12.PerformLayout();
             flowLayoutPanel10.ResumeLayout(false);
             flowLayoutPanel10.PerformLayout();
+            flowLayoutPanel9.ResumeLayout(false);
+            flowLayoutPanel9.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

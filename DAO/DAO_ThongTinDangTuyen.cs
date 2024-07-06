@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System.Data;
 using System.Data.SqlClient;
+using Utilis;
 
 namespace DAO;
 
@@ -18,7 +19,9 @@ public class DAO_ThongTinDangTuyen
 			ThoiGianDangTuyen = DateTime.Now.AddDays(-4),
 			TenViTri = row["TENVITRI"].ToString()!,
 			SoLuong = Convert.ToInt32(row["SOLUONG"])!,
-			YeuCau = row["YEUCAU"].ToString()!
+			YeuCau = row["YEUCAU"].ToString()!,
+			TrangThai = row["TRANGTHAI"].ToString()!.ToTrangTraiThongTinDangTuyen(),
+			TinhTrang = row["TINHTRANG"].ToString()!.ToTinhTrangThongTinDangTuyen()
 		};
 	}
 
