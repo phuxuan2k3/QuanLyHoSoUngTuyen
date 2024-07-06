@@ -60,6 +60,11 @@ public class BUS_ThongTinDangTuyen
     {
         return DAO_ThongTinDangTuyen.LayDSThongTinDangTuyenDuyetPDK();
     }
+    public static List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenChoDNDuyet()
+    {
+        return DAO_ThongTinDangTuyen.LayDSThongTinDangTuyenChoDNDuyet();
+    }
+    
     public static DTO_ThongTinDangTuyen LayThongTinDangTuyen(string maTTDT)
     {
         return DAO_ThongTinDangTuyen.LayThongTinDangTuyen(maTTDT);
@@ -67,5 +72,10 @@ public class BUS_ThongTinDangTuyen
     public static List<DTO_ThongTinHoSo> LayDSPhieuDangKy(string maTTDT)
     {
         return DAO_ThongTinDangTuyen.LayDSPhieuDangKy(maTTDT);
+    }
+    
+        public static List<DTO_ThongTinHoSo> DanhSachHoSo(string maTTDT)
+    {
+        return DAO_ThongTinDangTuyen.DanhSachHoSo(maTTDT);
     }
 }

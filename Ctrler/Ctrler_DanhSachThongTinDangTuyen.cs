@@ -22,7 +22,8 @@ public class Ctrler_DanhSachThongTinDangTuyen
 
         return new Ctrler_ChiTietThongTinDangTuyen(ttdt);
     }
-
+    
+    
     //public void LoadTTDTXD(ref List<DTO_ThongTinDangTuyen> thongTinDangTuyen)
     //{
     //	thongTinDangTuyen = BUS_ThongTinDangTuyen.LayDSTTDTXD();
@@ -61,6 +62,11 @@ public class Ctrler_DanhSachThongTinDangTuyen
     public static List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenDuyetPDK()
     {
         return BUS_ThongTinDangTuyen.LayDSThongTinDangTuyenDuyetPDK();
+
+    }
+    public static List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenChoDNDuyet()
+    {
+        return BUS_ThongTinDangTuyen.LayDSThongTinDangTuyenChoDNDuyet();
 
     }
     public static Ctrler_ChiTietThongTinDangTuyen LayThongTinDangTuyen(string maTTDT)

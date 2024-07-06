@@ -49,4 +49,11 @@ public class Ctrler_ChiTietThongTinDangTuyen
 		thongTinDangTuyen = _thongTinDangTuyen;
 		thongTinPhieuDangKyUngTuyen = BUS_ThongTinDangTuyen.LayDSPhieuDangKy(thongTinDangTuyen.MaTTDT);
 	}
+    
+
+    public void DanhSachHoSo(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref List<DTO_ThongTinHoSo> thongTinPhieuDangKyUngTuyen)
+    {
+        thongTinDangTuyen = _thongTinDangTuyen;
+        thongTinPhieuDangKyUngTuyen = BUS_ThongTinDangTuyen.DanhSachHoSo(thongTinDangTuyen.MaTTDT);
+    }
 }

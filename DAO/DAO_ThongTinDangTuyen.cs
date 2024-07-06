@@ -153,11 +153,34 @@ public class DAO_ThongTinDangTuyen
         return ds;
 
     }
+    
+        public static List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenChoDNDuyet()
+    {
+        string query = "SELECT MATTDT,MADN,SoLuong FROM THONGTINDANGTUYEN " +
+            "WHERE SOLUONG <= (SELECT COUNT(*) FROM PHIEUDANGKYUNGTUYEN WHERE PHIEUDANGKYUNGTUYEN.MATTDT = THONGTINDANGTUYEN.MATTDT and TRANGTHAI = N'Đã xử lý')";
 
+        DataTable dataTable = new DataTable();
+        dataTable = SqlSingleton.Instance.ExecuteQuery(query);
+
+        List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> ds = new List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen>();
+
+        foreach (DataRow row in dataTable.Rows)
+        {
+            DTO_DuyetPhieuDangKy_ThongTinDangTuyen ttdt = new DTO_DuyetPhieuDangKy_ThongTinDangTuyen
+            {
+                MaTTDT = row["MATTDT"].ToString(),
+                MaDN = row["MADN"].ToString(),
+                SoLuong = Convert.ToInt32(row["SoLuong"]),
+            };
+
+            ds.Add(ttdt);
+        }
+        return ds;
+    }
     public static List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenDuyetPDK()
     {
         string query = "SELECT MATTDT,MADN,SoLuong FROM THONGTINDANGTUYEN " +
-            "WHERE SOLUONG <= (SELECT COUNT(*) FROM PHIEUDANGKYUNGTUYEN WHERE PHIEUDANGKYUNGTUYEN.MATTDT = THONGTINDANGTUYEN.MATTDT)";
+            "WHERE SOLUONG <= (SELECT COUNT(*) FROM PHIEUDANGKYUNGTUYEN WHERE PHIEUDANGKYUNGTUYEN.MATTDT = THONGTINDANGTUYEN.MATTDT )";
 
         DataTable dataTable = new DataTable();
         dataTable = SqlSingleton.Instance.ExecuteQuery(query);
@@ -226,4 +249,25 @@ public class DAO_ThongTinDangTuyen
         return dsPhDK;
     }
 
+    
+        public static List<DTO_ThongTinHoSo> DanhSachHoSo(string maTTDT)
+    {
+        string query = "SELECT \r\n    p.MAUV,\r\n    u.TenUngVien,\r\n    p.TRANGTHAI \r\nFROM \r\n    PHIEUDANGKYUNGTUYEN p\r\nJOIN \r\n    UNGVIEN u ON p.MAUV = u.MaUngVien\r\nWHERE \r\n  p.TRANGTHAI = N'Đã Xử lý' and  p.MATTDT = " + maTTDT;
+        DataTable dataTable = new DataTable();
+        dataTable = SqlSingleton.Instance.ExecuteQuery(query);
+
+        List<DTO_ThongTinHoSo> dsPhDK = new List<DTO_ThongTinHoSo>();
+
+        foreach (DataRow row in dataTable.Rows)
+        {
+            DTO_ThongTinHoSo phDK = new DTO_ThongTinHoSo
+            {
+                MaUV = row["MAUV"].ToString(),
+                TrangThai = row["TRANGTHAI"].ToString()
+            };
+
+            dsPhDK.Add(phDK);
+        }
+        return dsPhDK;
+    }
 }

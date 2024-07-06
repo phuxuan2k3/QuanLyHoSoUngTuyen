@@ -37,6 +37,14 @@ namespace GUI
             content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(""));
             SwitchContent(content);
         }
+
+        private void btnDuyet_DoanhNghiep_Click(object sender, EventArgs e)
+        {
+            GUI_DanhSachThongTinDangTuyen_DN content = new();
+            content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(""));
+            SwitchContent(content);
+        }
+
         public static GUI_NhanVienNghiepVu Instance => _instance ??= new GUI_NhanVienNghiepVu();
 
     }
