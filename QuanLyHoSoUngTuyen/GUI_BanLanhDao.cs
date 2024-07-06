@@ -6,11 +6,37 @@ namespace GUI
 {
     public partial class GUI_BanLanhDao : Form
     {
+        private Size oldSize;
+
         public GUI_BanLanhDao()
         {
             InitializeComponent();
             KhoiTaoManHinh();
+        }
 
+        private void GUI_BanLanhDao_Load(object sender, EventArgs e) => oldSize = Size;
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+
+            foreach (Control cnt in this.Controls)
+            {
+                ResizeAll(cnt, this.Size);
+            }
+
+            oldSize = this.Size;
+        }
+
+        private void ResizeAll(Control control, Size newSize)
+        {
+            int widthChange = newSize.Width - oldSize.Width;
+            control.Left += (control.Left * widthChange) / oldSize.Width;
+            control.Width += (control.Width * widthChange) / oldSize.Width;
+
+            int heightChange = newSize.Height - oldSize.Height;
+            control.Top += (control.Top * heightChange) / oldSize.Height;
+            control.Height += (control.Height * heightChange) / oldSize.Height;
         }
 
         void KhoiTaoManHinh()
@@ -33,11 +59,11 @@ namespace GUI
 
         private void TienHanhGiaHanHopDong(object sender, EventArgs e)
         {
-            GUI_XacNhanGiaHanHopDongUC ui_XacNhanGiaHanHopDong = new GUI_XacNhanGiaHanHopDongUC(new EventHandler(HuyGiaHan!), (e as EventArgs<DTO_DoanhNghiep>)!.Value);
+            GUI_XacNhanGiaHanHopDongUC ui_XacNhanGiaHanHopDong = new GUI_XacNhanGiaHanHopDongUC(new EventHandler(ThoatKhoiTrangGiaHan!), (e as EventArgs<DTO_DoanhNghiep>)!.Value);
             SwitchContent(ui_XacNhanGiaHanHopDong);
         }
 
-        private void HuyGiaHan(object sender, EventArgs e)
+        private void ThoatKhoiTrangGiaHan(object sender, EventArgs e)
         {
             GUI_DoanhNghiepSapHetHan ui_DoanhNghiepSapHetHan = new GUI_DoanhNghiepSapHetHan(new EventHandler(TienHanhGiaHanHopDong!));
             SwitchContent(ui_DoanhNghiepSapHetHan);

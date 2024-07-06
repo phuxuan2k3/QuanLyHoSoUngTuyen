@@ -31,6 +31,8 @@
             btnGiaHanHopDong = new Button();
             btnChienLuocUuDai = new Button();
             pnContent = new Panel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnGiaHanHopDong
@@ -45,7 +47,7 @@
             // 
             // btnChienLuocUuDai
             // 
-            btnChienLuocUuDai.Location = new Point(152, 3);
+            btnChienLuocUuDai.Location = new Point(153, 3);
             btnChienLuocUuDai.Name = "btnChienLuocUuDai";
             btnChienLuocUuDai.Size = new Size(143, 29);
             btnChienLuocUuDai.TabIndex = 2;
@@ -60,16 +62,31 @@
             pnContent.Size = new Size(815, 424);
             pnContent.TabIndex = 3;
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(btnGiaHanHopDong, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnChienLuocUuDai, 1, 0);
+            tableLayoutPanel1.Location = new Point(3, 3);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(301, 38);
+            tableLayoutPanel1.TabIndex = 4;
+            // 
             // GUI_BanLanhDao
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 467);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(pnContent);
-            Controls.Add(btnChienLuocUuDai);
-            Controls.Add(btnGiaHanHopDong);
             Name = "GUI_BanLanhDao";
             Text = "GUI_BanLanhDao_Base";
+            Load += GUI_BanLanhDao_Load;
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -78,5 +95,6 @@
         private Button btnGiaHanHopDong;
         private Button btnChienLuocUuDai;
         private Panel pnContent;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

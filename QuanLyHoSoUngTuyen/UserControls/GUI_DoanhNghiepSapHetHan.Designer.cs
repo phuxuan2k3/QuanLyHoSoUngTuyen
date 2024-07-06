@@ -30,20 +30,24 @@
         {
             btnGiaHan = new Button();
             dsKetQuaUngTuyen = new DataGridView();
-            lbMaDoanhNghiep = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
             dsDNHetHan = new DataGridView();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            panel1 = new Panel();
+            lbMaDoanhNghiep = new Label();
+            label4 = new Label();
+            label1 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dsKetQuaUngTuyen).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dsDNHetHan).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnGiaHan
             // 
             btnGiaHan.BackColor = SystemColors.MenuHighlight;
             btnGiaHan.ForeColor = Color.White;
-            btnGiaHan.Location = new Point(682, 367);
+            btnGiaHan.Location = new Point(385, 360);
             btnGiaHan.Name = "btnGiaHan";
             btnGiaHan.Size = new Size(94, 29);
             btnGiaHan.TabIndex = 13;
@@ -54,88 +58,117 @@
             // dsKetQuaUngTuyen
             // 
             dsKetQuaUngTuyen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dsKetQuaUngTuyen.Location = new Point(414, 50);
+            dsKetQuaUngTuyen.Location = new Point(385, 85);
             dsKetQuaUngTuyen.Name = "dsKetQuaUngTuyen";
             dsKetQuaUngTuyen.RowHeadersWidth = 51;
-            dsKetQuaUngTuyen.Size = new Size(362, 298);
+            dsKetQuaUngTuyen.Size = new Size(362, 267);
             dsKetQuaUngTuyen.TabIndex = 12;
+            // 
+            // dsDNHetHan
+            // 
+            dsDNHetHan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dsDNHetHan.Location = new Point(3, 85);
+            dsDNHetHan.Name = "dsDNHetHan";
+            dsDNHetHan.RowHeadersWidth = 51;
+            dsDNHetHan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dsDNHetHan.Size = new Size(362, 267);
+            dsDNHetHan.TabIndex = 7;
+            dsDNHetHan.CellClick += dsDNHetHan_CellClick;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(panel1, 1, 0);
+            tableLayoutPanel1.Controls.Add(btnGiaHan, 1, 3);
+            tableLayoutPanel1.Controls.Add(dsKetQuaUngTuyen, 1, 2);
+            tableLayoutPanel1.Controls.Add(dsDNHetHan, 0, 2);
+            tableLayoutPanel1.Controls.Add(label1, 0, 1);
+            tableLayoutPanel1.Controls.Add(label2, 1, 1);
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.2788134F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.2788134F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 68.48259F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.9597826F));
+            tableLayoutPanel1.Size = new Size(765, 403);
+            tableLayoutPanel1.TabIndex = 14;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(lbMaDoanhNghiep);
+            panel1.Controls.Add(label4);
+            panel1.Location = new Point(385, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(277, 35);
+            panel1.TabIndex = 15;
             // 
             // lbMaDoanhNghiep
             // 
             lbMaDoanhNghiep.AutoSize = true;
             lbMaDoanhNghiep.Font = new Font("Segoe UI", 7F, FontStyle.Italic);
-            lbMaDoanhNghiep.Location = new Point(549, 7);
-            lbMaDoanhNghiep.Name = "lbTenDoanhNghiep";
-            lbMaDoanhNghiep.Size = new Size(116, 15);
-            lbMaDoanhNghiep.TabIndex = 11;
-            lbMaDoanhNghiep.Text = "Current Manu Name";
+            lbMaDoanhNghiep.Location = new Point(138, 8);
+            lbMaDoanhNghiep.Name = "lbMaDoanhNghiep";
+            lbMaDoanhNghiep.Size = new Size(0, 15);
+            lbMaDoanhNghiep.TabIndex = 18;
             // 
-            // label3
+            // label4
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 7F, FontStyle.Italic);
-            label3.Location = new Point(414, 7);
-            label3.Name = "label3";
-            label3.Size = new Size(129, 15);
-            label3.TabIndex = 10;
-            label3.Text = "Doanh nghiệp hiện tại:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(414, 27);
-            label2.Name = "label2";
-            label2.Size = new Size(130, 20);
-            label2.TabIndex = 9;
-            label2.Text = "Kết quả ứng tuyển";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 7F, FontStyle.Italic);
+            label4.Location = new Point(4, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(129, 15);
+            label4.TabIndex = 16;
+            label4.Text = "Doanh nghiệp hiện tại:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(10, 27);
+            label1.Location = new Point(3, 41);
             label1.Name = "label1";
             label1.Size = new Size(261, 20);
-            label1.TabIndex = 8;
+            label1.TabIndex = 16;
             label1.Text = "Doanh nghiệp sắp hết hạn đăng tuyển";
             // 
-            // dsDNHetHan
+            // label2
             // 
-            dsDNHetHan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dsDNHetHan.Location = new Point(10, 50);
-            dsDNHetHan.Name = "dsDNHetHan";
-            dsDNHetHan.RowHeadersWidth = 51;
-            dsDNHetHan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dsDNHetHan.Size = new Size(362, 298);
-            dsDNHetHan.TabIndex = 7;
-            dsDNHetHan.CellClick += dsDNHetHan_CellClick;
+            label2.AutoSize = true;
+            label2.Location = new Point(385, 41);
+            label2.Name = "label2";
+            label2.Size = new Size(130, 20);
+            label2.TabIndex = 17;
+            label2.Text = "Kết quả ứng tuyển";
             // 
             // GUI_DoanhNghiepSapHetHan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(btnGiaHan);
-            Controls.Add(dsKetQuaUngTuyen);
-            Controls.Add(lbMaDoanhNghiep);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(dsDNHetHan);
+            Controls.Add(tableLayoutPanel1);
             Name = "GUI_DoanhNghiepSapHetHan";
-            Size = new Size(786, 403);
+            Size = new Size(765, 403);
+            Load += GUI_DoanhNghiepSapHetHan_Load;
             ((System.ComponentModel.ISupportInitialize)dsKetQuaUngTuyen).EndInit();
             ((System.ComponentModel.ISupportInitialize)dsDNHetHan).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Button btnGiaHan;
         private DataGridView dsKetQuaUngTuyen;
-        private Label lbMaDoanhNghiep;
-        private Label label3;
-        private Label label2;
-        private Label label1;
         private DataGridView dsDNHetHan;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Panel panel1;
+        private Label lbMaDoanhNghiep;
+        private Label label4;
+        private Label label1;
+        private Label label2;
     }
 }

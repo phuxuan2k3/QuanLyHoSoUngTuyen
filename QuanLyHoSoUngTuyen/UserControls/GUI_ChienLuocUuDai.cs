@@ -49,8 +49,12 @@ namespace GUI.UserControls
                 MessageBoxHelper.ShowInformation("Điền đủ các trường thông tin!");
                 return;
             }
-            var ud = new DTO_ChienLuocUuDai("", txtTenUuDai.Text, txtMoTaUuDai.Text);
-            Ctrler_ChienLuocUuDai.ThemCLUD(ud);
+            if (MessageBoxHelper.ShowQuestion("Thêm chiến lược ưu đãi này?") == DialogResult.Yes)
+            {
+                var ud = new DTO_ChienLuocUuDai("", txtTenUuDai.Text, txtMoTaUuDai.Text);
+                Ctrler_ChienLuocUuDai.ThemCLUD(ud);
+                HienThi();
+            }
         }
 
         private void btnSuaUuDai_Click(object sender, EventArgs e)
@@ -65,8 +69,12 @@ namespace GUI.UserControls
                 MessageBoxHelper.ShowInformation("Điền đủ các trường thông tin!");
                 return;
             }
-            var ud = new DTO_ChienLuocUuDai(_maChienLuocHienTai, txtTenUuDai.Text, txtMoTaUuDai.Text);
-            Ctrler_ChienLuocUuDai.ThemCLUD(ud);
+            if (MessageBoxHelper.ShowQuestion("Chỉnh sửa chiến lược ưu đãi này?") == DialogResult.Yes)
+            {
+                var ud = new DTO_ChienLuocUuDai(_maChienLuocHienTai, txtTenUuDai.Text, txtMoTaUuDai.Text);
+                Ctrler_ChienLuocUuDai.SuaCLUD(ud);
+                HienThi();
+            }
         }
 
         private void btnXoaUuDai_Click(object sender, EventArgs e)
@@ -83,6 +91,7 @@ namespace GUI.UserControls
                     Ctrler_ChienLuocUuDai.XoaCLUD(_maChienLuocHienTai);
                 }
             }
+            HienThi();
         }
     }
 }

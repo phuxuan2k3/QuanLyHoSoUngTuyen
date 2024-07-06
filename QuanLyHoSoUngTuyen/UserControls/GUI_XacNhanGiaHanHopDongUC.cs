@@ -1,5 +1,6 @@
 ﻿using Ctrler;
 using DTO;
+using GUI.Utilis;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +17,11 @@ namespace GUI.UserControls
     public partial class GUI_XacNhanGiaHanHopDongUC : UserControl
     {
         private DTO_DoanhNghiep _DNHienTai = null!;
-        public event EventHandler HuyGiaHan;
+        public event EventHandler ThoatKhoiTrangGiaHan;
 
-        public GUI_XacNhanGiaHanHopDongUC(EventHandler huyGiaHan, DTO_DoanhNghiep dNHienTai)
+        public GUI_XacNhanGiaHanHopDongUC(EventHandler thoat, DTO_DoanhNghiep dNHienTai)
         {
-            HuyGiaHan += huyGiaHan;
+            ThoatKhoiTrangGiaHan += thoat;
             _DNHienTai = dNHienTai;
 
             InitializeComponent();
@@ -75,7 +76,7 @@ namespace GUI.UserControls
         {
             if (MessageBox.Show("Rời khỏi mà không có bất kỳ thay đổi nào?", "Không gia hạn", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                HuyGiaHan?.Invoke(this, EventArgs.Empty);
+                ThoatKhoiTrangGiaHan?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -83,8 +84,11 @@ namespace GUI.UserControls
         {
             if (MessageBox.Show("Gia hạn hợp đồng của doanh nghiệp với các ưu đãi này?", "Gia hạn hợp đồng", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                var lsChienLuocUuDaiHienTai = dsChienLuocUuDaiHienTai.DataSource as List<DTO_ChienLuocUuDai>;
+                var bdlsChienLuocUuDaiHienTai = (BindingList<DTO_ChienLuocUuDai>)dsChienLuocUuDaiHienTai.DataSource;
+                var lsChienLuocUuDaiHienTai = bdlsChienLuocUuDaiHienTai?.ToList();
                 Ctrler_XacNhanGiaHanHopDong.GiaHanDoanhNghiep(_DNHienTai.MaDN, lsChienLuocUuDaiHienTai!);
+                MessageBoxHelper.ShowInformation("Gia hạn thành công!");
+                ThoatKhoiTrangGiaHan?.Invoke(this, EventArgs.Empty);
             }
         }
     }
