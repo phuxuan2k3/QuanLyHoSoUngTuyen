@@ -35,6 +35,7 @@ namespace GUI.UC
                 else
                 {
                     MessageBox.Show("Doanh nghiệp đã quá hạn xác thực!");
+                    Ctrler_XacThucThongTinDoanhNghiep.CapNhatTrangThaiDN(MaDN, "Không hợp lệ");
                 }
             }
         }

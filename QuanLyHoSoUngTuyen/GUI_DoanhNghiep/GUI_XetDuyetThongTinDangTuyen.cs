@@ -45,7 +45,7 @@ namespace GUI.UC
             _soLuong.Text = ttdt.SoLuong.ToString();
             _yeuCau.Text = ttdt.YeuCau;
             _trangThai.Text = ttdt.TrangThai.ToString();
-            _hoaDon.Text = hoaDon.TrangThaiThanhToan.ToString();
+           // _hoaDon.Text = hoaDon.TrangThaiThanhToan.ToString();
             _tinhTrang.Text = ttdt.TinhTrang.ToString();
         }
 
@@ -63,7 +63,7 @@ namespace GUI.UC
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
             GUI_DanhSachTTDTCanXetDuyet content = new();
-            GUI_DoanhNghiep.Instance.SwitchContent(content);
+            GUI_NhanVienTiepNhan.Instance.SwitchContent(content);
             content.HienThi(Ctrler_ChiTietThongTinDangTuyen.Owner);
         }
     }

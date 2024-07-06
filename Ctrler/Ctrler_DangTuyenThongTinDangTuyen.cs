@@ -17,10 +17,10 @@ namespace Ctrler
 
         public Ctrler_DanhSachThongTinDangTuyen Owner { get; set; }
 
-        public Ctrler_DangTuyenThongTinDangTuyen(DTO_ThongTinDangTuyen ttdt, DTO_HoaDon hoaDon, DTO_HinhThucDangTuyen hinhThucDangTuyen, DTO_DoanhNghiep doanhNghiep, Ctrler_DanhSachThongTinDangTuyen owner)
+        public Ctrler_DangTuyenThongTinDangTuyen(DTO_ThongTinDangTuyen ttdt, DTO_HinhThucDangTuyen hinhThucDangTuyen, DTO_DoanhNghiep doanhNghiep, Ctrler_DanhSachThongTinDangTuyen owner)
         {
             _ttdt = ttdt;
-            _hoaDon = hoaDon;
+            
             _hinhThucDangTuyen = hinhThucDangTuyen;
             _DoanhNghiep = doanhNghiep;
             Owner = owner;
