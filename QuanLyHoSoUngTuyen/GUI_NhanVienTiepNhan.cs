@@ -1,6 +1,6 @@
 ﻿using Ctrler.NhanVienTiepNhan;
 using GUI.Styles;
-using GUI.UC;
+using GUI.UserControls;
 
 namespace GUI
 {

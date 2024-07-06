@@ -5,7 +5,6 @@ namespace Ctrler.NhanVienTiepNhan
 {
 	public class Ctrler_DanhSachTTDTCanXetDuyet
     {
-
         private readonly DTO_ThongTinDangTuyen _ttdt;
         private readonly DTO_HinhThucDangTuyen _hinhThucDangTuyen;
         private readonly DTO_DoanhNghiep _DoanhNghiep;

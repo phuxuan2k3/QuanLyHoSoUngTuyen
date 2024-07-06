@@ -15,7 +15,8 @@ public class DAO_HinhThucDangTuyen
 				MaHTDT = row["MAHINHTHUC"].ToString()!,
 				TenHinhThuc = row["TENHINHTHUC"]!.ToString()!,
 				MoTa = row["MOTA"].ToString()!,
-				Gia = row.IsNull("GIA") ? -1 : (float)row["GIA"]
+
+				Gia = row.IsNull("GIA") ? -1 : Convert.ToSingle(row["GIA"])
 			};
 			return htdt;
 		}

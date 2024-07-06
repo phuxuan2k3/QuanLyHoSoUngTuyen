@@ -71,22 +71,6 @@ public class DAO_ThongTinDangTuyen
         return thongTinDangTuyens;
     }
 
-    public static void Them(DTO_ThongTinDangTuyen thongTinDangTuyen)
-	{
-		var query = $@"INSERT INTO {tableName} (MaDN, SoNgayDT, MaHTDT, ThoiGianDangTuyen, TrangThai, TinhTrang, TenViTri, SoLuong, YeuCau) VALUES (@MaDN, @SoNgayDT, @MaHTDT, @ThoiGianDangTuyen, @TrangThai, @TinhTrang, @TenViTri, @SoLuong, @YeuCau)";
-		SqlSingleton.Instance.ExecuteNonQuery(query, [
-			new SqlParameter("MaDN", thongTinDangTuyen.MaDN),
-			new SqlParameter("SoNgayDT", thongTinDangTuyen.SoNgayDangTuyen),
-			new SqlParameter("ThoiGianDangTuyen", thongTinDangTuyen.ThoiGianDangTuyen.ToString()),
-			new SqlParameter("MaHTDT", thongTinDangTuyen.MaHTDT),
-			new SqlParameter("TrangThai", thongTinDangTuyen.TrangThai.ToString()),
-			new SqlParameter("TinhTrang", thongTinDangTuyen.TinhTrang.ToString()),
-			new SqlParameter("TenViTri", thongTinDangTuyen.TenViTri),
-			new SqlParameter("SoLuong", thongTinDangTuyen.SoLuong),
-			new SqlParameter("YeuCau", thongTinDangTuyen.YeuCau),
-		]);
-	}
-
 	public static void CapNhat(DTO_ThongTinDangTuyen thongTinDangTuyen)
 	{
 		var query = $@"UPDATE {tableName} SET MaDN = @MaDN, SoNgayDT = @SoNgayDT, MaHTDT = @MaHTDT, ThoiGianDangTuyen = @ThoiGianDangTuyen, TrangThai = @TrangThai, TinhTrang = @TinhTrang, TenViTri = @TenViTri, SoLuong = @SoLuong, YeuCau = @YeuCau WHERE MaTTDT = @MaTTDT";
@@ -104,26 +88,23 @@ public class DAO_ThongTinDangTuyen
 		]);
 	}
 
-    public static List<DTO_ThongTinDangTuyen> LayDSTTDT()
-    {
-        string query = "select * from THONGTINDANGTUYEN";
-        var ttdtTable = SqlSingleton.Instance.ExecuteQuery(query);
-
-
-        var lsTTDT = ttdtTable.AsEnumerable().Select(x => new DTO_ThongTinDangTuyen()
-        {
-            MaTTDT = x.Field<int>("MATTDT").ToString()!,
-            MaDN = x.Field<int>("MADN").ToString()!,
-            SoNgayDangTuyen = x.Field<int>("SONGAYDT")!,
-            ThoiGianDangTuyen = x.Field<DateTime>("THOIGIANDANGTUYEN")!,
-            MaHTDT = x.Field<string>("MAHTDT")!,
-            TenViTri = x.Field<string>("TENVITRI")!,
-            SoLuong = x.Field<int>("SOLUONG")!,
-            YeuCau = x.Field<string>("YEUCAU")!
-        }).ToList();
-
-        return lsTTDT;
-    }
+    //public static List<DTO_ThongTinDangTuyen> LayDSTTDT()
+    //{
+    //    string query = "select * from THONGTINDANGTUYEN";
+    //    var ttdtTable = SqlSingleton.Instance.ExecuteQuery(query);
+    //    var lsTTDT = ttdtTable.AsEnumerable().Select(x => new DTO_ThongTinDangTuyen()
+    //    {
+    //        MaTTDT = x.Field<int>("MATTDT").ToString()!,
+    //        MaDN = x.Field<int>("MADN").ToString()!,
+    //        SoNgayDangTuyen = x.Field<int>("SONGAYDT")!,
+    //        ThoiGianDangTuyen = x.Field<DateTime>("THOIGIANDANGTUYEN")!,
+    //        MaHTDT = x.Field<string>("MAHTDT")!,
+    //        TenViTri = x.Field<string>("TENVITRI")!,
+    //        SoLuong = x.Field<int>("SOLUONG")!,
+    //        YeuCau = x.Field<string>("YEUCAU")!
+    //    }).ToList();
+    //    return lsTTDT;
+    //}
 
     public static List<DTO_ThongTinDangTuyen> LoadTTDTXD()
     {
@@ -141,12 +122,6 @@ public class DAO_ThongTinDangTuyen
         return ds;
     }
 
-    public static void CapNhatTrangThaiTTDT(string MaTTDT, string TrangThai)
-    {
-        string query = "update THONGTINDANGTUYEN set TINHTRANG = N'" + TrangThai + "' where MATTDT = " + MaTTDT;
-        SqlSingleton.Instance.ExecuteNonQuery(query);
-
-    }
     public static List<DTO_ThongTinDangTuyen> LayDSTTDT(string maDN)
     {
         string query = "select * from THONGTINDANGTUYEN where MADN =  " + maDN;
@@ -161,10 +136,10 @@ public class DAO_ThongTinDangTuyen
             SoLuong = x.Field<int>("SOLUONG")!,
             YeuCau = x.Field<string>("YEUCAU")!
         }).ToList();
-
         return lsTTDT;
     }
-	public static void CapNhatTrangThaiTTDT(string MaTTDT, string TrangThai)
+
+    public static void CapNhatTrangThaiTTDT(string MaTTDT, string TrangThai)
 	{
 		string query = "update THONGTINDANGTUYEN set TINHTRANG = N'" + TrangThai + "' where MATTDT = " + MaTTDT;
 		SqlSingleton.Instance.ExecuteNonQuery(query);
@@ -182,9 +157,7 @@ public class DAO_ThongTinDangTuyen
 		string query = "select * from THONGTINDANGTUYEN where TINHTRANG = N'Hợp lệ' AND TRANGTHAI <> N'Đã đăng tuyển'";
 		DataTable dataTable = new DataTable();
 		dataTable = SqlSingleton.Instance.ExecuteQuery(query);
-
         List<DTO_ThongTinDangTuyen> ds = new List<DTO_ThongTinDangTuyen>();
-
         foreach (DataRow row in dataTable.Rows)
         {
             DTO_ThongTinDangTuyen ttdt = new DTO_ThongTinDangTuyen
@@ -198,14 +171,8 @@ public class DAO_ThongTinDangTuyen
                 SoLuong = Convert.ToInt32(row["SOLUONG"]),
                 YeuCau = row["YEUCAU"].ToString()
             };
-
             ds.Add(ttdt);
         }
-
         return ds;
-
     }
-
-
-
 }
