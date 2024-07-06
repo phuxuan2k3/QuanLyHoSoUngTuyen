@@ -13,7 +13,7 @@ public class DAO_HoaDon
 		DTO_HoaDon htdt = new DTO_HoaDon
 		{
 			MaTTDT = row["MATTDT"].ToString()!,
-			TongTien = row.IsNull("TONGTIEN") ? -1 : Convert.ToSingle( row["TONGTIEN"]),
+			TongTien = row.IsNull("TONGTIEN") ? -1 : Convert.ToSingle(row["TONGTIEN"]),
 			CachThucThanhToan = row["CACHTHUC"].ToString()!.ToCachThucThanhToan(),
 			TrangThaiThanhToan = row["TRANGTHAI"].ToString()!.ToTrangThaiThanhToan(),
 			NgayLap = row.IsNull("TONGTIEN") ? DateTime.MinValue : (DateTime)row["NGAYLAP"],
@@ -28,15 +28,16 @@ public class DAO_HoaDon
 		return RowConvert(data.Rows[0]);
 	}
 
-	public static void Them(DTO_HoaDon hoaDon)
+	public static string Them(DTO_HoaDon hoaDon)
 	{
-		var query = $@"INSERT INTO {tableName} (MATTDT, TONGTIEN, CACHTHUC, TRANGTHAI, NGAYLAP) VALUES (@MATTDT, @TONGTIEN, @CACHTHUC, @TRANGTHAI, @NGAYLAP)";
-		SqlSingleton.Instance.ExecuteQuery(query, [
+		var query = $@"INSERT INTO {tableName} (MATTDT, TONGTIEN, CACHTHUC, TRANGTHAI, NGAYLAP) VALUES (@MATTDT, @TONGTIEN, @CACHTHUC, @TRANGTHAI, @NGAYLAP);";
+		SqlSingleton.Instance.ExecuteNonQuery(query, [
 			new SqlParameter("MATTDT", hoaDon.MaTTDT),
 			new SqlParameter("TONGTIEN", hoaDon.TongTien),
-			new SqlParameter("CACHTHUC", hoaDon.CachThucThanhToan.ToString()),
-			new SqlParameter("TRANGTHAI", hoaDon.TrangThaiThanhToan.ToString() ),
+			new SqlParameter("CACHTHUC", hoaDon.CachThucThanhToan.ToDisplayString()),
+			new SqlParameter("TRANGTHAI", hoaDon.TrangThaiThanhToan.ToDisplayString() ),
 			new SqlParameter("NGAYLAP", hoaDon.NgayLap.ToString()),
 			]);
+		return hoaDon.MaTTDT;
 	}
 }

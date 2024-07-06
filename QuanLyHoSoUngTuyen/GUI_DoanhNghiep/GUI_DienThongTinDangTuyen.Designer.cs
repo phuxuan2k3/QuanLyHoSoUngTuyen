@@ -92,11 +92,11 @@
 			label2.Anchor = AnchorStyles.None;
 			label2.AutoSize = true;
 			label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label2.Location = new Point(316, 23);
+			label2.Location = new Point(310, 23);
 			label2.Name = "label2";
-			label2.Size = new Size(305, 31);
+			label2.Size = new Size(317, 31);
 			label2.TabIndex = 0;
-			label2.Text = "Điền thông tin đăng tuyển ";
+			label2.Text = "Điền Thông Tin Đăng Tuyển ";
 			// 
 			// tableLayoutPanel2
 			// 
@@ -200,7 +200,7 @@
 			btnXacNhan.Location = new Point(3, 3);
 			btnXacNhan.Name = "btnXacNhan";
 			btnXacNhan.Size = new Size(94, 35);
-			btnXacNhan.TabIndex = 0;
+			btnXacNhan.TabIndex = 7;
 			btnXacNhan.Tag = "green";
 			btnXacNhan.Text = "Xác nhận";
 			btnXacNhan.UseVisualStyleBackColor = true;
@@ -215,7 +215,7 @@
 			btnHuy.MinimumSize = new Size(70, 0);
 			btnHuy.Name = "btnHuy";
 			btnHuy.Size = new Size(94, 35);
-			btnHuy.TabIndex = 1;
+			btnHuy.TabIndex = 8;
 			btnHuy.Tag = "red";
 			btnHuy.Text = "Hủy";
 			btnHuy.UseVisualStyleBackColor = true;
@@ -294,7 +294,7 @@
 			_tenViTri.Margin = new Padding(5);
 			_tenViTri.Name = "_tenViTri";
 			_tenViTri.Size = new Size(502, 31);
-			_tenViTri.TabIndex = 17;
+			_tenViTri.TabIndex = 4;
 			// 
 			// _yeuCau
 			// 
@@ -304,17 +304,19 @@
 			_yeuCau.Multiline = true;
 			_yeuCau.Name = "_yeuCau";
 			_yeuCau.Size = new Size(502, 76);
-			_yeuCau.TabIndex = 19;
+			_yeuCau.TabIndex = 6;
 			// 
 			// _thoiGianDangTuyen
 			// 
+			_thoiGianDangTuyen.CustomFormat = "dd/MM/yyyy";
 			_thoiGianDangTuyen.Dock = DockStyle.Fill;
+			_thoiGianDangTuyen.Format = DateTimePickerFormat.Custom;
 			_thoiGianDangTuyen.Location = new Point(331, 87);
 			_thoiGianDangTuyen.Margin = new Padding(5);
 			_thoiGianDangTuyen.MinDate = new DateTime(2024, 6, 30, 11, 18, 56, 0);
 			_thoiGianDangTuyen.Name = "_thoiGianDangTuyen";
 			_thoiGianDangTuyen.Size = new Size(502, 31);
-			_thoiGianDangTuyen.TabIndex = 20;
+			_thoiGianDangTuyen.TabIndex = 2;
 			_thoiGianDangTuyen.Value = new DateTime(2024, 6, 30, 11, 18, 56, 0);
 			// 
 			// _soNgayDangTuyen
@@ -326,7 +328,7 @@
 			_soNgayDangTuyen.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
 			_soNgayDangTuyen.Name = "_soNgayDangTuyen";
 			_soNgayDangTuyen.Size = new Size(502, 31);
-			_soNgayDangTuyen.TabIndex = 21;
+			_soNgayDangTuyen.TabIndex = 1;
 			_soNgayDangTuyen.Value = new decimal(new int[] { 1, 0, 0, 0 });
 			// 
 			// _hinhThucDangTuyen
@@ -337,7 +339,7 @@
 			_hinhThucDangTuyen.Margin = new Padding(5);
 			_hinhThucDangTuyen.Name = "_hinhThucDangTuyen";
 			_hinhThucDangTuyen.Size = new Size(502, 33);
-			_hinhThucDangTuyen.TabIndex = 22;
+			_hinhThucDangTuyen.TabIndex = 3;
 			// 
 			// _soLuong
 			// 
@@ -348,7 +350,7 @@
 			_soLuong.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
 			_soLuong.Name = "_soLuong";
 			_soLuong.Size = new Size(502, 31);
-			_soLuong.TabIndex = 23;
+			_soLuong.TabIndex = 5;
 			_soLuong.Value = new decimal(new int[] { 1, 0, 0, 0 });
 			// 
 			// tableLayoutPanel4

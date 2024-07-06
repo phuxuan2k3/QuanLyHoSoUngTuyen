@@ -13,6 +13,5 @@ namespace Ctrler.DoanhNghiep
 		{
 			BUS_DoanhNghiep.CapNhatThongTinDN(doanhNghiep);
 		}
-
 	}
 }

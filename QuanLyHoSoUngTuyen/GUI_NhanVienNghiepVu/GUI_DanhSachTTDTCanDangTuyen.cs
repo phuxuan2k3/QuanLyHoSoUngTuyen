@@ -5,7 +5,7 @@ using GUI.GUIException;
 
 namespace GUI.UserControls
 {
-    public partial class GUI_DanhSachTTDTCanDangTuyen : UserControl
+	public partial class GUI_DanhSachTTDTCanDangTuyen : UserControl
 	{
 		public GUI_DanhSachTTDTCanDangTuyen()
 		{
@@ -33,8 +33,8 @@ namespace GUI.UserControls
 				row.Cells["_soLuong"].Value = ttdt.SoLuong;
 				row.Cells["_thoiGianDang"].Value = ttdt.ThoiGianDangTuyen;
 				row.Cells["_soNgayDang"].Value = ttdt.SoNgayDangTuyen;
-				row.Cells["_trangThai"].Value = ttdt.TrangThai;
-				row.Cells["_tinhTrang"].Value = ttdt.TinhTrang;
+				row.Cells["_trangThai"].Value = ttdt.TrangThai.ToDisplayString();
+				row.Cells["_tinhTrang"].Value = ttdt.TinhTrang.ToDisplayString();
 			}
 		}
 

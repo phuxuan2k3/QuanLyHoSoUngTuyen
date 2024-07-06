@@ -6,7 +6,7 @@ namespace Ctrler.Sub;
 
 public class Ctrler_PDF
 {
-	public static void Xuat(DTO_ThongTinDangTuyen thongTinDangTuyen, DTO_HoaDon hoaDon, string outPath)
+	public static void Xuat(DTO_ThongTinDangTuyen thongTinDangTuyen, DTO_HinhThucDangTuyen hinhThucDangTuyen, DTO_HoaDon hoaDon, IEnumerable<DTO_ChiTietHoaDon> chiTietHoaDons, string outPath)
 	{
 		using FileStream fs = new FileStream(outPath, FileMode.Create);
 		//Document doc = new Document(new PdfDocument(new PdfWriter(outPath)));

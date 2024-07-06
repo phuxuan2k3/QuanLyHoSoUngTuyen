@@ -1,4 +1,6 @@
-﻿namespace DTO;
+﻿using DTO.Exceptions;
+
+namespace DTO;
 
 public enum TrangThaiThanhToan
 {
@@ -7,10 +9,58 @@ public enum TrangThaiThanhToan
 	ThanhToanHoanTat = 3,
 }
 
+public static class TrangThaiThanhToanConvert
+{
+	public static string ToDisplayString(this TrangThaiThanhToan trangThaiThanhToan)
+	{
+		return trangThaiThanhToan switch
+		{
+			TrangThaiThanhToan.ChuaThanhToan => "Chưa thanh toán",
+			TrangThaiThanhToan.ChuaThanhToanHoanTat => "Chưa thanh toán hoàn tất",
+			TrangThaiThanhToan.ThanhToanHoanTat => "Thanh toán hoàn tất",
+			_ => throw new EnumException()
+		};
+	}
+
+	public static TrangThaiThanhToan ToTrangThaiThanhToan(this string s)
+	{
+		return s switch
+		{
+			"Chưa thanh toán" => TrangThaiThanhToan.ChuaThanhToan,
+			"Chưa thanh toán hoàn tất" => TrangThaiThanhToan.ChuaThanhToanHoanTat,
+			"Thanh toán hoàn tất" => TrangThaiThanhToan.ThanhToanHoanTat,
+			_ => throw new EnumException(),
+		};
+	}
+}
+
 public enum CachThucThanhToan
 {
 	ToanBo = 1,
 	NhieuDot = 2,
+}
+
+public static class CachThucThanhToanConvert
+{
+	public static string ToDisplayString(this CachThucThanhToan cachThucThanhToan)
+	{
+		return cachThucThanhToan switch
+		{
+			CachThucThanhToan.ToanBo => "Toàn bộ",
+			CachThucThanhToan.NhieuDot => "Nhiều đợt",
+			_ => throw new EnumException()
+		};
+	}
+
+	public static CachThucThanhToan ToCachThucThanhToan(this string s)
+	{
+		return s switch
+		{
+			"Toàn bộ" => CachThucThanhToan.ToanBo,
+			"Nhiều đợt" => CachThucThanhToan.NhieuDot,
+			_ => throw new EnumException(),
+		};
+	}
 }
 
 public class DTO_HoaDon(string maTTDT = "", float tongTien = 0, DateTime? ngayLap = null, TrangThaiThanhToan trangThaiThanhToan = TrangThaiThanhToan.ChuaThanhToan, CachThucThanhToan cachThucThanhToan = CachThucThanhToan.ToanBo)

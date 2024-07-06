@@ -45,7 +45,6 @@ public class BUS_ThongTinDangTuyen
 	private static bool KiemTra(DTO_ThongTinDangTuyen thongTinDangTuyen)
 	{
 		if (thongTinDangTuyen.SoNgayDangTuyen < 1 ||
-			thongTinDangTuyen.ThoiGianDangTuyen.Date < DateTime.Now.AddDays(1).Date ||
 			string.IsNullOrEmpty(thongTinDangTuyen.TenViTri) == true ||
 			thongTinDangTuyen.SoLuong < 1 ||
 			string.IsNullOrEmpty(thongTinDangTuyen.YeuCau) == true)
@@ -63,13 +62,13 @@ public class BUS_ThongTinDangTuyen
 		return true;
 	}
 
-	public static void Them(DTO_ThongTinDangTuyen thongTinDangTuyen)
+	public static int Them(DTO_ThongTinDangTuyen thongTinDangTuyen)
 	{
 		if (KiemTra(thongTinDangTuyen) == false)
 		{
-			return;
+			return -1;
 		}
-		DAO_ThongTinDangTuyen.Them(thongTinDangTuyen);
+		return DAO_ThongTinDangTuyen.Them(thongTinDangTuyen);
 	}
 	
 	public static void CapNhat(DTO_ThongTinDangTuyen thongTinDangTuyen)

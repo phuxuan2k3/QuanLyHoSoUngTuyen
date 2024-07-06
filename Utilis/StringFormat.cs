@@ -23,6 +23,6 @@ public static class StringFormat
 	public static string ToVNDString(this float amount)
 	{
 		CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
-		return amount.ToString("#,###", cul.NumberFormat);
+		return amount.ToString("#,###", cul.NumberFormat) + " VND";
 	}
 }
