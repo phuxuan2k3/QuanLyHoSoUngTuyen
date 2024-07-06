@@ -13,4 +13,10 @@
     <ProjectReference Include="..\Utilis\Utilis.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="UC\GUI_HieuChinhThongTinDangTuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

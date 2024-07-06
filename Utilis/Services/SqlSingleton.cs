@@ -1,6 +1,4 @@
-﻿using System;
-using System.Configuration;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 using Utilis;
 
@@ -111,6 +109,28 @@ public sealed class SqlSingleton
 					DataTable resultTable = new DataTable();
 					adapter.Fill(resultTable);
 					return resultTable;
+				}
+			}
+		}
+		finally
+		{
+			EnsureConnectionClosed();
+		}
+	}
+
+	public void ExecuteNonQuery(IEnumerable<string> queries, params SqlParameter[] parameters)
+	{
+		try
+		{
+			EnsureConnectionOpen();
+			foreach (string query in queries)
+			{
+				if (!string.IsNullOrWhiteSpace(query.Trim()))
+				{
+					using (var command = new SqlCommand(query, Connection))
+					{
+						command.ExecuteNonQuery();
+					}
 				}
 			}
 		}
