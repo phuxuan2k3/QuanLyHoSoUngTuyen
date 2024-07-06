@@ -1,19 +1,10 @@
-﻿using Ctrler;
+﻿using Ctrler.NhanVienTiepNhan;
 using GUI.Styles;
 using GUI.UC;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class GUI_NhanVienTiepNhan : Form
+	public partial class GUI_NhanVienTiepNhan : Form
     {
         public GUI_NhanVienTiepNhan()
         {
@@ -38,7 +29,7 @@ namespace GUI
         private void btnXetDuyetTTDT_Click(object sender, EventArgs e)
         {
             GUI_DanhSachTTDTCanXetDuyet content = new();
-            content.HienThi(new Ctrler_DanhSachTTDTXetDuyet());
+            content.HienThi(new Ctrler_DanhSachTTDTCanXetDuyet());
             SwitchContent(content);
         }
 

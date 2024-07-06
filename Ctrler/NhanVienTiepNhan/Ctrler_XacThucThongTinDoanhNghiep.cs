@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Ctrler
+namespace Ctrler.NhanVienTiepNhan
 {
     public class Ctrler_XacThucThongTinDoanhNghiep
     {
@@ -16,17 +16,18 @@ namespace Ctrler
             dsDNXT = BUS_DoanhNghiep.LayDNCanXacThuc();
         }
 
-        public static DTO_DoanhNghiep LoadTTDN( string MaDN)
+        public static DTO_DoanhNghiep LoadTTDN(string MaDN)
         {
             DTO_DoanhNghiep DNXT = BUS_DoanhNghiep.LoadTTDN(MaDN);
             return DNXT;
         }
 
-        public static void CapNhatTrangThaiDN(string MaDN, string TrangThai) {
+        public static void CapNhatTrangThaiDN(string MaDN, string TrangThai)
+        {
 
             BUS_DoanhNghiep.CapNhatTrangThaiDN(MaDN, TrangThai);
         }
 
-  
+
     }
 }

@@ -1,10 +1,10 @@
-﻿using Ctrler;
+﻿using Ctrler.NhanVienNghiepVu;
 using DTO;
 using GUI.GUIException;
 
 namespace GUI.UC
 {
-	public partial class GUI_XacNhanDangTuyen : UserControl
+    public partial class GUI_XacNhanDangTuyen : UserControl
     {
         public GUI_XacNhanDangTuyen()
         {

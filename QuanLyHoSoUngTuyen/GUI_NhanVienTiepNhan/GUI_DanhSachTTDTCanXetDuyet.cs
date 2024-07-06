@@ -1,4 +1,4 @@
-﻿using Ctrler;
+﻿using Ctrler.NhanVienTiepNhan;
 using DTO;
 using GUI.GUIException;
 
@@ -13,17 +13,17 @@ namespace GUI.UC
 
 
 
-        private Ctrler_DanhSachTTDTXetDuyet? _ctrler_DanhSachThongTinDangTuyen;
+        private Ctrler_DanhSachTTDTCanXetDuyet? _ctrler_DanhSachThongTinDangTuyen;
 
 
-        public Ctrler_DanhSachTTDTXetDuyet Ctrler_DanhSachThongTinDangTuyen
+        public Ctrler_DanhSachTTDTCanXetDuyet Ctrler_DanhSachThongTinDangTuyen
         {
             get => _ctrler_DanhSachThongTinDangTuyen ?? throw new ControllerNotFoundException();
             set => _ctrler_DanhSachThongTinDangTuyen = value;
         }
 
 
-        public void HienThi(Ctrler_DanhSachTTDTXetDuyet ctrler_DanhSachThongTinDangTuyen)
+        public void HienThi(Ctrler_DanhSachTTDTCanXetDuyet ctrler_DanhSachThongTinDangTuyen)
         {
             _ctrler_DanhSachThongTinDangTuyen = ctrler_DanhSachThongTinDangTuyen;
             var dsTTDT = new List<DTO_ThongTinDangTuyen>();

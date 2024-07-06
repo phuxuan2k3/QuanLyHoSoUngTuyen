@@ -1,7 +1,8 @@
 ﻿using BUS;
+using Ctrler.NhanVienNghiepVu;
 using DTO;
 
-namespace Ctrler;
+namespace Ctrler.DoanhNghiep;
 
 public class Ctrler_DanhSachThongTinDangTuyen
 {
@@ -35,14 +36,11 @@ public class Ctrler_DanhSachThongTinDangTuyen
 		return new Ctrler_ChiTietThongTinDangTuyen(ttdt, hoaDon, hinhThucDangTuyen);
 	}
 
-
-
 	public Ctrler_DangTuyenThongTinDangTuyen ChiTietThongTinDangTuyenHopLe(string maTTDT)
 	{
 		var ttdt = BUS_ThongTinDangTuyen.Lay(maTTDT);
-		var hoaDon = BUS_HoaDon.Lay(maTTDT);
 		var hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(ttdt.MaHTDT);
 		var doanhNghiep = BUS_DoanhNghiep.LoadTTDN(ttdt.MaDN);
-		return new Ctrler_DangTuyenThongTinDangTuyen(ttdt,hinhThucDangTuyen, doanhNghiep, this);
+		return new Ctrler_DangTuyenThongTinDangTuyen(ttdt, hinhThucDangTuyen, doanhNghiep, this);
 	}
 }

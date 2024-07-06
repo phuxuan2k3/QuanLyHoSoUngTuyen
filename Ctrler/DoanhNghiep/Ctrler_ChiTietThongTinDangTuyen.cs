@@ -1,6 +1,6 @@
 ﻿using DTO;
 
-namespace Ctrler;
+namespace Ctrler.DoanhNghiep;
 
 public class Ctrler_ChiTietThongTinDangTuyen
 {
@@ -32,4 +32,3 @@ public class Ctrler_ChiTietThongTinDangTuyen
 		return new Ctrler_HieuChinhThongTinDangTuyen(_thongTinDangTuyen, _hoaDon, _hinhThucDangTuyen);
 	}
 }
-	

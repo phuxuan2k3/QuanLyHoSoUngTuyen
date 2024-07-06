@@ -1,4 +1,4 @@
-﻿using Ctrler;
+﻿using Ctrler.NhanVienTiepNhan;
 using DTO;
 using GUI.GUIException;
 using System;

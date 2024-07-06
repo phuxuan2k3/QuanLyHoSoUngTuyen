@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ctrler
+namespace Ctrler.NhanVienTiepNhan
 {
-    public class Ctrler_DanhSachTTDTXetDuyet
+    public class Ctrler_DanhSachTTDTCanXetDuyet
     {
 
         private readonly DTO_ThongTinDangTuyen _ttdt;
