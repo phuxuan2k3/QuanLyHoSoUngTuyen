@@ -24,8 +24,7 @@ namespace GUI
             InitializeComponent();
         }
 
-        private string _maDN = "1";
-        public string MaDN { get => _maDN; set => _maDN = value; }
+       
         private static GUI_NhanVienTiepNhan? _instance = null;
         public static GUI_NhanVienTiepNhan Instance => _instance ??= new GUI_NhanVienTiepNhan();
 
@@ -39,7 +38,7 @@ namespace GUI
         private void btnXetDuyetTTDT_Click(object sender, EventArgs e)
         {
             GUI_DanhSachTTDTCanXetDuyet content = new();
-            content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
+            content.HienThi(new Ctrler_DanhSachTTDTXetDuyet());
             SwitchContent(content);
         }
 

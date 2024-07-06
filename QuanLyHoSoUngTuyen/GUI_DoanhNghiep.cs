@@ -53,7 +53,7 @@ public partial class GUI_DoanhNghiep : Form
     private void btnXetDuyetTTDT_Click(object sender, EventArgs e)
     {
         GUI_DanhSachTTDTCanXetDuyet content = new();
-        content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
+        content.HienThi(new Ctrler_DanhSachTTDTXetDuyet());
         SwitchContent(content);
     }
 

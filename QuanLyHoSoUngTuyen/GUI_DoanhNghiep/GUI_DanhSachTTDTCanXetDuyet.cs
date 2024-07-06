@@ -1,16 +1,6 @@
 ﻿using Ctrler;
-using DAO;
 using DTO;
 using GUI.GUIException;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GUI.UC
 {
@@ -23,17 +13,17 @@ namespace GUI.UC
 
 
 
-        private Ctrler_DanhSachThongTinDangTuyen? _ctrler_DanhSachThongTinDangTuyen;
+        private Ctrler_DanhSachTTDTXetDuyet? _ctrler_DanhSachThongTinDangTuyen;
 
 
-        public Ctrler_DanhSachThongTinDangTuyen Ctrler_DanhSachThongTinDangTuyen
+        public Ctrler_DanhSachTTDTXetDuyet Ctrler_DanhSachThongTinDangTuyen
         {
             get => _ctrler_DanhSachThongTinDangTuyen ?? throw new ControllerNotFoundException();
             set => _ctrler_DanhSachThongTinDangTuyen = value;
         }
 
 
-        public void HienThi(Ctrler_DanhSachThongTinDangTuyen ctrler_DanhSachThongTinDangTuyen)
+        public void HienThi(Ctrler_DanhSachTTDTXetDuyet ctrler_DanhSachThongTinDangTuyen)
         {
             _ctrler_DanhSachThongTinDangTuyen = ctrler_DanhSachThongTinDangTuyen;
             var dsTTDT = new List<DTO_ThongTinDangTuyen>();

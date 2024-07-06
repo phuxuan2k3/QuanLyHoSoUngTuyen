@@ -15,9 +15,9 @@ namespace Ctrler
         private readonly DTO_HinhThucDangTuyen _hinhThucDangTuyen;
         private readonly DTO_DoanhNghiep _DoanhNghiep;
 
-        public Ctrler_DanhSachThongTinDangTuyen Owner { get; set; }
+        public Ctrler_DanhSachTTDTXetDuyet Owner { get; set; }
 
-        public Ctrler_XetDuyetThongTinDangTuyen(DTO_ThongTinDangTuyen ttdt, DTO_HinhThucDangTuyen hinhThucDangTuyen,DTO_DoanhNghiep doanhNghiep ,Ctrler_DanhSachThongTinDangTuyen owner)
+        public Ctrler_XetDuyetThongTinDangTuyen(DTO_ThongTinDangTuyen ttdt, DTO_HinhThucDangTuyen hinhThucDangTuyen,DTO_DoanhNghiep doanhNghiep , Ctrler_DanhSachTTDTXetDuyet owner)
         {
             _ttdt = ttdt;
            

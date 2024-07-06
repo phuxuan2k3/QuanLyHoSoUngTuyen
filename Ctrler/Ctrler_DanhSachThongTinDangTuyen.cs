@@ -35,14 +35,7 @@ public class Ctrler_DanhSachThongTinDangTuyen
 		return new Ctrler_ChiTietThongTinDangTuyen(ttdt, hoaDon, hinhThucDangTuyen);
 	}
 
-	public Ctrler_XetDuyetThongTinDangTuyen ChiTietThongTinDangTuyenXD(string maTTDT)
-	{
-		var ttdt = BUS_ThongTinDangTuyen.Lay(maTTDT);
-		
-		var hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(ttdt.MaHTDT);
-		var doanhNghiep = BUS_DoanhNghiep.LoadTTDN(ttdt.MaDN);
-		return new Ctrler_XetDuyetThongTinDangTuyen(ttdt, hinhThucDangTuyen, doanhNghiep, this);
-	}
+
 
 	public Ctrler_DangTuyenThongTinDangTuyen ChiTietThongTinDangTuyenHopLe(string maTTDT)
 	{
