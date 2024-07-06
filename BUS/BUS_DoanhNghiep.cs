@@ -17,7 +17,7 @@ namespace BUS
             return DAO_DoanhNghiep.LayDNChuaXacThuc();
         }
 
-        public static DTO_DoanhNghiep LoadTTDN(string MaDN)
+        public static DTO_DoanhNghiep Lay(string MaDN)
         {
             return DAO_DoanhNghiep.LoadTTDN(MaDN);  
         }

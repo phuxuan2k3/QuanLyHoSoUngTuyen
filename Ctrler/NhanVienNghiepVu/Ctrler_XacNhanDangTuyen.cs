@@ -6,24 +6,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ctrler.NhanVienTiepNhan
+namespace Ctrler.NhanVienNghiepVu
 {
-    public class Ctrler_XetDuyetThongTinDangTuyen
+    public class Ctrler_XacNhanDangTuyen
     {
         private readonly DTO_ThongTinDangTuyen _ttdt;
         private readonly DTO_HinhThucDangTuyen _hinhThucDangTuyen;
         private readonly DTO_DoanhNghiep _DoanhNghiep;
 
 
-        public Ctrler_XetDuyetThongTinDangTuyen(DTO_ThongTinDangTuyen ttdt, DTO_HinhThucDangTuyen hinhThucDangTuyen, DTO_DoanhNghiep doanhNghiep)
+        public Ctrler_XacNhanDangTuyen(DTO_ThongTinDangTuyen ttdt, DTO_HinhThucDangTuyen hinhThucDangTuyen, DTO_DoanhNghiep doanhNghiep)
         {
             _ttdt = ttdt;
             _hinhThucDangTuyen = hinhThucDangTuyen;
             _DoanhNghiep = doanhNghiep;
-            
+
         }
 
-  
 
         public void Load(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HinhThucDangTuyen hinhThucDangTuyen, ref DTO_DoanhNghiep doanhNghiep)
         {
@@ -32,10 +31,13 @@ namespace Ctrler.NhanVienTiepNhan
             doanhNghiep = _DoanhNghiep;
         }
 
-        public static void CapNhatTrangThaiXetDuyet(string MaTTDT, string TrangThai)
+
+        public static void XacNhanDangTuyen(string MaTTDT)
         {
-            BUS_ThongTinDangTuyen.CapNhatTrangThaiXetDuyet(MaTTDT, TrangThai);
+            BUS_ThongTinDangTuyen.CapNhatTinhTrangDangTuyen(MaTTDT);
         }
+
+
 
     }
 

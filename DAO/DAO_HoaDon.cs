@@ -13,9 +13,9 @@ public class DAO_HoaDon
 		DTO_HoaDon htdt = new DTO_HoaDon
 		{
 			MaTTDT = row["MATTDT"].ToString()!,
-			TongTien = row.IsNull("TONGTIEN") ? -1 : (float)row["TONGTIEN"],
-			CachThucThanhToan = row["CACHTHUCTHANHTOAN"].ToString()!.ToCachThucThanhToan(),
-			TrangThaiThanhToan = row["TRANGTHAITHANHTOAN"].ToString()!.ToTrangThaiThanhToan(),
+			TongTien = row.IsNull("TONGTIEN") ? -1 : Convert.ToSingle( row["TONGTIEN"]),
+			CachThucThanhToan = row["CACHTHUC"].ToString()!.ToCachThucThanhToan(),
+			TrangThaiThanhToan = row["TRANGTHAI"].ToString()!.ToTrangThaiThanhToan(),
 			NgayLap = row.IsNull("TONGTIEN") ? DateTime.MinValue : (DateTime)row["NGAYLAP"],
 		};
 		return htdt;

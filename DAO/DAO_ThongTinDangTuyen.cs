@@ -106,9 +106,9 @@ public class DAO_ThongTinDangTuyen
     //    return lsTTDT;
     //}
 
-    public static List<DTO_ThongTinDangTuyen> LoadTTDTXD()
+    public static List<DTO_ThongTinDangTuyen> LayTTDTCanXetDuyet()
     {
-        string query = "select * from THONGTINDANGTUYEN where TINHTRANG = N'Chưa xét duyệt' ";
+        string query = "select * from THONGTINDANGTUYEN where TRANGTHAI = N'Chưa xét duyệt' ";
         DataTable dataTable = new DataTable();
         dataTable = SqlSingleton.Instance.ExecuteQuery(query);
 
@@ -139,15 +139,15 @@ public class DAO_ThongTinDangTuyen
         return lsTTDT;
     }
 
-    public static void CapNhatTrangThaiTTDT(string MaTTDT, string TrangThai)
+    public static void CapNhatTrangThaiTTDT(string MaTTDT, string tinhTrang)
 	{
-		string query = "update THONGTINDANGTUYEN set TINHTRANG = N'" + TrangThai + "' where MATTDT = " + MaTTDT;
+		string query = "update THONGTINDANGTUYEN set TRANGTHAI = N'" + tinhTrang + "' where MATTDT = " + MaTTDT;
 		SqlSingleton.Instance.ExecuteNonQuery(query);
 	}
 
     public static void CapNhatTrangThaiDangTuyen(string MaTTDT)
     {
-        string query = "update THONGTINDANGTUYEN set TRANGTHAI = N'Đã đăng tuyển' where MATTDT = " + MaTTDT;
+        string query = "update THONGTINDANGTUYEN set TINHTRANG = N'Đã đăng tuyển' where MATTDT = " + MaTTDT;
         SqlSingleton.Instance.ExecuteNonQuery(query);
     }
 

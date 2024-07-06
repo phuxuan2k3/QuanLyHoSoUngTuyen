@@ -7,7 +7,7 @@ namespace Ctrler.DoanhNghiep
 	{
 		public DTO_DoanhNghiep Load(string MaDN)
 		{
-			return BUS_DoanhNghiep.LoadTTDN(MaDN);
+			return BUS_DoanhNghiep.Lay(MaDN);
 		}
 		public void CapNhatTTDN(DTO_DoanhNghiep doanhNghiep)
 		{

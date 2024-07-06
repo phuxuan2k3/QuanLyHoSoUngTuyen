@@ -27,7 +27,7 @@ namespace GUI.UserControls
         {
             _ctrler_DanhSachThongTinDangTuyen = ctrler_DanhSachThongTinDangTuyen;
             var dsTTDT = new List<DTO_ThongTinDangTuyen>();
-            Ctrler_DanhSachThongTinDangTuyen.LoadTTDTXD(ref dsTTDT);
+            Ctrler_DanhSachThongTinDangTuyen.Load(ref dsTTDT);
             foreach (var ttdt in dsTTDT)
             {
                 int rowId = dsThongTinDangTuyen.Rows.Add();
@@ -46,7 +46,7 @@ namespace GUI.UserControls
         {
             if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_id"].Value is string maTTDT)
             {
-                var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyenXD(maTTDT);
+                var ctrler = Ctrler_DanhSachThongTinDangTuyen.HienThi_XetDuyetThongTinDangTuyen(maTTDT);
                 GUI_XetDuyetThongTinDangTuyen content = new();
                 content.HienThi(ctrler);
                 GUI_NhanVienTiepNhan.Instance.SwitchContent(content);

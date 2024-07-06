@@ -58,12 +58,7 @@ public partial class GUI_DoanhNghiep : Form
         SwitchContent(content);
     }
 
-    private void btnDangTuyenTTDT_Click(object sender, EventArgs e)
-    {
-        GUI_DanhSachTTDTCanDangTuyen content = new();
-        content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
-        SwitchContent(content);
-    }
+
 
     private void btnCapNhatTTDN_Click(object sender, EventArgs e)
     {

@@ -32,9 +32,9 @@ public class BUS_ThongTinDangTuyen
 		return DAO_ThongTinDangTuyen.LayTatCaCuaDoanhNghiep(maDN);
 	}
 
-	public static List<DTO_ThongTinDangTuyen> LayDSTTDTXD()
+	public static List<DTO_ThongTinDangTuyen> LayDSTTDTCanXetDuyet()
 	{
-		return DAO_ThongTinDangTuyen.LoadTTDTXD();
+		return DAO_ThongTinDangTuyen.LayTTDTCanXetDuyet();
 	}
 
 	public static List<DTO_ThongTinDangTuyen> LayDSTTDTHopLe()
@@ -81,13 +81,13 @@ public class BUS_ThongTinDangTuyen
 		DAO_ThongTinDangTuyen.CapNhat(thongTinDangTuyen);
 	}
 
-	public static void CapNhatTrangThaiTTDT(string MaTTDT, string TrangThai)
+	public static void CapNhatTrangThaiXetDuyet(string MaTTDT, string tinhTrang)
 	{
-		DAO_ThongTinDangTuyen.CapNhatTrangThaiTTDT(MaTTDT, TrangThai);
+		DAO_ThongTinDangTuyen.CapNhatTrangThaiTTDT(MaTTDT, tinhTrang);
 
 	}
 
-	public static void CapNhatTrangThaiDangTuyen(string MaTTDT)
+	public static void CapNhatTinhTrangDangTuyen(string MaTTDT)
 	{
 		DAO_ThongTinDangTuyen.CapNhatTrangThaiDangTuyen(MaTTDT);
 	}

@@ -18,7 +18,7 @@ namespace Ctrler.NhanVienTiepNhan
 
         public static DTO_DoanhNghiep LoadTTDN(string MaDN)
         {
-            DTO_DoanhNghiep DNXT = BUS_DoanhNghiep.LoadTTDN(MaDN);
+            DTO_DoanhNghiep DNXT = BUS_DoanhNghiep.Lay(MaDN);
             return DNXT;
         }
 

@@ -1,28 +1,29 @@
 ﻿using Ctrler.DoanhNghiep;
+using Ctrler.NhanVienNghiepVu;
 using DTO;
 using GUI.GUIException;
 
 namespace GUI.UserControls
 {
-	public partial class GUI_DanhSachTTDTCanDangTuyen : UserControl
+    public partial class GUI_DanhSachTTDTCanDangTuyen : UserControl
 	{
 		public GUI_DanhSachTTDTCanDangTuyen()
 		{
 			InitializeComponent();
 		}
-		private Ctrler_DanhSachThongTinDangTuyen? _ctrler_DanhSachThongTinDangTuyen;
+		private Ctrler_DanhSachTTDTCanDangTuyen? _ctrler_DanhSachThongTinDangTuyen;
 
-		public Ctrler_DanhSachThongTinDangTuyen Ctrler_DanhSachThongTinDangTuyen
+		public Ctrler_DanhSachTTDTCanDangTuyen Ctrler_DanhSachThongTinDangTuyen
 		{
 			get => _ctrler_DanhSachThongTinDangTuyen ?? throw new ControllerNotFoundException();
 			set => _ctrler_DanhSachThongTinDangTuyen = value;
 		}
 
-		public void HienThi(Ctrler_DanhSachThongTinDangTuyen ctrler_DanhSachThongTinDangTuyen)
+		public void HienThi(Ctrler_DanhSachTTDTCanDangTuyen ctrler_DanhSachThongTinDangTuyen)
 		{
 			_ctrler_DanhSachThongTinDangTuyen = ctrler_DanhSachThongTinDangTuyen;
 			var dsTTDT = new List<DTO_ThongTinDangTuyen>();
-			Ctrler_DanhSachThongTinDangTuyen.LoadTTDTHopLe(ref dsTTDT);
+			Ctrler_DanhSachThongTinDangTuyen.Load(ref dsTTDT);
 			foreach (var ttdt in dsTTDT)
 			{
 				int rowId = dsThongTinDangTuyen.Rows.Add();
@@ -39,13 +40,13 @@ namespace GUI.UserControls
 
 		private void dsThongTinDangTuyen_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			//if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_id"].Value is string maTTDT)
-			//{
-			//    var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyenHopLe(maTTDT);
-			//    GUI_XacNhanDangTuyen content = new();
-			//    content.HienThi(ctrler);
-			//    GUI_DoanhNghiep.Instance.SwitchContent(content);
-			//}
+			if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_id"].Value is string maTTDT)
+			{
+				var ctrler = Ctrler_DanhSachThongTinDangTuyen.HienThi_XacNhanDangTuyen(maTTDT);
+				GUI_XacNhanDangTuyen content = new();
+				content.HienThi(ctrler);
+				GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
+			}
 		}
 
 	}
