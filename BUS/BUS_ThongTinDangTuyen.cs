@@ -42,4 +42,30 @@ public class BUS_ThongTinDangTuyen
     {
         return DAO_ThongTinDangTuyen.LayDSPDK(maTTDT);
     }
+<<<<<<< Updated upstream
+=======
+
+    public static void CapNhatTrangThaiTTDT(string MaTTDT, string TrangThai) { 
+		DAO_ThongTinDangTuyen.CapNhatTrangThaiTTDT(MaTTDT, TrangThai);
+	
+	}
+
+	public static void CapNhatTrangThaiDangTuyen(string MaTTDT)
+	{
+		DAO_ThongTinDangTuyen.CapNhatTrangThaiDangTuyen(MaTTDT);
+	}
+
+    public static List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenDuyetPDK()
+     {
+         return DAO_ThongTinDangTuyen.LayDSThongTinDangTuyenDuyetPDK();
+     }
+    public static DTO_ThongTinDangTuyen LayThongTinDangTuyen(string maTTDT)
+    {
+        return DAO_ThongTinDangTuyen.LayThongTinDangTuyen(maTTDT);
+    }
+    public static List<DTO_ThongTinHoSo> LayDSPhieuDangKy(string maTTDT)
+    {
+        return DAO_ThongTinDangTuyen.LayDSPhieuDangKy(maTTDT);
+    }
+>>>>>>> Stashed changes
 }

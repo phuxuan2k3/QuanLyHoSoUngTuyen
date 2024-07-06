@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using BUS;
+using DTO;
 
 namespace Ctrler;
 
@@ -9,9 +10,14 @@ public class Ctrler_ChiTietThongTinDangTuyen
 	private readonly DTO_HinhThucDangTuyen _hinhThucDangTuyen;
 	private readonly DTO_DoanhNghiep _DoanhNghiep;
 
+<<<<<<< Updated upstream
 	public Ctrler_DanhSachThongTinDangTuyen Owner { get; set; }
 
 	public Ctrler_ChiTietThongTinDangTuyen(DTO_ThongTinDangTuyen ttdt, DTO_HoaDon hoaDon, DTO_HinhThucDangTuyen hinhThucDangTuyen, Ctrler_DanhSachThongTinDangTuyen owner)
+=======
+
+    public Ctrler_ChiTietThongTinDangTuyen(DTO_ThongTinDangTuyen ttdt, DTO_HoaDon hoaDon, DTO_HinhThucDangTuyen hinhThucDangTuyen)
+>>>>>>> Stashed changes
 	{
 		_ttdt = ttdt;
 		_hoaDon = hoaDon;
@@ -19,9 +25,8 @@ public class Ctrler_ChiTietThongTinDangTuyen
 		Owner = owner;
 	}
 
-
-
-
+   
+   
     public void Load(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HoaDon hoaDon, ref DTO_HinhThucDangTuyen hinhThucDangTuyen)
 	{
 		thongTinDangTuyen = _ttdt;
@@ -46,4 +51,28 @@ public class Ctrler_ChiTietThongTinDangTuyen
 	{
 		// todo
 	}
+    public DTO_ThongTinDangTuyen LayThongTinDangTuyen(string maTTDT)
+    {
+        return BUS_ThongTinDangTuyen.LayThongTinDangTuyen(maTTDT);
+    }
+    
+
+
+    public Ctrler_ChiTietThongTinDangTuyen(DTO_ThongTinDangTuyen ttdt)
+    {
+        _thongTinDangTuyen = ttdt;
+    }
+
+
+    public void ThongTinDangTuyenvaDSPDk(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref List<DTO_ThongTinHoSo> thongTinPhieuDangKyUngTuyen)
+    {
+        thongTinDangTuyen = _thongTinDangTuyen;
+        thongTinPhieuDangKyUngTuyen = BUS_ThongTinDangTuyen.LayDSPhieuDangKy(thongTinDangTuyen.MaTTDT);
+    }
+    public static void CapNhatThongTinPhieuDangKy(DTO_ThongTinHoSo ttpdk)
+    {
+        BUS_PhieuDangKyUngTuyen.CapNhatThongTinPhieuDangKy(ttpdk);
+    }
+
+
 }

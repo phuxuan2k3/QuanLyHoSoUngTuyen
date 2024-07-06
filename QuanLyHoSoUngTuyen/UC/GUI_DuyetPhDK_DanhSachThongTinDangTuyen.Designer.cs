@@ -60,6 +60,7 @@
             dsThongTinDangTuyen.RowHeadersWidth = 51;
             dsThongTinDangTuyen.Size = new Size(717, 269);
             dsThongTinDangTuyen.TabIndex = 4;
+<<<<<<< Updated upstream:QuanLyHoSoUngTuyen/UC/GUI_DuyetPhDK_DanhSachThongTinDangTuyen.Designer.cs
             dsThongTinDangTuyen.CellContentClick += dsThongTinDangTuyen_CellContentClick;
             // 
             // lb_dsTTDT
@@ -71,6 +72,9 @@
             lb_dsTTDT.Size = new Size(229, 31);
             lb_dsTTDT.TabIndex = 3;
             lb_dsTTDT.Text = "Thông in đăng tuyển";
+=======
+           // dsThongTinDangTuyen.CellContentClick += dsThongTinDangTuyen_CellClick;
+>>>>>>> Stashed changes:QuanLyHoSoUngTuyen/GUI_DoanhNghiep/GUI_DanhSachTTDTCanDangTuyen.Designer.cs
             // 
             // _id
             // 

@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ctrler\Ctrler.csproj" />
+<<<<<<< Updated upstream
     <ProjectReference Include="..\Utilis\Utilis.csproj" />
   </ItemGroup>
 
@@ -19,4 +20,10 @@
     </Compile>
   </ItemGroup>
 
+=======
+    <ProjectReference Include="..\DTO\DTO.csproj" />
+    <ProjectReference Include="..\Utilis\Utilis.csproj" />
+  </ItemGroup>
+
+>>>>>>> Stashed changes
 </Project>

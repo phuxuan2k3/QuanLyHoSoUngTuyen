@@ -14,6 +14,13 @@ namespace BUS
 
             return new DTO_KetQuaUngTuyen(maTTDT, "", total, countHopLe, countDat);
         }
+<<<<<<< Updated upstream
         
+=======
+        public static void CapNhatThongTinPhieuDangKy(DTO_ThongTinHoSo ttpdk)
+        {
+            DAO_PhieuDangKyUngTuyen.CapNhatThongTinPhieuDangKy(ttpdk);
+        }
+>>>>>>> Stashed changes
     }
 }

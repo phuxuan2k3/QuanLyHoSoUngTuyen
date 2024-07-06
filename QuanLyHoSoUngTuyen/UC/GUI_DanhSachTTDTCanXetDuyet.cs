@@ -52,7 +52,7 @@ namespace GUI.UC
             }
         }
 
-        private void dsThongTinDangTuyen_CellClick(object sender, DataGridViewCellEventArgs e)
+       /* private void dsThongTinDangTuyen_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_id"].Value is string maTTDT)
             {
@@ -61,7 +61,7 @@ namespace GUI.UC
                 content.HienThi(ctrler);
                 GUI_Base.Instance.SwitchContent(content);
             }
-        }
+        }*/
 
 
     }
