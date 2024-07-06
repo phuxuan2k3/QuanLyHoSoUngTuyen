@@ -1,5 +1,6 @@
 ﻿using DAO;
 using DTO;
+using System.Data;
 
 namespace BUS
 {
@@ -34,6 +35,11 @@ namespace BUS
         public static int KiemTraTrangThaiDN(string maDN)
         {
             return DAO_DoanhNghiep.KiemTraTrangThai(maDN);
+        }
+
+        public static DTO_DoanhNghiep LayThongTinDoanhNghiep(string maDoanhNghiep)
+        {
+            return DAO_DoanhNghiep.LayThongTinDoanhNghiep(maDoanhNghiep);
         }
     }
 

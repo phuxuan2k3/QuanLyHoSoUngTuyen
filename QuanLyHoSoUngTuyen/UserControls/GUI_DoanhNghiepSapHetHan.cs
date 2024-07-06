@@ -1,17 +1,19 @@
-using Ctrler;
+﻿using Ctrler;
 using DTO;
-using GUI;
+using Utilis;
 
-namespace QuanLyHoSoUngTuyen
+namespace GUI.UserControls
 {
-    public partial class GUI_DoanhNghiepHetHan : Form
+    public partial class GUI_DoanhNghiepSapHetHan : UserControl
     {
-        private string _maDNHienTai = string.Empty;
+        public DTO_DoanhNghiep DNHienTai { get; set; } = null!;
+        public event EventHandler GiaHanHopDong;
 
-
-        public GUI_DoanhNghiepHetHan()
+        public GUI_DoanhNghiepSapHetHan(EventHandler giaHanHopDong)
         {
+            GiaHanHopDong += giaHanHopDong;
             InitializeComponent();
+
             HienThi();
         }
 
@@ -27,23 +29,24 @@ namespace QuanLyHoSoUngTuyen
         {
             if (e.RowIndex != -1)
             {
-                _maDNHienTai = dsDNHetHan.Rows[e.RowIndex].Cells[0].Value.ToString()!;
-                lbTenDoanhNghiep.Text = dsDNHetHan.Rows[e.RowIndex].Cells[1].Value.ToString();
+                DNHienTai = (dsDNHetHan.DataSource as List<DTO_DoanhNghiep>)![e.RowIndex];
+                lbMaDoanhNghiep.Text = DNHienTai.TenDN;
                 List<DTO_KetQuaUngTuyen> lsKetQuaUngTuyen;
                 Ctrler_DoanhNghiepHetHan.LoadKetQuaUngTuyenCuaDN(dsDNHetHan.Rows[e.RowIndex].Cells[0].Value.ToString()!, out lsKetQuaUngTuyen);
                 dsKetQuaUngTuyen.DataSource = lsKetQuaUngTuyen;
             }
         }
 
+
         private void btnGiaHan_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(_maDNHienTai))
+            if (DNHienTai == null)
             {
                 MessageBox.Show("Vui lòng chọn doanh nghiệp để gia hạn.");
                 return;
             }
-            GUI_XacNhanGiaHanHopDong ui_XacNhanGiaHanHopDong = new GUI_XacNhanGiaHanHopDong(_maDNHienTai);
-            ui_XacNhanGiaHanHopDong.ShowDialog();
+
+            GiaHanHopDong?.Invoke(this, new EventArgs<DTO_DoanhNghiep>(DNHienTai));
         }
     }
 }

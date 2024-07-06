@@ -40,8 +40,5 @@ namespace Ctrler.NhanVienNghiepVu
         {
             BUS_ThongTinDangTuyen.CapNhatTrangThaiDangTuyen(MaTTDT);
         }
-
-
-
     }
 }

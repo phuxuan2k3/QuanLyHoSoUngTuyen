@@ -11,10 +11,6 @@ public sealed class SqlSingleton
 
 	private SqlSingleton()
 	{
-		// Replace the connection string with your own in App.config.
-		// Replace the connection string with your own in App.config.
-		// Replace the connection string with your own in App.config.
-
 		string connectionString = ConfigurationHelper.GetConnectionString();
 		connection = new SqlConnection(connectionString);
 	}

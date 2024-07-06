@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI.UserControls
 {
-    public partial class GUI_XemDanhSachDoanhNghiep : UserControl
-    {
-        public GUI_XemDanhSachDoanhNghiep()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class GUI_TaoYeuCauDangTuyen : UserControl
+	{
+		public GUI_TaoYeuCauDangTuyen()
+		{
+			InitializeComponent();
+		}
+	}
 }

@@ -27,5 +27,20 @@ namespace BUS
                 DAO_ChienLuocUuDai.ThemUuDaiChoDN(maDN, uuDai);
             }
         }
+
+        public static void ThemUD(DTO_ChienLuocUuDai ud)
+        {
+            DAO_ChienLuocUuDai.ThemUD(ud);
+        }
+
+        public static void XoaUD(string maUD)
+        {
+            DAO_ChienLuocUuDai.XoaUD(maUD);
+
+        }
+        public static void SuaUD(DTO_ChienLuocUuDai ud)
+        {
+            DAO_ChienLuocUuDai.SuaUD(ud);
+        }
     }
 }

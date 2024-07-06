@@ -1,4 +1,4 @@
-﻿namespace GUI.UC
+﻿namespace GUI.UserControls
 {
 	partial class GUI_HoaDonThongTinDangTuyen
 	{

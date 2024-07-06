@@ -1,7 +1,11 @@
-﻿USE QL_HSUT;
---use master;
---CREATE DATABASE QL_HSUT;
---drop DATABASE QL_HSUT;
+﻿--USE QL_HSUT;
+use master;
+drop DATABASE QL_HSUT;
+go
+CREATE DATABASE QL_HSUT;
+go
+use QL_HSUT;
+go
 -- Creating tables
 
 -- Table TAIKHOAN
@@ -82,7 +86,7 @@ create table THONGTINDANGTUYEN (
    MADN                 varchar(50)          null,
    SONGAYDT             int                  null,
    MAHTDT               varchar(50)          null,
-   THOIGIANXETTUYEN     int                  null,
+   THOIGIANDANGTUYEN    date                  null,
    TRANGTHAI            nvarchar(20)          null,
    TINHTRANG            nvarchar(20)          null,
    TENVITRI             nvarchar(50)          null,
@@ -238,13 +242,13 @@ GO
 select * from HINHTHUCDANGTUYEN;
 go
 -- Insert   THONGTINDANGTUYEN
-INSERT INTO THONGTINDANGTUYEN (MaDN, SoNgayDT, MaHTDT, ThoiGianXetTuyen, TrangThai, TinhTrang, TenViTri, SoLuong, gia, YeuCau) VALUES
-('123568', 30, 'HT001', 15, N'Chưa đăng tuyển', N'Chưa xét duyệt', N'Dev,BA,TEST', 3,300000, N'Biết lập trình Java'),
-('223587', 45, 'HT001', 20, N'Đã đăng tuyển', N'Hợp lệ', N'Kế toán', 2, 250000,N'Tốt nghiệp đại học chuyên ngành kế toán'),
-('23568', 60, 'HT001', 25, N'Chưa đăng tuyển', N'Chưa xét duyệt', N'Thực tập sinh', 5,150000, N'Sinh viên năm cuối'),
-('23568', 30, 'HT001', 10, N'Chưa đăng tuyển', N'Chưa xét duyệt', N'Nhà thiết kế đồ họa', 1,123000, N'Sử dụng thành thạo Photoshop'),
-('23568', 40, 'HT001', 15, N'Đã đăng tuyển', N'Hợp lệ', N'Quản lý dự án', 2,450000, N'Kinh nghiệm 3 năm trong quản lý dự án'),
-('123568', 25, 'HT001', 18, N'Đã đăng tuyển', N'Hợp lệ', N'Chuyên viên tư vấn', 3,440000, N'Có kỹ năng giao tiếp tốt');
+INSERT INTO THONGTINDANGTUYEN (MaDN, SoNgayDT, MaHTDT, ThoiGianDangTuyen, TrangThai, TinhTrang, TenViTri, SoLuong, gia, YeuCau) VALUES
+('123568', 30, 'HT001', '2024-5-4', N'Chưa đăng tuyển', N'Chưa xét duyệt', N'Dev,BA,TEST', 3,300000, N'Biết lập trình Java'),
+('223587', 45, 'HT001', '2024-5-4', N'Đã đăng tuyển', N'Hợp lệ', N'Kế toán', 2, 250000,N'Tốt nghiệp đại học chuyên ngành kế toán'),
+('23568', 60, 'HT001', '2024-5-4',N'Chưa đăng tuyển', N'Chưa xét duyệt', N'Thực tập sinh', 5,150000, N'Sinh viên năm cuối'),
+('23568', 30, 'HT001', '2024-5-4',N'Chưa đăng tuyển', N'Chưa xét duyệt', N'Nhà thiết kế đồ họa', 1,123000, N'Sử dụng thành thạo Photoshop'),
+('23568', 40, 'HT001', '2024-5-4',N'Đã đăng tuyển', N'Hợp lệ', N'Quản lý dự án', 2,450000, N'Kinh nghiệm 3 năm trong quản lý dự án'),
+('123568', 25, 'HT001', '2024-5-4',N'Đã đăng tuyển', N'Hợp lệ', N'Chuyên viên tư vấn', 3,440000, N'Có kỹ năng giao tiếp tốt');
 go
 INSERT INTO HOADON (MaTTDT, TongTien, CachThuc, TrangThai, NgayLap) VALUES
 (1, 5000000, N'Toàn bộ', N'Chưa thanh toán hoàn tất', '2024-06-01'),

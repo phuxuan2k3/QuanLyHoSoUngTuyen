@@ -15,7 +15,6 @@ public class BUS_ThongTinDangTuyen
 			return (ngayHetHan - DateTime.Now).TotalDays < 3.0;
 		}).ToList();
 		return lsTTDTSapHetHan;
-		return [];
 	}
 
 	public static List<DTO_ThongTinDangTuyen> LayDanhSachTTDT(string maDN)

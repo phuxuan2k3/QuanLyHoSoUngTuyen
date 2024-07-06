@@ -1,7 +1,7 @@
 ﻿using Ctrler.DoanhNghiep;
 using Ctrler.NhanVienTiepNhan;
 using GUI.Styles;
-using GUI.UC;
+using GUI.UserControls;
 
 namespace GUI;
 
@@ -28,7 +28,7 @@ public partial class GUI_DoanhNghiep : Form
 
 	private void btnDanhSachThongTinDangTuyen_Click(object sender, EventArgs e)
 	{
-		var gui = new GUI_DanhSachThongTinDangTuyen();
+        var gui = new GUI_DanhSachThongTinDangTuyen();
 		gui.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
 		SwitchContent(gui);
 	}

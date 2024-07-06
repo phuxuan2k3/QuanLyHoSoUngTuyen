@@ -1,16 +1,10 @@
 ﻿using BUS;
 using DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ctrler.NhanVienTiepNhan
 {
-    public class Ctrler_DanhSachTTDTCanXetDuyet
+	public class Ctrler_DanhSachTTDTCanXetDuyet
     {
-
         private readonly DTO_ThongTinDangTuyen _ttdt;
         private readonly DTO_HinhThucDangTuyen _hinhThucDangTuyen;
         private readonly DTO_DoanhNghiep _DoanhNghiep;

@@ -1,7 +1,7 @@
 ﻿using Ctrler.DoanhNghiep;
 using GUI.GUIException;
 
-namespace GUI.UC
+namespace GUI.UserControls
 {
 	public partial class GUI_DanhSachTTDTCanDangTuyen : UserControl
 	{

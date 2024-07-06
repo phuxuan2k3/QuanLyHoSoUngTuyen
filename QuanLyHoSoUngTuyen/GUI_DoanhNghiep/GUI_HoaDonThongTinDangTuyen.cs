@@ -3,7 +3,7 @@ using DTO;
 using GUI.GUIException;
 using Utilis;
 
-namespace GUI.UC
+namespace GUI.UserControls
 {
     public partial class GUI_HoaDonThongTinDangTuyen : UserControl
 	{
