@@ -9,7 +9,6 @@
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj" />
     <ProjectReference Include="..\DTO\DTO.csproj" />
-    <ProjectReference Include="..\Utilis\Utilis.csproj" />
   </ItemGroup>
 
 </Project>
