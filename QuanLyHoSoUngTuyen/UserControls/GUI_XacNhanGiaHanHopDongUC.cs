@@ -11,17 +11,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilis;
 
-namespace GUI.UC
+namespace GUI.UserControls
 {
     public partial class GUI_XacNhanGiaHanHopDongUC : UserControl
     {
-        private string _maDNHienTai = string.Empty;
+        private DTO_DoanhNghiep _DNHienTai = null!;
         public event EventHandler HuyGiaHan;
 
-        public GUI_XacNhanGiaHanHopDongUC(EventHandler huyGiaHan, string maDNHienTai)
+        public GUI_XacNhanGiaHanHopDongUC(EventHandler huyGiaHan, DTO_DoanhNghiep dNHienTai)
         {
             HuyGiaHan += huyGiaHan;
-            _maDNHienTai = maDNHienTai;
+            _DNHienTai = dNHienTai;
 
             InitializeComponent();
             HienThi();
@@ -34,12 +34,12 @@ namespace GUI.UC
             dsChienLuocUuDai.DataSource = ls_ChienLuocUuDai;
 
             List<DTO_ChienLuocUuDai> ls_ChienLuocUuDaiHienTai;
-            Ctrler.Ctrler_XacNhanGiaHanHopDong.LoadChienLuocUuDaiCuaDN(_maDNHienTai, out ls_ChienLuocUuDaiHienTai);
+            Ctrler.Ctrler_XacNhanGiaHanHopDong.LoadChienLuocUuDaiCuaDN(_DNHienTai.MaDN, out ls_ChienLuocUuDaiHienTai);
 
             var bdls_ChienLuocUuDaiHienTai = new BindingList<DTO_ChienLuocUuDai>(ls_ChienLuocUuDaiHienTai);
             dsChienLuocUuDaiHienTai.DataSource = bdls_ChienLuocUuDaiHienTai;
 
-            lbMaDoanhNghiep.Text = _maDNHienTai;
+            lbMaDoanhNghiep.Text = _DNHienTai.TenDN;
         }
         private void btnApDung_Click(object sender, EventArgs e)
         {
@@ -84,7 +84,7 @@ namespace GUI.UC
             if (MessageBox.Show("Gia hạn hợp đồng của doanh nghiệp với các ưu đãi này?", "Gia hạn hợp đồng", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 var lsChienLuocUuDaiHienTai = dsChienLuocUuDaiHienTai.DataSource as List<DTO_ChienLuocUuDai>;
-                Ctrler_XacNhanGiaHanHopDong.GiaHanDoanhNghiep(_maDNHienTai, lsChienLuocUuDaiHienTai!);
+                Ctrler_XacNhanGiaHanHopDong.GiaHanDoanhNghiep(_DNHienTai.MaDN, lsChienLuocUuDaiHienTai!);
             }
         }
     }

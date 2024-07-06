@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.UC
+namespace GUI.UserControls
 {
     public partial class GUI_ChienLuocUuDai : UserControl
     {

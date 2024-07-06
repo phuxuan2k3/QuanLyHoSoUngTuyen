@@ -39,8 +39,5 @@ namespace Ctrler
         {
             BUS_ThongTinDangTuyen.CapNhatTrangThaiDangTuyen(MaTTDT);
         }
-
-
-
     }
 }

@@ -2,7 +2,7 @@
 using DTO;
 using GUI.GUIException;
 
-namespace GUI.UC
+namespace GUI.UserControls
 {
 	public partial class GUI_XacNhanDangTuyen : UserControl
     {

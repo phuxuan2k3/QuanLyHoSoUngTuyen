@@ -7,14 +7,13 @@ public class BUS_ThongTinDangTuyen
 {
 	public static List<DTO_ThongTinDangTuyen> LayDanhSachTTDTSapHetHan()
 	{
-		//var lsTTDT = DAO_ThongTinDangTuyen.LayDSTTDT();
-		//var lsTTDTSapHetHan = lsTTDT.Where(ttdt =>
-		//{
-		//	var ngayHetHan = ttdt.ThoiGianDangTuyen.AddDays(ttdt.SoNgayDangTuyen);
-		//	return (ngayHetHan - DateTime.Now).TotalDays < 3.0;
-		//}).ToList();
-		//return lsTTDTSapHetHan;
-		return [];
+		var lsTTDT = DAO_ThongTinDangTuyen.LayDSTTDT();
+		var lsTTDTSapHetHan = lsTTDT.Where(ttdt =>
+		{
+			var ngayHetHan = ttdt.ThoiGianDangTuyen.AddDays(ttdt.SoNgayDangTuyen);
+			return (ngayHetHan - DateTime.Now).TotalDays < 3.0;
+		}).ToList();
+		return lsTTDTSapHetHan;
 	}
 
 	public static List<DTO_ThongTinDangTuyen> LayDanhSachTTDT(string maDN)

@@ -1,4 +1,5 @@
-﻿using GUI.UC;
+﻿using DTO;
+using GUI.UserControls;
 using Utilis;
 
 namespace GUI
@@ -32,7 +33,7 @@ namespace GUI
 
         private void TienHanhGiaHanHopDong(object sender, EventArgs e)
         {
-            GUI_XacNhanGiaHanHopDongUC ui_XacNhanGiaHanHopDong = new GUI_XacNhanGiaHanHopDongUC(new EventHandler(HuyGiaHan!), (e as StringEventAgrs)!.Message);
+            GUI_XacNhanGiaHanHopDongUC ui_XacNhanGiaHanHopDong = new GUI_XacNhanGiaHanHopDongUC(new EventHandler(HuyGiaHan!), (e as EventArgs<DTO_DoanhNghiep>)!.Value);
             SwitchContent(ui_XacNhanGiaHanHopDong);
         }
 

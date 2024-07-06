@@ -2,11 +2,11 @@
 using DTO;
 using Utilis;
 
-namespace GUI.UC
+namespace GUI.UserControls
 {
     public partial class GUI_DoanhNghiepSapHetHan : UserControl
     {
-        public string MaDNHienTai { get; set; } = string.Empty;
+        public DTO_DoanhNghiep DNHienTai { get; set; } = null!;
         public event EventHandler GiaHanHopDong;
 
         public GUI_DoanhNghiepSapHetHan(EventHandler giaHanHopDong)
@@ -29,8 +29,8 @@ namespace GUI.UC
         {
             if (e.RowIndex != -1)
             {
-                MaDNHienTai = dsDNHetHan.Rows[e.RowIndex].Cells[0].Value.ToString()!;
-                lbMaDoanhNghiep.Text = MaDNHienTai;
+                DNHienTai = (dsDNHetHan.DataSource as List<DTO_DoanhNghiep>)![e.RowIndex];
+                lbMaDoanhNghiep.Text = DNHienTai.TenDN;
                 List<DTO_KetQuaUngTuyen> lsKetQuaUngTuyen;
                 Ctrler_DoanhNghiepHetHan.LoadKetQuaUngTuyenCuaDN(dsDNHetHan.Rows[e.RowIndex].Cells[0].Value.ToString()!, out lsKetQuaUngTuyen);
                 dsKetQuaUngTuyen.DataSource = lsKetQuaUngTuyen;
@@ -40,13 +40,13 @@ namespace GUI.UC
 
         private void btnGiaHan_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(MaDNHienTai))
+            if (DNHienTai == null)
             {
                 MessageBox.Show("Vui lòng chọn doanh nghiệp để gia hạn.");
                 return;
             }
 
-            GiaHanHopDong?.Invoke(this, new StringEventAgrs(MaDNHienTai));
+            GiaHanHopDong?.Invoke(this, new EventArgs<DTO_DoanhNghiep>(DNHienTai));
         }
     }
 }

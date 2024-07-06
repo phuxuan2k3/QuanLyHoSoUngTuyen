@@ -2,7 +2,7 @@
 using DTO;
 using GUI.GUIException;
 
-namespace GUI.UC;
+namespace GUI.UserControls;
 
 public partial class GUI_DanhSachThongTinDangTuyen : UserControl
 {
@@ -43,7 +43,7 @@ public partial class GUI_DanhSachThongTinDangTuyen : UserControl
 		if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_id"].Value is string maTTDT)
 		{
 			var ctrler = Ctrler_DanhSachThongTinDangTuyen.HienThi_ChiTiet(maTTDT);
-			GUI_ChiTietThongTinDangTuyen content = new();
+			GUI_ChiTietThongTinDangTuyen content = new ();
 			content.HienThi(ctrler);
 			GUI_DoanhNghiep.Instance.SwitchContent(content);
 		}

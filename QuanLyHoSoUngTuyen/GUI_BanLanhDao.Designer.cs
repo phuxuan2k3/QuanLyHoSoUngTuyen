@@ -60,7 +60,7 @@
             pnContent.Size = new Size(815, 424);
             pnContent.TabIndex = 3;
             // 
-            // GUI_BanLanhDao_Base
+            // GUI_BanLanhDao
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -68,7 +68,7 @@
             Controls.Add(pnContent);
             Controls.Add(btnChienLuocUuDai);
             Controls.Add(btnGiaHanHopDong);
-            Name = "GUI_BanLanhDao_Base";
+            Name = "GUI_BanLanhDao";
             Text = "GUI_BanLanhDao_Base";
             ResumeLayout(false);
         }
