@@ -49,18 +49,25 @@ namespace GUI
                 row.Cells["_uuTien"].Value = doUuTien;
 
             }
-            
+
         }
         private void dsPhieuDangKy_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dsPhieuDangKy.Rows[e.RowIndex].Cells["_maUV"].Value is string maUV)
             {
-                var ctrler = new Ctrler_ThongTinPhieuDangKy(_MaTTDT.Text,maUV);
+                var ctrler = new Ctrler_ThongTinPhieuDangKy(_MaTTDT.Text, maUV);
                 GUI_DuyetPhieuDangKy_Duyet content = new();
                 content.HienThi(ctrler);
                 GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
 
             }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            GUI_DuyetPhieuDangKy_DanhSachThongTinDangTuyen content = new();
+            content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(""));
+            GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
         }
     }
 }

@@ -101,5 +101,13 @@ namespace GUI
             }
 
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyen(_MaTTDT.Text);
+            GUI_DuyetPhieuDangKy_ChiTietThongTinDangTuyen content = new();
+            content.HienThi(ctrler);
+            GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
+        }
     }
 }

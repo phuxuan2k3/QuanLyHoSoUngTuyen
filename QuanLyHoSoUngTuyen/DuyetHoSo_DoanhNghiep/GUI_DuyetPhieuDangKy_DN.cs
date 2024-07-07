@@ -27,8 +27,7 @@ public partial class GUI_DuyetPhieuDangKy_DN : UserControl
         DTO_ThongTinDangTuyen ttdt = new DTO_ThongTinDangTuyen();
         DTO_ThongTinHoSo pdk = new DTO_ThongTinHoSo();
         ctrler_ChiTietPhieuDangKy.ThongTinDuyet(ref ttdt, ref pdk);
-        lbTTDT.Text = ttdt.MaTTDT.ToString();    
-        _MaUV.Text = pdk.MaUV;
+        lbTTDT.Text = "Mã TTDT: " + ttdt.MaTTDT.ToString(); _MaUV.Text = pdk.MaUV;
         _viTri.Text = pdk.ViTri;
         _bangCap.Text = pdk.BangCap;
         cbxTinhTrang.Text = pdk.TrangThai.ToString();
@@ -80,13 +79,34 @@ public partial class GUI_DuyetPhieuDangKy_DN : UserControl
                 });
             }
 
-            
+            content.dsPhieuDangKy.Rows.Clear();
+            foreach (var pdk in dsPhDK)
+            {
+                int rowId = content.dsPhieuDangKy.Rows.Add();
+                DataGridViewRow row = content.dsPhieuDangKy.Rows[rowId];
+                row.Cells["_maUV"].Value = pdk.MaUV;
+                row.Cells["_trangThai"].Value = pdk.TrangThai;
+                row.Cells["_uuTien"].Value = pdk.UuTien == int.MaxValue ? "" : pdk.UuTien.ToString(); // Hiển thị giá trị ưu tiên nếu có
+            }
+
             // Hiển thị nội dung đã cập nhật
             GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
         }
         catch (Exception ex)
         {
             MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    private void btnHuy_Click(object sender, EventArgs e)
+    {
+        string[] parts = lbTTDT.Text.Split(':');
+        if (parts.Length > 1 && int.TryParse(parts[1].Trim(), out int maTTDT))
+        {
+            var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyen(maTTDT.ToString());
+            GUI_DanhSachPhieuDK_DN content = new();
+            content.HienThi(ctrler);
+            GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
         }
     }
 }

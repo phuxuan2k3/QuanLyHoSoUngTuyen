@@ -40,7 +40,7 @@
             lbVtriUV = new Label();
             lb_BangCap = new Label();
             lbMaPhieuDK = new Label();
-            button2 = new Button();
+            btnHuy = new Button();
             lbTTDT = new Label();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -157,16 +157,17 @@
             lbMaPhieuDK.TabIndex = 10;
             lbMaPhieuDK.Text = "Mã Ứng viên:";
             // 
-            // button2
+            // btnHuy
             // 
-            button2.BackColor = Color.Red;
-            button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            button2.Location = new Point(646, 393);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 19;
-            button2.Text = "Hủy";
-            button2.UseVisualStyleBackColor = false;
+            btnHuy.BackColor = Color.Red;
+            btnHuy.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnHuy.Location = new Point(646, 393);
+            btnHuy.Name = "btnHuy";
+            btnHuy.Size = new Size(94, 29);
+            btnHuy.TabIndex = 19;
+            btnHuy.Text = "Hủy";
+            btnHuy.UseVisualStyleBackColor = false;
+            btnHuy.Click += btnHuy_Click;
             // 
             // lbTTDT
             // 
@@ -186,7 +187,7 @@
             Controls.Add(cbxTinhTrang);
             Controls.Add(lbTinhTrang);
             Controls.Add(panel2);
-            Controls.Add(button2);
+            Controls.Add(btnHuy);
             Controls.Add(lb1);
             Name = "GUI_DuyetPhieuDangKy_DN";
             Size = new Size(799, 448);
@@ -209,7 +210,7 @@
         private Label lbVtriUV;
         private Label lb_BangCap;
         private Label lbMaPhieuDK;
-        private Button button2;
+        private Button btnHuy;
         private Label lbTTDT;
     }
 }

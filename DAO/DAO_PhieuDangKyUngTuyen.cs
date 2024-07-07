@@ -82,4 +82,34 @@ public static DTO_ThongTinHoSo LayThongTinDangTuyenTheoMaUV(string maTTDT, strin
 
         }
     }
+    public static List<DTO_UngVienDat> LayDanhSachUngVienDat(string maTTDT)
+    {
+        string query = "SELECT  p.MAUV,u.Email, u.TenUngVien " +
+                       "FROM PHIEUDANGKYUNGTUYEN p " +
+                       "JOIN UNGVIEN u ON p.MAUV = u.MaUngVien " +
+                       "WHERE p.MATTDT = @MaTTDT AND p.TRANGTHAI = N'Đạt'";
+
+        DataTable dataTable = new DataTable();
+        using (SqlCommand cmd = new SqlCommand(query, SqlSingleton.Instance.Connection))
+        {
+            cmd.Parameters.AddWithValue("@MaTTDT", maTTDT);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dataTable);
+        }
+
+        List<DTO_UngVienDat> danhSachUngVien = new List<DTO_UngVienDat>();
+        foreach (DataRow row in dataTable.Rows)
+        {
+            DTO_UngVienDat ungVien = new DTO_UngVienDat
+            {
+                MaUV = row["MaUV"].ToString(),
+                TenUV = row["TenUngVien"].ToString(),
+                Email = row["Email"].ToString(),
+            };
+            danhSachUngVien.Add(ungVien);
+        }
+
+        return danhSachUngVien;
+    }
+
 }

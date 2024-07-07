@@ -285,6 +285,7 @@
             btnHuy.TabIndex = 31;
             btnHuy.Text = "Hủy";
             btnHuy.UseVisualStyleBackColor = false;
+            btnHuy.Click += btnHuy_Click;
             // 
             // lb1
             // 

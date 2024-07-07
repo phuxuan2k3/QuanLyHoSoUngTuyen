@@ -47,6 +47,7 @@
             btnHuy.TabIndex = 8;
             btnHuy.Text = "Hủy";
             btnHuy.UseVisualStyleBackColor = false;
+            btnHuy.Click += btnHuy_Click;
             // 
             // dsThongTinDangTuyen
             // 

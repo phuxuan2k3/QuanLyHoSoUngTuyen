@@ -23,7 +23,7 @@ namespace GUI
             get => _ctrler_DanhSachThongTinDangTuyen ?? throw new ControllerNotFoundException();
             set => _ctrler_DanhSachThongTinDangTuyen = value;
         }
-        
+
         public GUI_DuyetPhieuDangKy_DanhSachThongTinDangTuyen()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace GUI
 
         private void dsThongTinDangTuyen_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_maTTDT"].Value is string maTTDT)
+            if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_maTTDT"].Value is string maTTDT)
             {
                 var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyen(maTTDT);
                 GUI_DuyetPhieuDangKy_ChiTietThongTinDangTuyen content = new();
@@ -56,5 +56,11 @@ namespace GUI
             }
         }
 
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            GUI_DuyetPhieuDangKy_DanhSachThongTinDangTuyen content = new();
+            content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(""));
+            GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
+        }
     }
 }

@@ -34,6 +34,7 @@
             dsPhieuDangKy = new DataGridView();
             _maUV = new DataGridViewTextBoxColumn();
             _trangThai = new DataGridViewTextBoxColumn();
+            _uuTien = new DataGridViewTextBoxColumn();
             btnHuy = new Button();
             panel2 = new Panel();
             _YeuCau = new TextBox();
@@ -47,7 +48,6 @@
             lb_MoTa = new Label();
             lb1 = new Label();
             pageSetupDialog1 = new PageSetupDialog();
-            _uuTien = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dsPhieuDangKy).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -109,6 +109,13 @@
             _trangThai.Name = "_trangThai";
             _trangThai.ReadOnly = true;
             // 
+            // _uuTien
+            // 
+            _uuTien.HeaderText = "Ưu tiên";
+            _uuTien.MinimumWidth = 6;
+            _uuTien.Name = "_uuTien";
+            _uuTien.ReadOnly = true;
+            // 
             // btnHuy
             // 
             btnHuy.BackColor = Color.Red;
@@ -119,6 +126,7 @@
             btnHuy.TabIndex = 8;
             btnHuy.Text = "Hủy";
             btnHuy.UseVisualStyleBackColor = false;
+            btnHuy.Click += btnHuy_Click;
             // 
             // panel2
             // 
@@ -230,13 +238,6 @@
             lb1.Size = new Size(237, 31);
             lb1.TabIndex = 5;
             lb1.Text = "Thông tin đăng tuyển";
-            // 
-            // _uuTien
-            // 
-            _uuTien.HeaderText = "Ưu tiên";
-            _uuTien.MinimumWidth = 6;
-            _uuTien.Name = "_uuTien";
-            _uuTien.ReadOnly = true;
             // 
             // GUI_DuyetPhieuDangKy_ChiTietThongTinDangTuyen
             // 

@@ -49,6 +49,7 @@
             btnHuy.TabIndex = 8;
             btnHuy.Text = "Hủy";
             btnHuy.UseVisualStyleBackColor = false;
+            btnHuy.Click += btnHuy_Click;
             // 
             // lb_dsTTDT
             // 
@@ -70,6 +71,7 @@
             button1.TabIndex = 9;
             button1.Text = "Thông báo đến Ứng viên";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // dsPhieuDangKy
             // 
