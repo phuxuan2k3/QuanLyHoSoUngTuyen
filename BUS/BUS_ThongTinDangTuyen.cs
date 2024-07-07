@@ -34,12 +34,12 @@ public class BUS_ThongTinDangTuyen
 
 	public static List<DTO_ThongTinDangTuyen> LayDSTTDTCanXetDuyet()
 	{
-		return DAO_ThongTinDangTuyen.LayTTDTCanXetDuyet();
+		return DAO_ThongTinDangTuyen.LayDSTTDTCanXetDuyet();
 	}
 
-	public static List<DTO_ThongTinDangTuyen> LayDSTTDTHopLe()
+	public static List<DTO_ThongTinDangTuyen> LayDSTTDTCanDangTuyen()
 	{
-		return DAO_ThongTinDangTuyen.LoadTTDTHopLe();
+		return DAO_ThongTinDangTuyen.LayDSTTDTCanDangTuyen();
 	}
 
 	private static bool KiemTra(DTO_ThongTinDangTuyen thongTinDangTuyen)
@@ -80,14 +80,13 @@ public class BUS_ThongTinDangTuyen
 		DAO_ThongTinDangTuyen.CapNhat(thongTinDangTuyen);
 	}
 
-	public static void CapNhatTrangThaiXetDuyet(string MaTTDT, string tinhTrang)
+	public static void CapNhatTrangThai(string MaTTDT, TrangThaiThongTinDangTuyen trangThai)
 	{
-		DAO_ThongTinDangTuyen.CapNhatTrangThaiTTDT(MaTTDT, tinhTrang);
-
+		DAO_ThongTinDangTuyen.CapNhatTrangThai(MaTTDT, trangThai);
 	}
 
-	public static void CapNhatTinhTrangDangTuyen(string MaTTDT)
+	public static void CapNhatDaDangTuyen(string MaTTDT)
 	{
-		DAO_ThongTinDangTuyen.CapNhatTrangThaiDangTuyen(MaTTDT);
+		DAO_ThongTinDangTuyen.CapNhatDaDangTuyen(MaTTDT);
 	}
 }

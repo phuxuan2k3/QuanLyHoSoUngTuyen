@@ -11,17 +11,13 @@ namespace GUI.UserControls
 			InitializeComponent();
 		}
 
-
-
 		private Ctrler_DanhSachTTDTCanXetDuyet? _ctrler_DanhSachThongTinDangTuyen;
-
 
 		public Ctrler_DanhSachTTDTCanXetDuyet Ctrler_DanhSachThongTinDangTuyen
 		{
 			get => _ctrler_DanhSachThongTinDangTuyen ?? throw new ControllerNotFoundException();
 			set => _ctrler_DanhSachThongTinDangTuyen = value;
 		}
-
 
 		public void HienThi(Ctrler_DanhSachTTDTCanXetDuyet ctrler_DanhSachThongTinDangTuyen)
 		{

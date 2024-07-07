@@ -11,6 +11,7 @@ namespace GUI.UserControls
 		{
 			InitializeComponent();
 		}
+
 		private Ctrler_DanhSachTTDTCanDangTuyen? _ctrler_DanhSachThongTinDangTuyen;
 
 		public Ctrler_DanhSachTTDTCanDangTuyen Ctrler_DanhSachThongTinDangTuyen
@@ -48,6 +49,5 @@ namespace GUI.UserControls
 				GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
 			}
 		}
-
 	}
 }

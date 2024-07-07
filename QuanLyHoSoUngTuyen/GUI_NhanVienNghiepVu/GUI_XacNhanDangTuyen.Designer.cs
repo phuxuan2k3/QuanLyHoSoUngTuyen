@@ -249,7 +249,7 @@
 			flowLayoutPanel10.Controls.Add(_TenDN);
 			flowLayoutPanel10.Dock = DockStyle.Bottom;
 			flowLayoutPanel10.Location = new Point(44, 67);
-			flowLayoutPanel10.Margin = new Padding(4, 4, 4, 4);
+			flowLayoutPanel10.Margin = new Padding(4);
 			flowLayoutPanel10.Name = "flowLayoutPanel10";
 			flowLayoutPanel10.Size = new Size(512, 40);
 			flowLayoutPanel10.TabIndex = 9;
@@ -510,7 +510,7 @@
 			// btnXacNhan
 			// 
 			btnXacNhan.Location = new Point(790, 488);
-			btnXacNhan.Margin = new Padding(4, 4, 4, 4);
+			btnXacNhan.Margin = new Padding(4);
 			btnXacNhan.Name = "btnXacNhan";
 			btnXacNhan.Size = new Size(119, 36);
 			btnXacNhan.TabIndex = 8;
@@ -524,7 +524,7 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			Controls.Add(label1);
 			Controls.Add(tableLayoutPanel2);
-			Margin = new Padding(4, 4, 4, 4);
+			Margin = new Padding(4);
 			Name = "GUI_XacNhanDangTuyen";
 			Size = new Size(1055, 746);
 			flowLayoutPanel3.ResumeLayout(false);

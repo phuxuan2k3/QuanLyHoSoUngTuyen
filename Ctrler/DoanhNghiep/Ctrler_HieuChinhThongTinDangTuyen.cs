@@ -27,6 +27,8 @@ public class Ctrler_HieuChinhThongTinDangTuyen
 		_thongTinDangTuyen.TenViTri = thongTinDangTuyen.TenViTri;
 		_thongTinDangTuyen.SoLuong = thongTinDangTuyen.SoLuong;
 		_thongTinDangTuyen.YeuCau = thongTinDangTuyen.YeuCau;
+		_thongTinDangTuyen.TinhTrang = TinhTrangThongTinDangTuyen.CanHieuChinh;
+		_thongTinDangTuyen.TrangThai = TrangThaiThongTinDangTuyen.ChuaXetDuyet;
 		BUS_ThongTinDangTuyen.CapNhat(_thongTinDangTuyen);
 	}
 

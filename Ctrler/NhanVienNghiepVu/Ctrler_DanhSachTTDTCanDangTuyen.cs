@@ -7,7 +7,7 @@ namespace Ctrler.NhanVienNghiepVu
     {
         public void Load(ref List<DTO_ThongTinDangTuyen> thongTinDangTuyen)
         {
-            thongTinDangTuyen = BUS_ThongTinDangTuyen.LayDSTTDTHopLe();
+            thongTinDangTuyen = BUS_ThongTinDangTuyen.LayDSTTDTCanDangTuyen();
         }
 
         public Ctrler_XacNhanDangTuyen HienThi_XacNhanDangTuyen(string maTTDT)

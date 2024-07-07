@@ -6,17 +6,17 @@ namespace Ctrler.DoanhNghiep
 {
 	public class Ctrler_HoaDonThongTinDangTuyen
 	{
-		private readonly DTO_ThongTinDangTuyen _thongTinDangTuyen;
-		private readonly DTO_HoaDon _hoaDon;
-		private readonly DTO_HinhThucDangTuyen _hinhThucDangTuyen;
-		private readonly List<DTO_ChiTietHoaDon> _dsChiTietHoaDon;
+		private DTO_ThongTinDangTuyen _thongTinDangTuyen;
+		private DTO_HoaDon _hoaDon;
+		private DTO_HinhThucDangTuyen _hinhThucDangTuyen;
+		private List<DTO_ChiTietHoaDon> _dsChiTietHoaDon;
 
 		public Ctrler_HoaDonThongTinDangTuyen(DTO_ThongTinDangTuyen thongTinDangTuyen, DTO_HoaDon hoaDon, DTO_HinhThucDangTuyen hinhThucDangTuyen)
 		{
 			_thongTinDangTuyen = thongTinDangTuyen;
 			_hoaDon = hoaDon;
 			_hinhThucDangTuyen = hinhThucDangTuyen;
-			_dsChiTietHoaDon = BUS_HoaDon.LayTatCaChiTiet(thongTinDangTuyen.MaTTDT);
+			_dsChiTietHoaDon = new();
 		}
 
 		public void Load(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HoaDon hoaDon, ref DTO_HinhThucDangTuyen hinhThucDangTuyen, ref List<DTO_ChiTietHoaDon> dsChiTietHoaDon)
@@ -24,6 +24,7 @@ namespace Ctrler.DoanhNghiep
 			thongTinDangTuyen = _thongTinDangTuyen;
 			hoaDon = _hoaDon;
 			hinhThucDangTuyen = _hinhThucDangTuyen;
+			_dsChiTietHoaDon = BUS_HoaDon.LayTatCaChiTiet(thongTinDangTuyen.MaTTDT);
 			dsChiTietHoaDon = _dsChiTietHoaDon;
 		}
 

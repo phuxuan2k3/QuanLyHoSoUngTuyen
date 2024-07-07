@@ -16,7 +16,6 @@ namespace Ctrler.NhanVienThanhToan
 			_hoaDon = hoaDon;
 			_doanhNghiep = doanhNghiep;
 			_chiTietHoaDons = chiTietHoaDons;
-			_lanDongHienTai = BUS_HoaDon.TaoLanThanhToan(hoaDon, chiTietHoaDons);
 		}
 
 		public void Load(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HoaDon hoaDon, ref DTO_DoanhNghiep doanhNghiep, ref List<DTO_ChiTietHoaDon> chiTietHoaDons, ref DTO_ChiTietHoaDon? lanDongHienTai)
@@ -25,6 +24,7 @@ namespace Ctrler.NhanVienThanhToan
 			hoaDon = _hoaDon;
 			doanhNghiep = _doanhNghiep;
 			chiTietHoaDons = _chiTietHoaDons;
+			_lanDongHienTai = BUS_HoaDon.TaoLanThanhToan(hoaDon, chiTietHoaDons);
 			lanDongHienTai = _lanDongHienTai;
 		}
 
