@@ -30,6 +30,10 @@ namespace GUI
 
         private void ResizeAll(Control control, Size newSize)
         {
+            if (oldSize.Width == 0 || oldSize.Height == 0)
+            {
+                return;
+            }
             int widthChange = newSize.Width - oldSize.Width;
             control.Left += (control.Left * widthChange) / oldSize.Width;
             control.Width += (control.Width * widthChange) / oldSize.Width;

@@ -16,4 +16,6 @@ namespace Utilis
             Value = val;
         }
     }
+
+    public delegate void CustomEventHandler<T>(object sender, EventArgs<T> args);
 }

@@ -1,10 +1,27 @@
 ﻿using DTO;
 using System.Data;
+using System.Data.SqlClient;
 using Utilis;
 namespace DAO
 {
     public class DAO_DoanhNghiep
     {
+        private const string tableName = "DOANHNGHIEP";
+
+        public static void ThemDoanhNghiep(DTO_DoanhNghiep doanhNghiep)
+        {
+            string query = $@"  INSERT INTO {tableName}(TenDoanhNghiep, MASOTHUE,NGUOIDAIDIEN,DIACHI,EMAIL,TRANGTHAI,NGAYDK,TenTaiKhoan)
+VALUES(@TenDoanhNghiep, @MASOTHUE,@NGUOIDAIDIEN,@DIACHI,@EMAIL,@TRANGTHAI,@NGAYDK,@TenTaiKhoan);";
+            SqlSingleton.Instance.ExecuteNonQuery(query, [
+                new SqlParameter("TenDoanhNghiep", doanhNghiep.TenDN),
+                new SqlParameter("MASOTHUE", doanhNghiep.TenDN),
+                new SqlParameter("NGUOIDAIDIEN", doanhNghiep.NguoiDaiDien),
+                new SqlParameter("DIACHI", doanhNghiep.DiaChi),
+                new SqlParameter("EMAIL", doanhNghiep.Email),
+                new SqlParameter("TRANGTHAI", doanhNghiep.TrangThai.GetString()),
+                new SqlParameter("NGAYDK", DateTime.Now.ToString()),
+                new SqlParameter("TenTaiKhoan", doanhNghiep.TenTaiKhoan)]);
+        }
         public static List<DTO_DoanhNghiep> LayDNChuaXacThuc()
         {
 

@@ -52,7 +52,7 @@ namespace GUI.UserControls
 			//{
 			//    var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyenHopLe(maTTDT);
 			//    GUI_XacNhanDangTuyen content = new();
-			//    content.HienThi(ctrler);
+			//    content.KhoiTaoManHinh(ctrler);
 			//    GUI_DoanhNghiep.Instance.SwitchContent(content);
 			//}
 		}

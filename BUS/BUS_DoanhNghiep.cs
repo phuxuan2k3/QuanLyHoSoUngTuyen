@@ -19,11 +19,12 @@ namespace BUS
 
         public static DTO_DoanhNghiep LoadTTDN(string MaDN)
         {
-            return DAO_DoanhNghiep.LoadTTDN(MaDN);  
+            return DAO_DoanhNghiep.LoadTTDN(MaDN);
         }
 
-        public static void CapNhatTrangThaiDN(string MaDN,string TrangThai) {
-            
+        public static void CapNhatTrangThaiDN(string MaDN, string TrangThai)
+        {
+
             DAO_DoanhNghiep.CapNhatTrangThaiDN(MaDN, TrangThai);
         }
 
@@ -37,6 +38,10 @@ namespace BUS
             return DAO_DoanhNghiep.KiemTraTrangThai(maDN);
         }
 
+        public static void ThemDoanhNghiep(DTO_DoanhNghiep doanhNghiep)
+        {
+            DAO_DoanhNghiep.ThemDoanhNghiep(doanhNghiep);
+        }
         public static DTO_DoanhNghiep LayThongTinDoanhNghiep(string maDoanhNghiep)
         {
             return DAO_DoanhNghiep.LayThongTinDoanhNghiep(maDoanhNghiep);

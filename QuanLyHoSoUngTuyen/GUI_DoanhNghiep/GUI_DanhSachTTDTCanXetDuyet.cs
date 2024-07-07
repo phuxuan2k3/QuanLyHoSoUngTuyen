@@ -58,7 +58,7 @@ namespace GUI.UserControls
             //{
             //    var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyenXD(maTTDT);
             //    GUI_XetDuyetThongTinDangTuyen content = new();
-            //    content.HienThi(ctrler);
+            //    content.KhoiTaoManHinh(ctrler);
             //    GUI_DoanhNghiep.Instance.SwitchContent(content);
             //}
         }
