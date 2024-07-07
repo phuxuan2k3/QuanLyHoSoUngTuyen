@@ -1,4 +1,5 @@
 ﻿using Ctrler;
+using Ctrler.DoanhNghiep;
 using DTO;
 using GUI.GUIException;
 using Utilis;
@@ -47,18 +48,7 @@ namespace GUI.UserControls
 
 		private void btnXuatHoaDon_Click(object sender, EventArgs e)
 		{
-			using SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-			saveFileDialog1.InitialDirectory = @"C:\";
-			saveFileDialog1.Title = "Save PDF";
-			saveFileDialog1.CheckFileExists = true;
-			saveFileDialog1.CheckPathExists = true;
-			saveFileDialog1.DefaultExt = "pdf";
-			saveFileDialog1.RestoreDirectory = true;
-			if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-			{
-				var outPath = saveFileDialog1.FileName;
-				Ctrler_HoaDonThongTinDangTuyen.XuatPDF(outPath);
-			}
+
 		}
 
 		private void btnQuayLai_Click(object sender, EventArgs e)

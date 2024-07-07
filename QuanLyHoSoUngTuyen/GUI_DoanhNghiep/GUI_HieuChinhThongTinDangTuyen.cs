@@ -1,4 +1,5 @@
 ﻿using Ctrler;
+using Ctrler.DoanhNghiep;
 using GUI.GUIException;
 
 namespace GUI.UserControls;

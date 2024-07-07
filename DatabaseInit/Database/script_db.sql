@@ -102,7 +102,7 @@ create table HINHTHUCDANGTUYEN (
     MaHinhThuc varchar(50) not null primary key,
     TenHinhThuc nvarchar(100),
     MoTa nvarchar(100) null,
-    Gia float
+    Gia float not null,
 );
 go
 

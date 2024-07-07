@@ -1,4 +1,5 @@
-﻿using Ctrler;
+﻿using Ctrler.DoanhNghiep;
+using Ctrler.NhanVienTiepNhan;
 using GUI.Styles;
 using GUI.UserControls;
 
@@ -53,16 +54,11 @@ public partial class GUI_DoanhNghiep : Form
     private void btnXetDuyetTTDT_Click(object sender, EventArgs e)
     {
         GUI_DanhSachTTDTCanXetDuyet content = new();
-        content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
+        content.HienThi(new Ctrler_DanhSachTTDTCanXetDuyet());
         SwitchContent(content);
     }
 
-    private void btnDangTuyenTTDT_Click(object sender, EventArgs e)
-    {
-        GUI_DanhSachTTDTCanDangTuyen content = new();
-        content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
-        SwitchContent(content);
-    }
+
 
     private void btnCapNhatTTDN_Click(object sender, EventArgs e)
     {

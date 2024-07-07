@@ -37,13 +37,15 @@
             btnDuyetPhieuDangKy = new Button();
             btnDuyet_DoanhNghiep = new Button();
             button8 = new Button();
+            panel1 = new Panel();
+            btnDangTuyenTTDT = new Button();
             _container = new Panel();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(3, 3);
+            button1.Location = new Point(102, 3);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 0;
@@ -52,6 +54,7 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.Controls.Add(btnDangTuyenTTDT);
             flowLayoutPanel1.Controls.Add(button1);
             flowLayoutPanel1.Controls.Add(button2);
             flowLayoutPanel1.Controls.Add(button3);
@@ -67,7 +70,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(103, 3);
+            button2.Location = new Point(202, 3);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 1;
@@ -76,7 +79,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(203, 3);
+            button3.Location = new Point(302, 3);
             button3.Name = "button3";
             button3.Size = new Size(94, 29);
             button3.TabIndex = 2;
@@ -85,7 +88,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(303, 3);
+            button4.Location = new Point(402, 3);
             button4.Name = "button4";
             button4.Size = new Size(94, 29);
             button4.TabIndex = 3;
@@ -94,7 +97,7 @@
             // 
             // button5
             // 
-            button5.Location = new Point(403, 3);
+            button5.Location = new Point(502, 3);
             button5.Name = "button5";
             button5.Size = new Size(94, 29);
             button5.TabIndex = 4;
@@ -137,6 +140,19 @@
             _container.Size = new Size(800, 412);
             _container.TabIndex = 2;
             // 
+            // btnDangTuyenTTDT
+            // 
+            btnDangTuyenTTDT.AutoSize = true;
+            btnDangTuyenTTDT.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnDangTuyenTTDT.Location = new Point(2, 2);
+            btnDangTuyenTTDT.Margin = new Padding(2);
+            btnDangTuyenTTDT.Name = "btnDangTuyenTTDT";
+            btnDangTuyenTTDT.Size = new Size(95, 30);
+            btnDangTuyenTTDT.TabIndex = 5;
+            btnDangTuyenTTDT.Text = "Đăng tuyển";
+            btnDangTuyenTTDT.UseVisualStyleBackColor = true;
+            btnDangTuyenTTDT.Click += btnDangTuyenTTDT_Click;
+            // 
             // GUI_NhanVienNghiepVu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -147,6 +163,7 @@
             Name = "GUI_NhanVienNghiepVu";
             Text = "GUI_NhanVienNghiepVu";
             flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -162,5 +179,7 @@
         private Button btnDuyet_DoanhNghiep;
         private Button button8;
         private Panel _container;
+        private Panel panel1;
+        private Button btnDangTuyenTTDT;
     }
 }

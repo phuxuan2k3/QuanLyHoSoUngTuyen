@@ -368,3 +368,5 @@ FodyWeavers.xsd
 /Console.An/ConsoleTest.An.csproj
 /QuanLyHoSoUngTuyen/App.config
 /Utilis/App.config
+/DatabaseInit/App.config
+/QuanLyHoSoUngTuyen/App.config

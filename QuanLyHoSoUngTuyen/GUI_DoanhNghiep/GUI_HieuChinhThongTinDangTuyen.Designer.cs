@@ -38,11 +38,11 @@
 			label1.Anchor = AnchorStyles.None;
 			label1.AutoSize = true;
 			label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label1.Location = new Point(212, 18);
+			label1.Location = new Point(231, 18);
 			label1.Name = "label1";
-			label1.Size = new Size(381, 31);
+			label1.Size = new Size(343, 31);
 			label1.TabIndex = 0;
-			label1.Text = "Hiệu Chỉnh Thông Tin Đăng Tuyển";
+			label1.Text = "Chi Tiết Thông Tin Đăng Tuyển";
 			// 
 			// tableLayoutPanel1
 			// 
@@ -58,12 +58,12 @@
 			tableLayoutPanel1.Size = new Size(806, 456);
 			tableLayoutPanel1.TabIndex = 1;
 			// 
-			// GUI_HieuChinhThongTinDangTuyen
+			// GUI_ChiTietThongTinDangTuyen
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
 			Controls.Add(tableLayoutPanel1);
-			Name = "GUI_HieuChinhThongTinDangTuyen";
+			Name = "GUI_ChiTietThongTinDangTuyen";
 			Size = new Size(806, 456);
 			tableLayoutPanel1.ResumeLayout(false);
 			tableLayoutPanel1.PerformLayout();

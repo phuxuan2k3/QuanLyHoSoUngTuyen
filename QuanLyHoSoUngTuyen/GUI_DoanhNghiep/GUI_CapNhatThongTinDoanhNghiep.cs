@@ -1,18 +1,9 @@
-﻿using Ctrler;
+﻿using Ctrler.DoanhNghiep;
 using DTO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GUI.UserControls
 {
-    public partial class GUI_CapNhatThongTinDoanhNghiep : UserControl
+	public partial class GUI_CapNhatThongTinDoanhNghiep : UserControl
     {
         public GUI_CapNhatThongTinDoanhNghiep()
         {
@@ -23,7 +14,7 @@ namespace GUI.UserControls
         public void HienThi(string MaDN)
         {
             DTO_DoanhNghiep doanhNghiep = new();
-            Ctrler_CapNhatThongTinDn ctrler = new();
+            Ctrler_CapNhatThongTinDoanhNghiep ctrler = new();
             doanhNghiep = ctrler.Load(MaDN);
             txbTenDN.Text = doanhNghiep.TenDN;
             txbMST.Text = doanhNghiep.MaSoThue;
@@ -53,7 +44,7 @@ namespace GUI.UserControls
                 Email = txbEmail.Text,
                 MaDN = maDN
             };
-            Ctrler_CapNhatThongTinDn ctrler = new();
+            Ctrler_CapNhatThongTinDoanhNghiep ctrler = new();
             ctrler.CapNhatTTDN(doanhNghiep);
         }
 

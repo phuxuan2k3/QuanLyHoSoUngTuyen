@@ -1,7 +1,7 @@
 ﻿using BUS;
 using DTO;
 
-namespace Ctrler;
+namespace Ctrler.DoanhNghiep;
 
 public class Ctrler_ChiTietThongTinDangTuyen
 {
@@ -30,7 +30,7 @@ public class Ctrler_ChiTietThongTinDangTuyen
 
 	public Ctrler_HieuChinhThongTinDangTuyen HienThi_HieuChinh()
 	{
-		return new Ctrler_HieuChinhThongTinDangTuyen(_thongTinDangTuyen, _hinhThucDangTuyen);
+		return new Ctrler_HieuChinhThongTinDangTuyen(_thongTinDangTuyen, _hoaDon, _hinhThucDangTuyen);
 	}
     public static void CapNhatThongTinPhieuDangKy(DTO_ThongTinHoSo ttpdk)
     {

@@ -1,4 +1,5 @@
 ﻿using DAO;
+using DAO.Exceptions;
 using DTO;
 
 namespace BUS;
@@ -31,9 +32,9 @@ public class BUS_ThongTinDangTuyen
 		return DAO_ThongTinDangTuyen.LayTatCaCuaDoanhNghiep(maDN);
 	}
 
-	public static List<DTO_ThongTinDangTuyen> LayDSTTDTXD()
+	public static List<DTO_ThongTinDangTuyen> LayDSTTDTCanXetDuyet()
 	{
-		return DAO_ThongTinDangTuyen.LoadTTDTXD();
+		return DAO_ThongTinDangTuyen.LayTTDTCanXetDuyet();
 	}
 
 	public static List<DTO_ThongTinDangTuyen> LayDSTTDTHopLe()
@@ -41,18 +42,52 @@ public class BUS_ThongTinDangTuyen
 		return DAO_ThongTinDangTuyen.LoadTTDTHopLe();
 	}
 
+	private static bool KiemTra(DTO_ThongTinDangTuyen thongTinDangTuyen)
+	{
+		if (thongTinDangTuyen.SoNgayDangTuyen < 1 ||
+			thongTinDangTuyen.ThoiGianDangTuyen.Date < DateTime.Now.AddDays(1).Date ||
+			string.IsNullOrEmpty(thongTinDangTuyen.TenViTri) == true ||
+			thongTinDangTuyen.SoLuong < 1 ||
+			string.IsNullOrEmpty(thongTinDangTuyen.YeuCau) == true)
+		{
+			return false;
+		}
+		try
+		{
+			DAO_HinhThucDangTuyen.Lay(thongTinDangTuyen.MaHTDT);
+		}
+		catch (NullDatarowException)
+		{
+			return false;
+		}
+		return true;
+	}
+
 	public static void Them(DTO_ThongTinDangTuyen thongTinDangTuyen)
 	{
+		if (KiemTra(thongTinDangTuyen) == false)
+		{
+			return;
+		}
 		DAO_ThongTinDangTuyen.Them(thongTinDangTuyen);
 	}
-
-	public static void CapNhatTrangThaiTTDT(string MaTTDT, string TrangThai)
+	
+	public static void CapNhat(DTO_ThongTinDangTuyen thongTinDangTuyen)
 	{
-		DAO_ThongTinDangTuyen.CapNhatTrangThaiTTDT(MaTTDT, TrangThai);
+		if (KiemTra(thongTinDangTuyen) == false)
+		{
+			return;
+		}
+		DAO_ThongTinDangTuyen.CapNhat(thongTinDangTuyen);
+	}
+
+	public static void CapNhatTrangThaiXetDuyet(string MaTTDT, string tinhTrang)
+	{
+		DAO_ThongTinDangTuyen.CapNhatTrangThaiTTDT(MaTTDT, tinhTrang);
 
 	}
 
-	public static void CapNhatTrangThaiDangTuyen(string MaTTDT)
+	public static void CapNhatTinhTrangDangTuyen(string MaTTDT)
 	{
 		DAO_ThongTinDangTuyen.CapNhatTrangThaiDangTuyen(MaTTDT);
 	}

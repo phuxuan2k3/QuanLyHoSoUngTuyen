@@ -1,4 +1,4 @@
-﻿using Ctrler;
+﻿using Ctrler.NhanVienTiepNhan;
 using DTO;
 using GUI.GUIException;
 using System;
@@ -28,13 +28,18 @@ namespace GUI.UserControls
                 string thoihan = dsDoanhNghiep.Rows[e.RowIndex].Cells["ColumnNgayConLai"].Value.ToString();
                 if (thoihan[0] != '-')
                 {
-                    var ctrler = Ctrler_XacThucThongTinDoanhNghiep.LoadTTDN(MaDN);
+                    var ctrler = Ctrler_XacThucThongTinDoanhNghiep.LayThongTinDoanhNghiep(MaDN);
 
                     HienThiTTDN(ctrler);
                 }
                 else
                 {
                     MessageBox.Show("Doanh nghiệp đã quá hạn xác thực!");
+                    Ctrler_XacThucThongTinDoanhNghiep.CapNhatTrangThaiDoanhNghiep(MaDN, "Không hợp lệ");
+                    dsDoanhNghiep.Rows.Clear();
+
+                    HienThi();
+
                 }
             }
         }
@@ -77,7 +82,7 @@ namespace GUI.UserControls
 
             dsDoanhNghiep.DataSource = null;
             dsDoanhNghiep.Rows.Clear();
-            Ctrler_XacThucThongTinDoanhNghiep.CapNhatTrangThaiDN(MaDN, "Không hợp lệ");
+            Ctrler_XacThucThongTinDoanhNghiep.CapNhatTrangThaiDoanhNghiep(MaDN, "Không hợp lệ");
             HienThi();
         }
 
@@ -87,7 +92,7 @@ namespace GUI.UserControls
             dsDoanhNghiep.DataSource = null;
             dsDoanhNghiep.Rows.Clear();
 
-            Ctrler_XacThucThongTinDoanhNghiep.CapNhatTrangThaiDN(MaDN, "Hợp lệ");
+            Ctrler_XacThucThongTinDoanhNghiep.CapNhatTrangThaiDoanhNghiep(MaDN, "Hợp lệ");
             HienThi();
 
 

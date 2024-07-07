@@ -54,7 +54,7 @@ VALUES(@TenDoanhNghiep, @MASOTHUE,@NGUOIDAIDIEN,@DIACHI,@EMAIL,@TRANGTHAI,@NGAYD
         }
 
 
-        public static DTO_DoanhNghiep LoadTTDN(string MaDN)
+        public static DTO_DoanhNghiep Lay(string MaDN)
         {
             string query = "select * from DOANHNGHIEP where MaDoanhNghiep = " + MaDN;
             DataTable dataTable = new DataTable();
@@ -106,7 +106,7 @@ VALUES(@TenDoanhNghiep, @MASOTHUE,@NGUOIDAIDIEN,@DIACHI,@EMAIL,@TRANGTHAI,@NGAYD
         }
 
 
-        public static List<DTO_DoanhNghiep> LayDN()
+        public static List<DTO_DoanhNghiep> LayDanhSachDoanhNghiep()
         {
             var query = "select * from DOANHNGHIEP";
             var doanhNghieps = SqlSingleton.Instance.ExecuteQuery(query);
@@ -119,7 +119,7 @@ VALUES(@TenDoanhNghiep, @MASOTHUE,@NGUOIDAIDIEN,@DIACHI,@EMAIL,@TRANGTHAI,@NGAYD
                 NguoiDaiDien = row.Field<string>("NGUOIDAIDIEN")!,
                 DiaChi = row.Field<string>("DIACHI")!,
                 Email = row.Field<string>("EMAIL")!,
-                TrangThai = TrangThaiDoanhNghiepConvert.GetTrangThaiEnum(row.Field<string>("TRANGTHAI")!.ToString()),
+                //TrangThai = TrangThaiDoanhNghiepConvert.GetTrangThaiEnum(row.Field<string>("TRANGTHAI")!.ToString()),
                 NgayDangKy = row.Field<DateTime>("NGAYDK"),
             })
         .ToList();

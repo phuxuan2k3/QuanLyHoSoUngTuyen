@@ -1,4 +1,7 @@
-﻿using Ctrler;
+﻿using Ctrler.DoanhNghiep;
+using Ctrler.NhanVienNghiepVu;
+using GUI.UserControls;
+using Ctrler;
 using GUI.Styles;
 using GUI.UserControls;
 using System;
@@ -21,6 +24,22 @@ namespace GUI
             ButtonStyle.Apply);
             _instance = this;
             InitializeComponent();
+        }
+
+        private void btnDangTuyenTTDT_Click(object sender, EventArgs e)
+        {
+            GUI_DanhSachTTDTCanDangTuyen content = new();
+            content.HienThi(new Ctrler_DanhSachTTDTCanDangTuyen());
+            SwitchContent(content);
+        }
+        private static GUI_DoanhNghiep? _instance = null;
+        public static GUI_DoanhNghiep Instance => _instance ??= new GUI_DoanhNghiep();
+
+        public void SwitchContent(UserControl content)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(content);
+            content.Dock = DockStyle.Fill;
         }
         public void SwitchContent(UserControl content)
         {
