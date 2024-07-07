@@ -32,15 +32,9 @@ namespace GUI
             content.HienThi(new Ctrler_DanhSachTTDTCanDangTuyen());
             SwitchContent(content);
         }
-        private static GUI_DoanhNghiep? _instance = null;
-        public static GUI_DoanhNghiep Instance => _instance ??= new GUI_DoanhNghiep();
+        private static GUI_NhanVienNghiepVu? _instance = null;
+        public static GUI_NhanVienNghiepVu Instance => _instance ??= new GUI_NhanVienNghiepVu();
 
-        public void SwitchContent(UserControl content)
-        {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(content);
-            content.Dock = DockStyle.Fill;
-        }
         public void SwitchContent(UserControl content)
         {
             _container.Controls.Clear();
@@ -48,7 +42,6 @@ namespace GUI
             content.Dock = DockStyle.Fill;
         }
 
-        private static GUI_NhanVienNghiepVu? _instance = null;
 
         private void btnDuyetPhieuDangKy_Click(object sender, EventArgs e)
         {
@@ -63,8 +56,5 @@ namespace GUI
             content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(""));
             SwitchContent(content);
         }
-
-        public static GUI_NhanVienNghiepVu Instance => _instance ??= new GUI_NhanVienNghiepVu();
-
     }
 }

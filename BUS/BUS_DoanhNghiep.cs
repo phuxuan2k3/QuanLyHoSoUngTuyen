@@ -14,12 +14,12 @@ namespace BUS
 
         public static List<DTO_DoanhNghiep> LayDoanhNghiepCanXacThuc()
         {
-            return DAO_DoanhNghiep.LayDoanhNghiepCanXacThuc();
+            return DAO_DoanhNghiep.LayDNChuaXacThuc();
         }
 
         public static DTO_DoanhNghiep Lay(string MaDN)
         {
-            return DAO_DoanhNghiep.LoadTTDN(MaDN);
+            return DAO_DoanhNghiep.Lay(MaDN);
         }
 
         public static void CapNhatTrangThaiDN(string MaDN, string TrangThai)

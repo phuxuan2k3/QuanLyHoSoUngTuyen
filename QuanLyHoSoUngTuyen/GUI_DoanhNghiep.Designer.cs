@@ -145,6 +145,5 @@
 		private Button btnTaoYeuCau;
 		private Button btnDanhSachThongTinDangTuyen;
         private Button btnCapNhatTTDN;
-        private TableLayoutPanel tableLayoutPanel1;
     }
 }

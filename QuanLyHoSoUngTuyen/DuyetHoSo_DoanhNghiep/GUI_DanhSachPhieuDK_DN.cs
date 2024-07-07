@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MimeKit;
 using MailKit.Net.Smtp;
+using Ctrler.DoanhNghiep;
 
 
 namespace GUI;
