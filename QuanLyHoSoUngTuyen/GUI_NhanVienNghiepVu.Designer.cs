@@ -34,10 +34,10 @@
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
+            btnDuyetPhieuDangKy = new Button();
+            btnDuyet_DoanhNghiep = new Button();
             button8 = new Button();
-            panel1 = new Panel();
+            _container = new Panel();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,8 +57,8 @@
             flowLayoutPanel1.Controls.Add(button3);
             flowLayoutPanel1.Controls.Add(button4);
             flowLayoutPanel1.Controls.Add(button5);
-            flowLayoutPanel1.Controls.Add(button6);
-            flowLayoutPanel1.Controls.Add(button7);
+            flowLayoutPanel1.Controls.Add(btnDuyetPhieuDangKy);
+            flowLayoutPanel1.Controls.Add(btnDuyet_DoanhNghiep);
             flowLayoutPanel1.Controls.Add(button8);
             flowLayoutPanel1.Location = new Point(0, -5);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -101,46 +101,48 @@
             button5.Text = "button5";
             button5.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnDuyetPhieuDangKy
             // 
-            button6.Location = new Point(503, 3);
-            button6.Name = "button6";
-            button6.Size = new Size(94, 29);
-            button6.TabIndex = 5;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
+            btnDuyetPhieuDangKy.Location = new Point(503, 3);
+            btnDuyetPhieuDangKy.Name = "btnDuyetPhieuDangKy";
+            btnDuyetPhieuDangKy.Size = new Size(94, 29);
+            btnDuyetPhieuDangKy.TabIndex = 5;
+            btnDuyetPhieuDangKy.Text = "Duyệt hồ sơ";
+            btnDuyetPhieuDangKy.UseVisualStyleBackColor = true;
+            btnDuyetPhieuDangKy.Click += btnDuyetPhieuDangKy_Click;
             // 
-            // button7
+            // btnDuyet_DoanhNghiep
             // 
-            button7.Location = new Point(603, 3);
-            button7.Name = "button7";
-            button7.Size = new Size(94, 29);
-            button7.TabIndex = 6;
-            button7.Text = "button7";
-            button7.UseVisualStyleBackColor = true;
+            btnDuyet_DoanhNghiep.Location = new Point(603, 3);
+            btnDuyet_DoanhNghiep.Name = "btnDuyet_DoanhNghiep";
+            btnDuyet_DoanhNghiep.Size = new Size(124, 29);
+            btnDuyet_DoanhNghiep.TabIndex = 6;
+            btnDuyet_DoanhNghiep.Text = "Duyệt của DN";
+            btnDuyet_DoanhNghiep.UseVisualStyleBackColor = true;
+            btnDuyet_DoanhNghiep.Click += btnDuyet_DoanhNghiep_Click;
             // 
             // button8
             // 
-            button8.Location = new Point(703, 3);
+            button8.Location = new Point(3, 38);
             button8.Name = "button8";
             button8.Size = new Size(94, 29);
             button8.TabIndex = 7;
             button8.Text = "button8";
             button8.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // _container
             // 
-            panel1.Location = new Point(0, 38);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(800, 412);
-            panel1.TabIndex = 2;
+            _container.Location = new Point(0, 38);
+            _container.Name = "_container";
+            _container.Size = new Size(800, 412);
+            _container.TabIndex = 2;
             // 
             // GUI_NhanVienNghiepVu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panel1);
+            Controls.Add(_container);
             Controls.Add(flowLayoutPanel1);
             Name = "GUI_NhanVienNghiepVu";
             Text = "GUI_NhanVienNghiepVu";
@@ -156,9 +158,9 @@
         private Button button3;
         private Button button4;
         private Button button5;
-        private Button button6;
-        private Button button7;
+        private Button btnDuyetPhieuDangKy;
+        private Button btnDuyet_DoanhNghiep;
         private Button button8;
-        private Panel panel1;
+        private Panel _container;
     }
 }

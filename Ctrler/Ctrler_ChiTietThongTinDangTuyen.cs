@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using BUS;
+using DTO;
 
 namespace Ctrler;
 
@@ -31,4 +32,28 @@ public class Ctrler_ChiTietThongTinDangTuyen
 	{
 		return new Ctrler_HieuChinhThongTinDangTuyen(_thongTinDangTuyen, _hinhThucDangTuyen);
 	}
+    public static void CapNhatThongTinPhieuDangKy(DTO_ThongTinHoSo ttpdk)
+    {
+         BUS_PhieuDangKyUngTuyen.CapNhatThongTinPhieuDangKy(ttpdk);
+    }
+    public Ctrler_ChiTietThongTinDangTuyen(DTO_ThongTinDangTuyen ttdt)
+    {
+        _thongTinDangTuyen = ttdt;
+    }
+    public static DTO_ThongTinDangTuyen LayThongTinDangTuyen(string maTTDT)
+    {
+        return BUS_ThongTinDangTuyen.LayThongTinDangTuyen(maTTDT);
+    }
+	public void ThongTinDangTuyenvaDSPDk(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref List<DTO_ThongTinHoSo> thongTinPhieuDangKyUngTuyen)
+	{
+		thongTinDangTuyen = _thongTinDangTuyen;
+		thongTinPhieuDangKyUngTuyen = BUS_ThongTinDangTuyen.LayDSPhieuDangKy(thongTinDangTuyen.MaTTDT);
+	}
+    
+
+    public void DanhSachHoSo(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref List<DTO_ThongTinHoSo> thongTinPhieuDangKyUngTuyen)
+    {
+        thongTinDangTuyen = _thongTinDangTuyen;
+        thongTinPhieuDangKyUngTuyen = BUS_ThongTinDangTuyen.DanhSachHoSo(thongTinDangTuyen.MaTTDT);
+    }
 }

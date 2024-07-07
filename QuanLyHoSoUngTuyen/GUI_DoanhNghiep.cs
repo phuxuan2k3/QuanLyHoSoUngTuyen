@@ -18,19 +18,19 @@ public partial class GUI_DoanhNghiep : Form
         InitializeComponent();
     }
 
-	private void btnTaoYeuCau_Click(object sender, EventArgs e)
-	{
-		var gui = new GUI_DienThongTinDangTuyen();
-		gui.HienThi(new Ctrler_DienThongTinDangTuyen());
-		SwitchContent(gui);
-	}
+    private void btnTaoYeuCau_Click(object sender, EventArgs e)
+    {
+        var gui = new GUI_DienThongTinDangTuyen();
+        gui.HienThi(new Ctrler_DienThongTinDangTuyen());
+        SwitchContent(gui);
+    }
 
-	private void btnDanhSachThongTinDangTuyen_Click(object sender, EventArgs e)
-	{
+    private void btnDanhSachThongTinDangTuyen_Click(object sender, EventArgs e)
+    {
         var gui = new GUI_DanhSachThongTinDangTuyen();
-		gui.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
-		SwitchContent(gui);
-	}
+        gui.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
+        SwitchContent(gui);
+    }
 
     public void SwitchContent(UserControl content)
     {
@@ -69,6 +69,11 @@ public partial class GUI_DoanhNghiep : Form
         GUI_CapNhatThongTinDoanhNghiep content = new();
         content.HienThi("123568");
         SwitchContent(content);
+    }
+
+    private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+    {
+
     }
 
     public static GUI_DoanhNghiep Instance => _instance ??= new GUI_DoanhNghiep();
