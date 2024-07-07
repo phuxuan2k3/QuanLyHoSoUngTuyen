@@ -31,4 +31,15 @@ public class DAO_ChiTietHoaDon
 		}
 		return dtos;
 	}
+
+	public static void Them(DTO_ChiTietHoaDon chiTietHoaDon)
+	{
+		var query = $@"INSERT INTO {tableName} (MATTDT, LANTT, SOTIENCANTHANHTOAN, NGAYTHANHTOAN) VALUES (@MATTDT, @LANTT, @SOTIENCANTHANHTOAN, @NGAYTHANHTOAN)";
+		SqlSingleton.Instance.ExecuteNonQuery(query, [
+			new("MATTDT", chiTietHoaDon.MaTTDT),
+			new("LANTT", chiTietHoaDon.LanThanhToan),
+			new("SOTIENCANTHANHTOAN", chiTietHoaDon.SoTienCanThanhToan),
+			new("NGAYTHANHTOAN", chiTietHoaDon.NgayThanhToan.ToString())
+			]);
+	}
 }

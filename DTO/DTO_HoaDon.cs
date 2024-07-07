@@ -6,7 +6,7 @@ public enum TrangThaiThanhToan
 {
 	ChuaThanhToan = 1,
 	ChuaThanhToanHoanTat = 2,
-	ThanhToanHoanTat = 3,
+	DaThanhToanHoanTat = 3,
 }
 
 public static class TrangThaiThanhToanConvert
@@ -17,7 +17,7 @@ public static class TrangThaiThanhToanConvert
 		{
 			TrangThaiThanhToan.ChuaThanhToan => "Chưa thanh toán",
 			TrangThaiThanhToan.ChuaThanhToanHoanTat => "Chưa thanh toán hoàn tất",
-			TrangThaiThanhToan.ThanhToanHoanTat => "Thanh toán hoàn tất",
+			TrangThaiThanhToan.DaThanhToanHoanTat => "Đã thanh toán hoàn tất",
 			_ => throw new EnumException()
 		};
 	}
@@ -28,7 +28,7 @@ public static class TrangThaiThanhToanConvert
 		{
 			"Chưa thanh toán" => TrangThaiThanhToan.ChuaThanhToan,
 			"Chưa thanh toán hoàn tất" => TrangThaiThanhToan.ChuaThanhToanHoanTat,
-			"Thanh toán hoàn tất" => TrangThaiThanhToan.ThanhToanHoanTat,
+			"Đã thanh toán hoàn tất" => TrangThaiThanhToan.DaThanhToanHoanTat,
 			_ => throw new EnumException(),
 		};
 	}

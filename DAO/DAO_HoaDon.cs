@@ -28,7 +28,19 @@ public class DAO_HoaDon
 		return RowConvert(data.Rows[0]);
 	}
 
-	public static string Them(DTO_HoaDon hoaDon)
+	public static List<DTO_HoaDon> LayTatCaChuaThanhToan()
+	{
+		var query = $@"SELECT * FROM {tableName} WHERE TRANGTHAI IN (N'Chưa thanh toán', N'Chưa thanh toán hoàn tất')";
+		var data = SqlSingleton.Instance.ExecuteQuery(query);
+		var dtos = new List<DTO_HoaDon>();
+		foreach (DataRow row in data.Rows)
+		{
+			dtos.Add(RowConvert(row));
+		}
+		return dtos;
+	}
+
+	public static void Them(DTO_HoaDon hoaDon)
 	{
 		var query = $@"INSERT INTO {tableName} (MATTDT, TONGTIEN, CACHTHUC, TRANGTHAI, NGAYLAP) VALUES (@MATTDT, @TONGTIEN, @CACHTHUC, @TRANGTHAI, @NGAYLAP);";
 		SqlSingleton.Instance.ExecuteNonQuery(query, [
@@ -38,6 +50,17 @@ public class DAO_HoaDon
 			new SqlParameter("TRANGTHAI", hoaDon.TrangThaiThanhToan.ToDisplayString() ),
 			new SqlParameter("NGAYLAP", hoaDon.NgayLap.ToString()),
 			]);
-		return hoaDon.MaTTDT;
+	}
+
+	public static void CapNhat(DTO_HoaDon hoaDon)
+	{
+		var query = $@"UPDATE {tableName} SET TONGTIEN = @TONGTIEN, CACHTHUC = @CACHTHUC, TRANGTHAI = @TRANGTHAI, NGAYLAP = @NGAYLAP WHERE MATTDT = @MATTDT";
+		SqlSingleton.Instance.ExecuteQuery(query, [
+			new ("MATTDT", hoaDon.MaTTDT),
+			new ("TONGTIEN", hoaDon.TongTien),
+			new ("CACHTHUC", hoaDon.CachThucThanhToan),
+			new ("TRANGTHAI", hoaDon.TrangThaiThanhToan),
+			new ("NGAYLAP", hoaDon.NgayLap.ToString()),
+			]);
 	}
 }
