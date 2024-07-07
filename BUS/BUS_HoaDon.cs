@@ -5,7 +5,7 @@ namespace BUS;
 
 public class BUS_HoaDon
 {
-	public static DTO_HoaDon Lay(string maTTDT)
+	public static DTO_HoaDon? Lay(string maTTDT)
 	{
 		return DAO_HoaDon.Lay(maTTDT);
 	}
@@ -27,7 +27,7 @@ public class BUS_HoaDon
 
 	public static void ThemLanThanhToan(DTO_HoaDon hoaDon, List<DTO_ChiTietHoaDon> chiTietHoaDons, DTO_ChiTietHoaDon lanThanhToan)
 	{
-		if (chiTietHoaDons.Sum(x => x.SoTienCanThanhToan) >= hoaDon.TongTien)
+		if (chiTietHoaDons.Sum(x => x.SoTienCanThanhToan) + lanThanhToan.SoTienCanThanhToan >= hoaDon.TongTien)
 		{
 			hoaDon.TrangThaiThanhToan = TrangThaiThanhToan.DaThanhToanHoanTat;
 		}
@@ -66,7 +66,7 @@ public class BUS_HoaDon
 		}
 		var soTienDongCoBan = hoaDon.TongTien * 0.3f;
 		var soTienCanDong = hoaDon.TongTien - (tongTienDaDong + soTienDongCoBan) > 0 ? soTienDongCoBan : hoaDon.TongTien - tongTienDaDong;
-		var lanDong = cacLanThanhToan.Max(x => x.LanThanhToan);
+		var lanDong = cacLanThanhToan.Count == 0 ? 0 : cacLanThanhToan.Max(x => x.LanThanhToan);
 		return new DTO_ChiTietHoaDon(hoaDon.MaTTDT, lanDong + 1, soTienCanDong, DateTime.Now);
 	}
 }

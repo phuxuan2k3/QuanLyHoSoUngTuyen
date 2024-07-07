@@ -36,14 +36,14 @@
 			panel1.Dock = DockStyle.Fill;
 			panel1.Location = new Point(0, 0);
 			panel1.Name = "panel1";
-			panel1.Size = new Size(800, 450);
+			panel1.Size = new Size(942, 593);
 			panel1.TabIndex = 0;
 			// 
 			// GUI_NhanVienThanhToan
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(800, 450);
+			ClientSize = new Size(942, 593);
 			Controls.Add(panel1);
 			Name = "GUI_NhanVienThanhToan";
 			Text = "GUI_NhanVienThanhToan";

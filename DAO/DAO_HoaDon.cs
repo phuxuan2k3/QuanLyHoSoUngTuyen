@@ -21,10 +21,14 @@ public class DAO_HoaDon
 		return htdt;
 	}
 
-	public static DTO_HoaDon Lay(string maTTDT)
+	public static DTO_HoaDon? Lay(string maTTDT)
 	{
 		var query = @$"SELECT * FROM {tableName} WHERE MATTDT = @MaTTDT";
 		var data = SqlSingleton.Instance.ExecuteQuery(query, [new SqlParameter("MaTTDT", maTTDT)]);
+		if (data.Rows.Count == 0)
+		{
+			return null;
+		}
 		return RowConvert(data.Rows[0]);
 	}
 
@@ -58,8 +62,8 @@ public class DAO_HoaDon
 		SqlSingleton.Instance.ExecuteQuery(query, [
 			new ("MATTDT", hoaDon.MaTTDT),
 			new ("TONGTIEN", hoaDon.TongTien),
-			new ("CACHTHUC", hoaDon.CachThucThanhToan),
-			new ("TRANGTHAI", hoaDon.TrangThaiThanhToan),
+			new ("CACHTHUC", hoaDon.CachThucThanhToan.ToDisplayString()),
+			new ("TRANGTHAI", hoaDon.TrangThaiThanhToan.ToDisplayString()),
 			new ("NGAYLAP", hoaDon.NgayLap.ToString()),
 			]);
 	}

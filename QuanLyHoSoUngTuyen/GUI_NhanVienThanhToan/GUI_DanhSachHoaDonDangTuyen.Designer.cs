@@ -168,11 +168,13 @@
 			// 
 			// btnTraCuu
 			// 
-			btnTraCuu.Dock = DockStyle.Fill;
-			btnTraCuu.Location = new Point(734, 3);
-			btnTraCuu.Margin = new Padding(5, 3, 5, 3);
+			btnTraCuu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			btnTraCuu.AutoSize = true;
+			btnTraCuu.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			btnTraCuu.Location = new Point(734, 0);
+			btnTraCuu.Margin = new Padding(5, 0, 0, 0);
 			btnTraCuu.Name = "btnTraCuu";
-			btnTraCuu.Size = new Size(156, 31);
+			btnTraCuu.Size = new Size(161, 37);
 			btnTraCuu.TabIndex = 5;
 			btnTraCuu.Tag = "blue";
 			btnTraCuu.Text = "Tra cứu";

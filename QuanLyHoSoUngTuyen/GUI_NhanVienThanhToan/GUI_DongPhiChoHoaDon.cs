@@ -44,10 +44,9 @@ namespace GUI.UserControls
 			}
 			if (lanDongHienTai == null)
 			{
-				MessageBox.Show("Hóa đơn đã thanh toán", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				GUI_DanhSachHoaDonDangTuyen content = new();
 				content.HienThi(new Ctrler_DanhSachHoaDonDangTuyen());
-				GUI_DoanhNghiep.Instance.SwitchContent(content);
+				GUI_NhanVienThanhToan.Instance.SwitchContent(content);
 				return;
 			}
 			_lanDongHienTai.Text = lanDongHienTai.LanThanhToan.ToString();
@@ -59,14 +58,14 @@ namespace GUI.UserControls
 			Ctrler_DongPhiChoHoaDon.DongPhiChoHoaDon();
 			GUI_DanhSachHoaDonDangTuyen content = new();
 			content.HienThi(new Ctrler_DanhSachHoaDonDangTuyen());
-			GUI_DoanhNghiep.Instance.SwitchContent(content);
+			GUI_NhanVienThanhToan.Instance.SwitchContent(content);
 		}
 
 		private void btnQuayLai_Click(object sender, EventArgs e)
 		{
 			GUI_DanhSachHoaDonDangTuyen content = new();
 			content.HienThi(new Ctrler_DanhSachHoaDonDangTuyen());
-			GUI_DoanhNghiep.Instance.SwitchContent(content);
+			GUI_NhanVienThanhToan.Instance.SwitchContent(content);
 		}
 	}
 }

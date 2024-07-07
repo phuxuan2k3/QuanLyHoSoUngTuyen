@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Ctrler.NhanVienThanhToan;
+using GUI.Styles;
+using GUI.UserControls;
 
 namespace GUI
 {
@@ -14,8 +8,12 @@ namespace GUI
 	{
 		public GUI_NhanVienThanhToan()
 		{
-			InitializeComponent();
 			_instance = this;
+			Style.ApplyStylingEventOnChildControlAdded(this, ButtonStyle.Apply);
+			InitializeComponent();
+			var gui = new GUI_DanhSachHoaDonDangTuyen();
+			gui.HienThi(new Ctrler_DanhSachHoaDonDangTuyen());
+			SwitchContent(gui);
 		}
 
 		private static GUI_NhanVienThanhToan? _instance;
