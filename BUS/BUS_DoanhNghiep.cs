@@ -6,20 +6,20 @@ namespace BUS
 {
     public class BUS_DoanhNghiep
     {
-        public static List<DTO_DoanhNghiep> LayDN()
+        public static List<DTO_DoanhNghiep> LayDanhSachDoanhNghiep()
         {
-            return DAO_DoanhNghiep.LayDN();
+            return DAO_DoanhNghiep.LayDanhSachDoanhNghiep();
         }
 
 
-        public static List<DTO_DoanhNghiep> LayDNCanXacThuc()
+        public static List<DTO_DoanhNghiep> LayDoanhNghiepCanXacThuc()
         {
-            return DAO_DoanhNghiep.LayDNChuaXacThuc();
+            return DAO_DoanhNghiep.LayDoanhNghiepCanXacThuc();
         }
 
         public static DTO_DoanhNghiep Lay(string MaDN)
         {
-            return DAO_DoanhNghiep.LoadTTDN(MaDN);  
+            return DAO_DoanhNghiep.Lay(MaDN);  
         }
 
         public static void CapNhatTrangThaiDN(string MaDN,string TrangThai) {

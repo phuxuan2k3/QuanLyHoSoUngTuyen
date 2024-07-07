@@ -5,7 +5,7 @@ namespace DAO
 {
     public class DAO_DoanhNghiep
     {
-        public static List<DTO_DoanhNghiep> LayDNChuaXacThuc()
+        public static List<DTO_DoanhNghiep> LayDoanhNghiepCanXacThuc()
         {
 
             string query = "select * from DOANHNGHIEP where TRANGTHAI = N'Chưa xác thực' ";
@@ -37,7 +37,7 @@ namespace DAO
         }
 
 
-        public static DTO_DoanhNghiep LoadTTDN(string MaDN)
+        public static DTO_DoanhNghiep Lay(string MaDN)
         {
             string query = "select * from DOANHNGHIEP where MaDoanhNghiep = " + MaDN;
             DataTable dataTable = new DataTable();
@@ -89,7 +89,7 @@ namespace DAO
         }
 
 
-        public static List<DTO_DoanhNghiep> LayDN()
+        public static List<DTO_DoanhNghiep> LayDanhSachDoanhNghiep()
         {
             var query = "select * from DOANHNGHIEP";
             var doanhNghieps = SqlSingleton.Instance.ExecuteQuery(query);
@@ -102,7 +102,7 @@ namespace DAO
                 NguoiDaiDien = row.Field<string>("NGUOIDAIDIEN")!,
                 DiaChi = row.Field<string>("DIACHI")!,
                 Email = row.Field<string>("EMAIL")!,
-                TrangThai = TrangThaiDoanhNghiepConvert.GetTrangThaiEnum(row.Field<string>("TRANGTHAI")!.ToString()),
+                //TrangThai = TrangThaiDoanhNghiepConvert.GetTrangThaiEnum(row.Field<string>("TRANGTHAI")!.ToString()),
                 NgayDangKy = row.Field<DateTime>("NGAYDK"),
             })
         .ToList();
