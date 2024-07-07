@@ -61,7 +61,7 @@ namespace GUI.UserControls
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
             GUI_DanhSachTTDTCanXetDuyet content = new();
-            GUI_NhanVienTiepNhan.Instance.SwitchContent(content);
+            GUINhanVienTiepNhan.Instance.SwitchContent(content);
             content.HienThi(new Ctrler_DanhSachTTDTCanXetDuyet());
         }
     }

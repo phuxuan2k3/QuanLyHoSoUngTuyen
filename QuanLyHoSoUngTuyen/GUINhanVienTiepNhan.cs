@@ -1,23 +1,25 @@
 ﻿using Ctrler.NhanVienTiepNhan;
 using GUI.Styles;
 using GUI.UserControls;
+using GUI;
+using GUI.GUI_NhanVienTiepNhan;
 
 namespace GUI
 {
-	public partial class GUI_NhanVienTiepNhan : Form
+    public partial class GUINhanVienTiepNhan : Form
     {
-        public GUI_NhanVienTiepNhan()
+        public GUINhanVienTiepNhan()
         {
             Style.ApplyStylingEventOnChildControlAdded(this,
            ButtonStyle.Apply);
-           _instance = this;
-           // InitializeComponent();
+            _instance = this;
+            // InitializeComponent();
             InitializeComponent();
         }
 
-       
-        private static GUI_NhanVienTiepNhan? _instance = null;
-        public static GUI_NhanVienTiepNhan Instance => _instance ??= new GUI_NhanVienTiepNhan();
+
+        private static GUINhanVienTiepNhan? _instance = null;
+        public static GUINhanVienTiepNhan Instance => _instance ??= new GUINhanVienTiepNhan();
 
         public void SwitchContent(UserControl content)
         {
@@ -38,6 +40,12 @@ namespace GUI
             GUI_XacThucThongTinDoanhNghiep content = new();
             content.HienThi();
             SwitchContent(content);
+        }
+
+        private void btn_ThemHS_Click(object sender, EventArgs e)
+        {
+            UC_ThemHSCTBC uc = new UC_ThemHSCTBC();
+            SwitchContent(uc);
         }
     }
 }

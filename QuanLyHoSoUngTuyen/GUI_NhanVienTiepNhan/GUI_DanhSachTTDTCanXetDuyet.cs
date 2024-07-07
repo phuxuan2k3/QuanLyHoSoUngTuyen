@@ -49,7 +49,7 @@ namespace GUI.UserControls
 				var ctrler = Ctrler_DanhSachThongTinDangTuyen.HienThi_XetDuyetThongTinDangTuyen(maTTDT);
 				GUI_XetDuyetThongTinDangTuyen content = new();
 				content.HienThi(ctrler);
-				GUI_NhanVienTiepNhan.Instance.SwitchContent(content);
+				GUINhanVienTiepNhan.Instance.SwitchContent(content);
 			}
 		}
 	}

@@ -179,4 +179,52 @@ public class DAO_ThongTinDangTuyen
 		}
 		return ds;
 	}
+
+
+
+    public static Boolean check_Vitri(string value)
+    {
+        string QueryStr = $"SELECT * FROM THONGTINDANGTUYEN WHERE TENVITRI LIKE N'%{value}%';";
+
+        Console.WriteLine(QueryStr);
+        SqlDataReader reader = DatabaseDAO.getQueryStr(QueryStr);
+
+        if (reader.Read())
+        {
+            reader.Close();
+            return true;
+        }
+        else
+        {
+            reader.Close();
+            return false;
+        }
+    }
+
+
+    public static SqlDataReader getList(string value)
+    {
+        SqlConnection sqlConn = DatabaseDAO.getConnectionString();
+        SqlDataReader reader = null;
+        string QueryStr = $"SELECT * FROM THONGTINDANGTUYEN WHERE TENVITRI LIKE N'%{value}%' AND TINHTRANG = N'Đã đăng tuyển';";
+        try
+        {
+            sqlConn.Open();
+            SqlCommand cmd = new SqlCommand(QueryStr, sqlConn);
+            reader = cmd.ExecuteReader(CommandBehavior.CloseConnection); // Ensure the connection is closed when the reader is closed
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            if (sqlConn != null && sqlConn.State == System.Data.ConnectionState.Open)
+            {
+                sqlConn.Close();
+            }
+            throw;
+        }
+
+        return reader;
+    }
+
+
 }

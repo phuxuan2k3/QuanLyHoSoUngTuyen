@@ -14,5 +14,51 @@ namespace BUS
 
             return new DTO_KetQuaUngTuyen(maTTDT, "", total, countHopLe, countDat);
         }
+        public static int KiemTraMaUV(string value)
+        {
+            Boolean check = DAO_UngVien.check_mauv(value);
+            if (check == true)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public static int KiemTraHoTenUV(string mauv, string name)
+        {
+            Boolean check = DAO_UngVien.check_hoten(mauv, name);
+            if (check == true)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public static int KiemTraActtionThem(int mattdt, string mauv)
+        {
+            Boolean check = DAO_PhieuDangKyUngTuyen.Them_Phieu(mattdt, mauv);
+            if (check == true)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public static int Them_Phieu(int mattdt, string mauv, string name)
+        {
+            if (BUS_PhieuDangKyUngTuyen.KiemTraMaUV(mauv) == 0) return 0; // ALERT ERROR MAUV
+            if (BUS_PhieuDangKyUngTuyen.KiemTraHoTenUV(mauv, name) == 0) return 0; // ALERT ERROR MAUV
+            if (BUS_PhieuDangKyUngTuyen.KiemTraActtionThem(mattdt, mauv) == 0) return 0;
+            return 1;
+        }
     }
 }
