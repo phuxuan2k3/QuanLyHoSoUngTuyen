@@ -17,9 +17,9 @@ public class Ctrler_XacNhanThanhToan
 
 	public void Load(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HinhThucDangTuyen hinhThucDangTuyen, ref float tongTien, ref bool coTheThanhToanNhieuDot)
 	{
+		thongTinDangTuyen = _thongTinDangTuyen;
 		_hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(thongTinDangTuyen.MaHTDT);
 		_tongTien = BUS_HoaDon.TinhTongSoTien(_hinhThucDangTuyen, thongTinDangTuyen);
-		thongTinDangTuyen = _thongTinDangTuyen;
 		hinhThucDangTuyen = _hinhThucDangTuyen;
 		tongTien = _tongTien;
 		coTheThanhToanNhieuDot = BUS_HoaDon.KiemTraThanhToanNhieuDot(thongTinDangTuyen);

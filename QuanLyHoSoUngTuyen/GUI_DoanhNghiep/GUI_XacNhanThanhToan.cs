@@ -51,7 +51,7 @@ namespace GUI.UserControls
 				{
 					Ctrler_XacNhanThanhToan.XacNhanThanhToan(CachThucThanhToan.ToanBo);
 				}
-				MessageBox.Show($"Yêu cầu đăng tuyển đã tạo thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show($"Yêu cầu đăng tuyển đã tạo thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				var gui = new GUI_DanhSachThongTinDangTuyen();
 				gui.HienThi(new Ctrler_DanhSachThongTinDangTuyen(GUI_DoanhNghiep.Instance.MaDN));
 				GUI_DoanhNghiep.Instance.SwitchContent(gui);
