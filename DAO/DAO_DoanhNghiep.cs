@@ -41,8 +41,8 @@ VALUES(@TenDoanhNghiep, @MASOTHUE,@NGUOIDAIDIEN,@DIACHI,@EMAIL,@TRANGTHAI,@NGAYD
 					NguoiDaiDien = row["NGUOIDAIDIEN"].ToString(),
 					DiaChi = row["DIACHI"].ToString(),
 					Email = row["EMAIL"].ToString(),
-					NgayDangKy = Convert.ToDateTime(row["NGAYDK"])
-					// Map other columns as needed
+					NgayDangKy = Convert.ToDateTime(row["NGAYDK"]),
+					TrangThai = TrangThaiDoanhNghiepConvert.GetTrangThaiEnum(row.Field<string>("TRANGTHAI")!.ToString()),
 				};
 
 				lsDoanhNghiep.Add(doanhNghiep);
@@ -71,7 +71,8 @@ VALUES(@TenDoanhNghiep, @MASOTHUE,@NGUOIDAIDIEN,@DIACHI,@EMAIL,@TRANGTHAI,@NGAYD
 					NguoiDaiDien = row["NGUOIDAIDIEN"].ToString(),
 					DiaChi = row["DIACHI"].ToString(),
 					Email = row["EMAIL"].ToString(),
-					NgayDangKy = Convert.ToDateTime(row["NGAYDK"])
+					NgayDangKy = Convert.ToDateTime(row["NGAYDK"]),
+					TrangThai = TrangThaiDoanhNghiepConvert.GetTrangThaiEnum(row.Field<string>("TRANGTHAI")!.ToString()),
 				};
 
 				return doanhNghiep;
@@ -141,7 +142,9 @@ VALUES(@TenDoanhNghiep, @MASOTHUE,@NGUOIDAIDIEN,@DIACHI,@EMAIL,@TRANGTHAI,@NGAYD
 					NguoiDaiDien = row["NGUOIDAIDIEN"].ToString(),
 					DiaChi = row["DIACHI"].ToString(),
 					Email = row["EMAIL"].ToString(),
-					NgayDangKy = Convert.ToDateTime(row["NGAYDK"])
+					NgayDangKy = Convert.ToDateTime(row["NGAYDK"]),
+					TrangThai = TrangThaiDoanhNghiepConvert.GetTrangThaiEnum(row.Field<string>("TRANGTHAI")!.ToString()),
+
 				};
 				return doanhNghiep;
 			}
@@ -192,7 +195,8 @@ VALUES(@TenDoanhNghiep, @MASOTHUE,@NGUOIDAIDIEN,@DIACHI,@EMAIL,@TRANGTHAI,@NGAYD
 					NguoiDaiDien = row["NGUOIDAIDIEN"].ToString(),
 					DiaChi = row["DIACHI"].ToString(),
 					Email = row["EMAIL"].ToString(),
-					NgayDangKy = Convert.ToDateTime(row["NGAYDK"])
+					NgayDangKy = Convert.ToDateTime(row["NGAYDK"]),
+					TrangThai = TrangThaiDoanhNghiepConvert.GetTrangThaiEnum(row.Field<string>("TRANGTHAI")!.ToString()),
 				};
 				return doanhNghiep;
 			}

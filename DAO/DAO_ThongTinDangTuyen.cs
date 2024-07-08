@@ -152,8 +152,10 @@ public class DAO_ThongTinDangTuyen
                 ThoiGianDangTuyen = DateTime.Now.AddDays(-4),
                 TenViTri = row["TENVITRI"].ToString(),
                 SoLuong = Convert.ToInt32(row["SOLUONG"]),
-                YeuCau = row["YEUCAU"].ToString()
-            };
+                YeuCau = row["YEUCAU"].ToString(),
+				TrangThai = row["TRANGTHAI"].ToString()!.ToTrangThaiThongTinDangTuyen(),
+				TinhTrang = row["TINHTRANG"].ToString()!.ToTinhTrangThongTinDangTuyen(),
+			};
             ds.Add(ttdt);
         }
         return ds;
@@ -223,8 +225,10 @@ public class DAO_ThongTinDangTuyen
                 ThoiGianDangTuyen = DateTime.Now.AddDays(-4),
                 TenViTri = row["TENVITRI"].ToString(),
                 SoLuong = Convert.ToInt32(row["SOLUONG"]),
-                YeuCau = row["YEUCAU"].ToString()
-            };
+                YeuCau = row["YEUCAU"].ToString(),
+				TrangThai = row["TRANGTHAI"].ToString()!.ToTrangThaiThongTinDangTuyen(),
+				TinhTrang = row["TINHTRANG"].ToString()!.ToTinhTrangThongTinDangTuyen()
+			};
 
             return doanhNghiep;
         }
@@ -276,15 +280,6 @@ public class DAO_ThongTinDangTuyen
         return dsPhDK;
     }
 
-    //   List<DTO_ThongTinDangTuyen> ds = new List<DTO_ThongTinDangTuyen>();
-    //	foreach(DataRow row in dataTable.Rows)
-    //	{
-    //		var ttdt = ConvertRow(row);
-    //   ds.Add(ttdt);
-    //	}
-    //	return ds;
-    //}
-
     public static List<DTO_ThongTinDangTuyen> LoadTTDTHopLe()
     {
         string query = "select * from THONGTINDANGTUYEN where TINHTRANG = N'Hợp lệ' AND TRANGTHAI <> N'Đã đăng tuyển'";
@@ -302,8 +297,10 @@ public class DAO_ThongTinDangTuyen
                 ThoiGianDangTuyen = DateTime.Now.AddDays(-4),
                 TenViTri = row["TENVITRI"].ToString(),
                 SoLuong = Convert.ToInt32(row["SOLUONG"]),
-                YeuCau = row["YEUCAU"].ToString()
-            };
+                YeuCau = row["YEUCAU"].ToString(),
+				TrangThai = row["TRANGTHAI"].ToString()!.ToTrangThaiThongTinDangTuyen(),
+				TinhTrang = row["TINHTRANG"].ToString()!.ToTinhTrangThongTinDangTuyen()
+			};
             ds.Add(ttdt);
         }
         return ds;
@@ -330,7 +327,6 @@ public class DAO_ThongTinDangTuyen
         }
     }
 
-
     public static SqlDataReader getList(string value)
     {
         SqlConnection sqlConn = DatabaseDAO.getConnectionString();
@@ -351,9 +347,6 @@ public class DAO_ThongTinDangTuyen
             }
             throw;
         }
-
         return reader;
     }
-
-
 }

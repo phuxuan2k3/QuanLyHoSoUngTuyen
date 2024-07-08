@@ -29,37 +29,6 @@ namespace GUI
 			SwitchContent(gui_DangNhap);
 		}
 
-		private void GUI_XacThucNguoiDung_Load(object sender, EventArgs e)
-		{
-		}
-
-		//protected override void OnResize(EventArgs e)
-		//{
-		//    base.OnResize(e);
-
-		//    foreach (Control cnt in Controls)
-		//    {
-		//        ResizeAll(cnt, Size);
-		//    }
-
-		//    oldSize = Size;
-		//}
-
-		//private void ResizeAll(Control control, Size newSize)
-		//{
-		//    if (oldSize.Width == 0 || oldSize.Height == 0)
-		//    {
-		//        return;
-		//    }
-		//    int widthChange = newSize.Width - oldSize.Width;
-		//    control.Left += (control.Left * widthChange) / oldSize.Width;
-		//    control.Width += (control.Width * widthChange) / oldSize.Width;
-
-		//    int heightChange = newSize.Height - oldSize.Height;
-		//    control.Top += (control.Top * heightChange) / oldSize.Height;
-		//    control.Height += (control.Height * heightChange) / oldSize.Height;
-		//}
-
 		private void DangNhapThanhCong(object sender, EventArgs e)
 		{
 			switch ((e as EventArgs<DTO_TaiKhoan>)!.Value.VaiTro)

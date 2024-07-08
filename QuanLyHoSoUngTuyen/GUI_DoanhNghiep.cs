@@ -27,7 +27,7 @@ public partial class GUI_DoanhNghiep : Form
             }
             else
             {
-                btnCapNhatTTDN.Enabled = true;
+                btnCapNhatTTDN.Enabled = false;
                 btnDanhSachThongTinDangTuyen.Enabled = true;
                 btnDuyetHoSo.Enabled = true;
                 btnTaoYeuCau.Enabled = true;

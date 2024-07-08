@@ -49,7 +49,6 @@
 			Margin = new Padding(4, 4, 4, 4);
 			Name = "GUI_XacThucNguoiDung";
 			Text = "GUI_XacThucNguoiDung";
-			Load += GUI_XacThucNguoiDung_Load;
 			ResumeLayout(false);
 		}
 
