@@ -32,7 +32,6 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnDangTuyenTTDT = new Button();
             btnDuyetPhieuDangKy = new Button();
-            btnDuyet_DoanhNghiep = new Button();
             panel1 = new Panel();
             _container = new Panel();
             flowLayoutPanel1.SuspendLayout();
@@ -53,7 +52,6 @@
             flowLayoutPanel1.Controls.Add(btnDoanhNghiep);
             flowLayoutPanel1.Controls.Add(btnDangTuyenTTDT);
             flowLayoutPanel1.Controls.Add(btnDuyetPhieuDangKy);
-            flowLayoutPanel1.Controls.Add(btnDuyet_DoanhNghiep);
             flowLayoutPanel1.Location = new Point(0, -5);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(800, 37);
@@ -81,16 +79,6 @@
             btnDuyetPhieuDangKy.Text = "Duyệt hồ sơ";
             btnDuyetPhieuDangKy.UseVisualStyleBackColor = true;
             btnDuyetPhieuDangKy.Click += btnDuyetPhieuDangKy_Click;
-            // 
-            // btnDuyet_DoanhNghiep
-            // 
-            btnDuyet_DoanhNghiep.Location = new Point(349, 3);
-            btnDuyet_DoanhNghiep.Name = "btnDuyet_DoanhNghiep";
-            btnDuyet_DoanhNghiep.Size = new Size(124, 29);
-            btnDuyet_DoanhNghiep.TabIndex = 6;
-            btnDuyet_DoanhNghiep.Text = "Duyệt của DN";
-            btnDuyet_DoanhNghiep.UseVisualStyleBackColor = true;
-            btnDuyet_DoanhNghiep.Click += btnDuyet_DoanhNghiep_Click;
             // 
             // panel1
             // 
@@ -125,7 +113,6 @@
         private Button btnDoanhNghiep;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button btnDuyetPhieuDangKy;
-        private Button btnDuyet_DoanhNghiep;
         private Panel _container;
         private Panel panel1;
         private Button btnDangTuyenTTDT;
