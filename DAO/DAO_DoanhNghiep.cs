@@ -101,8 +101,6 @@ VALUES(@TenDoanhNghiep, @MASOTHUE,@NGUOIDAIDIEN,@DIACHI,@EMAIL,@TRANGTHAI,@NGAYD
             if (SqlSingleton.Instance.ExecuteScalar(query) == null)
             { return 1; }
             return 0;
-
-
         }
 
 
@@ -113,13 +111,13 @@ VALUES(@TenDoanhNghiep, @MASOTHUE,@NGUOIDAIDIEN,@DIACHI,@EMAIL,@TRANGTHAI,@NGAYD
             var listDoanhNghiep = doanhNghieps.AsEnumerable()
             .Select(row => new DTO_DoanhNghiep()
             {
-                MaDN = row.Field<string>("MaDoanhNghiep")!,
+                MaDN = row.Field<int>("MaDoanhNghiep").ToString()!,
                 TenDN = row.Field<string>("TenDoanhNghiep")!,
                 MaSoThue = row.Field<string>("MASOTHUE")!,
                 NguoiDaiDien = row.Field<string>("NGUOIDAIDIEN")!,
                 DiaChi = row.Field<string>("DIACHI")!,
                 Email = row.Field<string>("EMAIL")!,
-                //TrangThai = TrangThaiDoanhNghiepConvert.GetTrangThaiEnum(row.Field<string>("TRANGTHAI")!.ToString()),
+                TrangThai = TrangThaiDoanhNghiepConvert.GetTrangThaiEnum(row.Field<string>("TRANGTHAI")!.ToString()),
                 NgayDangKy = row.Field<DateTime>("NGAYDK"),
             })
         .ToList();

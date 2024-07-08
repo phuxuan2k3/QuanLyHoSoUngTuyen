@@ -70,7 +70,6 @@ namespace GUI
                     GUI_DoanhNghiep gUI_DoanhNghiep = new GUI_DoanhNghiep();
                     Hide();
                     gUI_DoanhNghiep.ShowDialog();
-                    //todo: them logout xoa cac truong cua textbox
                     Show();
                     break;
                 case "Ban lãnh đạo":

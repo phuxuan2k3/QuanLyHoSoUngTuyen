@@ -112,8 +112,8 @@ public class DAO_ThongTinDangTuyen
         var dataTable = SqlSingleton.Instance.ExecuteQuery(query);
         var lsTTDT = dataTable.AsEnumerable().Select(x => new DTO_ThongTinDangTuyen()
         {
-            MaTTDT = x.Field<string>("MATTDT")!,
-            MaDN = x.Field<string>("MADN")!,
+            MaTTDT = x.Field<int>("MATTDT").ToString()!,
+            MaDN = x.Field<int>("MADN").ToString()!,
             SoNgayDangTuyen = x.Field<int>("SONGAYDT")!,
             MaHTDT = x.Field<string>("MAHTDT")!,
             TenViTri = x.Field<string>("TENVITRI")!,
@@ -276,38 +276,38 @@ public class DAO_ThongTinDangTuyen
         return dsPhDK;
     }
 
- //   List<DTO_ThongTinDangTuyen> ds = new List<DTO_ThongTinDangTuyen>();
-	//	foreach(DataRow row in dataTable.Rows)
-	//	{
-	//		var ttdt = ConvertRow(row);
- //   ds.Add(ttdt);
-	//	}
-	//	return ds;
-	//}
+    //   List<DTO_ThongTinDangTuyen> ds = new List<DTO_ThongTinDangTuyen>();
+    //	foreach(DataRow row in dataTable.Rows)
+    //	{
+    //		var ttdt = ConvertRow(row);
+    //   ds.Add(ttdt);
+    //	}
+    //	return ds;
+    //}
 
-	public static List<DTO_ThongTinDangTuyen> LoadTTDTHopLe()
-	{
-		string query = "select * from THONGTINDANGTUYEN where TINHTRANG = N'Hợp lệ' AND TRANGTHAI <> N'Đã đăng tuyển'";
-		DataTable dataTable = new DataTable();
-		dataTable = SqlSingleton.Instance.ExecuteQuery(query);
-		List<DTO_ThongTinDangTuyen> ds = new List<DTO_ThongTinDangTuyen>();
-		foreach (DataRow row in dataTable.Rows)
-		{
-			DTO_ThongTinDangTuyen ttdt = new DTO_ThongTinDangTuyen
-			{
-				MaTTDT = row["MATTDT"].ToString(),
-				MaDN = row["MADN"].ToString(),
-				SoNgayDangTuyen = Convert.ToInt32(row["SONGAYDT"]),
-				MaHTDT = row["MAHTDT"].ToString(),
-				ThoiGianDangTuyen = DateTime.Now.AddDays(-4),
-				TenViTri = row["TENVITRI"].ToString(),
-				SoLuong = Convert.ToInt32(row["SOLUONG"]),
-				YeuCau = row["YEUCAU"].ToString()
-			};
-			ds.Add(ttdt);
-		}
-		return ds;
-	}
+    public static List<DTO_ThongTinDangTuyen> LoadTTDTHopLe()
+    {
+        string query = "select * from THONGTINDANGTUYEN where TINHTRANG = N'Hợp lệ' AND TRANGTHAI <> N'Đã đăng tuyển'";
+        DataTable dataTable = new DataTable();
+        dataTable = SqlSingleton.Instance.ExecuteQuery(query);
+        List<DTO_ThongTinDangTuyen> ds = new List<DTO_ThongTinDangTuyen>();
+        foreach (DataRow row in dataTable.Rows)
+        {
+            DTO_ThongTinDangTuyen ttdt = new DTO_ThongTinDangTuyen
+            {
+                MaTTDT = row["MATTDT"].ToString(),
+                MaDN = row["MADN"].ToString(),
+                SoNgayDangTuyen = Convert.ToInt32(row["SONGAYDT"]),
+                MaHTDT = row["MAHTDT"].ToString(),
+                ThoiGianDangTuyen = DateTime.Now.AddDays(-4),
+                TenViTri = row["TENVITRI"].ToString(),
+                SoLuong = Convert.ToInt32(row["SOLUONG"]),
+                YeuCau = row["YEUCAU"].ToString()
+            };
+            ds.Add(ttdt);
+        }
+        return ds;
+    }
 
 
 

@@ -6,6 +6,30 @@ namespace BUS
 {
     public class BUS_DoanhNghiep
     {
+        public static List<DTO_DoanhNghiep> LayDanhSachDoanhNghiepChuaXacThuc()
+        {
+            var lsDN = DAO_DoanhNghiep.LayDanhSachDoanhNghiep();
+            var lsDNChuaXacThuc = lsDN.Where(x => x.TrangThai == TrangThaiDoanhNghiep.ChuaXacThuc).ToList();
+            return lsDNChuaXacThuc;
+        }
+        public static List<DTO_DoanhNghiep> LayDanhSachDoanhNghiepKhongHopLe()
+        {
+            var lsDN = DAO_DoanhNghiep.LayDanhSachDoanhNghiep();
+            var lsDNKhongHopLe = lsDN.Where(x => x.TrangThai == TrangThaiDoanhNghiep.KhongHopLe).ToList();
+            return lsDNKhongHopLe;
+        }
+        public static List<DTO_DoanhNghiep> LayDanhSachDoanhNghiepHopLe()
+        {
+            var lsDN = DAO_DoanhNghiep.LayDanhSachDoanhNghiep();
+            var lsDNHopLe = lsDN.Where(x => x.TrangThai == TrangThaiDoanhNghiep.HopLe).ToList();
+            return lsDNHopLe;
+        }
+        public static List<DTO_DoanhNghiep> LayDanhSachDoanhNghiepTiemNang()
+        {
+            var lsDN = DAO_DoanhNghiep.LayDanhSachDoanhNghiep();
+            var lsDNTiemNang = lsDN.Where(x => x.TrangThai == TrangThaiDoanhNghiep.TiemNang).ToList();
+            return lsDNTiemNang;
+        }
         public static List<DTO_DoanhNghiep> LayDanhSachDoanhNghiep()
         {
             return DAO_DoanhNghiep.LayDanhSachDoanhNghiep();

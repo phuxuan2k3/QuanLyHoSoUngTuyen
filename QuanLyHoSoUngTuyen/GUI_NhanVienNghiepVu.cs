@@ -56,5 +56,11 @@ namespace GUI
             content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(""));
             SwitchContent(content);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GUI_XemThongTinDoanhNghiep gui_XemThongTinDoanhNghiep = new();
+            SwitchContent(gui_XemThongTinDoanhNghiep);
+        }
     }
 }

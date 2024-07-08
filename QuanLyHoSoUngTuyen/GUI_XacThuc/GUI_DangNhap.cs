@@ -77,6 +77,8 @@ namespace GUI.GUI_XacThuc
             {
                 MessageBoxHelper.ShowInformation("Đăng nhập thành công!");
                 DangNhapThanhCong?.Invoke(this, new EventArgs<DTO_TaiKhoan>(taiKhoan));
+                txtMatKhau.Text = string.Empty;
+                txtTenTaiKhoan.Text = string.Empty;
             }
             else
             {
