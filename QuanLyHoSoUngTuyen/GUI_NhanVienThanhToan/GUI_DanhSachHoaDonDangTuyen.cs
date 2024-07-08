@@ -67,7 +67,7 @@ public partial class GUI_DanhSachHoaDonDangTuyen : UserControl
 		var hoaDon = Ctrler_DanhSachHoaDonDangTuyen.TruyVanHoaDon(maTTDT);
 		if (hoaDon == null)
 		{
-			MessageBox.Show($"Không tìm thấy hóa đơn \"{maTTDT}\"", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			MessageBox.Show($"Không tìm thấy hóa đơn \"{maTTDT}\"", "Không tìm thấy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 		else if (hoaDon.TrangThaiThanhToan == TrangThaiThanhToan.DaThanhToanHoanTat)
 		{

@@ -59,11 +59,11 @@ namespace GUI.UserControls
 				try
 				{
 					Ctrler_HoaDonThongTinDangTuyen.XuatPDF(filePath);
-					MessageBox.Show("PDF file saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show(@$"Xuất hóa đơn thành công. Địa chỉ thư mục đến hóa đơn là: {filePath}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show($"An error occurred while saving the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show($"Xuất hóa đơn thất bại: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 		}

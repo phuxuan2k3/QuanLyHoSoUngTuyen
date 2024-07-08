@@ -55,10 +55,14 @@ namespace GUI.UserControls
 
 		private void btnThanhToan_Click(object sender, EventArgs e)
 		{
-			Ctrler_DongPhiChoHoaDon.DongPhiChoHoaDon();
-			GUI_DanhSachHoaDonDangTuyen content = new();
-			content.HienThi(new Ctrler_DanhSachHoaDonDangTuyen());
-			GUI_NhanVienThanhToan.Instance.SwitchContent(content);
+			DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn cập nhật lần thanh toán cho thông tin đăng tuyển?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (dialogResult == DialogResult.Yes)
+			{
+				Ctrler_DongPhiChoHoaDon.DongPhiChoHoaDon();
+				GUI_DanhSachHoaDonDangTuyen content = new();
+				content.HienThi(new Ctrler_DanhSachHoaDonDangTuyen());
+				GUI_NhanVienThanhToan.Instance.SwitchContent(content);
+			}
 		}
 
 		private void btnQuayLai_Click(object sender, EventArgs e)
