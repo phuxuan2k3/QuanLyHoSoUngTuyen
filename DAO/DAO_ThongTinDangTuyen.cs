@@ -284,4 +284,76 @@ public class DAO_ThongTinDangTuyen
 	//	}
 	//	return ds;
 	//}
+
+	public static List<DTO_ThongTinDangTuyen> LoadTTDTHopLe()
+	{
+		string query = "select * from THONGTINDANGTUYEN where TINHTRANG = N'Hợp lệ' AND TRANGTHAI <> N'Đã đăng tuyển'";
+		DataTable dataTable = new DataTable();
+		dataTable = SqlSingleton.Instance.ExecuteQuery(query);
+		List<DTO_ThongTinDangTuyen> ds = new List<DTO_ThongTinDangTuyen>();
+		foreach (DataRow row in dataTable.Rows)
+		{
+			DTO_ThongTinDangTuyen ttdt = new DTO_ThongTinDangTuyen
+			{
+				MaTTDT = row["MATTDT"].ToString(),
+				MaDN = row["MADN"].ToString(),
+				SoNgayDangTuyen = Convert.ToInt32(row["SONGAYDT"]),
+				MaHTDT = row["MAHTDT"].ToString(),
+				ThoiGianDangTuyen = DateTime.Now.AddDays(-4),
+				TenViTri = row["TENVITRI"].ToString(),
+				SoLuong = Convert.ToInt32(row["SOLUONG"]),
+				YeuCau = row["YEUCAU"].ToString()
+			};
+			ds.Add(ttdt);
+		}
+		return ds;
+	}
+
+
+
+    public static Boolean check_Vitri(string value)
+    {
+        string QueryStr = $"SELECT * FROM THONGTINDANGTUYEN WHERE TENVITRI LIKE N'%{value}%';";
+
+        Console.WriteLine(QueryStr);
+        SqlDataReader reader = DatabaseDAO.getQueryStr(QueryStr);
+
+        if (reader.Read())
+        {
+            reader.Close();
+            return true;
+        }
+        else
+        {
+            reader.Close();
+            return false;
+        }
+    }
+
+
+    public static SqlDataReader getList(string value)
+    {
+        SqlConnection sqlConn = DatabaseDAO.getConnectionString();
+        SqlDataReader reader = null;
+        string QueryStr = $"SELECT * FROM THONGTINDANGTUYEN WHERE TENVITRI LIKE N'%{value}%' AND TINHTRANG = N'Đã đăng tuyển';";
+        try
+        {
+            sqlConn.Open();
+            SqlCommand cmd = new SqlCommand(QueryStr, sqlConn);
+            reader = cmd.ExecuteReader(CommandBehavior.CloseConnection); // Ensure the connection is closed when the reader is closed
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            if (sqlConn != null && sqlConn.State == System.Data.ConnectionState.Open)
+            {
+                sqlConn.Close();
+            }
+            throw;
+        }
+
+        return reader;
+    }
+
+
 }

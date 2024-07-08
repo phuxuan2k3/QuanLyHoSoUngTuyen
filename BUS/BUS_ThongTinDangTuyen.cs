@@ -1,6 +1,7 @@
 ﻿using DAO;
 using DAO.Exceptions;
 using DTO;
+using System.Data.SqlClient;
 
 namespace BUS;
 
@@ -80,6 +81,41 @@ public class BUS_ThongTinDangTuyen
 		DAO_ThongTinDangTuyen.CapNhat(thongTinDangTuyen);
 	}
 
+	public static void CapNhatTrangThaiXetDuyet(string MaTTDT, string tinhTrang)
+	{
+		DAO_ThongTinDangTuyen.CapNhatTrangThaiTTDT(MaTTDT, tinhTrang);
+
+	}
+
+	public static void CapNhatTinhTrangDangTuyen(string MaTTDT)
+	{
+		DAO_ThongTinDangTuyen.CapNhatTrangThaiDangTuyen(MaTTDT);
+	}
+
+    public static int KiemTraViTriUngTuyen(string value)
+    {
+        Boolean check = DAO_ThongTinDangTuyen.check_Vitri(value);
+        if (check == true)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+
+    }
+    public static SqlDataReader viewList_ViTri(string value)
+    {
+        SqlDataReader reader = DAO_ThongTinDangTuyen.getList(value);
+        return reader;
+    }
+
+    public static int check_Dienphieu(string value)
+    {
+        if (value == "") return 0;
+        return 1;
+    }
 	public static void CapNhatTrangThai(string MaTTDT, TrangThaiThongTinDangTuyen trangThai)
 	{
 		DAO_ThongTinDangTuyen.CapNhatTrangThai(MaTTDT, trangThai);

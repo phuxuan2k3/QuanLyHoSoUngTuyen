@@ -152,5 +152,30 @@ VALUES(@TenDoanhNghiep, @MASOTHUE,@NGUOIDAIDIEN,@DIACHI,@EMAIL,@TRANGTHAI,@NGAYD
                 return null;
             }
         }
+
+        public static string LayTenDoanhNghiep(string Ma)
+        {
+            string doanhNghiep = string.Empty;
+            string QueryStr = $"SELECT TENDOANHNGHIEP FROM DOANHNGHIEP WHERE MADOANHNGHIEP = '{Ma}';";
+            using (SqlConnection sqlConn = DatabaseDAO.getConnectionString())
+            {
+                try
+                {
+                    sqlConn.Open();
+                    SqlCommand cmd = new SqlCommand(QueryStr, sqlConn);
+
+                    doanhNghiep = cmd.ExecuteScalar().ToString()!;
+
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception (log it, rethrow it, etc.)
+                    Console.WriteLine(ex.Message);
+                }
+                sqlConn.Close();
+            }
+
+            return doanhNghiep;
+        }
     }
 }

@@ -49,5 +49,10 @@ namespace BUS
         {
             return DAO_DoanhNghiep.LayThongTinDoanhNghiep(maDoanhNghiep);
         }
+
+        public static string LayTenDN(string Ma)
+        {
+            return DAO_DoanhNghiep.LayTenDoanhNghiep(Ma);
+        }
     }
 }
