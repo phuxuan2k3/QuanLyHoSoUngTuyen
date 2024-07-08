@@ -62,29 +62,7 @@ namespace GUI.GUI_XacThuc
             return true;
         }
 
-        private void rdbPassword_CheckedChanged(object sender, EventArgs e)
-        {
-            if (txtMatKhau.PasswordChar.Equals("."))
-            {
-                txtMatKhau.PasswordChar = '\0';
-            }
-            else
-            {
-                txtMatKhau.PasswordChar = '.';
-            }
-        }
-
-        private void rdbPasswordAgain_CheckedChanged(object sender, EventArgs e)
-        {
-            if (txtNhapLaiMatKhau.PasswordChar.Equals("."))
-            {
-                txtNhapLaiMatKhau.PasswordChar = '\0';
-            }
-            else
-            {
-                txtNhapLaiMatKhau.PasswordChar = '.';
-            }
-        }
+ 
 
         private void cbPassword_CheckedChanged(object sender, EventArgs e)
         {

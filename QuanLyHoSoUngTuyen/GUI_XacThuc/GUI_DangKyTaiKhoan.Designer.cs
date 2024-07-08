@@ -36,7 +36,7 @@
             label3 = new Label();
             txtNhapLaiMatKhau = new TextBox();
             cbPassword = new CheckBox();
-            cbPasswordAgain = new CheckBox();
+            cbPasswordAgain = new CheckBox();   
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
