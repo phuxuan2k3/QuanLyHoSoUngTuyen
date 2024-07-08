@@ -175,5 +175,31 @@ VALUES(@TenDoanhNghiep, @MASOTHUE,@NGUOIDAIDIEN,@DIACHI,@EMAIL,@TRANGTHAI,@NGAYD
 
             return doanhNghiep;
         }
+
+        public static DTO_DoanhNghiep LayDNBangTenTaiKhoan(string tenTaiKhoan)
+        {
+            string query = "select * from DOANHNGHIEP where TenTaiKhoan = " + tenTaiKhoan;
+            var dataTable = SqlSingleton.Instance.ExecuteQuery(query);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                DataRow row = dataTable.Rows[0];
+                DTO_DoanhNghiep doanhNghiep = new DTO_DoanhNghiep
+                {
+                    MaDN = row["MaDoanhNghiep"].ToString(),
+                    TenDN = row["TenDoanhNghiep"].ToString(),
+                    MaSoThue = row["MASOTHUE"].ToString(),
+                    NguoiDaiDien = row["NGUOIDAIDIEN"].ToString(),
+                    DiaChi = row["DIACHI"].ToString(),
+                    Email = row["EMAIL"].ToString(),
+                    NgayDangKy = Convert.ToDateTime(row["NGAYDK"])
+                };
+                return doanhNghiep;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

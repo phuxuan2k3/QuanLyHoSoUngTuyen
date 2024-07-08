@@ -1,4 +1,5 @@
-﻿using Ctrler;
+﻿using BUS;
+using Ctrler;
 using DTO;
 using GUI.GUI_XacThuc;
 using System;
@@ -67,7 +68,9 @@ namespace GUI
             switch ((e as EventArgs<DTO_TaiKhoan>)!.Value.VaiTro)
             {
                 case "Doanh nghiệp":
+                    var dn = BUS_DoanhNghiep.LayDoanhNghiep((e as EventArgs<DTO_TaiKhoan>)!.Value.TenTaiKhoan));
                     GUI_DoanhNghiep gUI_DoanhNghiep = new GUI_DoanhNghiep();
+                    gUI_DoanhNghiep.MaDN = dn.MaDN;
                     Hide();
                     gUI_DoanhNghiep.ShowDialog();
                     Show();
