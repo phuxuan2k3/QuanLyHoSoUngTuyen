@@ -162,7 +162,7 @@ public class DAO_ThongTinDangTuyen
     public static List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenChoDNDuyet()
     {
         string query = "SELECT MATTDT,MADN,SoLuong FROM THONGTINDANGTUYEN " +
-            "WHERE SOLUONG <= (SELECT COUNT(*) FROM PHIEUDANGKYUNGTUYEN WHERE PHIEUDANGKYUNGTUYEN.MATTDT = THONGTINDANGTUYEN.MATTDT and TRANGTHAI = N'Đã xử lý')";
+            "WHERE SOLUONG <= (SELECT COUNT(*) FROM PHIEUDANGKYUNGTUYEN WHERE PHIEUDANGKYUNGTUYEN.MATTDT = THONGTINDANGTUYEN.MATTDT and TRANGTHAI In (N'Đã xử lý',N'Đạt',N'Không đạt'))";
 
         DataTable dataTable = new DataTable();
         dataTable = SqlSingleton.Instance.ExecuteQuery(query);
