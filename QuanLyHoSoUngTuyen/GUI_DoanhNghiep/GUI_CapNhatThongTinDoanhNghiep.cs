@@ -48,10 +48,6 @@ namespace GUI.UserControls
             ctrler.CapNhatTTDN(doanhNghiep);
         }
 
-        private void btnQuayLai_Click(object sender, EventArgs e)
-        {
-            
 
-        }
     }
 }

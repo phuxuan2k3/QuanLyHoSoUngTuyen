@@ -28,7 +28,9 @@ public partial class GUI_DuyetPhieuDangKy_DN : UserControl
         DTO_ThongTinDangTuyen ttdt = new DTO_ThongTinDangTuyen();
         DTO_ThongTinHoSo pdk = new DTO_ThongTinHoSo();
         ctrler_ChiTietPhieuDangKy.ThongTinDuyet(ref ttdt, ref pdk);
-        lbTTDT.Text = "Mã TTDT: " + ttdt.MaTTDT.ToString(); _MaUV.Text = pdk.MaUV;
+        lbTTDT.Text = "Mã TTDT: " + ttdt.MaTTDT.ToString();
+        lbTTDT.Tag = ttdt.MaTTDT.ToString();
+        _MaUV.Text = pdk.MaUV;
         _viTri.Text = pdk.ViTri;
         _bangCap.Text = pdk.BangCap;
         cbxTinhTrang.Text = pdk.TrangThai.ToString();
@@ -50,7 +52,7 @@ public partial class GUI_DuyetPhieuDangKy_DN : UserControl
         DTO_ThongTinHoSo ttpdk = new DTO_ThongTinHoSo
         {
             MaUV = _MaUV.Text,
-            MaTTDT = lbTTDT.Text,
+            MaTTDT = Convert.ToString(lbTTDT.Tag),
             UuTien = 0,
             BangCap = "",
             TrangThai = cbxTinhTrang.Text,
@@ -91,7 +93,7 @@ public partial class GUI_DuyetPhieuDangKy_DN : UserControl
             }
 
             // Hiển thị nội dung đã cập nhật
-            GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
+            GUI_DoanhNghiep.Instance.SwitchContent(content);
         }
         catch (Exception ex)
         {

@@ -52,16 +52,21 @@ public partial class GUI_HieuChinhThongTinDangTuyen : UserControl
 		}
 		else
 		{
-			DTO_ThongTinDangTuyen thongTinDangTuyen = new DTO_ThongTinDangTuyen(
-				tenViTri: _tenViTri.Text,
-				soLuong: (int)_soLuong.Value,
-				yeuCau: _yeuCau.Text
-				);
-			Ctrler_HieuChinhThongTinDangTuyen.XacNhanHieuChinh(thongTinDangTuyen);
-			var gui = new GUI_ChiTietThongTinDangTuyen();
-			var ctrler = Ctrler_HieuChinhThongTinDangTuyen.HienThi_ChiTietThongTinDangTuyen();
-			gui.HienThi(ctrler);
-			GUI_DoanhNghiep.Instance.SwitchContent(gui);
+			var res = MessageBox.Show($"Bạn có chắc chắn muốn gửi lại yêu cầu hiệu chỉnh? Thông tin đăng tuyển của bạn sẽ cần được xác thực lại.", "Xác nhận hiệu chỉnh", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (res == DialogResult.Yes)
+			{
+				DTO_ThongTinDangTuyen thongTinDangTuyen = new DTO_ThongTinDangTuyen(
+					tenViTri: _tenViTri.Text,
+					soLuong: (int)_soLuong.Value,
+					yeuCau: _yeuCau.Text
+					);
+				Ctrler_HieuChinhThongTinDangTuyen.XacNhanHieuChinh(thongTinDangTuyen);
+				MessageBox.Show($"Đã gửi yêu cầu hiệu chỉnh đến hệ thống.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				var gui = new GUI_ChiTietThongTinDangTuyen();
+				var ctrler = Ctrler_HieuChinhThongTinDangTuyen.HienThi_ChiTietThongTinDangTuyen();
+				gui.HienThi(ctrler);
+				GUI_DoanhNghiep.Instance.SwitchContent(gui);
+			}
 		}
 	}
 
