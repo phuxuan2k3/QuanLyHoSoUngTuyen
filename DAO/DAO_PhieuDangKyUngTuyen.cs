@@ -125,7 +125,7 @@ namespace DAO
             using (SqlCommand cmd = new SqlCommand(query, SqlSingleton.Instance.Connection))
             {
                 cmd.Parameters.AddWithValue("@TrangThai", ttpdk.TrangThai.ToString());
-                cmd.Parameters.AddWithValue("@MaTTDT", ttpdk.MaTTDT);
+                cmd.Parameters.AddWithValue("@MaTTDT", Convert.ToInt32( ttpdk.MaTTDT));
                 cmd.Parameters.AddWithValue("@MaUV", ttpdk.MaUV);
 
                 SqlSingleton.Instance.Connection.Open();

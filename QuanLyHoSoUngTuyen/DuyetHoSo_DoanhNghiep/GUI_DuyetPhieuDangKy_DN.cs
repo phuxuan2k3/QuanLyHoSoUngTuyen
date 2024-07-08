@@ -91,7 +91,7 @@ public partial class GUI_DuyetPhieuDangKy_DN : UserControl
             }
 
             // Hiển thị nội dung đã cập nhật
-            GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
+            GUI_DoanhNghiep.Instance.SwitchContent(content);
         }
         catch (Exception ex)
         {
