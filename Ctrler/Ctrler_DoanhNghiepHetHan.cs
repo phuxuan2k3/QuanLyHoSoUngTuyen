@@ -8,7 +8,9 @@ namespace Ctrler
     {
         public static void LoadDanhSachDNHetHan(out List<DTO_DoanhNghiep> lsDoanhNghiep)
         {
-            lsDoanhNghiep = BUS_DoanhNghiep.LayDanhSachDoanhNghiep();
+            var lsTTDT = BUS_ThongTinDangTuyen.LayDanhSachTTDTSapHetHan();
+            var lsDN = lsTTDT.DistinctBy(x => x.MaDN).Select(x => BUS_DoanhNghiep.Lay(x.MaDN)).ToList();
+            lsDoanhNghiep = lsDN;
         }
 
         public static void LoadKetQuaUngTuyenCuaDN(string maDN, out List<DTO_KetQuaUngTuyen> lsKetQuaUngTuyen)

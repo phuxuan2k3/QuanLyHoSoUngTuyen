@@ -6,6 +6,12 @@ namespace BUS
 {
     public class BUS_DoanhNghiep
     {
+        public static List<DTO_DoanhNghiep> LayDanhSachDanhNghiepSapHetHan()
+        {
+              var lsDN = DAO_DoanhNghiep.LayDanhSachDoanhNghiep();
+            var lsDNChuaXacThuc = lsDN.Where(x => x.TrangThai == TrangThaiDoanhNghiep.ChuaXacThuc).ToList();
+            return lsDNChuaXacThuc;
+        }
         public static List<DTO_DoanhNghiep> LayDanhSachDoanhNghiepChuaXacThuc()
         {
             var lsDN = DAO_DoanhNghiep.LayDanhSachDoanhNghiep();
@@ -81,7 +87,7 @@ namespace BUS
 
         public static DTO_DoanhNghiep LayDoanhNghiep(string tenTaiKhoan)
         {
-            return DAO_DoanhNghiep.LayDNBangTenTaiKhoan(tenTaiKhoan);  
+            return DAO_DoanhNghiep.LayDNBangTenTaiKhoan(tenTaiKhoan);
         }
     }
 }
