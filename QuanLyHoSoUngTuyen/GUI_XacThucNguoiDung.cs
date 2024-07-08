@@ -84,17 +84,23 @@ namespace GUI
                     Hide();
                     gui_NhanVienNghiepVu.ShowDialog();
                     Show();
-                    break;     
+                    break;
                 case "Nhân viên tiếp nhận":
                     GUI_NhanVienTiepNhan gui_NhanVienTiepNhan = new GUI_NhanVienTiepNhan();
                     Hide();
                     gui_NhanVienTiepNhan.ShowDialog();
                     Show();
-                    break;          
+                    break;
+                case "Nhân viên thanh toán":
+                    GUI_NhanVienThanhToan gui_NhanVienThanhToan = new GUI_NhanVienThanhToan();
+                    Hide();
+                    gui_NhanVienThanhToan.ShowDialog();
+                    Show();
+                    break;   
                 //case "Nhân viên thanh toán":
-                //    GUI_NhanVienTiepNhan gui_NhanVienTiepNhan = new GUI_NhanVienTiepNhan();
+                //    GUI_NhanVienThanhToan gui_NhanVienThanhToan = new GUI_NhanVienThanhToan();
                 //    Hide();
-                //    gui_NhanVienTiepNhan.ShowDialog();
+                //    gui_NhanVienThanhToan.ShowDialog();
                 //    Show();
                 //    break;
             }
