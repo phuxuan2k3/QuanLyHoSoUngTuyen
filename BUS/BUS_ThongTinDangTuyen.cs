@@ -34,18 +34,17 @@ public class BUS_ThongTinDangTuyen
 
 	public static List<DTO_ThongTinDangTuyen> LayDSTTDTCanXetDuyet()
 	{
-		return DAO_ThongTinDangTuyen.LayTTDTCanXetDuyet();
+		return DAO_ThongTinDangTuyen.LayDSTTDTCanXetDuyet();
 	}
 
-	public static List<DTO_ThongTinDangTuyen> LayDSTTDTHopLe()
+	public static List<DTO_ThongTinDangTuyen> LayDSTTDTCanDangTuyen()
 	{
-		return DAO_ThongTinDangTuyen.LoadTTDTHopLe();
+		return DAO_ThongTinDangTuyen.LayDSTTDTCanDangTuyen();
 	}
 
 	private static bool KiemTra(DTO_ThongTinDangTuyen thongTinDangTuyen)
 	{
 		if (thongTinDangTuyen.SoNgayDangTuyen < 1 ||
-			thongTinDangTuyen.ThoiGianDangTuyen.Date < DateTime.Now.AddDays(1).Date ||
 			string.IsNullOrEmpty(thongTinDangTuyen.TenViTri) == true ||
 			thongTinDangTuyen.SoLuong < 1 ||
 			string.IsNullOrEmpty(thongTinDangTuyen.YeuCau) == true)
@@ -63,13 +62,13 @@ public class BUS_ThongTinDangTuyen
 		return true;
 	}
 
-	public static void Them(DTO_ThongTinDangTuyen thongTinDangTuyen)
+	public static int Them(DTO_ThongTinDangTuyen thongTinDangTuyen)
 	{
 		if (KiemTra(thongTinDangTuyen) == false)
 		{
-			return;
+			return -1;
 		}
-		DAO_ThongTinDangTuyen.Them(thongTinDangTuyen);
+		return DAO_ThongTinDangTuyen.Them(thongTinDangTuyen);
 	}
 	
 	public static void CapNhat(DTO_ThongTinDangTuyen thongTinDangTuyen)
@@ -81,15 +80,14 @@ public class BUS_ThongTinDangTuyen
 		DAO_ThongTinDangTuyen.CapNhat(thongTinDangTuyen);
 	}
 
-	public static void CapNhatTrangThaiXetDuyet(string MaTTDT, string tinhTrang)
+	public static void CapNhatTrangThai(string MaTTDT, TrangThaiThongTinDangTuyen trangThai)
 	{
-		DAO_ThongTinDangTuyen.CapNhatTrangThaiTTDT(MaTTDT, tinhTrang);
-
+		DAO_ThongTinDangTuyen.CapNhatTrangThai(MaTTDT, trangThai);
 	}
 
-	public static void CapNhatTinhTrangDangTuyen(string MaTTDT)
+	public static void CapNhatDaDangTuyen(string MaTTDT)
 	{
-		DAO_ThongTinDangTuyen.CapNhatTrangThaiDangTuyen(MaTTDT);
+		DAO_ThongTinDangTuyen.CapNhatDaDangTuyen(MaTTDT);
 	}
     public static List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenDuyetPDK()
     {

@@ -1,10 +1,36 @@
-﻿namespace DTO
+﻿using DTO.Exceptions;
+
+namespace DTO
 {
 	public enum TrangThaiThongTinDangTuyen
 	{
 		ChuaXetDuyet,
 		KhongHopLe,
 		HopLe,
+	}
+	public static class TrangThaiThongTinDangTuyenConvert
+	{
+		public static string ToDisplayString(this TrangThaiThongTinDangTuyen trangThaiThongTinDangTuyen)
+		{
+			return trangThaiThongTinDangTuyen switch
+			{
+				TrangThaiThongTinDangTuyen.ChuaXetDuyet => "Chưa xét duyệt",
+				TrangThaiThongTinDangTuyen.KhongHopLe => "Không hợp lệ",
+				TrangThaiThongTinDangTuyen.HopLe => "Hợp lệ",
+				_ => throw new EnumException(),
+			};
+		}
+
+		public static TrangThaiThongTinDangTuyen ToTrangThaiThongTinDangTuyen(this string s)
+		{
+			return s switch
+			{
+				"Chưa xét duyệt" => TrangThaiThongTinDangTuyen.ChuaXetDuyet,
+				"Không hợp lệ" => TrangThaiThongTinDangTuyen.KhongHopLe,
+				"Hợp lệ" => TrangThaiThongTinDangTuyen.HopLe,
+				_ => throw new EnumException(),
+			};
+		}
 	}
 
 	public enum TinhTrangThongTinDangTuyen
@@ -13,6 +39,32 @@
 		DaDangTuyen,
 		CanHieuChinh
 	}
+
+	public static class TinhTrangThongTinDangTuyenConvert
+	{
+		public static string ToDisplayString(this TinhTrangThongTinDangTuyen tinhTrangThongTinDangTuyen)
+		{
+			return tinhTrangThongTinDangTuyen switch
+			{
+				TinhTrangThongTinDangTuyen.ChuaDangTuyen => "Chưa đăng tuyển",
+				TinhTrangThongTinDangTuyen.DaDangTuyen => "Đã đăng tuyển",
+				TinhTrangThongTinDangTuyen.CanHieuChinh => "Cần hiệu chỉnh",
+				_ => throw new EnumException()
+			};
+		}
+
+		public static TinhTrangThongTinDangTuyen ToTinhTrangThongTinDangTuyen(this string s)
+		{
+			return s switch
+			{
+				"Chưa đăng tuyển" => TinhTrangThongTinDangTuyen.ChuaDangTuyen,
+				"Đã đăng tuyển" => TinhTrangThongTinDangTuyen.DaDangTuyen,
+				"Cần hiệu chỉnh" => TinhTrangThongTinDangTuyen.CanHieuChinh,
+				_ => throw new EnumException(),
+			};
+		}
+	}
+
 
 	public class DTO_ThongTinDangTuyen(string maTTDT = "", string maDN = "", int soNgayDangTuyen = 1, string maHTDT = "", DateTime? thoiGianDangTuyen = null, string tenViTri = "", int soLuong = 1, string yeuCau = "", TrangThaiThongTinDangTuyen trangThai = TrangThaiThongTinDangTuyen.ChuaXetDuyet, TinhTrangThongTinDangTuyen tinhTrang = TinhTrangThongTinDangTuyen.ChuaDangTuyen)
 	{

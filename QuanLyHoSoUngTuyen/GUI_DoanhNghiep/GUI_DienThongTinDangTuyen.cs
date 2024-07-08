@@ -1,10 +1,11 @@
 ﻿using Ctrler.DoanhNghiep;
 using DTO;
 using GUI.GUIException;
+using GUI.UserControls;
 
 namespace GUI.UserControls
 {
-    public partial class GUI_DienThongTinDangTuyen : UserControl
+	public partial class GUI_DienThongTinDangTuyen : UserControl
 	{
 		private Ctrler_DienThongTinDangTuyen? _ctrler_DienThongTinDangTuyen;
 
@@ -32,6 +33,7 @@ namespace GUI.UserControls
 			_hinhThucDangTuyen.SelectedIndex = hinhThucDangTuyen.FindIndex(x => x.MaHTDT == thongTinDangTuyen.MaHTDT);
 			_hinhThucDangTuyen.DropDownStyle = ComboBoxStyle.DropDownList;
 			_hinhThucDangTuyen.SelectedIndex = 0;
+			_thoiGianDangTuyen.MinDate = DateTime.Now.AddDays(1).Date;
 			_thoiGianDangTuyen.Value = thongTinDangTuyen.ThoiGianDangTuyen;
 			_tenViTri.Text = thongTinDangTuyen.TenViTri;
 			_soLuong.Value = thongTinDangTuyen.SoLuong;

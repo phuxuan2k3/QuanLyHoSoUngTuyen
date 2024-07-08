@@ -5,7 +5,6 @@ namespace Ctrler.NhanVienTiepNhan
 {
 	public class Ctrler_DanhSachTTDTCanXetDuyet
     {
-
         public void Load(ref List<DTO_ThongTinDangTuyen> thongTinDangTuyen)
         {
             thongTinDangTuyen = BUS_ThongTinDangTuyen.LayDSTTDTCanXetDuyet();
@@ -18,7 +17,5 @@ namespace Ctrler.NhanVienTiepNhan
             var doanhNghiep = BUS_DoanhNghiep.Lay(ttdt.MaDN);
             return new Ctrler_XetDuyetThongTinDangTuyen(ttdt, hinhThucDangTuyen, doanhNghiep);
         }
-
-
     }
 }

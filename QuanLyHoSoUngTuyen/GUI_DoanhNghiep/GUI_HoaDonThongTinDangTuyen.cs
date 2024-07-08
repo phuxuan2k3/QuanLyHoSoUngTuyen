@@ -32,8 +32,8 @@ namespace GUI.UserControls
 			_soNgayDangTuyen.Text = thongTinDangTuyen.SoNgayDangTuyen.ToString();
 			_thoiGianDangTuyen.Text = thongTinDangTuyen.ThoiGianDangTuyen.ToDateString();
 			_hinhThuc.Text = hinhThucDangTuyen.TenHinhThuc;
-			_trangThaiThanhToan.Text = hoaDon.TrangThaiThanhToan.ToString();
-			_cachThucThanhToan.Text = hoaDon.CachThucThanhToan.ToString();
+			_trangThaiThanhToan.Text = hoaDon.TrangThaiThanhToan.ToDisplayString();
+			_cachThucThanhToan.Text = hoaDon.CachThucThanhToan.ToDisplayString();
 			_ngayLapHoaDon.Text = hoaDon.NgayLap.ToDateString();
 			_tongChiPhi.Text = hoaDon.TongTien.ToVNDString();
 			foreach (var chiTietHoaDon in dsChiTietHoaDon)
@@ -48,7 +48,24 @@ namespace GUI.UserControls
 
 		private void btnXuatHoaDon_Click(object sender, EventArgs e)
 		{
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
+			saveFileDialog.Filter = "PDF Files|*.pdf";
+			saveFileDialog.Title = "Save a PDF File";
+			saveFileDialog.FileName = "document.pdf";
 
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				string filePath = saveFileDialog.FileName;
+				try
+				{
+					Ctrler_HoaDonThongTinDangTuyen.XuatPDF(filePath);
+					MessageBox.Show("PDF file saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show($"An error occurred while saving the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
 		}
 
 		private void btnQuayLai_Click(object sender, EventArgs e)

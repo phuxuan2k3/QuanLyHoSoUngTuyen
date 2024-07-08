@@ -67,7 +67,7 @@ namespace GUI
         private void btnHuy_Click(object sender, EventArgs e)
         {
             GUI_DuyetPhieuDangKy_DanhSachThongTinDangTuyen content = new();
-            content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(""));
+            content.HienThi();
             GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
         }
     }

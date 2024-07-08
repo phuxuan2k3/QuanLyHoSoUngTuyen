@@ -11,8 +11,11 @@ namespace BUS
             return DAO_DoanhNghiep.LayDanhSachDoanhNghiep();
         }
 
-
         public static List<DTO_DoanhNghiep> LayDoanhNghiepCanXacThuc()
+        {
+            return DAO_DoanhNghiep.LayDNChuaXacThuc();
+        }
+        public static List<DTO_DoanhNghiep> LayDNCanXacThuc()
         {
             return DAO_DoanhNghiep.LayDNChuaXacThuc();
         }
@@ -47,6 +50,4 @@ namespace BUS
             return DAO_DoanhNghiep.LayThongTinDoanhNghiep(maDoanhNghiep);
         }
     }
-
-
 }

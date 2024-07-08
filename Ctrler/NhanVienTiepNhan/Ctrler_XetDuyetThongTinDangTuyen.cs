@@ -14,16 +14,12 @@ namespace Ctrler.NhanVienTiepNhan
         private readonly DTO_HinhThucDangTuyen _hinhThucDangTuyen;
         private readonly DTO_DoanhNghiep _DoanhNghiep;
 
-
         public Ctrler_XetDuyetThongTinDangTuyen(DTO_ThongTinDangTuyen ttdt, DTO_HinhThucDangTuyen hinhThucDangTuyen, DTO_DoanhNghiep doanhNghiep)
         {
             _ttdt = ttdt;
             _hinhThucDangTuyen = hinhThucDangTuyen;
             _DoanhNghiep = doanhNghiep;
-            
         }
-
-  
 
         public void Load(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HinhThucDangTuyen hinhThucDangTuyen, ref DTO_DoanhNghiep doanhNghiep)
         {
@@ -32,11 +28,9 @@ namespace Ctrler.NhanVienTiepNhan
             doanhNghiep = _DoanhNghiep;
         }
 
-        public static void CapNhatTrangThaiXetDuyet(string MaTTDT, string TrangThai)
+        public static void CapNhatTrangThai(string MaTTDT, TrangThaiThongTinDangTuyen trangThai)
         {
-            BUS_ThongTinDangTuyen.CapNhatTrangThaiXetDuyet(MaTTDT, TrangThai);
+            BUS_ThongTinDangTuyen.CapNhatTrangThai(MaTTDT, trangThai);
         }
-
     }
-
 }

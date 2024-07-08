@@ -42,11 +42,10 @@ namespace GUI
 
             }
         }
-        public void HienThi(Ctrler_DanhSachThongTinDangTuyen ctrler_DanhSachThongTinDangTuyen)
+        public void HienThi( )
         {
-            _ctrler_DanhSachThongTinDangTuyen = ctrler_DanhSachThongTinDangTuyen;
             var dsTTDT = new List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen>();
-            dsTTDT = Ctrler_DanhSachThongTinDangTuyen.LayDSThongTinDangTuyenDuyetPDK();
+            dsTTDT = Ctrler_DuyetPhieuDangKy_DanhSachThongTinDangTuyen.LayDSThongTinDangTuyenDuyetPDK();
             foreach (var ttdt in dsTTDT)
             {
                 int rowId = dsThongTinDangTuyen.Rows.Add();
@@ -60,7 +59,7 @@ namespace GUI
         private void btnHuy_Click(object sender, EventArgs e)
         {
             GUI_DuyetPhieuDangKy_DanhSachThongTinDangTuyen content = new();
-            content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(""));
+            content.HienThi();
             GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
         }
     }
