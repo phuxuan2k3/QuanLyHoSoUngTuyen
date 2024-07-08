@@ -11,12 +11,12 @@ public partial class GUI_DoanhNghiep : Form
     private string _maDN = "1";
     public string MaDN { get => _maDN; set => _maDN = value; }
 
-    public GUI_DoanhNghiep()
-    {
-        Style.ApplyStylingEventOnChildControlAdded(this, ButtonStyle.Apply);
-        _instance = this;
-        InitializeComponent();
-    }
+	public GUI_DoanhNghiep()
+	{
+		Style.ApplyStylingEventOnChildControlAdded(this, ButtonStyle.Apply);
+		_instance = this;
+		InitializeComponent();
+	}
 
     private void btnTaoYeuCau_Click(object sender, EventArgs e)
     {
@@ -59,12 +59,12 @@ public partial class GUI_DoanhNghiep : Form
 
 
 
-    private void btnCapNhatTTDN_Click(object sender, EventArgs e)
-    {
-        GUI_CapNhatThongTinDoanhNghiep content = new();
-        content.HienThi("123568");
-        SwitchContent(content);
-    }
+	private void btnCapNhatTTDN_Click(object sender, EventArgs e)
+	{
+		GUI_CapNhatThongTinDoanhNghiep content = new();
+		content.HienThi("1");
+		SwitchContent(content);
+	}
 
     private void btnDuyetHoSo_Click(object sender, EventArgs e)
     {

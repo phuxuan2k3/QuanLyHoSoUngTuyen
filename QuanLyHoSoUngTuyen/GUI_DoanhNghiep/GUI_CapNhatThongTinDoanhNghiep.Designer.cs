@@ -40,7 +40,6 @@
             label3 = new Label();
             label5 = new Label();
             label4 = new Label();
-            btnQuayLai = new Button();
             btnChinhSua = new Button();
             btnLuu = new Button();
             tableLayoutPanel1.SuspendLayout();
@@ -72,7 +71,6 @@
             tableLayoutPanel1.Controls.Add(label3, 0, 2);
             tableLayoutPanel1.Controls.Add(label5, 0, 4);
             tableLayoutPanel1.Controls.Add(label4, 0, 3);
-            tableLayoutPanel1.Controls.Add(btnQuayLai, 2, 5);
             tableLayoutPanel1.Controls.Add(btnChinhSua, 1, 5);
             tableLayoutPanel1.Controls.Add(btnLuu, 0, 5);
             tableLayoutPanel1.Location = new Point(27, 98);
@@ -177,16 +175,6 @@
             label4.TabIndex = 2;
             label4.Text = "Địa chỉ:";
             // 
-            // btnQuayLai
-            // 
-            btnQuayLai.Location = new Point(712, 203);
-            btnQuayLai.Name = "btnQuayLai";
-            btnQuayLai.Size = new Size(94, 29);
-            btnQuayLai.TabIndex = 10;
-            btnQuayLai.Text = "Quay lại";
-            btnQuayLai.UseVisualStyleBackColor = true;
-            btnQuayLai.Click += btnQuayLai_Click;
-            // 
             // btnChinhSua
             // 
             btnChinhSua.Location = new Point(201, 203);
@@ -235,7 +223,6 @@
         private Label label3;
         private Label label5;
         private Label label4;
-        private Button btnQuayLai;
         private Button btnChinhSua;
         private Button btnLuu;
     }
