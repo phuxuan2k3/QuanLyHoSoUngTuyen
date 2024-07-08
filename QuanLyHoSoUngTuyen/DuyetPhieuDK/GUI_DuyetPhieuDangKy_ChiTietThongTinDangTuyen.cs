@@ -16,7 +16,7 @@ namespace GUI
 {
     public partial class GUI_DuyetPhieuDangKy_ChiTietThongTinDangTuyen : UserControl
     {
-        private Ctrler_ChiTietThongTinDangTuyen? _ctrler_ChiTietThongTinDangTuyen;
+        private Ctrler_DuyetPhieuDangKy_ChiTietThongTinDangTuyen? _ctrler_ChiTietThongTinDangTuyen;
         public static int doUuTien;
 
 
@@ -25,12 +25,12 @@ namespace GUI
             InitializeComponent();
         }
 
-        public Ctrler_ChiTietThongTinDangTuyen Ctrler_ChiTietThongTinDangTuyen
+        public Ctrler_DuyetPhieuDangKy_ChiTietThongTinDangTuyen Ctrler_ChiTietThongTinDangTuyen
         {
             get => _ctrler_ChiTietThongTinDangTuyen ?? throw new ControllerNotFoundException();
             private set => _ctrler_ChiTietThongTinDangTuyen = value;
         }
-        public void HienThi(Ctrler_ChiTietThongTinDangTuyen ctrler_ChiTietThongTinDangTuyen)
+        public void HienThi(Ctrler_DuyetPhieuDangKy_ChiTietThongTinDangTuyen ctrler_ChiTietThongTinDangTuyen)
         {
             _ctrler_ChiTietThongTinDangTuyen = ctrler_ChiTietThongTinDangTuyen;
             DTO_ThongTinDangTuyen ttdt = new();

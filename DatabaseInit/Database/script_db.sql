@@ -33,20 +33,20 @@ create table TAIKHOAN (
     TenTaiKhoan varchar(50) not null primary key,
     MatKhau varchar(255),
 	VaiTro  nvarchar(20),
-	CONSTRAINT CK_VAITRO CHECK (VAITRO IN (N'Doanh nghiệp', N'Nhân viên', N'Ứng viên'))
+	CONSTRAINT CK_VAITRO CHECK (VAITRO IN (N'Doanh nghiệp', N'Nhân viên nghiệp vụ', N'Nhân viên tiếp nhận', N'Nhân viên thanh toán', N'Ban lãnh đạo', N'Ứng viên'))
 );
 go
 select * from TAIKHOAN;
 -- Table NHANVIEN
-create table NHANVIEN (
-    MaNhanVien varchar(50) not null primary key,
-    TenNhanVien nvarchar(100),
-    DiaChi nvarchar(255),
-    TenTaiKhoan varchar(50) not null,
+--create table NHANVIEN (
+--    MaNhanVien varchar(50) not null primary key,
+--    TenNhanVien nvarchar(100),
+--    DiaChi nvarchar(255),
+--    TenTaiKhoan varchar(50) not null,
 
-    foreign key (TenTaiKhoan) references TAIKHOAN(TenTaiKhoan)
-);
-go
+--    foreign key (TenTaiKhoan) references TAIKHOAN(TenTaiKhoan)
+--);
+--go
 
 -- Table UNGVIEN
 create table UNGVIEN (
@@ -155,6 +155,7 @@ create table PHIEUDANGKYUNGTUYEN (
    MATTDT               int not null, 
    MAUV                 varchar(50)                  not null,
    TRANGTHAI            Nvarchar(20)          null,
+   DOUUTIEN int null,
    constraint PK_PHIEUDANGKYUNGTUYEN primary key (MATTDT, MAUV),
    CONSTRAINT CK_TRANGTHAI_PDK CHECK (TRANGTHAI IN (N'Chưa xét duyệt', N'Không hợp lệ', N'Hợp lệ', N'Đã xử lý',N'Đạt',N'Không đạt')),
    foreign key (MATTDT) references THONGTINDANGTUYEN(MATTDT),
@@ -188,18 +189,16 @@ go
 -------------INSERT-------------
 -- Insert   TAIKHOAN
 INSERT INTO TAIKHOAN (TenTaiKhoan, MatKhau, VaiTro) VALUES
-('NV01', 'NV01', N'Nhân viên'),
-('NV02', 'NV02', N'Nhân viên'),
-('NV03', 'NV03', N'Nhân viên'),
-('NV04', 'NV04', N'Nhân viên'),
-('NV05', 'NV05', N'Nhân viên'),
+('NV01', 'NV01', N'Nhân viên nghiệp vụ'),
+('NV02', 'NV02', N'Nhân viên tiếp nhận'),
+('NV03', 'NV03', N'Nhân viên thanh toán'),
+('NV04', 'NV04', N'Ban lãnh đạo'),
+('NV05', 'NV05', N'Nhân viên thanh toán'),
 ('UV01', '123', N'Ứng viên'),
 ('UV02', '111', N'Ứng viên'),
 ('UV03', '555', N'Ứng viên'),
 ('DN01', 'DN1', N'Doanh nghiệp'),
 ('DN02', 'DN2', N'Doanh nghiệp'),
-('NV11', 'NV11', N'Nhân viên'),
-('NV12', 'NV12', N'Nhân viên'),
 ('UV04', '222', N'Ứng viên'),
 ('DN03', 'DN3', N'Doanh nghiệp'),
 ('DN04', 'DN4', N'Doanh nghiệp');
@@ -207,17 +206,17 @@ GO
 
 SELECT * FROM TAIKHOAN;
 GO
--- Insert   NHANVIEN
-INSERT INTO NHANVIEN (MaNhanVien, TenNhanVien, DiaChi, TenTaiKhoan) VALUES
-('NV01', N'Nguyễn Văn Tùng', N'Xã Quy Kỳ-Huyện Định Hóa-Tỉnh Thái Nguyên', 'NV01'),
-('NV02', N'Trần Kim Tuyến', N'Phường Trần Phú-Thành phố Hà Giang-Tỉnh Hà Giang', 'NV02'),
-('NV03', N'Lê Thành Công', N'Xã Phú Trung-Huyện Tân Phú-Tỉnh Đồng Nai', 'NV03'),
-('NV04', N'Phạm Thị Hồng Thắm', N'Phường 5-Thành phố Tân An-Tỉnh Long An', 'NV04'),
-('NV05', N'Vũ Văn Thành', N'Phường 11-Quận 6-Thành phố Hồ Chí Minh', 'NV05'),
-('NV11', N'Hoàng Thị Cúc', N'Xã Trung Thành Tây-Huyện  Vũng Liêm-Tỉnh Vĩnh Long', 'NV11'),
-('NV12', N'Trịnh Văn Hoàng', N'Phường Phan Bội Châu-Quận Hồng Bàng-Thành phố Hải Phòng', 'NV12');
-GO
-select * from nhanvien;
+---- Insert   NHANVIEN
+--INSERT INTO NHANVIEN (MaNhanVien, TenNhanVien, DiaChi, TenTaiKhoan) VALUES
+--('NV01', N'Nguyễn Văn Tùng', N'Xã Quy Kỳ-Huyện Định Hóa-Tỉnh Thái Nguyên', 'NV01'),
+--('NV02', N'Trần Kim Tuyến', N'Phường Trần Phú-Thành phố Hà Giang-Tỉnh Hà Giang', 'NV02'),
+--('NV03', N'Lê Thành Công', N'Xã Phú Trung-Huyện Tân Phú-Tỉnh Đồng Nai', 'NV03'),
+--('NV04', N'Phạm Thị Hồng Thắm', N'Phường 5-Thành phố Tân An-Tỉnh Long An', 'NV04'),
+--('NV05', N'Vũ Văn Thành', N'Phường 11-Quận 6-Thành phố Hồ Chí Minh', 'NV05'),
+--('NV11', N'Hoàng Thị Cúc', N'Xã Trung Thành Tây-Huyện  Vũng Liêm-Tỉnh Vĩnh Long', 'NV11'),
+--('NV12', N'Trịnh Văn Hoàng', N'Phường Phan Bội Châu-Quận Hồng Bàng-Thành phố Hải Phòng', 'NV12');
+--GO
+--select * from nhanvien;
 go
 -- Insert   UNGVIEN
 INSERT INTO UNGVIEN (MaUngVien, TenUngVien, DiaChi,Email, TenTaiKhoan) VALUES

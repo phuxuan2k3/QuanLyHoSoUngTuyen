@@ -47,7 +47,7 @@ public partial class GUI_DanhSachThongTinDangTuyen_DN : UserControl
     {
         if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_maTTDT"].Value is string maTTDT)
         {
-            var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyen(maTTDT);
+            var ctrler = Ctrler_DuyetPhieuDangKy_DanhSachThongTinDangTuyen.HienThi_ChiTiet(maTTDT);
             GUI_DanhSachPhieuDK_DN content = new();
             content.HienThi(ctrler);
             GUI_NhanVienNghiepVu.Instance.SwitchContent(content);

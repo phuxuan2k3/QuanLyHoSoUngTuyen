@@ -1,4 +1,5 @@
 ﻿using Ctrler;
+using Ctrler.DoanhNghiep;
 using DTO;
 using GUI.GUIException;
 using System;
@@ -63,7 +64,7 @@ public partial class GUI_DuyetPhieuDangKy_DN : UserControl
             MessageBox.Show("Lưu thay đổi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Lấy lại chi tiết thông tin đăng tuyển
-            var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyen(ttpdk.MaTTDT);
+            var ctrler = Ctrler_DuyetPhieuDangKy_DanhSachThongTinDangTuyen.HienThi_ChiTiet(ttpdk.MaTTDT);
             GUI_DanhSachPhieuDK_DN content = new();
             content.HienThi(ctrler);
 
@@ -103,7 +104,7 @@ public partial class GUI_DuyetPhieuDangKy_DN : UserControl
         string[] parts = lbTTDT.Text.Split(':');
         if (parts.Length > 1 && int.TryParse(parts[1].Trim(), out int maTTDT))
         {
-            var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyen(maTTDT.ToString());
+            var ctrler = Ctrler_DuyetPhieuDangKy_DanhSachThongTinDangTuyen.HienThi_ChiTiet(maTTDT.ToString());
             GUI_DanhSachPhieuDK_DN content = new();
             content.HienThi(ctrler);
             GUI_NhanVienNghiepVu.Instance.SwitchContent(content);

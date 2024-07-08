@@ -73,17 +73,30 @@ namespace GUI
                     //todo: them logout xoa cac truong cua textbox
                     Show();
                     break;
-                case "Nhân viên":
+                case "Ban lãnh đạo":
                     GUI_BanLanhDao gui_BanLanhDao = new GUI_BanLanhDao();
                     Hide();
                     gui_BanLanhDao.ShowDialog();
                     Show();
                     break;
-                    //case "Ứng viên":
-                    //    GUI_BanLanhDao gui_BanLanhDao = new GUI_BanLanhDao();
-                    //    gui_BanLanhDao.ShowDialog();
-                    //    Close();
-                    //    break;
+                case "Nhân viên nghiệp vụ":
+                    GUI_NhanVienNghiepVu gui_NhanVienNghiepVu = new GUI_NhanVienNghiepVu();
+                    Hide();
+                    gui_NhanVienNghiepVu.ShowDialog();
+                    Show();
+                    break;     
+                case "Nhân viên tiếp nhận":
+                    GUI_NhanVienTiepNhan gui_NhanVienTiepNhan = new GUI_NhanVienTiepNhan();
+                    Hide();
+                    gui_NhanVienTiepNhan.ShowDialog();
+                    Show();
+                    break;          
+                //case "Nhân viên thanh toán":
+                //    GUI_NhanVienTiepNhan gui_NhanVienTiepNhan = new GUI_NhanVienTiepNhan();
+                //    Hide();
+                //    gui_NhanVienTiepNhan.ShowDialog();
+                //    Show();
+                //    break;
             }
         }
         private void DangKy(object sender, EventArgs e)

@@ -11,10 +11,7 @@ namespace GUI.UserControls
             InitializeComponent();
         }
 
-
-
         private Ctrler_DanhSachTTDTCanXetDuyet? _ctrler_DanhSachThongTinDangTuyen;
-
 
         public Ctrler_DanhSachTTDTCanXetDuyet Ctrler_DanhSachThongTinDangTuyen
         {

@@ -1,4 +1,5 @@
 ﻿using Ctrler;
+using Ctrler.DoanhNghiep;
 using DTO;
 
 
@@ -62,7 +63,7 @@ namespace GUI
                 MessageBox.Show("Lưu thay đổi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Lấy lại chi tiết thông tin đăng tuyển
-                var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyen(ttpdk.MaTTDT);
+                var ctrler = Ctrler_DuyetPhieuDangKy_DanhSachThongTinDangTuyen.HienThi_ChiTiet(ttpdk.MaTTDT);
                 GUI_DuyetPhieuDangKy_ChiTietThongTinDangTuyen content = new();
                 content.HienThi(ctrler);
 
@@ -104,7 +105,7 @@ namespace GUI
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            var ctrler = Ctrler_DanhSachThongTinDangTuyen.ChiTietThongTinDangTuyen(_MaTTDT.Text);
+            var ctrler = Ctrler_DuyetPhieuDangKy_DanhSachThongTinDangTuyen.HienThi_ChiTiet(_MaTTDT.Text);
             GUI_DuyetPhieuDangKy_ChiTietThongTinDangTuyen content = new();
             content.HienThi(ctrler);
             GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
