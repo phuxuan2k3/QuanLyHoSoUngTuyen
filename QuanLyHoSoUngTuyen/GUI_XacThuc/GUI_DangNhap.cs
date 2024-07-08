@@ -18,44 +18,12 @@ namespace GUI.GUI_XacThuc
     {
         public event EventHandler? DangNhapThanhCong;
         public event EventHandler? DangKy;
-        private Size oldSize;
 
         public GUI_DangNhap(EventHandler dangNhapThanhCong, EventHandler dangKy)
         {
             DangNhapThanhCong += dangNhapThanhCong;
             DangKy += dangKy;
             InitializeComponent();
-        }
-        private void GUI_DangNhap_Load(object sender, EventArgs e)
-        {
-            oldSize = Size;
-        }
-
-        protected override void OnResize(EventArgs e)
-        {
-            base.OnResize(e);
-
-            foreach (Control cnt in Controls)
-            {
-                ResizeAll(cnt, Size);
-            }
-
-            oldSize = Size;
-        }
-
-        private void ResizeAll(Control control, Size newSize)
-        {
-            if (oldSize.Width == 0 || oldSize.Height == 0)
-            {
-                return;
-            }
-            int widthChange = newSize.Width - oldSize.Width;
-            control.Left += (control.Left * widthChange) / oldSize.Width;
-            control.Width += (control.Width * widthChange) / oldSize.Width;
-
-            int heightChange = newSize.Height - oldSize.Height;
-            control.Top += (control.Top * heightChange) / oldSize.Height;
-            control.Height += (control.Height * heightChange) / oldSize.Height;
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
