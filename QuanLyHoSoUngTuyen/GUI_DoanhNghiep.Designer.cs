@@ -30,10 +30,7 @@
 		{
 			tableLayoutPanel1 = new TableLayoutPanel();
 			tableLayoutPanel2 = new TableLayoutPanel();
-			btnXetDuyetTTDT = new Button();
-			btnDangTuyenTTDT = new Button();
 			btnTaoYeuCau = new Button();
-			btnXacThucDN = new Button();
 			btnDanhSachThongTinDangTuyen = new Button();
 			btnCapNhatTTDN = new Button();
 			_contentPanel = new Panel();
@@ -54,7 +51,7 @@
 			tableLayoutPanel1.RowCount = 2;
 			tableLayoutPanel1.RowStyles.Add(new RowStyle());
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-			tableLayoutPanel1.Size = new Size(1217, 513);
+			tableLayoutPanel1.Size = new Size(942, 593);
 			tableLayoutPanel1.TabIndex = 0;
 			// 
 			// tableLayoutPanel2
@@ -66,10 +63,7 @@
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
-			tableLayoutPanel2.Controls.Add(btnXetDuyetTTDT, 4, 0);
-			tableLayoutPanel2.Controls.Add(btnDangTuyenTTDT, 3, 0);
 			tableLayoutPanel2.Controls.Add(btnTaoYeuCau, 0, 0);
-			tableLayoutPanel2.Controls.Add(btnXacThucDN, 2, 0);
 			tableLayoutPanel2.Controls.Add(btnDanhSachThongTinDangTuyen, 1, 0);
 			tableLayoutPanel2.Controls.Add(btnCapNhatTTDN, 5, 0);
 			tableLayoutPanel2.Dock = DockStyle.Fill;
@@ -78,34 +72,8 @@
 			tableLayoutPanel2.Name = "tableLayoutPanel2";
 			tableLayoutPanel2.RowCount = 1;
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-			tableLayoutPanel2.Size = new Size(1213, 44);
+			tableLayoutPanel2.Size = new Size(938, 44);
 			tableLayoutPanel2.TabIndex = 2;
-			// 
-			// btnXetDuyetTTDT
-			// 
-			btnXetDuyetTTDT.AutoSize = true;
-			btnXetDuyetTTDT.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-			btnXetDuyetTTDT.Location = new Point(826, 2);
-			btnXetDuyetTTDT.Margin = new Padding(2);
-			btnXetDuyetTTDT.Name = "btnXetDuyetTTDT";
-			btnXetDuyetTTDT.Size = new Size(263, 35);
-			btnXetDuyetTTDT.TabIndex = 3;
-			btnXetDuyetTTDT.Text = "Xác thực thông tin đăng tuyển";
-			btnXetDuyetTTDT.UseVisualStyleBackColor = true;
-			btnXetDuyetTTDT.Click += btnXetDuyetTTDT_Click;
-			// 
-			// btnDangTuyenTTDT
-			// 
-			btnDangTuyenTTDT.AutoSize = true;
-			btnDangTuyenTTDT.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-			btnDangTuyenTTDT.Location = new Point(708, 2);
-			btnDangTuyenTTDT.Margin = new Padding(2);
-			btnDangTuyenTTDT.Name = "btnDangTuyenTTDT";
-			btnDangTuyenTTDT.Size = new Size(114, 35);
-			btnDangTuyenTTDT.TabIndex = 4;
-			btnDangTuyenTTDT.Text = "Đăng tuyển";
-			btnDangTuyenTTDT.UseVisualStyleBackColor = true;
-			btnDangTuyenTTDT.Click += btnDangTuyenTTDT_Click;
 			// 
 			// btnTaoYeuCau
 			// 
@@ -119,19 +87,6 @@
 			btnTaoYeuCau.Text = "Tạo yêu cầu đăng tuyển";
 			btnTaoYeuCau.UseVisualStyleBackColor = true;
 			btnTaoYeuCau.Click += btnTaoYeuCau_Click;
-			// 
-			// btnXacThucDN
-			// 
-			btnXacThucDN.AutoSize = true;
-			btnXacThucDN.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-			btnXacThucDN.Location = new Point(498, 2);
-			btnXacThucDN.Margin = new Padding(2);
-			btnXacThucDN.Name = "btnXacThucDN";
-			btnXacThucDN.Size = new Size(206, 35);
-			btnXacThucDN.TabIndex = 2;
-			btnXacThucDN.Text = "Xác thực doanh nghiệp";
-			btnXacThucDN.UseVisualStyleBackColor = true;
-			btnXacThucDN.Click += btnXacThucDN_Click;
 			// 
 			// btnDanhSachThongTinDangTuyen
 			// 
@@ -148,7 +103,7 @@
 			// 
 			// btnCapNhatTTDN
 			// 
-			btnCapNhatTTDN.Location = new Point(1095, 4);
+			btnCapNhatTTDN.Location = new Point(500, 4);
 			btnCapNhatTTDN.Margin = new Padding(4, 4, 4, 4);
 			btnCapNhatTTDN.Name = "btnCapNhatTTDN";
 			btnCapNhatTTDN.Size = new Size(199, 36);
@@ -164,18 +119,18 @@
 			_contentPanel.Location = new Point(2, 50);
 			_contentPanel.Margin = new Padding(2);
 			_contentPanel.Name = "_contentPanel";
-			_contentPanel.Size = new Size(1213, 461);
+			_contentPanel.Size = new Size(938, 541);
 			_contentPanel.TabIndex = 0;
 			// 
-			// GUI_Base
+			// GUI_DoanhNghiep
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(1217, 513);
+			ClientSize = new Size(942, 593);
 			Controls.Add(tableLayoutPanel1);
 			Margin = new Padding(2);
-			Name = "GUI_Base";
-			Text = "GUI_Base";
+			Name = "GUI_DoanhNghiep";
+			Text = "Doanh nghiệp";
 			Click += btnTaoYeuCau_Click;
 			tableLayoutPanel1.ResumeLayout(false);
 			tableLayoutPanel2.ResumeLayout(false);
@@ -190,9 +145,6 @@
 		private TableLayoutPanel tableLayoutPanel2;
 		private Button btnTaoYeuCau;
 		private Button btnDanhSachThongTinDangTuyen;
-        private Button btnXacThucDN;
-        private Button btnXetDuyetTTDT;
-        private Button btnDangTuyenTTDT;
         private Button btnCapNhatTTDN;
     }
 }

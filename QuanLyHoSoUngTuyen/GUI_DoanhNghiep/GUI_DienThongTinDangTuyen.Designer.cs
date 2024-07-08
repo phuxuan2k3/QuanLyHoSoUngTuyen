@@ -33,6 +33,11 @@
 			label2 = new Label();
 			tableLayoutPanel2 = new TableLayoutPanel();
 			tableLayoutPanel3 = new TableLayoutPanel();
+			tableLayoutPanel6 = new TableLayoutPanel();
+			flowLayoutPanel2 = new FlowLayoutPanel();
+			tableLayoutPanel5 = new TableLayoutPanel();
+			btnXacNhan = new Button();
+			btnHuy = new Button();
 			label3 = new Label();
 			label4 = new Label();
 			label5 = new Label();
@@ -45,18 +50,16 @@
 			_soNgayDangTuyen = new NumericUpDown();
 			_hinhThucDangTuyen = new ComboBox();
 			_soLuong = new NumericUpDown();
-			tableLayoutPanel5 = new TableLayoutPanel();
-			btnXacNhan = new Button();
-			btnHuy = new Button();
 			tableLayoutPanel4 = new TableLayoutPanel();
 			flowLayoutPanel10 = new FlowLayoutPanel();
 			btnXemHoaDon = new Button();
 			btnHieuChinh = new Button();
 			tableLayoutPanel2.SuspendLayout();
 			tableLayoutPanel3.SuspendLayout();
+			tableLayoutPanel6.SuspendLayout();
+			tableLayoutPanel5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)_soNgayDangTuyen).BeginInit();
 			((System.ComponentModel.ISupportInitialize)_soLuong).BeginInit();
-			tableLayoutPanel5.SuspendLayout();
 			flowLayoutPanel10.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -89,11 +92,11 @@
 			label2.Anchor = AnchorStyles.None;
 			label2.AutoSize = true;
 			label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label2.Location = new Point(316, 23);
+			label2.Location = new Point(310, 23);
 			label2.Name = "label2";
-			label2.Size = new Size(305, 31);
+			label2.Size = new Size(317, 31);
 			label2.TabIndex = 0;
-			label2.Text = "Điền thông tin đăng tuyển ";
+			label2.Text = "Điền Thông Tin Đăng Tuyển ";
 			// 
 			// tableLayoutPanel2
 			// 
@@ -117,6 +120,7 @@
 			tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
 			tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 55F));
 			tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+			tableLayoutPanel3.Controls.Add(tableLayoutPanel6, 2, 7);
 			tableLayoutPanel3.Controls.Add(label3, 1, 1);
 			tableLayoutPanel3.Controls.Add(label4, 1, 2);
 			tableLayoutPanel3.Controls.Add(label5, 1, 3);
@@ -129,7 +133,6 @@
 			tableLayoutPanel3.Controls.Add(_soNgayDangTuyen, 2, 1);
 			tableLayoutPanel3.Controls.Add(_hinhThucDangTuyen, 2, 3);
 			tableLayoutPanel3.Controls.Add(_soLuong, 2, 5);
-			tableLayoutPanel3.Controls.Add(tableLayoutPanel5, 2, 7);
 			tableLayoutPanel3.Dock = DockStyle.Fill;
 			tableLayoutPanel3.Location = new Point(3, 80);
 			tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -144,6 +147,79 @@
 			tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
 			tableLayoutPanel3.Size = new Size(932, 432);
 			tableLayoutPanel3.TabIndex = 1;
+			// 
+			// tableLayoutPanel6
+			// 
+			tableLayoutPanel6.ColumnCount = 1;
+			tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+			tableLayoutPanel6.Controls.Add(flowLayoutPanel2, 0, 0);
+			tableLayoutPanel6.Controls.Add(tableLayoutPanel5, 0, 1);
+			tableLayoutPanel6.Dock = DockStyle.Fill;
+			tableLayoutPanel6.Location = new Point(329, 337);
+			tableLayoutPanel6.Name = "tableLayoutPanel6";
+			tableLayoutPanel6.RowCount = 3;
+			tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+			tableLayoutPanel6.RowStyles.Add(new RowStyle());
+			tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+			tableLayoutPanel6.Size = new Size(506, 92);
+			tableLayoutPanel6.TabIndex = 7;
+			// 
+			// flowLayoutPanel2
+			// 
+			flowLayoutPanel2.Anchor = AnchorStyles.Right;
+			flowLayoutPanel2.AutoSize = true;
+			flowLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			flowLayoutPanel2.Location = new Point(503, 18);
+			flowLayoutPanel2.Name = "flowLayoutPanel2";
+			flowLayoutPanel2.Size = new Size(0, 0);
+			flowLayoutPanel2.TabIndex = 0;
+			// 
+			// tableLayoutPanel5
+			// 
+			tableLayoutPanel5.Anchor = AnchorStyles.Right;
+			tableLayoutPanel5.AutoSize = true;
+			tableLayoutPanel5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			tableLayoutPanel5.ColumnCount = 3;
+			tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
+			tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+			tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
+			tableLayoutPanel5.Controls.Add(btnXacNhan, 0, 0);
+			tableLayoutPanel5.Controls.Add(btnHuy, 2, 0);
+			tableLayoutPanel5.Location = new Point(253, 39);
+			tableLayoutPanel5.Name = "tableLayoutPanel5";
+			tableLayoutPanel5.RowCount = 1;
+			tableLayoutPanel5.RowStyles.Add(new RowStyle());
+			tableLayoutPanel5.Size = new Size(250, 41);
+			tableLayoutPanel5.TabIndex = 1;
+			// 
+			// btnXacNhan
+			// 
+			btnXacNhan.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+			btnXacNhan.AutoSize = true;
+			btnXacNhan.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			btnXacNhan.Location = new Point(3, 3);
+			btnXacNhan.Name = "btnXacNhan";
+			btnXacNhan.Size = new Size(94, 35);
+			btnXacNhan.TabIndex = 7;
+			btnXacNhan.Tag = "green";
+			btnXacNhan.Text = "Xác nhận";
+			btnXacNhan.UseVisualStyleBackColor = true;
+			btnXacNhan.Click += btnXacNhan_Click;
+			// 
+			// btnHuy
+			// 
+			btnHuy.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+			btnHuy.AutoSize = true;
+			btnHuy.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			btnHuy.Location = new Point(153, 3);
+			btnHuy.MinimumSize = new Size(70, 0);
+			btnHuy.Name = "btnHuy";
+			btnHuy.Size = new Size(94, 35);
+			btnHuy.TabIndex = 8;
+			btnHuy.Tag = "red";
+			btnHuy.Text = "Hủy";
+			btnHuy.UseVisualStyleBackColor = true;
+			btnHuy.Click += btnHuy_Click;
 			// 
 			// label3
 			// 
@@ -218,7 +294,7 @@
 			_tenViTri.Margin = new Padding(5);
 			_tenViTri.Name = "_tenViTri";
 			_tenViTri.Size = new Size(502, 31);
-			_tenViTri.TabIndex = 17;
+			_tenViTri.TabIndex = 4;
 			// 
 			// _yeuCau
 			// 
@@ -228,17 +304,19 @@
 			_yeuCau.Multiline = true;
 			_yeuCau.Name = "_yeuCau";
 			_yeuCau.Size = new Size(502, 76);
-			_yeuCau.TabIndex = 19;
+			_yeuCau.TabIndex = 6;
 			// 
 			// _thoiGianDangTuyen
 			// 
+			_thoiGianDangTuyen.CustomFormat = "dd/MM/yyyy";
 			_thoiGianDangTuyen.Dock = DockStyle.Fill;
+			_thoiGianDangTuyen.Format = DateTimePickerFormat.Custom;
 			_thoiGianDangTuyen.Location = new Point(331, 87);
 			_thoiGianDangTuyen.Margin = new Padding(5);
 			_thoiGianDangTuyen.MinDate = new DateTime(2024, 6, 30, 11, 18, 56, 0);
 			_thoiGianDangTuyen.Name = "_thoiGianDangTuyen";
 			_thoiGianDangTuyen.Size = new Size(502, 31);
-			_thoiGianDangTuyen.TabIndex = 20;
+			_thoiGianDangTuyen.TabIndex = 2;
 			_thoiGianDangTuyen.Value = new DateTime(2024, 6, 30, 11, 18, 56, 0);
 			// 
 			// _soNgayDangTuyen
@@ -250,19 +328,18 @@
 			_soNgayDangTuyen.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
 			_soNgayDangTuyen.Name = "_soNgayDangTuyen";
 			_soNgayDangTuyen.Size = new Size(502, 31);
-			_soNgayDangTuyen.TabIndex = 21;
+			_soNgayDangTuyen.TabIndex = 1;
 			_soNgayDangTuyen.Value = new decimal(new int[] { 1, 0, 0, 0 });
 			// 
 			// _hinhThucDangTuyen
 			// 
 			_hinhThucDangTuyen.Dock = DockStyle.Fill;
-			_hinhThucDangTuyen.DropDownStyle = ComboBoxStyle.DropDownList;
 			_hinhThucDangTuyen.FormattingEnabled = true;
 			_hinhThucDangTuyen.Location = new Point(331, 128);
 			_hinhThucDangTuyen.Margin = new Padding(5);
 			_hinhThucDangTuyen.Name = "_hinhThucDangTuyen";
 			_hinhThucDangTuyen.Size = new Size(502, 33);
-			_hinhThucDangTuyen.TabIndex = 22;
+			_hinhThucDangTuyen.TabIndex = 3;
 			// 
 			// _soLuong
 			// 
@@ -273,55 +350,8 @@
 			_soLuong.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
 			_soLuong.Name = "_soLuong";
 			_soLuong.Size = new Size(502, 31);
-			_soLuong.TabIndex = 23;
+			_soLuong.TabIndex = 5;
 			_soLuong.Value = new decimal(new int[] { 1, 0, 0, 0 });
-			// 
-			// tableLayoutPanel5
-			// 
-			tableLayoutPanel5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-			tableLayoutPanel5.AutoSize = true;
-			tableLayoutPanel5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-			tableLayoutPanel5.ColumnCount = 3;
-			tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-			tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-			tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-			tableLayoutPanel5.Controls.Add(btnXacNhan, 0, 0);
-			tableLayoutPanel5.Controls.Add(btnHuy, 2, 0);
-			tableLayoutPanel5.Location = new Point(585, 388);
-			tableLayoutPanel5.Name = "tableLayoutPanel5";
-			tableLayoutPanel5.RowCount = 1;
-			tableLayoutPanel5.RowStyles.Add(new RowStyle());
-			tableLayoutPanel5.Size = new Size(250, 41);
-			tableLayoutPanel5.TabIndex = 1;
-			// 
-			// btnXacNhan
-			// 
-			btnXacNhan.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-			btnXacNhan.AutoSize = true;
-			btnXacNhan.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-			btnXacNhan.Location = new Point(3, 3);
-			btnXacNhan.Name = "btnXacNhan";
-			btnXacNhan.Size = new Size(94, 35);
-			btnXacNhan.TabIndex = 0;
-			btnXacNhan.Tag = "green";
-			btnXacNhan.Text = "Xác nhận";
-			btnXacNhan.UseVisualStyleBackColor = true;
-			btnXacNhan.Click += btnXacNhan_Click;
-			// 
-			// btnHuy
-			// 
-			btnHuy.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-			btnHuy.AutoSize = true;
-			btnHuy.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-			btnHuy.Location = new Point(153, 3);
-			btnHuy.MinimumSize = new Size(70, 0);
-			btnHuy.Name = "btnHuy";
-			btnHuy.Size = new Size(94, 35);
-			btnHuy.TabIndex = 1;
-			btnHuy.Tag = "red";
-			btnHuy.Text = "Hủy";
-			btnHuy.UseVisualStyleBackColor = true;
-			btnHuy.Click += btnHuy_Click;
 			// 
 			// tableLayoutPanel4
 			// 
@@ -381,10 +411,12 @@
 			tableLayoutPanel2.PerformLayout();
 			tableLayoutPanel3.ResumeLayout(false);
 			tableLayoutPanel3.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)_soNgayDangTuyen).EndInit();
-			((System.ComponentModel.ISupportInitialize)_soLuong).EndInit();
+			tableLayoutPanel6.ResumeLayout(false);
+			tableLayoutPanel6.PerformLayout();
 			tableLayoutPanel5.ResumeLayout(false);
 			tableLayoutPanel5.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)_soNgayDangTuyen).EndInit();
+			((System.ComponentModel.ISupportInitialize)_soLuong).EndInit();
 			flowLayoutPanel10.ResumeLayout(false);
 			flowLayoutPanel10.PerformLayout();
 			ResumeLayout(false);
@@ -401,6 +433,8 @@
 		private FlowLayoutPanel flowLayoutPanel10;
 		private Button btnXemHoaDon;
 		private Button btnHieuChinh;
+		private TableLayoutPanel tableLayoutPanel6;
+		private FlowLayoutPanel flowLayoutPanel2;
 		private Button btnXacNhan;
 		private Button btnHuy;
 		private Label label3;

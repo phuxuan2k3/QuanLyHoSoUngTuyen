@@ -1,6 +1,7 @@
-﻿using Ctrler;
+﻿using Ctrler.DoanhNghiep;
 using DTO;
 using GUI.GUIException;
+using GUI.UserControls;
 using Utilis;
 
 namespace GUI.UserControls
@@ -27,6 +28,7 @@ namespace GUI.UserControls
 			DTO_HinhThucDangTuyen hinhThucDangTuyen = new();
 			float tongTien = -1;
 			bool coTheThanhToanNhieuDot = true;
+			_thanhToanToanBo.Checked = true;
 			ctrler_XacNhanThanhToan.Load(ref thongTinDangTuyen, ref hinhThucDangTuyen, ref tongTien, ref coTheThanhToanNhieuDot);
 			_soNgayDangTuyen.Text = thongTinDangTuyen.SoNgayDangTuyen.ToString();
 			_hinhThucDangTuyen.Text = hinhThucDangTuyen.TenHinhThuc;
@@ -39,13 +41,19 @@ namespace GUI.UserControls
 
 		private void btnXacNhan_Click(object sender, EventArgs e)
 		{
-			if (_thanhToanThanhNhieuDot.Checked)
+			if (_thanhToanThanhNhieuDot.Checked || _thanhToanToanBo.Checked)
 			{
-				Ctrler_XacNhanThanhToan.XacNhanThanhToan(CachThucThanhToan.NhieuDot);
-			}
-			else if (_thanhToanToanBo.Checked)
-			{
-				Ctrler_XacNhanThanhToan.XacNhanThanhToan(CachThucThanhToan.ToanBo);
+				if (_thanhToanThanhNhieuDot.Checked)
+				{
+					Ctrler_XacNhanThanhToan.XacNhanThanhToan(CachThucThanhToan.NhieuDot);
+				}
+				else if (_thanhToanToanBo.Checked)
+				{
+					Ctrler_XacNhanThanhToan.XacNhanThanhToan(CachThucThanhToan.ToanBo);
+				}
+				var gui = new GUI_DanhSachThongTinDangTuyen();
+				gui.HienThi(new Ctrler_DanhSachThongTinDangTuyen(GUI_DoanhNghiep.Instance.MaDN));
+				GUI_DoanhNghiep.Instance.SwitchContent(gui);
 			}
 			else
 			{

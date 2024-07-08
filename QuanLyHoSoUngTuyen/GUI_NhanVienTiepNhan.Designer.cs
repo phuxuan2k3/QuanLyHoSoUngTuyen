@@ -30,9 +30,9 @@
         {
             panel1 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnXetDuyetTTDT = new Button();
+            btnXacThucDN = new Button();
+            btn_ThemHS = new Button();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
@@ -43,108 +43,127 @@
             // 
             // panel1
             // 
-            panel1.Location = new Point(0, 41);
+            panel1.Location = new Point(0, 44);
+            panel1.Margin = new Padding(4, 4, 4, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 412);
+            panel1.Size = new Size(1365, 632);
             panel1.TabIndex = 4;
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Controls.Add(button1);
-            flowLayoutPanel1.Controls.Add(button2);
-            flowLayoutPanel1.Controls.Add(button3);
+            flowLayoutPanel1.Controls.Add(btnXetDuyetTTDT);
+            flowLayoutPanel1.Controls.Add(btnXacThucDN);
+            flowLayoutPanel1.Controls.Add(btn_ThemHS);
             flowLayoutPanel1.Controls.Add(button4);
             flowLayoutPanel1.Controls.Add(button5);
             flowLayoutPanel1.Controls.Add(button6);
             flowLayoutPanel1.Controls.Add(button7);
             flowLayoutPanel1.Controls.Add(button8);
             flowLayoutPanel1.Location = new Point(0, -2);
+            flowLayoutPanel1.Margin = new Padding(4, 4, 4, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(800, 37);
+            flowLayoutPanel1.Size = new Size(1361, 46);
             flowLayoutPanel1.TabIndex = 3;
             // 
-            // button1
+            // btnXetDuyetTTDT
             // 
-            button1.Location = new Point(3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnXetDuyetTTDT.AutoSize = true;
+            btnXetDuyetTTDT.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnXetDuyetTTDT.Location = new Point(2, 2);
+            btnXetDuyetTTDT.Margin = new Padding(2);
+            btnXetDuyetTTDT.Name = "btnXetDuyetTTDT";
+            btnXetDuyetTTDT.Size = new Size(263, 35);
+            btnXetDuyetTTDT.TabIndex = 5;
+            btnXetDuyetTTDT.Text = "Xác thực thông tin đăng tuyển";
+            btnXetDuyetTTDT.UseVisualStyleBackColor = true;
+            btnXetDuyetTTDT.Click += btnXetDuyetTTDT_Click;
             // 
-            // button2
+            // btnXacThucDN
             // 
-            button2.Location = new Point(103, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnXacThucDN.AutoSize = true;
+            btnXacThucDN.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnXacThucDN.Location = new Point(269, 2);
+            btnXacThucDN.Margin = new Padding(2);
+            btnXacThucDN.Name = "btnXacThucDN";
+            btnXacThucDN.Size = new Size(206, 35);
+            btnXacThucDN.TabIndex = 4;
+            btnXacThucDN.Text = "Xác thực doanh nghiệp";
+            btnXacThucDN.UseVisualStyleBackColor = true;
+            btnXacThucDN.Click += btnXacThucDN_Click;
             // 
-            // button3
+            // btn_ThemHS
             // 
-            button3.Location = new Point(203, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            btn_ThemHS.Location = new Point(481, 4);
+            btn_ThemHS.Margin = new Padding(4, 4, 4, 4);
+            btn_ThemHS.Name = "btn_ThemHS";
+            btn_ThemHS.Size = new Size(416, 36);
+            btn_ThemHS.TabIndex = 2;
+            btn_ThemHS.Text = "Thêm Hồ sơ - Chứng từ - Bằng cấp Ứng viên ";
+            btn_ThemHS.UseVisualStyleBackColor = true;
+            btn_ThemHS.Click += btn_ThemHS_Click;
             // 
             // button4
             // 
-            button4.Location = new Point(303, 3);
+            button4.Location = new Point(905, 4);
+            button4.Margin = new Padding(4, 4, 4, 4);
             button4.Name = "button4";
-            button4.Size = new Size(94, 29);
+            button4.Size = new Size(118, 36);
             button4.TabIndex = 3;
             button4.Text = "button4";
             button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            button5.Location = new Point(403, 3);
+            button5.Location = new Point(1031, 4);
+            button5.Margin = new Padding(4, 4, 4, 4);
             button5.Name = "button5";
-            button5.Size = new Size(94, 29);
+            button5.Size = new Size(118, 36);
             button5.TabIndex = 4;
             button5.Text = "button5";
             button5.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            button6.Location = new Point(503, 3);
+            button6.Location = new Point(1157, 4);
+            button6.Margin = new Padding(4, 4, 4, 4);
             button6.Name = "button6";
-            button6.Size = new Size(94, 29);
+            button6.Size = new Size(118, 36);
             button6.TabIndex = 5;
             button6.Text = "button6";
             button6.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
-            button7.Location = new Point(603, 3);
+            button7.Location = new Point(4, 48);
+            button7.Margin = new Padding(4, 4, 4, 4);
             button7.Name = "button7";
-            button7.Size = new Size(94, 29);
+            button7.Size = new Size(118, 36);
             button7.TabIndex = 6;
             button7.Text = "button7";
             button7.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
-            button8.Location = new Point(703, 3);
+            button8.Location = new Point(130, 48);
+            button8.Margin = new Padding(4, 4, 4, 4);
             button8.Name = "button8";
-            button8.Size = new Size(94, 29);
+            button8.Size = new Size(118, 36);
             button8.TabIndex = 7;
             button8.Text = "button8";
             button8.UseVisualStyleBackColor = true;
             // 
-            // GUI_NhanVienTiepNhan
+            // UCControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1365, 691);
             Controls.Add(panel1);
             Controls.Add(flowLayoutPanel1);
-            Name = "GUI_NhanVienTiepNhan";
-            Text = "GUI_NhanVienTiepNhan";
+            Margin = new Padding(4, 4, 4, 4);
+            Name = "UCControl";
+            Text = "UCControl";
             flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -152,13 +171,13 @@
 
         private Panel panel1;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btn_ThemHS;
         private Button button4;
         private Button button5;
         private Button button6;
         private Button button7;
         private Button button8;
+        private Button btnXetDuyetTTDT;
+        private Button btnXacThucDN;
     }
 }

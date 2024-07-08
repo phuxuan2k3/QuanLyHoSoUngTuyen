@@ -9,12 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Ctrler\Ctrler.csproj" />
     <ProjectReference Include="..\DTO\DTO.csproj" />
     <ProjectReference Include="..\Utilis\Utilis.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="GUI_NhanVienThanhToan\GUI_DanhSachHoaDonDangTuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="GUI_NhanVienThanhToan\GUI_DongPhiChoHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UC\GUI_HieuChinhThongTinDangTuyen.cs">
       <SubType>UserControl</SubType>
     </Compile>

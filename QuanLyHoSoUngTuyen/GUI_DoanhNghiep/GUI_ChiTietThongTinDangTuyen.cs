@@ -1,6 +1,7 @@
-﻿using Ctrler;
+﻿using Ctrler.DoanhNghiep;
 using DTO;
 using GUI.GUIException;
+using GUI.UserControls;
 
 namespace GUI.UserControls;
 
@@ -33,9 +34,9 @@ public partial class GUI_ChiTietThongTinDangTuyen : UserControl
 		_tenViTri.Text = ttdt.TenViTri;
 		_soLuong.Text = ttdt.SoLuong.ToString();
 		_yeuCau.Text = ttdt.YeuCau;
-		_trangThai.Text = ttdt.TrangThai.ToString();
-		_trangThaiThanhToan.Text = hoaDon.TrangThaiThanhToan.ToString();
-		_tinhTrang.Text = ttdt.TinhTrang.ToString();
+		_trangThai.Text = ttdt.TrangThai.ToDisplayString();
+		_trangThaiThanhToan.Text = hoaDon.TrangThaiThanhToan.ToDisplayString();
+		_tinhTrang.Text = ttdt.TinhTrang.ToDisplayString();
 	}
 
 	private void btnXemHoaDon_Click(object sender, EventArgs e)
