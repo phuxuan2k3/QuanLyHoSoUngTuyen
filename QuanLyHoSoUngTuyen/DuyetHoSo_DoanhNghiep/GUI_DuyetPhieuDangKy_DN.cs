@@ -109,7 +109,7 @@ public partial class GUI_DuyetPhieuDangKy_DN : UserControl
             var ctrler = Ctrler_DuyetPhieuDangKy_DanhSachThongTinDangTuyen.HienThi_ChiTiet(maTTDT.ToString());
             GUI_DanhSachPhieuDK_DN content = new();
             content.HienThi(ctrler);
-            GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
+            GUI_DoanhNghiep.Instance.SwitchContent(content);
         }
     }
 }
