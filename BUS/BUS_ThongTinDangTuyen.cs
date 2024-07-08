@@ -81,16 +81,16 @@ public class BUS_ThongTinDangTuyen
 		DAO_ThongTinDangTuyen.CapNhat(thongTinDangTuyen);
 	}
 
-	public static void CapNhatTrangThaiXetDuyet(string MaTTDT, string tinhTrang)
-	{
-		DAO_ThongTinDangTuyen.CapNhatTrangThaiTTDT(MaTTDT, tinhTrang);
+	//public static void CapNhatTrangThaiXetDuyet(string MaTTDT, string tinhTrang)
+	//{
+	//	DAO_ThongTinDangTuyen.CapNhatTrangThaiTTDT(MaTTDT, tinhTrang);
 
-	}
+	//}
 
-	public static void CapNhatTinhTrangDangTuyen(string MaTTDT)
-	{
-		DAO_ThongTinDangTuyen.CapNhatTrangThaiDangTuyen(MaTTDT);
-	}
+	//public static void CapNhatTinhTrangDangTuyen(string MaTTDT)
+	//{
+	//	DAO_ThongTinDangTuyen.CapNhatTrangThaiDangTuyen(MaTTDT);
+	//}
 
     public static int KiemTraViTriUngTuyen(string value)
     {

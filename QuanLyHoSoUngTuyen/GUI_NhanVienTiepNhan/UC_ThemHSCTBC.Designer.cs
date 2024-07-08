@@ -1,4 +1,4 @@
-﻿namespace GUI.GUI_NhanVienTiepNhan
+﻿namespace GUI.GUI_UC
 {
     partial class UC_ThemHSCTBC
     {

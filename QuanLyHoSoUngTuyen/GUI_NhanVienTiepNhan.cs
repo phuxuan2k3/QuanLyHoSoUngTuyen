@@ -2,13 +2,13 @@
 using GUI.Styles;
 using GUI.UserControls;
 using GUI;
-using GUI.GUI_NhanVienTiepNhan;
+using GUI.GUI_UC;
 
 namespace GUI
 {
-    public partial class GUINhanVienTiepNhan : Form
+    public partial class GUI_NhanVienTiepNhan : Form
     {
-        public GUINhanVienTiepNhan()
+        public GUI_NhanVienTiepNhan()
         {
             Style.ApplyStylingEventOnChildControlAdded(this,
            ButtonStyle.Apply);
@@ -18,8 +18,8 @@ namespace GUI
         }
 
 
-        private static GUINhanVienTiepNhan? _instance = null;
-        public static GUINhanVienTiepNhan Instance => _instance ??= new GUINhanVienTiepNhan();
+        private static GUI_NhanVienTiepNhan? _instance = null;
+        public static GUI_NhanVienTiepNhan Instance => _instance ??= new GUI_NhanVienTiepNhan();
 
         public void SwitchContent(UserControl content)
         {

@@ -96,13 +96,13 @@ namespace GUI
                     Hide();
                     gui_NhanVienThanhToan.ShowDialog();
                     Show();
-                    break;   
-                //case "Nhân viên thanh toán":
-                //    GUI_NhanVienThanhToan gui_NhanVienThanhToan = new GUI_NhanVienThanhToan();
-                //    Hide();
-                //    gui_NhanVienThanhToan.ShowDialog();
-                //    Show();
-                //    break;
+                    break;
+                case "Ứng viên":
+                    GUI_UngVien gui_UngVien = new GUI_UngVien();
+                    Hide();
+                    gui_UngVien.ShowDialog();
+                    Show();
+                    break;
             }
         }
         private void DangKy(object sender, EventArgs e)

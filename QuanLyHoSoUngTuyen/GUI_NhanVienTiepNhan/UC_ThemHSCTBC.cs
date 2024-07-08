@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.GUI_NhanVienTiepNhan
+namespace GUI.GUI_UC
 {
     public partial class UC_ThemHSCTBC : UserControl
     {

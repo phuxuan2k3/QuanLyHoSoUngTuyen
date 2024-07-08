@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class GUINhanVienTiepNhan
+    partial class GUI_NhanVienTiepNhan
     {
         /// <summary>
         /// Required designer variable.
@@ -152,7 +152,7 @@
             button8.Text = "button8";
             button8.UseVisualStyleBackColor = true;
             // 
-            // GUI_NhanVienTiepNhan
+            // UCControl
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -160,8 +160,8 @@
             Controls.Add(panel1);
             Controls.Add(flowLayoutPanel1);
             Margin = new Padding(4, 4, 4, 4);
-            Name = "GUI_NhanVienTiepNhan";
-            Text = "GUI_NhanVienTiepNhan";
+            Name = "UCControl";
+            Text = "UCControl";
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
