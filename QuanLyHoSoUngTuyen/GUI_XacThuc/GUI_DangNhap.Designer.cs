@@ -48,7 +48,7 @@
 			label2.Anchor = AnchorStyles.Right;
 			label2.AutoSize = true;
 			label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label2.Location = new Point(290, 243);
+			label2.Location = new Point(290, 209);
 			label2.Margin = new Padding(4, 0, 4, 0);
 			label2.Name = "label2";
 			label2.Size = new Size(103, 28);
@@ -61,7 +61,7 @@
 			label1.AutoSize = true;
 			tableLayoutPanel1.SetColumnSpan(label1, 2);
 			label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label1.Location = new Point(118, 40);
+			label1.Location = new Point(118, 30);
 			label1.Margin = new Padding(4, 0, 4, 0);
 			label1.Name = "label1";
 			label1.Size = new Size(161, 38);
@@ -73,7 +73,7 @@
 			label3.Anchor = AnchorStyles.Right;
 			label3.AutoSize = true;
 			label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label3.Location = new Point(291, 282);
+			label3.Location = new Point(291, 264);
 			label3.Margin = new Padding(4, 0, 4, 0);
 			label3.Name = "label3";
 			label3.Size = new Size(102, 28);
@@ -82,7 +82,7 @@
 			// 
 			// btnDangNhap
 			// 
-			btnDangNhap.Location = new Point(401, 320);
+			btnDangNhap.Location = new Point(401, 310);
 			btnDangNhap.Margin = new Padding(4);
 			btnDangNhap.Name = "btnDangNhap";
 			btnDangNhap.Size = new Size(118, 36);
@@ -121,8 +121,8 @@
 			// txtTenTaiKhoan
 			// 
 			txtTenTaiKhoan.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-			txtTenTaiKhoan.Location = new Point(401, 242);
-			txtTenTaiKhoan.Margin = new Padding(4);
+			txtTenTaiKhoan.Location = new Point(401, 208);
+			txtTenTaiKhoan.Margin = new Padding(4, 12, 4, 12);
 			txtTenTaiKhoan.Name = "txtTenTaiKhoan";
 			txtTenTaiKhoan.Size = new Size(320, 31);
 			txtTenTaiKhoan.TabIndex = 12;
@@ -131,8 +131,8 @@
 			// txtMatKhau
 			// 
 			txtMatKhau.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-			txtMatKhau.Location = new Point(401, 281);
-			txtMatKhau.Margin = new Padding(4);
+			txtMatKhau.Location = new Point(401, 263);
+			txtMatKhau.Margin = new Padding(4, 12, 4, 12);
 			txtMatKhau.Name = "txtMatKhau";
 			txtMatKhau.PasswordChar = '.';
 			txtMatKhau.Size = new Size(320, 31);
@@ -142,7 +142,7 @@
 			// cbPassword
 			// 
 			cbPassword.AutoSize = true;
-			cbPassword.Location = new Point(729, 281);
+			cbPassword.Location = new Point(729, 255);
 			cbPassword.Margin = new Padding(4);
 			cbPassword.Name = "cbPassword";
 			cbPassword.Size = new Size(76, 29);
@@ -170,12 +170,12 @@
 			tableLayoutPanel1.Location = new Point(0, 0);
 			tableLayoutPanel1.Name = "tableLayoutPanel1";
 			tableLayoutPanel1.RowCount = 7;
-			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 30.0000019F));
 			tableLayoutPanel1.RowStyles.Add(new RowStyle());
 			tableLayoutPanel1.RowStyles.Add(new RowStyle());
 			tableLayoutPanel1.RowStyles.Add(new RowStyle());
-			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 39.9999962F));
 			tableLayoutPanel1.RowStyles.Add(new RowStyle());
 			tableLayoutPanel1.Size = new Size(866, 531);
 			tableLayoutPanel1.TabIndex = 15;
