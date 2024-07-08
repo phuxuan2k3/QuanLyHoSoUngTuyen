@@ -34,6 +34,7 @@
 			btnDanhSachThongTinDangTuyen = new Button();
 			btnCapNhatTTDN = new Button();
 			_contentPanel = new Panel();
+			btnDuyetHoSo = new Button();
 			tableLayoutPanel1.SuspendLayout();
 			tableLayoutPanel2.SuspendLayout();
 			SuspendLayout();
@@ -56,16 +57,18 @@
 			// 
 			// tableLayoutPanel2
 			// 
-			tableLayoutPanel2.ColumnCount = 6;
+			tableLayoutPanel2.ColumnCount = 7;
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
+			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
 			tableLayoutPanel2.Controls.Add(btnTaoYeuCau, 0, 0);
 			tableLayoutPanel2.Controls.Add(btnDanhSachThongTinDangTuyen, 1, 0);
 			tableLayoutPanel2.Controls.Add(btnCapNhatTTDN, 5, 0);
+			tableLayoutPanel2.Controls.Add(btnDuyetHoSo, 6, 0);
 			tableLayoutPanel2.Dock = DockStyle.Fill;
 			tableLayoutPanel2.Location = new Point(2, 2);
 			tableLayoutPanel2.Margin = new Padding(2);
@@ -103,10 +106,12 @@
 			// 
 			// btnCapNhatTTDN
 			// 
+			btnCapNhatTTDN.AutoSize = true;
+			btnCapNhatTTDN.AutoSizeMode = AutoSizeMode.GrowAndShrink;
 			btnCapNhatTTDN.Location = new Point(500, 4);
-			btnCapNhatTTDN.Margin = new Padding(4, 4, 4, 4);
+			btnCapNhatTTDN.Margin = new Padding(4);
 			btnCapNhatTTDN.Name = "btnCapNhatTTDN";
-			btnCapNhatTTDN.Size = new Size(199, 36);
+			btnCapNhatTTDN.Size = new Size(147, 35);
 			btnCapNhatTTDN.TabIndex = 5;
 			btnCapNhatTTDN.Text = "Cập nhật TT DN";
 			btnCapNhatTTDN.UseVisualStyleBackColor = true;
@@ -121,6 +126,17 @@
 			_contentPanel.Name = "_contentPanel";
 			_contentPanel.Size = new Size(938, 541);
 			_contentPanel.TabIndex = 0;
+			// 
+			// btnDuyetHoSo
+			// 
+			btnDuyetHoSo.AutoSize = true;
+			btnDuyetHoSo.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			btnDuyetHoSo.Location = new Point(654, 3);
+			btnDuyetHoSo.Name = "btnDuyetHoSo";
+			btnDuyetHoSo.Size = new Size(119, 35);
+			btnDuyetHoSo.TabIndex = 6;
+			btnDuyetHoSo.Text = "Duyệt hồ sơ";
+			btnDuyetHoSo.UseVisualStyleBackColor = true;
 			// 
 			// GUI_DoanhNghiep
 			// 
@@ -146,5 +162,6 @@
 		private Button btnTaoYeuCau;
 		private Button btnDanhSachThongTinDangTuyen;
         private Button btnCapNhatTTDN;
-    }
+		private Button btnDuyetHoSo;
+	}
 }
