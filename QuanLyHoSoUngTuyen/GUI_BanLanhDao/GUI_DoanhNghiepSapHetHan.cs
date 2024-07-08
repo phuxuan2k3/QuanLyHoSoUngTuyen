@@ -65,7 +65,7 @@ namespace GUI.UserControls
             if (e.RowIndex != -1)
             {
                 DNHienTai = (dsDNHetHan.DataSource as List<DTO_DoanhNghiep>)![e.RowIndex];
-                lbMaDoanhNghiep.Text = DNHienTai.TenDN;
+                lbTenDoanhNghiep.Text = DNHienTai.TenDN;
                 List<DTO_KetQuaUngTuyen> lsKetQuaUngTuyen;
                 Ctrler_DoanhNghiepHetHan.LoadKetQuaUngTuyenCuaDN(dsDNHetHan.Rows[e.RowIndex].Cells[0].Value.ToString()!, out lsKetQuaUngTuyen);
                 dsKetQuaUngTuyen.DataSource = lsKetQuaUngTuyen;

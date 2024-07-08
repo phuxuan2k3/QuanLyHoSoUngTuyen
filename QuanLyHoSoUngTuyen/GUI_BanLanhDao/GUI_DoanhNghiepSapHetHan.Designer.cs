@@ -33,7 +33,7 @@
             dsDNHetHan = new DataGridView();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
-            lbMaDoanhNghiep = new Label();
+            lbTenDoanhNghiep = new Label();
             label4 = new Label();
             label1 = new Label();
             label2 = new Label();
@@ -98,21 +98,21 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(lbMaDoanhNghiep);
+            panel1.Controls.Add(lbTenDoanhNghiep);
             panel1.Controls.Add(label4);
             panel1.Location = new Point(385, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(277, 35);
             panel1.TabIndex = 15;
             // 
-            // lbMaDoanhNghiep
+            // lbTenDoanhNghiep
             // 
-            lbMaDoanhNghiep.AutoSize = true;
-            lbMaDoanhNghiep.Font = new Font("Segoe UI", 7F, FontStyle.Italic);
-            lbMaDoanhNghiep.Location = new Point(138, 8);
-            lbMaDoanhNghiep.Name = "lbMaDoanhNghiep";
-            lbMaDoanhNghiep.Size = new Size(0, 15);
-            lbMaDoanhNghiep.TabIndex = 18;
+            lbTenDoanhNghiep.AutoSize = true;
+            lbTenDoanhNghiep.Font = new Font("Segoe UI", 7F, FontStyle.Italic);
+            lbTenDoanhNghiep.Location = new Point(138, 8);
+            lbTenDoanhNghiep.Name = "lbTenDoanhNghiep";
+            lbTenDoanhNghiep.Size = new Size(0, 15);
+            lbTenDoanhNghiep.TabIndex = 18;
             // 
             // label4
             // 
@@ -166,7 +166,7 @@
         private DataGridView dsDNHetHan;
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
-        private Label lbMaDoanhNghiep;
+        private Label lbTenDoanhNghiep;
         private Label label4;
         private Label label1;
         private Label label2;

@@ -128,12 +128,12 @@
             dsChienLuocUuDai.Size = new Size(326, 328);
             dsChienLuocUuDai.TabIndex = 10;
             // 
-            // lbMaDoanhNghiep
+            // lbTenDoanhNghiep
             // 
             lbMaDoanhNghiep.AutoSize = true;
             lbMaDoanhNghiep.Font = new Font("Segoe UI", 7F, FontStyle.Italic);
             lbMaDoanhNghiep.Location = new Point(591, 19);
-            lbMaDoanhNghiep.Name = "lbMaDoanhNghiep";
+            lbMaDoanhNghiep.Name = "lbTenDoanhNghiep";
             lbMaDoanhNghiep.Size = new Size(116, 15);
             lbMaDoanhNghiep.TabIndex = 19;
             lbMaDoanhNghiep.Text = "Current Manu Name";

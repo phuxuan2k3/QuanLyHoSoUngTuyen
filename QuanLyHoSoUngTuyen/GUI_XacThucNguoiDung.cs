@@ -68,7 +68,7 @@ namespace GUI
             switch ((e as EventArgs<DTO_TaiKhoan>)!.Value.VaiTro)
             {
                 case "Doanh nghiệp":
-                    var dn = BUS_DoanhNghiep.LayDoanhNghiep((e as EventArgs<DTO_TaiKhoan>)!.Value.TenTaiKhoan));
+                    var dn = BUS_DoanhNghiep.LayDoanhNghiep((e as EventArgs<DTO_TaiKhoan>)!.Value.TenTaiKhoan);
                     GUI_DoanhNghiep gUI_DoanhNghiep = new GUI_DoanhNghiep();
                     gUI_DoanhNghiep.MaDN = dn.MaDN;
                     Hide();
