@@ -1,12 +1,11 @@
 ﻿using Ctrler.NhanVienTiepNhan;
 using GUI.Styles;
 using GUI.UserControls;
-using GUI;
 using GUI.GUI_UC;
 
 namespace GUI
 {
-    public partial class GUI_NhanVienTiepNhan : Form
+	public partial class GUI_NhanVienTiepNhan : Form
     {
         public GUI_NhanVienTiepNhan()
         {

@@ -5,36 +5,36 @@ namespace Ctrler.NhanVienThanhToan
 {
 	public class Ctrler_DongPhiChoHoaDon
 	{
-		private DTO_ThongTinDangTuyen _thongTinDangTuyen;
-		private DTO_HoaDon _hoaDon;
-		private DTO_DoanhNghiep _doanhNghiep;
-		private List<DTO_ChiTietHoaDon> _chiTietHoaDons;
-		private DTO_ChiTietHoaDon? _lanDongHienTai;
+		private DTO_ThongTinDangTuyen thongTinDangTuyen;
+		private DTO_HoaDon hoaDon;
+		private DTO_DoanhNghiep doanhNghiep;
+		private List<DTO_ChiTietHoaDon> chiTietHoaDons;
+		private DTO_ChiTietHoaDon? lanDongHienTai;
 		public Ctrler_DongPhiChoHoaDon(DTO_ThongTinDangTuyen thongTinDangTuyen, DTO_HoaDon hoaDon, DTO_DoanhNghiep doanhNghiep, List<DTO_ChiTietHoaDon> chiTietHoaDons)
 		{
-			_thongTinDangTuyen = thongTinDangTuyen;
-			_hoaDon = hoaDon;
-			_doanhNghiep = doanhNghiep;
-			_chiTietHoaDons = chiTietHoaDons;
+			this.thongTinDangTuyen = thongTinDangTuyen;
+			this.hoaDon = hoaDon;
+			this.doanhNghiep = doanhNghiep;
+			this.chiTietHoaDons = chiTietHoaDons;
 		}
 
 		public void Load(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HoaDon hoaDon, ref DTO_DoanhNghiep doanhNghiep, ref List<DTO_ChiTietHoaDon> chiTietHoaDons, ref DTO_ChiTietHoaDon? lanDongHienTai)
 		{
-			thongTinDangTuyen = _thongTinDangTuyen;
-			hoaDon = _hoaDon;
-			doanhNghiep = _doanhNghiep;
-			chiTietHoaDons = _chiTietHoaDons;
-			_lanDongHienTai = BUS_HoaDon.TaoLanThanhToan(hoaDon, chiTietHoaDons);
-			lanDongHienTai = _lanDongHienTai;
+			thongTinDangTuyen = this.thongTinDangTuyen;
+			hoaDon = this.hoaDon;
+			doanhNghiep = this.doanhNghiep;
+			chiTietHoaDons = this.chiTietHoaDons;
+			this.lanDongHienTai = BUS_HoaDon.TaoLanThanhToan(hoaDon, chiTietHoaDons);
+			lanDongHienTai = this.lanDongHienTai;
 		}
 
 		public void DongPhiChoHoaDon()
 		{
-			if (_lanDongHienTai == null)
+			if (lanDongHienTai == null)
 			{
 				throw new Exception("Hóa đơn đã được đóng phí");
 			}
-			BUS_HoaDon.ThemLanThanhToan(_hoaDon, _chiTietHoaDons, _lanDongHienTai);
+			BUS_HoaDon.ThemLanThanhToan(hoaDon, chiTietHoaDons, lanDongHienTai);
 		}
 	}
 }

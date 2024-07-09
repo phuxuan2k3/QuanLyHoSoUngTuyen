@@ -1,5 +1,4 @@
-﻿using Ctrler.DoanhNghiep;
-using Ctrler.NhanVienThanhToan;
+﻿using Ctrler.NhanVienThanhToan;
 using DTO;
 using GUI.GUIException;
 using Utilis;
@@ -8,12 +7,12 @@ namespace GUI.UserControls;
 
 public partial class GUI_DanhSachHoaDonDangTuyen : UserControl
 {
-	private Ctrler_DanhSachHoaDonDangTuyen? _ctrler_DanhSachHoaDonDangTuyen;
+	private Ctrler_DanhSachHoaDonDangTuyen? ctrler;
 
-	private Ctrler_DanhSachHoaDonDangTuyen Ctrler_DanhSachHoaDonDangTuyen
+	private Ctrler_DanhSachHoaDonDangTuyen Ctrler
 	{
-		get => _ctrler_DanhSachHoaDonDangTuyen ?? throw new ControllerNotFoundException();
-		set => _ctrler_DanhSachHoaDonDangTuyen = value;
+		get => ctrler ?? throw new ControllerNotFoundException();
+		set => ctrler = value;
 	}
 
 	public GUI_DanhSachHoaDonDangTuyen()
@@ -23,9 +22,9 @@ public partial class GUI_DanhSachHoaDonDangTuyen : UserControl
 
 	public void HienThi(Ctrler_DanhSachHoaDonDangTuyen ctrler_DanhSachHoaDonDangTuyen)
 	{
-		_ctrler_DanhSachHoaDonDangTuyen = ctrler_DanhSachHoaDonDangTuyen;
+		ctrler = ctrler_DanhSachHoaDonDangTuyen;
 		var dsHD = new List<DTO_HoaDon>();
-		Ctrler_DanhSachHoaDonDangTuyen.Load(ref dsHD);
+		Ctrler.Load(ref dsHD);
 		foreach (var hd in dsHD)
 		{
 			int rowId = dsHoaDon.Rows.Add();
@@ -42,7 +41,7 @@ public partial class GUI_DanhSachHoaDonDangTuyen : UserControl
 	{
 		if (dsHoaDon.Rows[e.RowIndex].Cells["_maTTDT"].Value is string maTTDT)
 		{
-			var hoaDon = Ctrler_DanhSachHoaDonDangTuyen.TruyVanHoaDon(maTTDT);
+			var hoaDon = Ctrler.TruyVanHoaDon(maTTDT);
 			if (hoaDon == null)
 			{
 				MessageBox.Show($"Không tìm thấy hóa đơn \"{maTTDT}\"", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -53,8 +52,12 @@ public partial class GUI_DanhSachHoaDonDangTuyen : UserControl
 			}
 			else
 			{
-				var ctrler = Ctrler_DanhSachHoaDonDangTuyen.HienThi_DongPhiChoHoaDon(hoaDon);
+				DTO_ThongTinDangTuyen thongTinDangTuyen = new();
+				List<DTO_ChiTietHoaDon> chiTietHoaDons = new();
+				DTO_DoanhNghiep doanhNghiep = new();
+				Ctrler.LoadChiTietHoaDon(maTTDT, ref thongTinDangTuyen, ref chiTietHoaDons, ref doanhNghiep);
 				var gui = new GUI_DongPhiChoHoaDon();
+				var ctrler = new Ctrler_DongPhiChoHoaDon(thongTinDangTuyen, hoaDon, doanhNghiep, chiTietHoaDons);
 				gui.HienThi(ctrler!);
 				GUI_NhanVienThanhToan.Instance.SwitchContent(gui);
 			}
@@ -64,7 +67,7 @@ public partial class GUI_DanhSachHoaDonDangTuyen : UserControl
 	private void btnTraCuu_Click(object sender, EventArgs e)
 	{
 		var maTTDT = txtMaTTDT.Text;
-		var hoaDon = Ctrler_DanhSachHoaDonDangTuyen.TruyVanHoaDon(maTTDT);
+		var hoaDon = Ctrler.TruyVanHoaDon(maTTDT);
 		if (hoaDon == null)
 		{
 			MessageBox.Show($"Không tìm thấy hóa đơn \"{maTTDT}\"", "Không tìm thấy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -75,10 +78,14 @@ public partial class GUI_DanhSachHoaDonDangTuyen : UserControl
 		}
 		else
 		{
-			var ctrler = Ctrler_DanhSachHoaDonDangTuyen.HienThi_DongPhiChoHoaDon(hoaDon);
+			DTO_ThongTinDangTuyen thongTinDangTuyen = new();
+			List<DTO_ChiTietHoaDon> chiTietHoaDons = new();
+			DTO_DoanhNghiep doanhNghiep = new();
+			Ctrler.LoadChiTietHoaDon(maTTDT, ref thongTinDangTuyen, ref chiTietHoaDons, ref doanhNghiep);
 			var gui = new GUI_DongPhiChoHoaDon();
+			var ctrler = new Ctrler_DongPhiChoHoaDon(thongTinDangTuyen, hoaDon, doanhNghiep, chiTietHoaDons);
+			gui.HienThi(ctrler!);
 			GUI_NhanVienThanhToan.Instance.SwitchContent(gui);
-			gui.HienThi(ctrler);
 		}
 	}
 }
