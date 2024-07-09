@@ -83,7 +83,7 @@ public partial class GUI_DoanhNghiep : Form
 	private void btnCapNhatTTDN_Click(object sender, EventArgs e)
 	{
 		GUI_CapNhatThongTinDoanhNghiep content = new();
-		content.HienThi(GUI_DoanhNghiep.Instance._maDN);
+		content.HienThi(MaDN);
 		SwitchContent(content);
 	}
 

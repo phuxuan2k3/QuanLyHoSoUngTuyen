@@ -23,11 +23,10 @@ public class Ctrler_DanhSachThongTinDangTuyen
 		thongTinDangTuyen = BUS_ThongTinDangTuyen.LayTatCaCuaDoanhNghiep(maDN);
 	}
 
-	public Ctrler_ChiTietThongTinDangTuyen HienThi_ChiTiet(string maTTDT)
+	public void LoadChiTiet(string maTTDT, ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HoaDon hoaDon, ref DTO_HinhThucDangTuyen hinhThucDangTuyen)
 	{
-		var ttdt = BUS_ThongTinDangTuyen.Lay(maTTDT);
-		var hoaDon = BUS_HoaDon.Lay(maTTDT);
-		var hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(ttdt.MaHTDT);
-		return new Ctrler_ChiTietThongTinDangTuyen(ttdt, hoaDon!, hinhThucDangTuyen);
+		thongTinDangTuyen = BUS_ThongTinDangTuyen.Lay(maTTDT);
+		hoaDon = BUS_HoaDon.Lay(maTTDT) ?? new DTO_HoaDon();
+		hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(thongTinDangTuyen.MaHTDT);
 	}
 }

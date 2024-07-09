@@ -5,35 +5,42 @@ namespace Ctrler.DoanhNghiep;
 
 public class Ctrler_HieuChinhThongTinDangTuyen
 {
-	private readonly DTO_ThongTinDangTuyen _thongTinDangTuyen;
-	private readonly DTO_HoaDon _hoaDon;
-	private readonly DTO_HinhThucDangTuyen _hinhThucDangTuyen;
+	private readonly DTO_ThongTinDangTuyen thongTinDangTuyen;
+	private readonly DTO_HoaDon hoaDon;
+	private readonly DTO_HinhThucDangTuyen hinhThucDangTuyen;
 
 	public Ctrler_HieuChinhThongTinDangTuyen(DTO_ThongTinDangTuyen thongTinDangTuyen, DTO_HoaDon hoaDon, DTO_HinhThucDangTuyen hinhThucDangTuyen)
 	{
-		_thongTinDangTuyen = thongTinDangTuyen;
-		_hoaDon = hoaDon;
-		_hinhThucDangTuyen = hinhThucDangTuyen;
+		this.thongTinDangTuyen = thongTinDangTuyen;
+		this.hoaDon = hoaDon;
+		this.hinhThucDangTuyen = hinhThucDangTuyen;
 	}
 
 	public void Load(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HinhThucDangTuyen hinhThucDangTuyen)
 	{
-		thongTinDangTuyen = _thongTinDangTuyen;
-		hinhThucDangTuyen = _hinhThucDangTuyen;
+		thongTinDangTuyen = this.thongTinDangTuyen;
+		hinhThucDangTuyen = this.hinhThucDangTuyen;
 	}
 
 	public void XacNhanHieuChinh(DTO_ThongTinDangTuyen thongTinDangTuyen)
 	{
-		_thongTinDangTuyen.TenViTri = thongTinDangTuyen.TenViTri;
-		_thongTinDangTuyen.SoLuong = thongTinDangTuyen.SoLuong;
-		_thongTinDangTuyen.YeuCau = thongTinDangTuyen.YeuCau;
-		_thongTinDangTuyen.TinhTrang = TinhTrangThongTinDangTuyen.CanHieuChinh;
-		_thongTinDangTuyen.TrangThai = TrangThaiThongTinDangTuyen.ChuaXetDuyet;
-		BUS_ThongTinDangTuyen.CapNhat(_thongTinDangTuyen);
+		this.thongTinDangTuyen.TenViTri = thongTinDangTuyen.TenViTri;
+		this.thongTinDangTuyen.SoLuong = thongTinDangTuyen.SoLuong;
+		this.thongTinDangTuyen.YeuCau = thongTinDangTuyen.YeuCau;
+		this.thongTinDangTuyen.TinhTrang = TinhTrangThongTinDangTuyen.CanHieuChinh;
+		this.thongTinDangTuyen.TrangThai = TrangThaiThongTinDangTuyen.ChuaXetDuyet;
+		BUS_ThongTinDangTuyen.CapNhat(this.thongTinDangTuyen);
 	}
 
-	public Ctrler_ChiTietThongTinDangTuyen HienThi_ChiTietThongTinDangTuyen()
+	public void LoadChiTiet(ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HoaDon hoaDon, ref DTO_HinhThucDangTuyen hinhThucDangTuyen)
 	{
-		return new Ctrler_ChiTietThongTinDangTuyen(_thongTinDangTuyen, _hoaDon, _hinhThucDangTuyen);
+		thongTinDangTuyen = this.thongTinDangTuyen;
+		hoaDon = this.hoaDon;
+		hinhThucDangTuyen = this.hinhThucDangTuyen;
 	}
+
+	//public Ctrler_ChiTietThongTinDangTuyen HienThi_ChiTietThongTinDangTuyen()
+	//{
+	//	return new Ctrler_ChiTietThongTinDangTuyen(thongTinDangTuyen, hoaDon, hinhThucDangTuyen);
+	//}
 }

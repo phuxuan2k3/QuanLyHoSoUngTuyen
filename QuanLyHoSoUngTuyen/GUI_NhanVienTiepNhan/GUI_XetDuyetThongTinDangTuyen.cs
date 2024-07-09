@@ -11,30 +11,30 @@ namespace GUI.UserControls
 			InitializeComponent();
 		}
 
-		private Ctrler_XetDuyetThongTinDangTuyen? _ctrler_ChiTietThongTinDangTuyen;
-		public Ctrler_XetDuyetThongTinDangTuyen Ctrler_ChiTietThongTinDangTuyen
+		private Ctrler_XetDuyetThongTinDangTuyen? ctrler;
+		public Ctrler_XetDuyetThongTinDangTuyen Ctrler
 		{
-			get => _ctrler_ChiTietThongTinDangTuyen ?? throw new ControllerNotFoundException();
-			private set => _ctrler_ChiTietThongTinDangTuyen = value;
+			get => ctrler ?? throw new ControllerNotFoundException();
+			private set => ctrler = value;
 		}
 
 		public void HienThi(Ctrler_XetDuyetThongTinDangTuyen ctrler_XetDuyetThongTinDangTuyen)
 		{
-			_ctrler_ChiTietThongTinDangTuyen = ctrler_XetDuyetThongTinDangTuyen;
-			DTO_ThongTinDangTuyen ttdt = new();
+			ctrler = ctrler_XetDuyetThongTinDangTuyen;
+			DTO_ThongTinDangTuyen thongTinDangTuyen = new();
 			DTO_HinhThucDangTuyen hinhThucDangTuyen = new();
 			DTO_DoanhNghiep doanhnghiep = new();
-			Ctrler_ChiTietThongTinDangTuyen.Load(ref ttdt, ref hinhThucDangTuyen, ref doanhnghiep);
+			Ctrler.Load(ref thongTinDangTuyen, ref hinhThucDangTuyen, ref doanhnghiep);
 			_TenDN.Text = doanhnghiep.TenDN.ToString();
-			_maTTDT.Text = ttdt.MaTTDT;
-			_soNgayDangTuyen.Text = ttdt.SoNgayDangTuyen.ToString();
-			_thoiGianDangTuyen.Text = ttdt.ThoiGianDangTuyen.ToString("dd/MM/yyyy") ?? "";
+			_maTTDT.Text = thongTinDangTuyen.MaTTDT;
+			_soNgayDangTuyen.Text = thongTinDangTuyen.SoNgayDangTuyen.ToString();
+			_thoiGianDangTuyen.Text = thongTinDangTuyen.ThoiGianDangTuyen.ToString("dd/MM/yyyy") ?? "";
 			_hinhThuc.Text = hinhThucDangTuyen.TenHinhThuc.ToString();
-			_tenViTri.Text = ttdt.TenViTri;
-			_soLuong.Text = ttdt.SoLuong.ToString();
-			_yeuCau.Text = ttdt.YeuCau;
-			_trangThai.Text = ttdt.TrangThai.ToString();
-			_tinhTrang.Text = ttdt.TinhTrang.ToString();
+			_tenViTri.Text = thongTinDangTuyen.TenViTri;
+			_soLuong.Text = thongTinDangTuyen.SoLuong.ToString();
+			_yeuCau.Text = thongTinDangTuyen.YeuCau;
+			_trangThai.Text = thongTinDangTuyen.TrangThai.ToString();
+			_tinhTrang.Text = thongTinDangTuyen.TinhTrang.ToString();
 		}
 
 		private void btnHopLe_Click(object sender, EventArgs e)
@@ -43,9 +43,9 @@ namespace GUI.UserControls
 			if (res == DialogResult.Yes)
 			{
 				Ctrler_XetDuyetThongTinDangTuyen.CapNhatTrangThai(_maTTDT.Text, TrangThaiThongTinDangTuyen.HopLe);
-				GUI_DanhSachTTDTCanXetDuyet content = new();
-				GUI_NhanVienTiepNhan.Instance.SwitchContent(content);
-				content.HienThi(new Ctrler_DanhSachTTDTCanXetDuyet());
+				var gui = new GUI_DanhSachTTDTCanXetDuyet();
+				gui.HienThi(new Ctrler_DanhSachTTDTCanXetDuyet());
+				GUI_NhanVienTiepNhan.Instance.SwitchContent(gui);
 			}
 		}
 
@@ -55,17 +55,17 @@ namespace GUI.UserControls
 			if (res == DialogResult.Yes)
 			{
 				Ctrler_XetDuyetThongTinDangTuyen.CapNhatTrangThai(_maTTDT.Text, TrangThaiThongTinDangTuyen.KhongHopLe);
-				GUI_DanhSachTTDTCanXetDuyet content = new();
-				GUI_NhanVienTiepNhan.Instance.SwitchContent(content);
-				content.HienThi(new Ctrler_DanhSachTTDTCanXetDuyet());
+				var gui = new GUI_DanhSachTTDTCanXetDuyet();
+				gui.HienThi(new Ctrler_DanhSachTTDTCanXetDuyet());
+				GUI_NhanVienTiepNhan.Instance.SwitchContent(gui);
 			}
 		}
 
 		private void btnQuayLai_Click(object sender, EventArgs e)
 		{
-			GUI_DanhSachTTDTCanXetDuyet content = new();
-			GUI_NhanVienTiepNhan.Instance.SwitchContent(content);
-			content.HienThi(new Ctrler_DanhSachTTDTCanXetDuyet());
+			var gui = new GUI_DanhSachTTDTCanXetDuyet();
+			gui.HienThi(new Ctrler_DanhSachTTDTCanXetDuyet());
+			GUI_NhanVienTiepNhan.Instance.SwitchContent(gui);
 		}
 	}
 }
