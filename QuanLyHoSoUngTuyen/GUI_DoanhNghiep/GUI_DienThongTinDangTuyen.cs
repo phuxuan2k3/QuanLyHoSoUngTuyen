@@ -7,12 +7,12 @@ namespace GUI.UserControls
 {
 	public partial class GUI_DienThongTinDangTuyen : UserControl
 	{
-		private Ctrler_DienThongTinDangTuyen? _ctrler_DienThongTinDangTuyen;
+		private Ctrler_DienThongTinDangTuyen? ctrler;
 
-		private Ctrler_DienThongTinDangTuyen Ctrler_DienThongTinDangTuyen
+		private Ctrler_DienThongTinDangTuyen Ctrler
 		{
-			get => _ctrler_DienThongTinDangTuyen ?? throw new ControllerNotFoundException();
-			set => _ctrler_DienThongTinDangTuyen = value;
+			get => ctrler ?? throw new ControllerNotFoundException();
+			set => ctrler = value;
 		}
 
 		public GUI_DienThongTinDangTuyen()
@@ -22,17 +22,17 @@ namespace GUI.UserControls
 
 		public void HienThi(Ctrler_DienThongTinDangTuyen ctrler_DienThongTinDangTuyen)
 		{
-			_ctrler_DienThongTinDangTuyen = ctrler_DienThongTinDangTuyen;
+			this.ctrler = ctrler_DienThongTinDangTuyen;
 			var thongTinDangTuyen = new DTO_ThongTinDangTuyen();
 			var hinhThucDangTuyen = new List<DTO_HinhThucDangTuyen>();
-			Ctrler_DienThongTinDangTuyen.Load(ref thongTinDangTuyen, ref hinhThucDangTuyen);
+			Ctrler.Load(ref thongTinDangTuyen, ref hinhThucDangTuyen);
 			_soNgayDangTuyen.Value = thongTinDangTuyen.SoNgayDangTuyen;
 			_hinhThucDangTuyen.DataSource = hinhThucDangTuyen;
 			_hinhThucDangTuyen.ValueMember = "MaHTDT";
 			_hinhThucDangTuyen.DisplayMember = "TenHinhThuc";
-			_hinhThucDangTuyen.SelectedIndex = hinhThucDangTuyen.FindIndex(x => x.MaHTDT == thongTinDangTuyen.MaHTDT);
+			var httdIndex = hinhThucDangTuyen.FindIndex(x => x.MaHTDT == thongTinDangTuyen.MaHTDT);
+			_hinhThucDangTuyen.SelectedIndex = httdIndex == -1 ? 0 : httdIndex;
 			_hinhThucDangTuyen.DropDownStyle = ComboBoxStyle.DropDownList;
-			_hinhThucDangTuyen.SelectedIndex = 0;
 			_thoiGianDangTuyen.MinDate = DateTime.Now.AddDays(1).Date;
 			_thoiGianDangTuyen.Value = thongTinDangTuyen.ThoiGianDangTuyen;
 			_tenViTri.Text = thongTinDangTuyen.TenViTri;
@@ -80,7 +80,7 @@ namespace GUI.UserControls
 					_yeuCau.Text
 					);
 				var gui = new GUI_XacNhanThanhToan();
-				var ctrler = Ctrler_DienThongTinDangTuyen.HienThi_XacNhanThanhToan(thongTinDangTuyen);
+				var ctrler = new Ctrler_XacNhanThanhToan(thongTinDangTuyen);
 				gui.HienThi(ctrler);
 				GUI_DoanhNghiep.Instance.SwitchContent(gui);
 			}

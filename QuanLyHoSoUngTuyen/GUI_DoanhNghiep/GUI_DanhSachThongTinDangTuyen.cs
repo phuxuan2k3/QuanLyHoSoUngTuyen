@@ -6,12 +6,12 @@ namespace GUI.UserControls;
 
 public partial class GUI_DanhSachThongTinDangTuyen : UserControl
 {
-    private Ctrler_DanhSachThongTinDangTuyen? _ctrler_DanhSachThongTinDangTuyen;
+    private Ctrler_DanhSachThongTinDangTuyen? ctrler;
 
-	private Ctrler_DanhSachThongTinDangTuyen Ctrler_DanhSachThongTinDangTuyen
+	private Ctrler_DanhSachThongTinDangTuyen Ctrler
 	{
-		get => _ctrler_DanhSachThongTinDangTuyen ?? throw new ControllerNotFoundException();
-		set => _ctrler_DanhSachThongTinDangTuyen = value;
+		get => ctrler ?? throw new ControllerNotFoundException();
+		set => ctrler = value;
 	}
 
     public GUI_DanhSachThongTinDangTuyen()
@@ -21,9 +21,9 @@ public partial class GUI_DanhSachThongTinDangTuyen : UserControl
 
     public void HienThi(Ctrler_DanhSachThongTinDangTuyen ctrler_DanhSachThongTinDangTuyen)
     {
-        _ctrler_DanhSachThongTinDangTuyen = ctrler_DanhSachThongTinDangTuyen;
+        ctrler = ctrler_DanhSachThongTinDangTuyen;
         var dsTTDT = new List<DTO_ThongTinDangTuyen>();
-        Ctrler_DanhSachThongTinDangTuyen.Load(ref dsTTDT);
+        Ctrler.Load(ref dsTTDT);
         foreach (var ttdt in dsTTDT)
         {
             int rowId = dsThongTinDangTuyen.Rows.Add();
@@ -42,7 +42,7 @@ public partial class GUI_DanhSachThongTinDangTuyen : UserControl
 	{
 		if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_id"].Value is string maTTDT)
 		{
-			var ctrler = Ctrler_DanhSachThongTinDangTuyen.HienThi_ChiTiet(maTTDT);
+			var ctrler = Ctrler.HienThi_ChiTiet(maTTDT);
 			GUI_ChiTietThongTinDangTuyen content = new ();
 			content.HienThi(ctrler);
 			GUI_DoanhNghiep.Instance.SwitchContent(content);

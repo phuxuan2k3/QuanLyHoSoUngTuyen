@@ -1,19 +1,18 @@
 ﻿using Ctrler.DoanhNghiep;
 using DTO;
 using GUI.GUIException;
-using GUI.UserControls;
 using Utilis;
 
 namespace GUI.UserControls
 {
 	public partial class GUI_XacNhanThanhToan : UserControl
 	{
-		private Ctrler_XacNhanThanhToan? _ctrler_XacNhanThanhToan;
+		private Ctrler_XacNhanThanhToan? ctrler;
 
-		private Ctrler_XacNhanThanhToan Ctrler_XacNhanThanhToan
+		private Ctrler_XacNhanThanhToan Ctrler
 		{
-			get => _ctrler_XacNhanThanhToan ?? throw new ControllerNotFoundException();
-			set => _ctrler_XacNhanThanhToan = value;
+			get => ctrler ?? throw new ControllerNotFoundException();
+			set => ctrler = value;
 		}
 
 		public GUI_XacNhanThanhToan()
@@ -23,7 +22,7 @@ namespace GUI.UserControls
 
 		public void HienThi(Ctrler_XacNhanThanhToan ctrler_XacNhanThanhToan)
 		{
-			_ctrler_XacNhanThanhToan = ctrler_XacNhanThanhToan;
+			ctrler = ctrler_XacNhanThanhToan;
 			DTO_ThongTinDangTuyen thongTinDangTuyen = new();
 			DTO_HinhThucDangTuyen hinhThucDangTuyen = new();
 			float tongTien = -1;
@@ -45,11 +44,11 @@ namespace GUI.UserControls
 			{
 				if (_thanhToanThanhNhieuDot.Checked)
 				{
-					Ctrler_XacNhanThanhToan.XacNhanThanhToan(CachThucThanhToan.NhieuDot);
+					Ctrler.XacNhanThanhToan(CachThucThanhToan.NhieuDot);
 				}
 				else if (_thanhToanToanBo.Checked)
 				{
-					Ctrler_XacNhanThanhToan.XacNhanThanhToan(CachThucThanhToan.ToanBo);
+					Ctrler.XacNhanThanhToan(CachThucThanhToan.ToanBo);
 				}
 				MessageBox.Show($"Yêu cầu đăng tuyển đã tạo thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				var gui = new GUI_DanhSachThongTinDangTuyen();
@@ -64,8 +63,8 @@ namespace GUI.UserControls
 
 		private void btnHuy_Click(object sender, EventArgs e)
 		{
-			var ctrler = Ctrler_XacNhanThanhToan.HienThi_DienThongTinDangTuyen();
 			var gui = new GUI_DienThongTinDangTuyen();
+			var ctrler = new Ctrler_DienThongTinDangTuyen(Ctrler.ThongTinDangTuyen);
 			gui.HienThi(ctrler);
 			GUI_DoanhNghiep.Instance.SwitchContent(gui);
 		}

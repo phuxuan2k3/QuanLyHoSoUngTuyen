@@ -1,17 +1,6 @@
-﻿using Ctrler;
-using Ctrler.DoanhNghiep;
+﻿using Ctrler.DoanhNghiep;
 using DTO;
 using GUI.GUIException;
-using Org.BouncyCastle.Asn1.Crmf;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GUI;
 
@@ -51,7 +40,6 @@ public partial class GUI_DanhSachThongTinDangTuyen_DN : UserControl
             GUI_DanhSachPhieuDK_DN content = new();
             content.HienThi(ctrler);
             GUI_DoanhNghiep.Instance.SwitchContent(content);
-
         }
     }
 }
