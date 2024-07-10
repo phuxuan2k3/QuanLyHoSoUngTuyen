@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="DuyetPhieuDK\GUI_DuyetPhieuDangKy_Duyet - Copy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="GUI_NhanVienThanhToan\GUI_DanhSachHoaDonDangTuyen.cs">
       <SubType>UserControl</SubType>
     </Compile>
