@@ -52,7 +52,7 @@
 			tableLayoutPanel1.RowCount = 2;
 			tableLayoutPanel1.RowStyles.Add(new RowStyle());
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-			tableLayoutPanel1.Size = new Size(942, 592);
+			tableLayoutPanel1.Size = new Size(1232, 703);
 			tableLayoutPanel1.TabIndex = 0;
 			// 
 			// tableLayoutPanel2
@@ -75,7 +75,7 @@
 			tableLayoutPanel2.Name = "tableLayoutPanel2";
 			tableLayoutPanel2.RowCount = 1;
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-			tableLayoutPanel2.Size = new Size(938, 44);
+			tableLayoutPanel2.Size = new Size(1228, 44);
 			tableLayoutPanel2.TabIndex = 2;
 			// 
 			// btnTaoYeuCau
@@ -137,14 +137,14 @@
 			_contentPanel.Location = new Point(2, 50);
 			_contentPanel.Margin = new Padding(2);
 			_contentPanel.Name = "_contentPanel";
-			_contentPanel.Size = new Size(938, 540);
+			_contentPanel.Size = new Size(1228, 651);
 			_contentPanel.TabIndex = 0;
 			// 
 			// GUI_DoanhNghiep
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(942, 592);
+			ClientSize = new Size(1232, 703);
 			Controls.Add(tableLayoutPanel1);
 			Margin = new Padding(2);
 			Name = "GUI_DoanhNghiep";

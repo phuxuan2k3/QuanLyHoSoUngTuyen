@@ -2,6 +2,7 @@
 using DTO;
 using GUI.GUIException;
 using GUI.UserControls;
+using Utilis;
 
 namespace GUI.UserControls;
 
@@ -29,7 +30,7 @@ public partial class GUI_ChiTietThongTinDangTuyen : UserControl
 		Ctrler_ChiTietThongTinDangTuyen.Load(ref ttdt, ref hoaDon, ref hinhThucDangTuyen);
 		_maTTDT.Text = ttdt.MaTTDT;
 		_soNgayDangTuyen.Text = ttdt.SoNgayDangTuyen.ToString();
-		_thoiGianDangTuyen.Text = ttdt.ThoiGianDangTuyen.ToString("dd/MM/yyyy");
+		_thoiGianDangTuyen.Text = ttdt.ThoiGianDangTuyen.ToDateString();
 		_hinhThuc.Text = hinhThucDangTuyen.TenHinhThuc.ToString();
 		_tenViTri.Text = ttdt.TenViTri;
 		_soLuong.Text = ttdt.SoLuong.ToString();

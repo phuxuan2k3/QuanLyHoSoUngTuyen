@@ -28,4 +28,19 @@ public class Style
 		}
 		control.ControlAdded += StyleNewlyAddedEvent;
 	}
+
+	public static void ApplyStylingAll(Form form, Action<Control> styling)
+	{
+		Stack<Control> stack = new();
+		stack.Push(form);
+		while (stack.Count > 0)
+		{
+			Control curControl = stack.Pop();
+			styling.Invoke(curControl);
+			foreach (Control childControl in curControl.Controls)
+			{
+				stack.Push(childControl);
+			}
+		}
+	}
 }

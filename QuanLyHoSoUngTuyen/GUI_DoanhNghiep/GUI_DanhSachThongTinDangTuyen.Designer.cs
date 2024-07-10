@@ -54,17 +54,17 @@
 			tableLayoutPanel1.RowCount = 2;
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 85F));
-			tableLayoutPanel1.Size = new Size(800, 484);
+			tableLayoutPanel1.Size = new Size(880, 542);
 			tableLayoutPanel1.TabIndex = 0;
 			// 
 			// label1
 			// 
 			label1.Anchor = AnchorStyles.None;
 			label1.AutoSize = true;
-			label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label1.Location = new Point(213, 20);
+			label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label1.Location = new Point(218, 22);
 			label1.Name = "label1";
-			label1.Size = new Size(374, 31);
+			label1.Size = new Size(444, 37);
 			label1.TabIndex = 0;
 			label1.Text = "Danh Sách Thông Tin Đăng Tuyển";
 			// 
@@ -72,16 +72,16 @@
 			// 
 			dsThongTinDangTuyen.AllowUserToAddRows = false;
 			dsThongTinDangTuyen.AllowUserToDeleteRows = false;
-			dsThongTinDangTuyen.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			dsThongTinDangTuyen.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 			dsThongTinDangTuyen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dsThongTinDangTuyen.Columns.AddRange(new DataGridViewColumn[] { _id, _viTri, _soLuong, _thoiGianDang, _soNgayDang, _trangThai, _tinhTrang });
 			dsThongTinDangTuyen.Dock = DockStyle.Fill;
-			dsThongTinDangTuyen.Location = new Point(30, 102);
-			dsThongTinDangTuyen.Margin = new Padding(30);
+			dsThongTinDangTuyen.Location = new Point(33, 115);
+			dsThongTinDangTuyen.Margin = new Padding(33, 34, 33, 34);
 			dsThongTinDangTuyen.Name = "dsThongTinDangTuyen";
 			dsThongTinDangTuyen.ReadOnly = true;
 			dsThongTinDangTuyen.RowHeadersWidth = 51;
-			dsThongTinDangTuyen.Size = new Size(740, 352);
+			dsThongTinDangTuyen.Size = new Size(814, 393);
 			dsThongTinDangTuyen.TabIndex = 1;
 			dsThongTinDangTuyen.CellClick += dsThongTinDangTuyen_CellClick;
 			// 
@@ -92,6 +92,7 @@
 			_id.Name = "_id";
 			_id.ReadOnly = true;
 			_id.Visible = false;
+			_id.Width = 125;
 			// 
 			// _viTri
 			// 
@@ -99,6 +100,7 @@
 			_viTri.MinimumWidth = 6;
 			_viTri.Name = "_viTri";
 			_viTri.ReadOnly = true;
+			_viTri.Width = 76;
 			// 
 			// _soLuong
 			// 
@@ -106,6 +108,7 @@
 			_soLuong.MinimumWidth = 6;
 			_soLuong.Name = "_soLuong";
 			_soLuong.ReadOnly = true;
+			_soLuong.Width = 111;
 			// 
 			// _thoiGianDang
 			// 
@@ -113,6 +116,7 @@
 			_thoiGianDang.MinimumWidth = 6;
 			_thoiGianDang.Name = "_thoiGianDang";
 			_thoiGianDang.ReadOnly = true;
+			_thoiGianDang.Width = 117;
 			// 
 			// _soNgayDang
 			// 
@@ -120,6 +124,7 @@
 			_soNgayDang.MinimumWidth = 6;
 			_soNgayDang.Name = "_soNgayDang";
 			_soNgayDang.ReadOnly = true;
+			_soNgayDang.Width = 108;
 			// 
 			// _trangThai
 			// 
@@ -127,6 +132,7 @@
 			_trangThai.MinimumWidth = 6;
 			_trangThai.Name = "_trangThai";
 			_trangThai.ReadOnly = true;
+			_trangThai.Width = 117;
 			// 
 			// _tinhTrang
 			// 
@@ -134,14 +140,16 @@
 			_tinhTrang.MinimumWidth = 6;
 			_tinhTrang.Name = "_tinhTrang";
 			_tinhTrang.ReadOnly = true;
+			_tinhTrang.Width = 119;
 			// 
 			// GUI_DanhSachThongTinDangTuyen
 			// 
-			AutoScaleDimensions = new SizeF(10F, 25F);
+			AutoScaleDimensions = new SizeF(11F, 28F);
 			AutoScaleMode = AutoScaleMode.Font;
 			Controls.Add(tableLayoutPanel1);
+			Font = new Font("Segoe UI", 12F);
 			Name = "GUI_DanhSachThongTinDangTuyen";
-			Size = new Size(800, 484);
+			Size = new Size(880, 542);
 			tableLayoutPanel1.ResumeLayout(false);
 			tableLayoutPanel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)dsThongTinDangTuyen).EndInit();

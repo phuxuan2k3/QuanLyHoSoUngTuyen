@@ -1,12 +1,13 @@
 ﻿using Ctrler.DoanhNghiep;
 using DTO;
 using GUI.GUIException;
+using Utilis;
 
 namespace GUI.UserControls;
 
 public partial class GUI_DanhSachThongTinDangTuyen : UserControl
 {
-    private Ctrler_DanhSachThongTinDangTuyen? _ctrler_DanhSachThongTinDangTuyen;
+	private Ctrler_DanhSachThongTinDangTuyen? _ctrler_DanhSachThongTinDangTuyen;
 
 	private Ctrler_DanhSachThongTinDangTuyen Ctrler_DanhSachThongTinDangTuyen
 	{
@@ -14,36 +15,41 @@ public partial class GUI_DanhSachThongTinDangTuyen : UserControl
 		set => _ctrler_DanhSachThongTinDangTuyen = value;
 	}
 
-    public GUI_DanhSachThongTinDangTuyen()
-    {
-        InitializeComponent();
-    }
+	public GUI_DanhSachThongTinDangTuyen()
+	{
+		InitializeComponent();
+	}
 
-    public void HienThi(Ctrler_DanhSachThongTinDangTuyen ctrler_DanhSachThongTinDangTuyen)
-    {
-        _ctrler_DanhSachThongTinDangTuyen = ctrler_DanhSachThongTinDangTuyen;
-        var dsTTDT = new List<DTO_ThongTinDangTuyen>();
-        Ctrler_DanhSachThongTinDangTuyen.Load(ref dsTTDT);
-        foreach (var ttdt in dsTTDT)
-        {
-            int rowId = dsThongTinDangTuyen.Rows.Add();
-            DataGridViewRow row = dsThongTinDangTuyen.Rows[rowId];
-            row.Cells["_id"].Value = ttdt.MaTTDT;
-            row.Cells["_viTri"].Value = ttdt.TenViTri;
-            row.Cells["_soLuong"].Value = ttdt.SoLuong;
-            row.Cells["_thoiGianDang"].Value = ttdt.ThoiGianDangTuyen;
-            row.Cells["_soNgayDang"].Value = ttdt.SoNgayDangTuyen;
-            row.Cells["_trangThai"].Value = ttdt.TrangThai.ToDisplayString();
-            row.Cells["_tinhTrang"].Value = ttdt.TinhTrang.ToDisplayString();
-        }
-    }
+	public void HienThi(Ctrler_DanhSachThongTinDangTuyen ctrler_DanhSachThongTinDangTuyen)
+	{
+		_ctrler_DanhSachThongTinDangTuyen = ctrler_DanhSachThongTinDangTuyen;
+		var dsTTDT = new List<DTO_ThongTinDangTuyen>();
+		Ctrler_DanhSachThongTinDangTuyen.Load(ref dsTTDT);
+		foreach (var ttdt in dsTTDT)
+		{
+			int rowId = dsThongTinDangTuyen.Rows.Add();
+			DataGridViewRow row = dsThongTinDangTuyen.Rows[rowId];
+			row.Cells["_id"].Value = ttdt.MaTTDT;
+			row.Cells["_viTri"].Value = ttdt.TenViTri;
+			row.Cells["_soLuong"].Value = ttdt.SoLuong;
+			row.Cells["_thoiGianDang"].Value = ttdt.ThoiGianDangTuyen.ToDateString();
+			row.Cells["_soNgayDang"].Value = ttdt.SoNgayDangTuyen;
+			row.Cells["_trangThai"].Value = ttdt.TrangThai.ToDisplayString();
+			row.Cells["_tinhTrang"].Value = ttdt.TinhTrang.ToDisplayString();
+		}
+		_viTri.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+	}
 
 	private void dsThongTinDangTuyen_CellClick(object sender, DataGridViewCellEventArgs e)
 	{
+		if (dsThongTinDangTuyen.CurrentCell == null || dsThongTinDangTuyen.CurrentCell.Value == null || e.RowIndex == -1)
+		{
+			return;
+		}
 		if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_id"].Value is string maTTDT)
 		{
 			var ctrler = Ctrler_DanhSachThongTinDangTuyen.HienThi_ChiTiet(maTTDT);
-			GUI_ChiTietThongTinDangTuyen content = new ();
+			GUI_ChiTietThongTinDangTuyen content = new();
 			content.HienThi(ctrler);
 			GUI_DoanhNghiep.Instance.SwitchContent(content);
 		}
