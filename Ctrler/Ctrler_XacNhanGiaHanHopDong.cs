@@ -17,6 +17,7 @@ namespace Ctrler
 
         public static void GiaHanDoanhNghiep(string maDN, List<DTO_ChienLuocUuDai> lsChienLuocUuDai)
         {
+            BUS_DoanhNghiep.CapNhatTrangThaiDN(maDN, TrangThaiDoanhNghiep.TiemNang.GetString());
             BUS_ChienLuocUuDai.XoaTatCaUuDaiCuaDoanhNghiep(maDN);
             BUS_ChienLuocUuDai.ThemUuDaiChoDoanhNghiep(maDN, lsChienLuocUuDai);
             BUS_DoanhNghiep.LuuDoanhNghiepTiemNang(maDN);

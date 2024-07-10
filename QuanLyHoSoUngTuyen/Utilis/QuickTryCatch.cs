@@ -8,39 +8,26 @@ namespace GUI.Utilis
 {
     public class QuickTryCatch
     {
-        public static T ExcuteWithTryCatchAndShowMessageBox<T>(Func<T> func, string message)
-        {
-            try
-            {
-                return func();
-            }
-            catch (Exception)
-            {
-                MessageBoxHelper.ShowException(message);
-                return default(T)!;
-            }
-        }
-        public static void ExecuteWithoutResolve<T>(Func<T> func)
-        {
-            try
-            {
-                func();
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-        public static void ExecuteWithTryCatch(Action action)
+        public static void ExcuteWithTryCatchAndShowMessageBox(Action action, string message)
         {
             try
             {
                 action();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBoxHelper.ShowException(ex.Message);
+                MessageBoxHelper.ShowException(message);
+            }
+        }
+        public static void ExecuteWithoutResolve(Action action)
+        {
+            try
+            {
+                action();
+            }
+            catch (Exception)
+            {
+
             }
         }
     }

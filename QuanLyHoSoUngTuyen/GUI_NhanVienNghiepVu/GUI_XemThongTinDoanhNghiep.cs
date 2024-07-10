@@ -25,7 +25,17 @@ namespace GUI
         {
             var lsDN = Ctrler_XemThongTinDoanhNghiep.LayDanhSachDoanhNghiep();
             dsDN.DataSource = lsDN;
+
+            HideSomeField();
         }
+
+        private void HideSomeField()
+        {
+            Utilis.QuickTryCatch.ExecuteWithoutResolve(() => dsDN.Columns["MaDN"].Visible = false);
+            Utilis.QuickTryCatch.ExecuteWithoutResolve(() => dsDN.Columns["NgayDangKy"].Visible = false);
+            Utilis.QuickTryCatch.ExecuteWithoutResolve(() => dsDN.Columns["TenTaiKhoan"].Visible = false);
+        }
+
 
         private void radChuaXacThuc_CheckedChanged(object sender, EventArgs e)
         {

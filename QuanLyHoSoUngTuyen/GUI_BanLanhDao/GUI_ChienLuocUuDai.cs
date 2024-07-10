@@ -88,10 +88,16 @@ namespace GUI.UserControls
             {
                 if (MessageBoxHelper.ShowQuestion("Chắn chắn xoá chiến lược này?") == DialogResult.Yes)
                 {
-                    Ctrler_ChienLuocUuDai.XoaCLUD(_maChienLuocHienTai);
+                    QuickTryCatch.ExcuteWithTryCatchAndShowMessageBox(() => Ctrler_ChienLuocUuDai.XoaCLUD(_maChienLuocHienTai),
+                                                                      "Không thể xoá ưu đãi này do đã có doanh nghiệp đang sử dụng.");
                 }
             }
             HienThi();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -108,6 +108,7 @@
             label5.Size = new Size(35, 20);
             label5.TabIndex = 13;
             label5.Text = "Tên:";
+            label5.Click += label5_Click;
             // 
             // label4
             // 
