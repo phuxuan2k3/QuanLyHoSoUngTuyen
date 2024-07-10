@@ -44,6 +44,7 @@ namespace GUI.UserControls
 				row.Cells[_soTienThanhToan.Name].Value = chiTietHoaDon.SoTienCanThanhToan;
 				row.Cells[_ngayThanhToan.Name].Value = chiTietHoaDon.NgayThanhToan;
 			}
+			btnXuatHoaDon.Enabled = hoaDon.TrangThaiThanhToan == TrangThaiThanhToan.DaThanhToanHoanTat;
 		}
 
 		private void btnXuatHoaDon_Click(object sender, EventArgs e)

@@ -23,7 +23,6 @@ public class Ctrler_ChiTietThongTinDangTuyen
 		hinhThucDangTuyen = this.hinhThucDangTuyen;
 	}
 
-	// todo
     public static void CapNhatThongTinPhieuDangKy(DTO_ThongTinHoSo ttpdk)
     {
          BUS_PhieuDangKyUngTuyen.CapNhatThongTinPhieuDangKy(ttpdk);

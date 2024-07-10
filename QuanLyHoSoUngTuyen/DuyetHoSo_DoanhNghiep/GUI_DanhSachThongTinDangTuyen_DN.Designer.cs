@@ -53,13 +53,14 @@
 			btnHuy.BackColor = SystemColors.ScrollBar;
 			btnHuy.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
 			btnHuy.Location = new Point(853, 561);
-			btnHuy.Margin = new Padding(4, 4, 4, 4);
+			btnHuy.Margin = new Padding(4);
 			btnHuy.Name = "btnHuy";
 			btnHuy.Size = new Size(130, 40);
 			btnHuy.TabIndex = 5;
 			btnHuy.Tag = "red";
 			btnHuy.Text = "Hủy";
 			btnHuy.UseVisualStyleBackColor = false;
+			btnHuy.Click += btnHuy_Click;
 			// 
 			// lb_dsTTDT
 			// 
@@ -84,7 +85,7 @@
 			tableLayoutPanel2.SetColumnSpan(dsThongTinDangTuyen, 2);
 			dsThongTinDangTuyen.Dock = DockStyle.Fill;
 			dsThongTinDangTuyen.Location = new Point(113, 93);
-			dsThongTinDangTuyen.Margin = new Padding(4, 4, 4, 4);
+			dsThongTinDangTuyen.Margin = new Padding(4);
 			dsThongTinDangTuyen.Name = "dsThongTinDangTuyen";
 			dsThongTinDangTuyen.ReadOnly = true;
 			dsThongTinDangTuyen.RowHeadersWidth = 51;
@@ -210,7 +211,7 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			Controls.Add(tableLayoutPanel2);
 			Font = new Font("Segoe UI", 12F);
-			Margin = new Padding(4, 4, 4, 4);
+			Margin = new Padding(4);
 			Name = "GUI_DanhSachThongTinDangTuyen_DN";
 			Size = new Size(1099, 627);
 			((System.ComponentModel.ISupportInitialize)dsThongTinDangTuyen).EndInit();

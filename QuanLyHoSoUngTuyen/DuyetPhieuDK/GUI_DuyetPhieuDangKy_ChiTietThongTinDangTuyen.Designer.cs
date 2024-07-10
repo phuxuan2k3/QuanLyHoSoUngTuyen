@@ -251,6 +251,7 @@
 			dsPhieuDangKy.RowHeadersWidth = 51;
 			dsPhieuDangKy.Size = new Size(884, 240);
 			dsPhieuDangKy.TabIndex = 10;
+			dsPhieuDangKy.CellContentClick += dsPhieuDangKy_CellContentClick;
 			// 
 			// _maUV
 			// 

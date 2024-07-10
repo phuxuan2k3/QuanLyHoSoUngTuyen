@@ -52,6 +52,7 @@ namespace GUI
 			}
 
 		}
+
 		private void dsPhieuDangKy_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (dsPhieuDangKy.Rows[e.RowIndex].Cells["_maUV"].Value is string maUV)

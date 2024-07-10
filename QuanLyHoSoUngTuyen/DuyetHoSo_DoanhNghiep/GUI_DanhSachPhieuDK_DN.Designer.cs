@@ -1,24 +1,24 @@
 ﻿namespace GUI
 {
-    partial class GUI_DanhSachPhieuDK_DN
-    {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class GUI_DanhSachPhieuDK_DN
+	{
+		/// <summary> 
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary> 
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
 		#region Component Designer generated code
 
@@ -38,9 +38,14 @@
 			lbTTDT = new Label();
 			tableLayoutPanel1 = new TableLayoutPanel();
 			tableLayoutPanel2 = new TableLayoutPanel();
+			tableLayoutPanel3 = new TableLayoutPanel();
+			flowLayoutPanel1 = new FlowLayoutPanel();
+			tenViTri = new Label();
 			((System.ComponentModel.ISupportInitialize)dsPhieuDangKy).BeginInit();
 			tableLayoutPanel1.SuspendLayout();
 			tableLayoutPanel2.SuspendLayout();
+			tableLayoutPanel3.SuspendLayout();
+			flowLayoutPanel1.SuspendLayout();
 			SuspendLayout();
 			// 
 			// btnHuy
@@ -48,7 +53,7 @@
 			btnHuy.Anchor = AnchorStyles.Right;
 			btnHuy.BackColor = Color.Red;
 			btnHuy.Location = new Point(739, 40);
-			btnHuy.Margin = new Padding(4, 4, 4, 4);
+			btnHuy.Margin = new Padding(4);
 			btnHuy.Name = "btnHuy";
 			btnHuy.Size = new Size(130, 40);
 			btnHuy.TabIndex = 8;
@@ -61,7 +66,7 @@
 			lb_dsTTDT.Anchor = AnchorStyles.Left;
 			lb_dsTTDT.AutoSize = true;
 			lb_dsTTDT.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 163);
-			lb_dsTTDT.Location = new Point(113, 44);
+			lb_dsTTDT.Location = new Point(4, 41);
 			lb_dsTTDT.Margin = new Padding(4, 0, 4, 0);
 			lb_dsTTDT.Name = "lb_dsTTDT";
 			lb_dsTTDT.Size = new Size(335, 37);
@@ -73,7 +78,7 @@
 			button1.Anchor = AnchorStyles.Left;
 			button1.BackColor = Color.DodgerBlue;
 			button1.Location = new Point(4, 40);
-			button1.Margin = new Padding(4, 4, 4, 4);
+			button1.Margin = new Padding(4);
 			button1.Name = "button1";
 			button1.Size = new Size(282, 40);
 			button1.TabIndex = 9;
@@ -90,7 +95,7 @@
 			dsPhieuDangKy.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dsPhieuDangKy.Columns.AddRange(new DataGridViewColumn[] { _maUV, _trangThai, _uuTien });
 			dsPhieuDangKy.Location = new Point(113, 129);
-			dsPhieuDangKy.Margin = new Padding(4, 4, 4, 4);
+			dsPhieuDangKy.Margin = new Padding(4);
 			dsPhieuDangKy.Name = "dsPhieuDangKy";
 			dsPhieuDangKy.ReadOnly = true;
 			dsPhieuDangKy.RowHeadersWidth = 51;
@@ -123,11 +128,12 @@
 			// 
 			lbTTDT.AutoSize = true;
 			lbTTDT.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-			lbTTDT.Location = new Point(851, 57);
+			lbTTDT.Location = new Point(4, 0);
 			lbTTDT.Margin = new Padding(4, 0, 4, 0);
 			lbTTDT.Name = "lbTTDT";
-			lbTTDT.Size = new Size(0, 31);
+			lbTTDT.Size = new Size(64, 31);
 			lbTTDT.TabIndex = 11;
+			lbTTDT.Text = "label";
 			// 
 			// tableLayoutPanel1
 			// 
@@ -135,9 +141,9 @@
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
-			tableLayoutPanel1.Controls.Add(lb_dsTTDT, 1, 0);
 			tableLayoutPanel1.Controls.Add(dsPhieuDangKy, 1, 1);
 			tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 2);
+			tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 1, 0);
 			tableLayoutPanel1.Dock = DockStyle.Fill;
 			tableLayoutPanel1.Location = new Point(0, 0);
 			tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -165,35 +171,76 @@
 			tableLayoutPanel2.Size = new Size(873, 120);
 			tableLayoutPanel2.TabIndex = 11;
 			// 
+			// tableLayoutPanel3
+			// 
+			tableLayoutPanel3.ColumnCount = 2;
+			tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+			tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+			tableLayoutPanel3.Controls.Add(lb_dsTTDT, 0, 0);
+			tableLayoutPanel3.Controls.Add(flowLayoutPanel1, 1, 0);
+			tableLayoutPanel3.Dock = DockStyle.Fill;
+			tableLayoutPanel3.Location = new Point(112, 3);
+			tableLayoutPanel3.Name = "tableLayoutPanel3";
+			tableLayoutPanel3.RowCount = 1;
+			tableLayoutPanel3.RowStyles.Add(new RowStyle());
+			tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+			tableLayoutPanel3.Size = new Size(873, 119);
+			tableLayoutPanel3.TabIndex = 12;
+			// 
+			// flowLayoutPanel1
+			// 
+			flowLayoutPanel1.Anchor = AnchorStyles.Right;
+			flowLayoutPanel1.AutoSize = true;
+			flowLayoutPanel1.Controls.Add(lbTTDT);
+			flowLayoutPanel1.Controls.Add(tenViTri);
+			flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+			flowLayoutPanel1.Location = new Point(798, 30);
+			flowLayoutPanel1.Name = "flowLayoutPanel1";
+			flowLayoutPanel1.Size = new Size(72, 59);
+			flowLayoutPanel1.TabIndex = 7;
+			// 
+			// tenViTri
+			// 
+			tenViTri.AutoSize = true;
+			tenViTri.Location = new Point(3, 31);
+			tenViTri.Name = "tenViTri";
+			tenViTri.Size = new Size(65, 28);
+			tenViTri.TabIndex = 12;
+			tenViTri.Text = "label1";
+			// 
 			// GUI_DanhSachPhieuDK_DN
 			// 
 			AutoScaleDimensions = new SizeF(11F, 28F);
 			AutoScaleMode = AutoScaleMode.Font;
-			Controls.Add(lbTTDT);
 			Controls.Add(tableLayoutPanel1);
 			Font = new Font("Segoe UI", 12F);
-			Margin = new Padding(4, 4, 4, 4);
+			Margin = new Padding(4);
 			Name = "GUI_DanhSachPhieuDK_DN";
 			Size = new Size(1099, 627);
 			((System.ComponentModel.ISupportInitialize)dsPhieuDangKy).EndInit();
 			tableLayoutPanel1.ResumeLayout(false);
-			tableLayoutPanel1.PerformLayout();
 			tableLayoutPanel2.ResumeLayout(false);
+			tableLayoutPanel3.ResumeLayout(false);
+			tableLayoutPanel3.PerformLayout();
+			flowLayoutPanel1.ResumeLayout(false);
+			flowLayoutPanel1.PerformLayout();
 			ResumeLayout(false);
-			PerformLayout();
 		}
 
 		#endregion
 
 		private Button btnHuy;
-        private Label lb_dsTTDT;
-        private Button button1;
-        public DataGridView dsPhieuDangKy;
-        private DataGridViewTextBoxColumn _maUV;
-        private DataGridViewTextBoxColumn _trangThai;
-        private DataGridViewTextBoxColumn _uuTien;
-        private Label lbTTDT;
+		private Label lb_dsTTDT;
+		private Button button1;
+		public DataGridView dsPhieuDangKy;
+		private DataGridViewTextBoxColumn _maUV;
+		private DataGridViewTextBoxColumn _trangThai;
+		private DataGridViewTextBoxColumn _uuTien;
+		private Label lbTTDT;
 		private TableLayoutPanel tableLayoutPanel1;
 		private TableLayoutPanel tableLayoutPanel2;
+		private TableLayoutPanel tableLayoutPanel3;
+		private FlowLayoutPanel flowLayoutPanel1;
+		private Label tenViTri;
 	}
 }

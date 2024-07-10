@@ -13,5 +13,10 @@ namespace Ctrler.DoanhNghiep
 		{
 			BUS_DoanhNghiep.CapNhatThongTinDN(doanhNghiep);
 		}
-	}
+
+        public static int KiemTraMaSothue(string maDN, string MST)
+        {
+            return BUS_DoanhNghiep.KiemTraMaSoThue(maDN, MST);
+        }
+    }
 }

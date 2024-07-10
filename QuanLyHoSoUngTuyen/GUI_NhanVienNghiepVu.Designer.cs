@@ -54,7 +54,7 @@
             flowLayoutPanel1.Controls.Add(btnDuyetPhieuDangKy);
             flowLayoutPanel1.Location = new Point(0, -5);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(800, 37);
+            flowLayoutPanel1.Size = new Size(917, 37);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // btnDangTuyenTTDT
@@ -64,15 +64,15 @@
             btnDangTuyenTTDT.Location = new Point(133, 2);
             btnDangTuyenTTDT.Margin = new Padding(2);
             btnDangTuyenTTDT.Name = "btnDangTuyenTTDT";
-            btnDangTuyenTTDT.Size = new Size(95, 30);
+            btnDangTuyenTTDT.Size = new Size(157, 30);
             btnDangTuyenTTDT.TabIndex = 5;
-            btnDangTuyenTTDT.Text = "Đăng tuyển";
+            btnDangTuyenTTDT.Text = "Xác nhận đăng tuyển";
             btnDangTuyenTTDT.UseVisualStyleBackColor = true;
             btnDangTuyenTTDT.Click += btnDangTuyenTTDT_Click;
             // 
             // btnDuyetPhieuDangKy
             // 
-            btnDuyetPhieuDangKy.Location = new Point(233, 3);
+            btnDuyetPhieuDangKy.Location = new Point(295, 3);
             btnDuyetPhieuDangKy.Name = "btnDuyetPhieuDangKy";
             btnDuyetPhieuDangKy.Size = new Size(110, 29);
             btnDuyetPhieuDangKy.TabIndex = 5;
@@ -91,14 +91,14 @@
             // 
             _container.Location = new Point(0, 38);
             _container.Name = "_container";
-            _container.Size = new Size(1098, 586);
+            _container.Size = new Size(917, 412);
             _container.TabIndex = 2;
             // 
             // GUI_NhanVienNghiepVu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1098, 624);
+            ClientSize = new Size(917, 450);
             Controls.Add(_container);
             Controls.Add(flowLayoutPanel1);
             Name = "GUI_NhanVienNghiepVu";

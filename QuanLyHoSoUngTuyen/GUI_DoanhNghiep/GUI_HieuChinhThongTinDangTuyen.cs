@@ -1,8 +1,7 @@
 ﻿using Ctrler.DoanhNghiep;
 using DTO;
 using GUI.GUIException;
-using GUI.UserControls;
-using System.Security.Permissions;
+using Utilis;
 
 namespace GUI.UserControls;
 
@@ -29,10 +28,20 @@ public partial class GUI_HieuChinhThongTinDangTuyen : UserControl
 		Ctrler.Load(ref ttdt, ref htdt);
 		_soNgayDangTuyen.Text = ttdt.SoNgayDangTuyen.ToString();
 		_hinhThucDangTuyen.Text = htdt.TenHinhThuc;
-		_thoiGianDangTuyen.Text = ttdt.ThoiGianDangTuyen.ToString();
+		_thoiGianDangTuyen.Text = ttdt.ThoiGianDangTuyen.ToDateString();
 		_tenViTri.Text = ttdt.TenViTri;
 		_soLuong.Value = ttdt.SoLuong;
 		_yeuCau.Text = ttdt.YeuCau;
+		if (ttdt.ThoiGianDangTuyen.AddDays(3) < DateTime.Today)
+		{
+			MessageBox.Show($@"Thông tin đăng tuyển đã quá hạn hiệu chỉnh ({ttdt.ThoiGianDangTuyen.ToDateString()} - {ttdt.ThoiGianDangTuyen.AddDays(3).ToDateString()})", "Quá hạn hiệu chỉnh", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			var hd = new DTO_HoaDon();
+			Ctrler.LoadChiTiet(ref ttdt, ref hd, ref htdt);
+			var gui = new GUI_ChiTietThongTinDangTuyen();
+			var ctrler = new Ctrler_ChiTietThongTinDangTuyen(ttdt, hd, htdt);
+			gui.HienThi(ctrler);
+			GUI_DoanhNghiep.Instance.SwitchContent(gui);
+		}
 	}
 
 	private void btnXacNhan_Click(object sender, EventArgs e)

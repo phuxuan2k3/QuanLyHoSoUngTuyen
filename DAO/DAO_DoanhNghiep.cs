@@ -99,6 +99,14 @@ VALUES(@TenDoanhNghiep, @MASOTHUE,@NGUOIDAIDIEN,@DIACHI,@EMAIL,@TRANGTHAI,@NGAYD
             return 0;
         }
 
+		public static int KiemTraMaSoThue(string MaDN, string MST)
+		{
+            string query = "select * from DOANHNGHIEP where MASOTHUE = '"+MST+"' and MaDoanhNghiep <> "+ MaDN;
+            if (SqlSingleton.Instance.ExecuteScalar(query) == null)
+            { return 1; }
+            return 0;
+        }
+
 
         public static List<DTO_DoanhNghiep> LayDanhSachDoanhNghiep()
         {

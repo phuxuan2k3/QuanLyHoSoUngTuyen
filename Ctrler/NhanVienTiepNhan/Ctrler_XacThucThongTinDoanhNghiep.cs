@@ -28,6 +28,7 @@ namespace Ctrler.NhanVienTiepNhan
             BUS_DoanhNghiep.CapNhatTrangThaiDN(MaDN, TrangThai);
         }
 
+       
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using Ctrler.DoanhNghiep;
+﻿using BUS;
+using Ctrler.DoanhNghiep;
 using DTO;
 
 namespace GUI.UserControls
@@ -35,18 +36,23 @@ namespace GUI.UserControls
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            DTO_DoanhNghiep doanhNghiep = new()
+
+            if (Ctrler_CapNhatThongTinDoanhNghiep.KiemTraMaSothue(maDN,txbMST.Text) == 1)
             {
-                TenDN = txbTenDN.Text,
-                MaSoThue = txbMST.Text,
-                DiaChi = txbDiaChi.Text,
-                NguoiDaiDien = txbDaiDien.Text,
-                Email = txbEmail.Text,
-                MaDN = maDN
-            };
-            Ctrler_CapNhatThongTinDoanhNghiep ctrler = new();
-            ctrler.CapNhatTTDN(doanhNghiep);
-            MessageBox.Show("Lưu thông tin thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DTO_DoanhNghiep doanhNghiep = new()
+                {
+                    TenDN = txbTenDN.Text,
+                    MaSoThue = txbMST.Text,
+                    DiaChi = txbDiaChi.Text,
+                    NguoiDaiDien = txbDaiDien.Text,
+                    Email = txbEmail.Text,
+                    MaDN = maDN
+                };
+                Ctrler_CapNhatThongTinDoanhNghiep ctrler = new();
+                ctrler.CapNhatTTDN(doanhNghiep);
+                MessageBox.Show("Lưu thông tin thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else { MessageBox.Show("Mã số thuế đã tồn tại trong hệ thống.", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
 

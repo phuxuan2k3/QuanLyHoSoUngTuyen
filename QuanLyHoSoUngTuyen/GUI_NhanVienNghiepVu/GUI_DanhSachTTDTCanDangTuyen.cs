@@ -32,7 +32,7 @@ namespace GUI.UserControls
 				row.Cells["_id"].Value = ttdt.MaTTDT;
 				row.Cells["_viTri"].Value = ttdt.TenViTri;
 				row.Cells["_soLuong"].Value = ttdt.SoLuong;
-				row.Cells["_thoiGianDang"].Value = ttdt.ThoiGianDangTuyen;
+				row.Cells["_thoiGianDang"].Value = ttdt.ThoiGianDangTuyen.Date.ToShortDateString();
 				row.Cells["_soNgayDang"].Value = ttdt.SoNgayDangTuyen;
 				row.Cells["_trangThai"].Value = ttdt.TrangThai.ToDisplayString();
 				row.Cells["_tinhTrang"].Value = ttdt.TinhTrang.ToDisplayString();
