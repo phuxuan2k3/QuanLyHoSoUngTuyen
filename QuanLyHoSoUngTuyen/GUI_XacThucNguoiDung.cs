@@ -1,18 +1,8 @@
 ﻿using BUS;
-using Ctrler;
 using DTO;
 using GUI.GUI_XacThuc;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using GUI.UserControls;
 using Utilis;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 namespace GUI
 {
 	public partial class GUI_XacThucNguoiDung : Form
@@ -34,12 +24,12 @@ namespace GUI
 			switch ((e as EventArgs<DTO_TaiKhoan>)!.Value.VaiTro)
 			{
 				case "Doanh nghiệp":
-                    string tenTaiKhoan = (e as EventArgs<DTO_TaiKhoan>)!.Value.TenTaiKhoan;
-                    var dn = BUS_DoanhNghiep.LayDoanhNghiep(tenTaiKhoan);
+					string tenTaiKhoan = (e as EventArgs<DTO_TaiKhoan>)!.Value.TenTaiKhoan;
+					var dn = BUS_DoanhNghiep.LayDoanhNghiep(tenTaiKhoan);
 					GUI_DoanhNghiep gUI_DoanhNghiep = new GUI_DoanhNghiep();
-					gUI_DoanhNghiep.MaDN = dn.MaDN;
-					gUI_DoanhNghiep.TrangThaiDoanhNghiep = dn.TrangThai;
+					gUI_DoanhNghiep.DoanhNghiep = dn;
 					Hide();
+					gUI_DoanhNghiep.HienThi();
 					gUI_DoanhNghiep.ShowDialog();
 					Show();
 					break;
