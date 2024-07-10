@@ -445,6 +445,7 @@
 			btnHuy.Tag = "red";
 			btnHuy.Text = "Hủy";
 			btnHuy.UseVisualStyleBackColor = false;
+			btnHuy.Click += btnHuy_Click;
 			// 
 			// btnLuu
 			// 
@@ -458,6 +459,7 @@
 			btnLuu.Tag = "blue";
 			btnLuu.Text = "Lưu thay đổi";
 			btnLuu.UseVisualStyleBackColor = false;
+			btnLuu.Click += btnLuu_Click;
 			// 
 			// GUI_DuyetPhieuDangKy_Duyet
 			// 

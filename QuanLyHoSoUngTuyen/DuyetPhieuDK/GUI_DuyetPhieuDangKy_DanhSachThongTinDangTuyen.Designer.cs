@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			btnHuy = new Button();
 			dsThongTinDangTuyen = new DataGridView();
 			_maTTDT = new DataGridViewTextBoxColumn();
 			_maDN = new DataGridViewTextBoxColumn();
@@ -38,24 +37,6 @@
 			((System.ComponentModel.ISupportInitialize)dsThongTinDangTuyen).BeginInit();
 			tableLayoutPanel1.SuspendLayout();
 			SuspendLayout();
-			// 
-			// btnHuy
-			// 
-			btnHuy.Anchor = AnchorStyles.Right;
-			btnHuy.BackColor = Color.LimeGreen;
-			btnHuy.FlatAppearance.BorderColor = Color.Black;
-			btnHuy.FlatStyle = FlatStyle.Flat;
-			btnHuy.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-			btnHuy.ForeColor = Color.Black;
-			btnHuy.Location = new Point(856, 513);
-			btnHuy.Margin = new Padding(4);
-			btnHuy.Name = "btnHuy";
-			btnHuy.Size = new Size(130, 40);
-			btnHuy.TabIndex = 8;
-			btnHuy.Tag = "red";
-			btnHuy.Text = "Hủy";
-			btnHuy.UseVisualStyleBackColor = false;
-			btnHuy.Click += btnHuy_Click;
 			// 
 			// dsThongTinDangTuyen
 			// 
@@ -115,7 +96,6 @@
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
-			tableLayoutPanel1.Controls.Add(btnHuy, 2, 2);
 			tableLayoutPanel1.Controls.Add(dsThongTinDangTuyen, 1, 1);
 			tableLayoutPanel1.Controls.Add(lb_dsTTDT, 1, 0);
 			tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -144,9 +124,7 @@
 		}
 
 		#endregion
-
-		private Button btnHuy;
-        private DataGridView dsThongTinDangTuyen;
+		private DataGridView dsThongTinDangTuyen;
         private Label lb_dsTTDT;
         private DataGridViewTextBoxColumn _maTTDT;
         private DataGridViewTextBoxColumn _maDN;

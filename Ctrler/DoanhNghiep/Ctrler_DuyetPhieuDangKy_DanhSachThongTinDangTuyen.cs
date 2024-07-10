@@ -33,7 +33,7 @@ public class Ctrler_DuyetPhieuDangKy_DanhSachThongTinDangTuyen
         var ttdt = BUS_ThongTinDangTuyen.Lay(maTTDT);
         var hoaDon = BUS_HoaDon.Lay(maTTDT);
         var hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(ttdt.MaHTDT);
-        return new Ctrler_DuyetPhieuDangKy_ChiTietThongTinDangTuyen(ttdt, hoaDon, hinhThucDangTuyen);
+        return new Ctrler_DuyetPhieuDangKy_ChiTietThongTinDangTuyen(ttdt);
     }
     public static List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenDuyetPDK()
     {
