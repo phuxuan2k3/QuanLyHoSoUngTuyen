@@ -3,19 +3,18 @@ using DTO;
 
 namespace Ctrler.NhanVienNghiepVu
 {
-    public class Ctrler_DanhSachTTDTCanDangTuyen
-    {
-        public void Load(ref List<DTO_ThongTinDangTuyen> thongTinDangTuyen)
-        {
-            thongTinDangTuyen = BUS_ThongTinDangTuyen.LayDSTTDTCanDangTuyen();
-        }
+	public class Ctrler_DanhSachTTDTCanDangTuyen
+	{
+		public void Load(ref List<DTO_ThongTinDangTuyen> thongTinDangTuyen)
+		{
+			thongTinDangTuyen = BUS_ThongTinDangTuyen.LayDSTTDTCanDangTuyen();
+		}
 
-        public Ctrler_XacNhanDangTuyen HienThi_XacNhanDangTuyen(string maTTDT)
-        {
-            var ttdt = BUS_ThongTinDangTuyen.Lay(maTTDT);
-            var hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(ttdt.MaHTDT);
-            var doanhNghiep = BUS_DoanhNghiep.Lay(ttdt.MaDN);
-            return new Ctrler_XacNhanDangTuyen(ttdt, hinhThucDangTuyen, doanhNghiep);
-        }
-    }
+		public void LoadChiTiet(string maTTDT, ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HinhThucDangTuyen hinhThucDangTuyen, ref DTO_DoanhNghiep doanhNghiep)
+		{
+			thongTinDangTuyen = BUS_ThongTinDangTuyen.Lay(maTTDT);
+			hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(thongTinDangTuyen.MaHTDT);
+			doanhNghiep = BUS_DoanhNghiep.Lay(thongTinDangTuyen.MaDN);
+		}
+	}
 }

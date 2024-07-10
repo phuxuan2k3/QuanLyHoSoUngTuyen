@@ -8,11 +8,11 @@ namespace GUI.UserControls
 {
 	public partial class GUI_HoaDonThongTinDangTuyen : UserControl
 	{
-		private Ctrler_HoaDonThongTinDangTuyen? _ctrler_HoaDonThongTinDangTuyen;
-		public Ctrler_HoaDonThongTinDangTuyen Ctrler_HoaDonThongTinDangTuyen
+		private Ctrler_HoaDonThongTinDangTuyen? ctrler;
+		public Ctrler_HoaDonThongTinDangTuyen Ctrler
 		{
-			get => _ctrler_HoaDonThongTinDangTuyen ?? throw new ControllerNotFoundException();
-			set => _ctrler_HoaDonThongTinDangTuyen = value;
+			get => ctrler ?? throw new ControllerNotFoundException();
+			set => ctrler = value;
 		}
 
 		public GUI_HoaDonThongTinDangTuyen()
@@ -22,12 +22,12 @@ namespace GUI.UserControls
 
 		public void HienThi(Ctrler_HoaDonThongTinDangTuyen ctrler_HoaDonThongTinDangTuyen)
 		{
-			_ctrler_HoaDonThongTinDangTuyen = ctrler_HoaDonThongTinDangTuyen;
+			ctrler = ctrler_HoaDonThongTinDangTuyen;
 			DTO_ThongTinDangTuyen thongTinDangTuyen = new DTO_ThongTinDangTuyen();
 			DTO_HinhThucDangTuyen hinhThucDangTuyen = new DTO_HinhThucDangTuyen();
 			DTO_HoaDon hoaDon = new DTO_HoaDon();
 			List<DTO_ChiTietHoaDon> dsChiTietHoaDon = new List<DTO_ChiTietHoaDon>();
-			_ctrler_HoaDonThongTinDangTuyen.Load(ref thongTinDangTuyen, ref hoaDon, ref hinhThucDangTuyen, ref dsChiTietHoaDon);
+			ctrler.Load(ref thongTinDangTuyen, ref hoaDon, ref hinhThucDangTuyen, ref dsChiTietHoaDon);
 			_maTTDT.Text = thongTinDangTuyen.MaTTDT;
 			_soNgayDangTuyen.Text = thongTinDangTuyen.SoNgayDangTuyen.ToString();
 			_thoiGianDangTuyen.Text = thongTinDangTuyen.ThoiGianDangTuyen.ToDateString();
@@ -58,22 +58,26 @@ namespace GUI.UserControls
 				string filePath = saveFileDialog.FileName;
 				try
 				{
-					Ctrler_HoaDonThongTinDangTuyen.XuatPDF(filePath);
-					MessageBox.Show("PDF file saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					Ctrler.XuatPDF(filePath);
+					MessageBox.Show(@$"Xuất hóa đơn thành công. Địa chỉ thư mục đến hóa đơn là: {filePath}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show($"An error occurred while saving the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show($"Xuất hóa đơn thất bại: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 		}
 
 		private void btnQuayLai_Click(object sender, EventArgs e)
 		{
-			GUI_ChiTietThongTinDangTuyen content = new();
-			var ctrler = Ctrler_HoaDonThongTinDangTuyen.HienThi_ChiTiet();
-			content.HienThi(ctrler);
-			GUI_DoanhNghiep.Instance.SwitchContent(content);
+			DTO_ThongTinDangTuyen thongTinDangTuyen = new DTO_ThongTinDangTuyen();
+			DTO_HinhThucDangTuyen hinhThucDangTuyen = new DTO_HinhThucDangTuyen();
+			DTO_HoaDon hoaDon = new DTO_HoaDon();
+			Ctrler.LoadChiTiet(ref thongTinDangTuyen, ref hoaDon, ref hinhThucDangTuyen);
+			GUI_ChiTietThongTinDangTuyen gui = new();
+			var ctrler = new Ctrler_ChiTietThongTinDangTuyen(thongTinDangTuyen, hoaDon, hinhThucDangTuyen);
+			gui.HienThi(ctrler);
+			GUI_DoanhNghiep.Instance.SwitchContent(gui);
 		}
 	}
 }

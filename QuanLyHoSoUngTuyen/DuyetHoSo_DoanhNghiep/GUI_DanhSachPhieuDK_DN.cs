@@ -61,7 +61,7 @@ public partial class GUI_DanhSachPhieuDK_DN : UserControl
                 var ctrler = new Ctrler_ThongTinPhieuDangKy(maTTDT.ToString(), maUV);
                 GUI_DuyetPhieuDangKy_DN content = new();
                 content.HienThi(ctrler);
-                GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
+                GUI_DoanhNghiep.Instance.SwitchContent(content);
             }
 
 
@@ -141,7 +141,7 @@ public partial class GUI_DanhSachPhieuDK_DN : UserControl
         {
             GUI_DanhSachThongTinDangTuyen_DN content = new();
             content.HienThi(new Ctrler_DanhSachThongTinDangTuyen(""));
-            GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
+            GUI_DoanhNghiep.Instance.SwitchContent(content);
         }
     }
    

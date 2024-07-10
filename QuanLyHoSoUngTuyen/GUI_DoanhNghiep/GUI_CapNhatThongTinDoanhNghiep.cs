@@ -46,12 +46,9 @@ namespace GUI.UserControls
             };
             Ctrler_CapNhatThongTinDoanhNghiep ctrler = new();
             ctrler.CapNhatTTDN(doanhNghiep);
+            MessageBox.Show("Lưu thông tin thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void btnQuayLai_Click(object sender, EventArgs e)
-        {
-            
 
-        }
     }
 }

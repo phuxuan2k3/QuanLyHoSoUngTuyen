@@ -12,19 +12,19 @@ namespace GUI.UserControls
 			InitializeComponent();
 		}
 
-		private Ctrler_DanhSachTTDTCanDangTuyen? _ctrler_DanhSachThongTinDangTuyen;
+		private Ctrler_DanhSachTTDTCanDangTuyen? ctrler;
 
-		public Ctrler_DanhSachTTDTCanDangTuyen Ctrler_DanhSachThongTinDangTuyen
+		public Ctrler_DanhSachTTDTCanDangTuyen Ctrler
 		{
-			get => _ctrler_DanhSachThongTinDangTuyen ?? throw new ControllerNotFoundException();
-			set => _ctrler_DanhSachThongTinDangTuyen = value;
+			get => ctrler ?? throw new ControllerNotFoundException();
+			set => ctrler = value;
 		}
 
 		public void HienThi(Ctrler_DanhSachTTDTCanDangTuyen ctrler_DanhSachThongTinDangTuyen)
 		{
-			_ctrler_DanhSachThongTinDangTuyen = ctrler_DanhSachThongTinDangTuyen;
+			ctrler = ctrler_DanhSachThongTinDangTuyen;
 			var dsTTDT = new List<DTO_ThongTinDangTuyen>();
-			Ctrler_DanhSachThongTinDangTuyen.Load(ref dsTTDT);
+			Ctrler.Load(ref dsTTDT);
 			foreach (var ttdt in dsTTDT)
 			{
 				int rowId = dsThongTinDangTuyen.Rows.Add();
@@ -43,10 +43,14 @@ namespace GUI.UserControls
 		{
 			if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_id"].Value is string maTTDT)
 			{
-				var ctrler = Ctrler_DanhSachThongTinDangTuyen.HienThi_XacNhanDangTuyen(maTTDT);
-				GUI_XacNhanDangTuyen content = new();
-				content.HienThi(ctrler);
-				GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
+				var thongTinDangTuyen = new DTO_ThongTinDangTuyen();
+				var hinhThucDangTuyen = new DTO_HinhThucDangTuyen();
+				var doanhNghiep = new DTO_DoanhNghiep();
+				Ctrler.LoadChiTiet(maTTDT, ref thongTinDangTuyen, ref hinhThucDangTuyen, ref doanhNghiep);
+				var gui = new GUI_XacNhanDangTuyen();
+				var ctrler = new Ctrler_XacNhanDangTuyen(thongTinDangTuyen, hinhThucDangTuyen, doanhNghiep);
+				gui.HienThi(ctrler);
+				GUI_NhanVienNghiepVu.Instance.SwitchContent(gui);
 			}
 		}
 	}

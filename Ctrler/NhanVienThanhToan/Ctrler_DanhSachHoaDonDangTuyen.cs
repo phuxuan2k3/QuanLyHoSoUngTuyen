@@ -15,12 +15,11 @@ namespace Ctrler.NhanVienThanhToan
 			return BUS_HoaDon.Lay(maTTDT);
 		}
 
-		public Ctrler_DongPhiChoHoaDon HienThi_DongPhiChoHoaDon(DTO_HoaDon hoaDon)
+		public void LoadChiTietHoaDon(string maTTDT, ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref List<DTO_ChiTietHoaDon> chiTietHoaDons, ref DTO_DoanhNghiep doanhNghiep)
 		{
-			var ctHoaDon = BUS_HoaDon.LayTatCaChiTiet(hoaDon.MaTTDT);
-			var ttdt = BUS_ThongTinDangTuyen.Lay(hoaDon.MaTTDT);
-			var dn = BUS_DoanhNghiep.Lay(ttdt.MaDN);
-			return new Ctrler_DongPhiChoHoaDon(ttdt, hoaDon, dn, ctHoaDon);
+			chiTietHoaDons = BUS_HoaDon.LayTatCaChiTiet(maTTDT);
+			thongTinDangTuyen = BUS_ThongTinDangTuyen.Lay(maTTDT);
+			doanhNghiep = BUS_DoanhNghiep.Lay(thongTinDangTuyen.MaDN);
 		}
 	}
 }

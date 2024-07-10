@@ -8,12 +8,12 @@ namespace GUI.UserControls;
 
 public partial class GUI_HieuChinhThongTinDangTuyen : UserControl
 {
-	private Ctrler_HieuChinhThongTinDangTuyen? _ctrler_HieuChinhThongTinDangTuyen;
+	private Ctrler_HieuChinhThongTinDangTuyen? ctrler;
 
-	public Ctrler_HieuChinhThongTinDangTuyen Ctrler_HieuChinhThongTinDangTuyen
+	public Ctrler_HieuChinhThongTinDangTuyen Ctrler
 	{
-		get { return _ctrler_HieuChinhThongTinDangTuyen ?? throw new ControllerNotFoundException(); }
-		set { _ctrler_HieuChinhThongTinDangTuyen = value; }
+		get { return ctrler ?? throw new ControllerNotFoundException(); }
+		set { ctrler = value; }
 	}
 
 	public GUI_HieuChinhThongTinDangTuyen()
@@ -23,10 +23,10 @@ public partial class GUI_HieuChinhThongTinDangTuyen : UserControl
 
 	public void HienThi(Ctrler_HieuChinhThongTinDangTuyen ctrler_HieuChinhThongTinDangTuyen)
 	{
-		_ctrler_HieuChinhThongTinDangTuyen = ctrler_HieuChinhThongTinDangTuyen;
+		ctrler = ctrler_HieuChinhThongTinDangTuyen;
 		var ttdt = new DTO_ThongTinDangTuyen();
 		var htdt = new DTO_HinhThucDangTuyen();
-		Ctrler_HieuChinhThongTinDangTuyen.Load(ref ttdt, ref htdt);
+		Ctrler.Load(ref ttdt, ref htdt);
 		_soNgayDangTuyen.Text = ttdt.SoNgayDangTuyen.ToString();
 		_hinhThucDangTuyen.Text = htdt.TenHinhThuc;
 		_thoiGianDangTuyen.Text = ttdt.ThoiGianDangTuyen.ToString();
@@ -52,23 +52,36 @@ public partial class GUI_HieuChinhThongTinDangTuyen : UserControl
 		}
 		else
 		{
-			DTO_ThongTinDangTuyen thongTinDangTuyen = new DTO_ThongTinDangTuyen(
-				tenViTri: _tenViTri.Text,
-				soLuong: (int)_soLuong.Value,
-				yeuCau: _yeuCau.Text
-				);
-			Ctrler_HieuChinhThongTinDangTuyen.XacNhanHieuChinh(thongTinDangTuyen);
-			var gui = new GUI_ChiTietThongTinDangTuyen();
-			var ctrler = Ctrler_HieuChinhThongTinDangTuyen.HienThi_ChiTietThongTinDangTuyen();
-			gui.HienThi(ctrler);
-			GUI_DoanhNghiep.Instance.SwitchContent(gui);
+			var res = MessageBox.Show($"Bạn có chắc chắn muốn gửi lại yêu cầu hiệu chỉnh? Thông tin đăng tuyển của bạn sẽ cần được xác thực lại.", "Xác nhận hiệu chỉnh", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (res == DialogResult.Yes)
+			{
+				DTO_ThongTinDangTuyen thongTinDangTuyen = new DTO_ThongTinDangTuyen(
+					tenViTri: _tenViTri.Text,
+					soLuong: (int)_soLuong.Value,
+					yeuCau: _yeuCau.Text
+					);
+				Ctrler.XacNhanHieuChinh(thongTinDangTuyen);
+				MessageBox.Show($"Đã gửi yêu cầu hiệu chỉnh đến hệ thống.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				var ttdt = new DTO_ThongTinDangTuyen();
+				var htdt = new DTO_HinhThucDangTuyen();
+				var hd = new DTO_HoaDon();
+				Ctrler.LoadChiTiet(ref ttdt, ref hd, ref htdt);
+				var gui = new GUI_ChiTietThongTinDangTuyen();
+				var ctrler = new Ctrler_ChiTietThongTinDangTuyen(ttdt, hd, htdt);
+				gui.HienThi(ctrler);
+				GUI_DoanhNghiep.Instance.SwitchContent(gui);
+			}
 		}
 	}
 
 	private void btnHuy_Click(object sender, EventArgs e)
 	{
+		var ttdt = new DTO_ThongTinDangTuyen();
+		var htdt = new DTO_HinhThucDangTuyen();
+		var hd = new DTO_HoaDon();
+		Ctrler.LoadChiTiet(ref ttdt, ref hd, ref htdt);
 		var gui = new GUI_ChiTietThongTinDangTuyen();
-		var ctrler = Ctrler_HieuChinhThongTinDangTuyen.HienThi_ChiTietThongTinDangTuyen();
+		var ctrler = new Ctrler_ChiTietThongTinDangTuyen(ttdt, hd, htdt);
 		gui.HienThi(ctrler);
 		GUI_DoanhNghiep.Instance.SwitchContent(gui);
 	}

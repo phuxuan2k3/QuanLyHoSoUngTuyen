@@ -5,28 +5,28 @@ namespace Ctrler.DoanhNghiep;
 
 public class Ctrler_DanhSachThongTinDangTuyen
 {
-    private readonly string _maDN;
+	private readonly string maDN;
 
-    public Ctrler_DanhSachThongTinDangTuyen(string maDN)
-    {
-        _maDN = maDN;
-    }
-
-    public List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenChoDNDuyet()
-    {
-        return BUS_ThongTinDangTuyen.LayDSThongTinDangTuyenChoDNDuyet();
-    }
-
-    public void Load(ref List<DTO_ThongTinDangTuyen> thongTinDangTuyen)
-    {
-        thongTinDangTuyen = BUS_ThongTinDangTuyen.LayTatCaCuaDoanhNghiep(_maDN);
-    }
-
-	public Ctrler_ChiTietThongTinDangTuyen HienThi_ChiTiet(string maTTDT)
+	public Ctrler_DanhSachThongTinDangTuyen(string maDN)
 	{
-		var ttdt = BUS_ThongTinDangTuyen.Lay(maTTDT);
-		var hoaDon = BUS_HoaDon.Lay(maTTDT);
-		var hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(ttdt.MaHTDT);
-		return new Ctrler_ChiTietThongTinDangTuyen(ttdt, hoaDon!, hinhThucDangTuyen);
+		this.maDN = maDN;
+	}
+
+	// todo
+	public List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenChoDNDuyet()
+	{
+		return BUS_ThongTinDangTuyen.LayDSThongTinDangTuyenChoDNDuyet();
+	}
+
+	public void Load(ref List<DTO_ThongTinDangTuyen> thongTinDangTuyen)
+	{
+		thongTinDangTuyen = BUS_ThongTinDangTuyen.LayTatCaCuaDoanhNghiep(maDN);
+	}
+
+	public void LoadChiTiet(string maTTDT, ref DTO_ThongTinDangTuyen thongTinDangTuyen, ref DTO_HoaDon hoaDon, ref DTO_HinhThucDangTuyen hinhThucDangTuyen)
+	{
+		thongTinDangTuyen = BUS_ThongTinDangTuyen.Lay(maTTDT);
+		hoaDon = BUS_HoaDon.Lay(maTTDT) ?? new DTO_HoaDon();
+		hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(thongTinDangTuyen.MaHTDT);
 	}
 }

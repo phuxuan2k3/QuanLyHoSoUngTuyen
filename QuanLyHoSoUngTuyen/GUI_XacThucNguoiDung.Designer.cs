@@ -20,38 +20,40 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            pnContent = new Panel();
-            SuspendLayout();
-            // 
-            // pnContent
-            // 
-            pnContent.Location = new Point(0, 0);
-            pnContent.Name = "pnContent";
-            pnContent.Size = new Size(801, 451);
-            pnContent.TabIndex = 0;
-            // 
-            // GUI_XacThucNguoiDung
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(pnContent);
-            Name = "GUI_XacThucNguoiDung";
-            Text = "GUI_XacThucNguoiDung";
-            Load += GUI_XacThucNguoiDung_Load;
-            ResumeLayout(false);
-        }
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			pnContent = new Panel();
+			SuspendLayout();
+			// 
+			// pnContent
+			// 
+			pnContent.Dock = DockStyle.Fill;
+			pnContent.Location = new Point(0, 0);
+			pnContent.Margin = new Padding(4, 4, 4, 4);
+			pnContent.Name = "pnContent";
+			pnContent.Size = new Size(1000, 562);
+			pnContent.TabIndex = 0;
+			// 
+			// GUI_XacThucNguoiDung
+			// 
+			AutoScaleDimensions = new SizeF(10F, 25F);
+			AutoScaleMode = AutoScaleMode.Font;
+			ClientSize = new Size(1000, 562);
+			Controls.Add(pnContent);
+			Margin = new Padding(4, 4, 4, 4);
+			Name = "GUI_XacThucNguoiDung";
+			Text = "GUI_XacThucNguoiDung";
+			ResumeLayout(false);
+		}
 
-        #endregion
+		#endregion
 
-        private Panel pnContent;
+		private Panel pnContent;
     }
 }

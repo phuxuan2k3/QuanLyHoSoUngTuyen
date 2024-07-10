@@ -33,6 +33,7 @@
 			btnTaoYeuCau = new Button();
 			btnDanhSachThongTinDangTuyen = new Button();
 			btnCapNhatTTDN = new Button();
+			btnDuyetHoSo = new Button();
 			_contentPanel = new Panel();
 			tableLayoutPanel1.SuspendLayout();
 			tableLayoutPanel2.SuspendLayout();
@@ -51,21 +52,23 @@
 			tableLayoutPanel1.RowCount = 2;
 			tableLayoutPanel1.RowStyles.Add(new RowStyle());
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-			tableLayoutPanel1.Size = new Size(942, 593);
+			tableLayoutPanel1.Size = new Size(942, 592);
 			tableLayoutPanel1.TabIndex = 0;
 			// 
 			// tableLayoutPanel2
 			// 
-			tableLayoutPanel2.ColumnCount = 6;
+			tableLayoutPanel2.ColumnCount = 7;
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
+			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 392F));
 			tableLayoutPanel2.Controls.Add(btnTaoYeuCau, 0, 0);
 			tableLayoutPanel2.Controls.Add(btnDanhSachThongTinDangTuyen, 1, 0);
 			tableLayoutPanel2.Controls.Add(btnCapNhatTTDN, 5, 0);
+			tableLayoutPanel2.Controls.Add(btnDuyetHoSo, 6, 0);
 			tableLayoutPanel2.Dock = DockStyle.Fill;
 			tableLayoutPanel2.Location = new Point(2, 2);
 			tableLayoutPanel2.Margin = new Padding(2);
@@ -103,14 +106,29 @@
 			// 
 			// btnCapNhatTTDN
 			// 
-			btnCapNhatTTDN.Location = new Point(500, 4);
-			btnCapNhatTTDN.Margin = new Padding(4, 4, 4, 4);
+			btnCapNhatTTDN.AutoSize = true;
+			btnCapNhatTTDN.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			btnCapNhatTTDN.Location = new Point(498, 2);
+			btnCapNhatTTDN.Margin = new Padding(2);
 			btnCapNhatTTDN.Name = "btnCapNhatTTDN";
-			btnCapNhatTTDN.Size = new Size(199, 36);
+			btnCapNhatTTDN.Size = new Size(147, 35);
 			btnCapNhatTTDN.TabIndex = 5;
 			btnCapNhatTTDN.Text = "Cập nhật TT DN";
 			btnCapNhatTTDN.UseVisualStyleBackColor = true;
 			btnCapNhatTTDN.Click += btnCapNhatTTDN_Click;
+			// 
+			// btnDuyetHoSo
+			// 
+			btnDuyetHoSo.AutoSize = true;
+			btnDuyetHoSo.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			btnDuyetHoSo.Location = new Point(649, 2);
+			btnDuyetHoSo.Margin = new Padding(2);
+			btnDuyetHoSo.Name = "btnDuyetHoSo";
+			btnDuyetHoSo.Size = new Size(119, 35);
+			btnDuyetHoSo.TabIndex = 6;
+			btnDuyetHoSo.Text = "Duyệt hồ sơ";
+			btnDuyetHoSo.UseVisualStyleBackColor = true;
+			btnDuyetHoSo.Click += btnDuyetHoSo_Click;
 			// 
 			// _contentPanel
 			// 
@@ -119,14 +137,14 @@
 			_contentPanel.Location = new Point(2, 50);
 			_contentPanel.Margin = new Padding(2);
 			_contentPanel.Name = "_contentPanel";
-			_contentPanel.Size = new Size(938, 541);
+			_contentPanel.Size = new Size(938, 540);
 			_contentPanel.TabIndex = 0;
 			// 
 			// GUI_DoanhNghiep
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(942, 593);
+			ClientSize = new Size(942, 592);
 			Controls.Add(tableLayoutPanel1);
 			Margin = new Padding(2);
 			Name = "GUI_DoanhNghiep";
@@ -146,5 +164,6 @@
 		private Button btnTaoYeuCau;
 		private Button btnDanhSachThongTinDangTuyen;
         private Button btnCapNhatTTDN;
-    }
+		private Button btnDuyetHoSo;
+	}
 }

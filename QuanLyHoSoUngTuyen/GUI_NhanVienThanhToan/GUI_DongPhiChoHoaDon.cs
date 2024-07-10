@@ -7,11 +7,11 @@ namespace GUI.UserControls
 {
 	public partial class GUI_DongPhiChoHoaDon : UserControl
 	{
-		private Ctrler_DongPhiChoHoaDon? _ctrler_DongPhiChoHoaDon;
-		public Ctrler_DongPhiChoHoaDon Ctrler_DongPhiChoHoaDon
+		private Ctrler_DongPhiChoHoaDon? ctrler;
+		public Ctrler_DongPhiChoHoaDon Ctrler
 		{
-			get => _ctrler_DongPhiChoHoaDon ?? throw new ControllerNotFoundException();
-			set => _ctrler_DongPhiChoHoaDon = value;
+			get => ctrler ?? throw new ControllerNotFoundException();
+			set => ctrler = value;
 		}
 
 		public GUI_DongPhiChoHoaDon()
@@ -21,13 +21,13 @@ namespace GUI.UserControls
 
 		public void HienThi(Ctrler_DongPhiChoHoaDon ctrler_HoaDonThongTinDangTuyen)
 		{
-			_ctrler_DongPhiChoHoaDon = ctrler_HoaDonThongTinDangTuyen;
+			ctrler = ctrler_HoaDonThongTinDangTuyen;
 			DTO_DoanhNghiep doanhNghiep = new DTO_DoanhNghiep();
 			DTO_ThongTinDangTuyen thongTinDangTuyen = new DTO_ThongTinDangTuyen();
 			DTO_HoaDon hoaDon = new DTO_HoaDon();
 			DTO_ChiTietHoaDon? lanDongHienTai = new DTO_ChiTietHoaDon();
 			List<DTO_ChiTietHoaDon> dsChiTietHoaDon = new List<DTO_ChiTietHoaDon>();
-			_ctrler_DongPhiChoHoaDon.Load(ref thongTinDangTuyen, ref hoaDon, ref doanhNghiep, ref dsChiTietHoaDon, ref lanDongHienTai);
+			ctrler.Load(ref thongTinDangTuyen, ref hoaDon, ref doanhNghiep, ref dsChiTietHoaDon, ref lanDongHienTai);
 			_maTTDT.Text = thongTinDangTuyen.MaTTDT;
 			_doanhNghiep.Text = doanhNghiep.TenDN;
 			_tongChiPhi.Text = hoaDon.TongTien.ToVNDString();
@@ -55,10 +55,14 @@ namespace GUI.UserControls
 
 		private void btnThanhToan_Click(object sender, EventArgs e)
 		{
-			Ctrler_DongPhiChoHoaDon.DongPhiChoHoaDon();
-			GUI_DanhSachHoaDonDangTuyen content = new();
-			content.HienThi(new Ctrler_DanhSachHoaDonDangTuyen());
-			GUI_NhanVienThanhToan.Instance.SwitchContent(content);
+			DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn cập nhật lần thanh toán cho thông tin đăng tuyển?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (dialogResult == DialogResult.Yes)
+			{
+				Ctrler.DongPhiChoHoaDon();
+				GUI_DanhSachHoaDonDangTuyen content = new();
+				content.HienThi(new Ctrler_DanhSachHoaDonDangTuyen());
+				GUI_NhanVienThanhToan.Instance.SwitchContent(content);
+			}
 		}
 
 		private void btnQuayLai_Click(object sender, EventArgs e)
