@@ -58,8 +58,8 @@ public partial class GUI_ChiTietThongTinDangTuyen : UserControl
 		Ctrler.Load(ref thongTinDangTuyen, ref hoaDon, ref hinhThucDangTuyen);
 		var gui = new GUI_HieuChinhThongTinDangTuyen();
 		var ctrler = new Ctrler_HieuChinhThongTinDangTuyen(thongTinDangTuyen, hoaDon, hinhThucDangTuyen);
-		gui.HienThi(ctrler);
 		GUI_DoanhNghiep.Instance.SwitchContent(gui);
+		gui.HienThi(ctrler);
 	}
 
 	private void btnQuayLai_Click(object sender, EventArgs e)
