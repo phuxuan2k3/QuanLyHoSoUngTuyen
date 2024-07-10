@@ -58,6 +58,24 @@ namespace GUI.UserControls
             Ctrler_DoanhNghiepHetHan.LoadDanhSachDNHetHan(out lsDoanhNghiepHetHan);
 
             dsDNHetHan.DataSource = lsDoanhNghiepHetHan;
+
+            HideSomeField();
+        }
+
+        private void RenameHeaders()
+        {
+            Utilis.QuickTryCatch.ExecuteWithoutResolve(() => dsKetQuaUngTuyen.Columns["SoLuongUVNop"].HeaderText = "Số lượng nộp");
+            Utilis.QuickTryCatch.ExecuteWithoutResolve(() => dsKetQuaUngTuyen.Columns["SoLuongUVHopLe"].HeaderText = "Số lượng hợp lệ");
+            Utilis.QuickTryCatch.ExecuteWithoutResolve(() => dsKetQuaUngTuyen.Columns["SoLuongUVDat"].HeaderText = "Số lượng đạt");
+        }
+
+        private void HideSomeField()
+        {
+            Utilis.QuickTryCatch.ExecuteWithoutResolve(() => dsDNHetHan.Columns["MaDN"].Visible = false);
+            Utilis.QuickTryCatch.ExecuteWithoutResolve(() => dsDNHetHan.Columns["DiaChi"].Visible = false);
+            Utilis.QuickTryCatch.ExecuteWithoutResolve(() => dsDNHetHan.Columns["Email"].Visible = false);
+            Utilis.QuickTryCatch.ExecuteWithoutResolve(() => dsDNHetHan.Columns["NgayDangKy"].Visible = false);
+            Utilis.QuickTryCatch.ExecuteWithoutResolve(() => dsDNHetHan.Columns["TenTaiKhoan"].Visible = false);
         }
 
         private void dsDNHetHan_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -69,6 +87,9 @@ namespace GUI.UserControls
                 List<DTO_KetQuaUngTuyen> lsKetQuaUngTuyen;
                 Ctrler_DoanhNghiepHetHan.LoadKetQuaUngTuyenCuaDN(dsDNHetHan.Rows[e.RowIndex].Cells[0].Value.ToString()!, out lsKetQuaUngTuyen);
                 dsKetQuaUngTuyen.DataSource = lsKetQuaUngTuyen;
+
+                Utilis.QuickTryCatch.ExecuteWithoutResolve(() => dsKetQuaUngTuyen.Columns["MaTTDT"].Visible = false);
+                RenameHeaders();
             }
         }
 

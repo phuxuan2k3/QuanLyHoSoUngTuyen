@@ -6,18 +6,29 @@ using System.Threading.Tasks;
 
 namespace GUI.Utilis
 {
-    public class TryCatchShowMessageBox
+    public class QuickTryCatch
     {
-        public static T ExcuteWithTryCatch<T>(Func<T> func)
+        public static T ExcuteWithTryCatchAndShowMessageBox<T>(Func<T> func, string message)
         {
             try
             {
                 return func();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBoxHelper.ShowException(ex.Message);
+                MessageBoxHelper.ShowException(message);
                 return default(T)!;
+            }
+        }
+        public static void ExecuteWithoutResolve<T>(Func<T> func)
+        {
+            try
+            {
+                func();
+            }
+            catch (Exception)
+            {
+
             }
         }
 

@@ -47,7 +47,7 @@
             // 
             btnGiaHan.BackColor = SystemColors.MenuHighlight;
             btnGiaHan.ForeColor = Color.White;
-            btnGiaHan.Location = new Point(385, 360);
+            btnGiaHan.Location = new Point(602, 349);
             btnGiaHan.Name = "btnGiaHan";
             btnGiaHan.Size = new Size(94, 29);
             btnGiaHan.TabIndex = 13;
@@ -57,21 +57,23 @@
             // 
             // dsKetQuaUngTuyen
             // 
+            dsKetQuaUngTuyen.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dsKetQuaUngTuyen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dsKetQuaUngTuyen.Location = new Point(385, 85);
+            dsKetQuaUngTuyen.Location = new Point(602, 83);
             dsKetQuaUngTuyen.Name = "dsKetQuaUngTuyen";
             dsKetQuaUngTuyen.RowHeadersWidth = 51;
-            dsKetQuaUngTuyen.Size = new Size(362, 267);
+            dsKetQuaUngTuyen.Size = new Size(593, 260);
             dsKetQuaUngTuyen.TabIndex = 12;
             // 
             // dsDNHetHan
             // 
+            dsDNHetHan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dsDNHetHan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dsDNHetHan.Location = new Point(3, 85);
+            dsDNHetHan.Location = new Point(3, 83);
             dsDNHetHan.Name = "dsDNHetHan";
             dsDNHetHan.RowHeadersWidth = 51;
             dsDNHetHan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dsDNHetHan.Size = new Size(362, 267);
+            dsDNHetHan.Size = new Size(593, 260);
             dsDNHetHan.TabIndex = 7;
             dsDNHetHan.CellClick += dsDNHetHan_CellClick;
             // 
@@ -89,20 +91,20 @@
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.2788134F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.2788134F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 68.48259F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.9597826F));
-            tableLayoutPanel1.Size = new Size(765, 403);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 11.54401F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 11.544013F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 76.91198F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel1.Size = new Size(1198, 387);
             tableLayoutPanel1.TabIndex = 14;
             // 
             // panel1
             // 
             panel1.Controls.Add(lbTenDoanhNghiep);
             panel1.Controls.Add(label4);
-            panel1.Location = new Point(385, 3);
+            panel1.Location = new Point(602, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(277, 35);
+            panel1.Size = new Size(277, 34);
             panel1.TabIndex = 15;
             // 
             // lbTenDoanhNghiep
@@ -127,7 +129,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(3, 41);
+            label1.Location = new Point(3, 40);
             label1.Name = "label1";
             label1.Size = new Size(261, 20);
             label1.TabIndex = 16;
@@ -136,7 +138,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(385, 41);
+            label2.Location = new Point(602, 40);
             label2.Name = "label2";
             label2.Size = new Size(130, 20);
             label2.TabIndex = 17;
@@ -148,7 +150,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
             Name = "GUI_DoanhNghiepSapHetHan";
-            Size = new Size(765, 403);
+            Size = new Size(1203, 395);
             Load += GUI_DoanhNghiepSapHetHan_Load;
             ((System.ComponentModel.ISupportInitialize)dsKetQuaUngTuyen).EndInit();
             ((System.ComponentModel.ISupportInitialize)dsDNHetHan).EndInit();

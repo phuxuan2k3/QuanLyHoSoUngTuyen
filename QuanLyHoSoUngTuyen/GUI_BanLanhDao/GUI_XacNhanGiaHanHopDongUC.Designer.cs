@@ -45,7 +45,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(453, 38);
+            label2.Location = new Point(620, 34);
             label2.Name = "label2";
             label2.Size = new Size(204, 20);
             label2.TabIndex = 17;
@@ -64,7 +64,7 @@
             // 
             btnKhongGiaHan.BackColor = Color.Red;
             btnKhongGiaHan.ForeColor = Color.White;
-            btnKhongGiaHan.Location = new Point(491, 399);
+            btnKhongGiaHan.Location = new Point(876, 395);
             btnKhongGiaHan.Name = "btnKhongGiaHan";
             btnKhongGiaHan.Size = new Size(123, 29);
             btnKhongGiaHan.TabIndex = 15;
@@ -76,7 +76,7 @@
             // 
             btnLuuLai.BackColor = SystemColors.MenuHighlight;
             btnLuuLai.ForeColor = Color.White;
-            btnLuuLai.Location = new Point(651, 399);
+            btnLuuLai.Location = new Point(1027, 395);
             btnLuuLai.Name = "btnLuuLai";
             btnLuuLai.Size = new Size(94, 29);
             btnLuuLai.TabIndex = 14;
@@ -88,7 +88,7 @@
             // 
             btnLoaiBo.BackColor = Color.Red;
             btnLoaiBo.ForeColor = Color.White;
-            btnLoaiBo.Location = new Point(344, 217);
+            btnLoaiBo.Location = new Point(520, 210);
             btnLoaiBo.Name = "btnLoaiBo";
             btnLoaiBo.Size = new Size(94, 29);
             btnLoaiBo.TabIndex = 13;
@@ -100,7 +100,7 @@
             // 
             btnApDung.BackColor = SystemColors.MenuHighlight;
             btnApDung.ForeColor = Color.White;
-            btnApDung.Location = new Point(344, 161);
+            btnApDung.Location = new Point(520, 160);
             btnApDung.Name = "btnApDung";
             btnApDung.Size = new Size(94, 29);
             btnApDung.TabIndex = 12;
@@ -110,30 +110,32 @@
             // 
             // dsChienLuocUuDaiHienTai
             // 
+            dsChienLuocUuDaiHienTai.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dsChienLuocUuDaiHienTai.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dsChienLuocUuDaiHienTai.Location = new Point(453, 61);
+            dsChienLuocUuDaiHienTai.Location = new Point(620, 61);
             dsChienLuocUuDaiHienTai.Name = "dsChienLuocUuDaiHienTai";
             dsChienLuocUuDaiHienTai.RowHeadersWidth = 51;
             dsChienLuocUuDaiHienTai.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dsChienLuocUuDaiHienTai.Size = new Size(326, 328);
+            dsChienLuocUuDaiHienTai.Size = new Size(523, 328);
             dsChienLuocUuDaiHienTai.TabIndex = 11;
             // 
             // dsChienLuocUuDai
             // 
+            dsChienLuocUuDai.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dsChienLuocUuDai.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dsChienLuocUuDai.Location = new Point(3, 61);
             dsChienLuocUuDai.Name = "dsChienLuocUuDai";
             dsChienLuocUuDai.RowHeadersWidth = 51;
             dsChienLuocUuDai.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dsChienLuocUuDai.Size = new Size(326, 328);
+            dsChienLuocUuDai.Size = new Size(511, 328);
             dsChienLuocUuDai.TabIndex = 10;
             // 
-            // lbTenDoanhNghiep
+            // lbMaDoanhNghiep
             // 
             lbMaDoanhNghiep.AutoSize = true;
             lbMaDoanhNghiep.Font = new Font("Segoe UI", 7F, FontStyle.Italic);
-            lbMaDoanhNghiep.Location = new Point(591, 19);
-            lbMaDoanhNghiep.Name = "lbTenDoanhNghiep";
+            lbMaDoanhNghiep.Location = new Point(758, 15);
+            lbMaDoanhNghiep.Name = "lbMaDoanhNghiep";
             lbMaDoanhNghiep.Size = new Size(116, 15);
             lbMaDoanhNghiep.TabIndex = 19;
             lbMaDoanhNghiep.Text = "Current Manu Name";
@@ -142,7 +144,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 7F, FontStyle.Italic);
-            label3.Location = new Point(456, 19);
+            label3.Location = new Point(623, 15);
             label3.Name = "label3";
             label3.Size = new Size(129, 15);
             label3.TabIndex = 18;
@@ -163,7 +165,7 @@
             Controls.Add(dsChienLuocUuDaiHienTai);
             Controls.Add(dsChienLuocUuDai);
             Name = "GUI_XacNhanGiaHanHopDongUC";
-            Size = new Size(791, 438);
+            Size = new Size(1146, 438);
             ((System.ComponentModel.ISupportInitialize)dsChienLuocUuDaiHienTai).EndInit();
             ((System.ComponentModel.ISupportInitialize)dsChienLuocUuDai).EndInit();
             ResumeLayout(false);

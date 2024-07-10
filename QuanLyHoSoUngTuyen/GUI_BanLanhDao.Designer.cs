@@ -59,7 +59,7 @@
             // 
             pnContent.Location = new Point(3, 38);
             pnContent.Name = "pnContent";
-            pnContent.Size = new Size(815, 424);
+            pnContent.Size = new Size(1146, 480);
             pnContent.TabIndex = 3;
             // 
             // tableLayoutPanel1
@@ -80,7 +80,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(827, 467);
+            ClientSize = new Size(1150, 522);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(pnContent);
             Name = "GUI_BanLanhDao";

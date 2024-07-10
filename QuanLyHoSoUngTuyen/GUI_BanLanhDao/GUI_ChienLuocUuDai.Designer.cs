@@ -44,7 +44,7 @@
             // 
             btnXoaUuDai.BackColor = Color.Red;
             btnXoaUuDai.ForeColor = Color.White;
-            btnXoaUuDai.Location = new Point(660, 265);
+            btnXoaUuDai.Location = new Point(988, 313);
             btnXoaUuDai.Name = "btnXoaUuDai";
             btnXoaUuDai.Size = new Size(94, 29);
             btnXoaUuDai.TabIndex = 19;
@@ -56,7 +56,7 @@
             // 
             btnSuaUuDai.BackColor = SystemColors.MenuHighlight;
             btnSuaUuDai.ForeColor = Color.White;
-            btnSuaUuDai.Location = new Point(560, 265);
+            btnSuaUuDai.Location = new Point(888, 313);
             btnSuaUuDai.Name = "btnSuaUuDai";
             btnSuaUuDai.Size = new Size(94, 29);
             btnSuaUuDai.TabIndex = 18;
@@ -68,7 +68,7 @@
             // 
             btnThemUuDai.BackColor = Color.Green;
             btnThemUuDai.ForeColor = Color.White;
-            btnThemUuDai.Location = new Point(458, 265);
+            btnThemUuDai.Location = new Point(786, 313);
             btnThemUuDai.Name = "btnThemUuDai";
             btnThemUuDai.Size = new Size(94, 29);
             btnThemUuDai.TabIndex = 17;
@@ -78,7 +78,7 @@
             // 
             // txtMoTaUuDai
             // 
-            txtMoTaUuDai.Location = new Point(458, 120);
+            txtMoTaUuDai.Location = new Point(786, 168);
             txtMoTaUuDai.Multiline = true;
             txtMoTaUuDai.Name = "txtMoTaUuDai";
             txtMoTaUuDai.Size = new Size(297, 124);
@@ -86,7 +86,7 @@
             // 
             // txtTenUuDai
             // 
-            txtTenUuDai.Location = new Point(458, 79);
+            txtTenUuDai.Location = new Point(786, 127);
             txtTenUuDai.Name = "txtTenUuDai";
             txtTenUuDai.Size = new Size(297, 27);
             txtTenUuDai.TabIndex = 15;
@@ -94,7 +94,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(386, 120);
+            label6.Location = new Point(714, 168);
             label6.Name = "label6";
             label6.Size = new Size(51, 20);
             label6.TabIndex = 14;
@@ -103,7 +103,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(402, 79);
+            label5.Location = new Point(730, 127);
             label5.Name = "label5";
             label5.Size = new Size(35, 20);
             label5.TabIndex = 13;
@@ -112,7 +112,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(3, 5);
+            label4.Location = new Point(3, 36);
             label4.Name = "label4";
             label4.Size = new Size(195, 20);
             label4.TabIndex = 12;
@@ -120,12 +120,13 @@
             // 
             // dsChienLuocUuDai
             // 
+            dsChienLuocUuDai.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dsChienLuocUuDai.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dsChienLuocUuDai.Location = new Point(3, 28);
+            dsChienLuocUuDai.Location = new Point(3, 75);
             dsChienLuocUuDai.Name = "dsChienLuocUuDai";
             dsChienLuocUuDai.RowHeadersWidth = 51;
             dsChienLuocUuDai.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dsChienLuocUuDai.Size = new Size(362, 298);
+            dsChienLuocUuDai.Size = new Size(641, 298);
             dsChienLuocUuDai.TabIndex = 11;
             dsChienLuocUuDai.CellClick += dsChienLuocUuDai_CellClick;
             // 
@@ -143,7 +144,7 @@
             Controls.Add(label4);
             Controls.Add(dsChienLuocUuDai);
             Name = "GUI_ChienLuocUuDai";
-            Size = new Size(764, 337);
+            Size = new Size(1146, 423);
             ((System.ComponentModel.ISupportInitialize)dsChienLuocUuDai).EndInit();
             ResumeLayout(false);
             PerformLayout();
