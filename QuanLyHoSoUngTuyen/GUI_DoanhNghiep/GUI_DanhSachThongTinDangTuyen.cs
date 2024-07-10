@@ -1,6 +1,7 @@
 ﻿using Ctrler.DoanhNghiep;
 using DTO;
 using GUI.GUIException;
+using Utilis;
 
 namespace GUI.UserControls;
 
@@ -31,15 +32,20 @@ public partial class GUI_DanhSachThongTinDangTuyen : UserControl
 			row.Cells["_id"].Value = ttdt.MaTTDT;
 			row.Cells["_viTri"].Value = ttdt.TenViTri;
 			row.Cells["_soLuong"].Value = ttdt.SoLuong;
-			row.Cells["_thoiGianDang"].Value = ttdt.ThoiGianDangTuyen;
+			row.Cells["_thoiGianDang"].Value = ttdt.ThoiGianDangTuyen.ToDateString();
 			row.Cells["_soNgayDang"].Value = ttdt.SoNgayDangTuyen;
 			row.Cells["_trangThai"].Value = ttdt.TrangThai.ToDisplayString();
 			row.Cells["_tinhTrang"].Value = ttdt.TinhTrang.ToDisplayString();
 		}
+		_viTri.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 	}
 
 	private void dsThongTinDangTuyen_CellClick(object sender, DataGridViewCellEventArgs e)
 	{
+		if (dsThongTinDangTuyen.CurrentCell == null || dsThongTinDangTuyen.CurrentCell.Value == null || e.RowIndex == -1)
+		{
+			return;
+		}
 		if (dsThongTinDangTuyen.Rows[e.RowIndex].Cells["_id"].Value is string maTTDT)
 		{
 			var gui = new GUI_ChiTietThongTinDangTuyen();

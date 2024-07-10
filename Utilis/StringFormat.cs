@@ -8,7 +8,7 @@ public static class StringFormat
 	{
 		return dateTime?.ToString("dd/MM/yyyy") ?? string.Empty;
 	}
-	
+
 	public static string ToDateString(this DateTime dateTime)
 	{
 		return dateTime.ToString("dd/MM/yyyy");

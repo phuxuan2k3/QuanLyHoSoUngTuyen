@@ -1,24 +1,23 @@
-﻿using Ctrler.DoanhNghiep;
+﻿using BUS;
+using Ctrler.DoanhNghiep;
 using Ctrler.NhanVienTiepNhan;
 using DTO;
 using GUI.Styles;
 using GUI.UserControls;
+using System.Drawing.Text;
 
 namespace GUI;
 
 public partial class GUI_DoanhNghiep : Form
 {
-	// todo: Thay bang tai khoan duoc dang nhap
-	private string _maDN = "2";
-	public string MaDN { get => _maDN; set => _maDN = value; }
-	private TrangThaiDoanhNghiep _trangThaiDoanhNghiep = TrangThaiDoanhNghiep.ChuaXacThuc;
-	public TrangThaiDoanhNghiep TrangThaiDoanhNghiep
+	public DTO_DoanhNghiep doanhNghiep = new();
+	public DTO_DoanhNghiep DoanhNghiep
 	{
-		get => _trangThaiDoanhNghiep;
+		get => doanhNghiep;
 		set
 		{
-			_trangThaiDoanhNghiep = value;
-			if (TrangThaiDoanhNghiep == TrangThaiDoanhNghiep.ChuaXacThuc || TrangThaiDoanhNghiep == TrangThaiDoanhNghiep.KhongHopLe)
+			doanhNghiep = value;
+			if (doanhNghiep.TrangThai == TrangThaiDoanhNghiep.ChuaXacThuc || doanhNghiep.TrangThai == TrangThaiDoanhNghiep.KhongHopLe)
 			{
 				btnCapNhatTTDN.Enabled = true;
 				btnDanhSachThongTinDangTuyen.Enabled = false;
@@ -34,16 +33,35 @@ public partial class GUI_DoanhNghiep : Form
 			}
 		}
 	}
+	public string MaDN => DoanhNghiep.MaDN;
 
 	public GUI_DoanhNghiep()
 	{
 		Style.ApplyStylingEventOnChildControlAdded(this, ButtonStyle.Apply);
-		_instance = this;
 		InitializeComponent();
-		var gui = new GUI_DanhSachThongTinDangTuyen();
-		gui.HienThi(new Ctrler_DanhSachThongTinDangTuyen(MaDN));
-		SwitchContent(gui);
+		_instance = this;
 	}
+
+	public void HienThi()
+	{
+		if (DoanhNghiep.TrangThai == TrangThaiDoanhNghiep.ChuaXacThuc || DoanhNghiep.TrangThai == TrangThaiDoanhNghiep.KhongHopLe)
+		{
+			GUI_CapNhatThongTinDoanhNghiep content = new();
+			content.HienThi(MaDN);
+			SwitchContent(content);
+		}
+		else
+		{
+			var gui = new GUI_DanhSachThongTinDangTuyen();
+			gui.HienThi(new Ctrler_DanhSachThongTinDangTuyen(MaDN));
+			SwitchContent(gui);
+		}
+	}
+
+	//public void GoHome()
+	//{
+	//	SwitchContent(new LandingPage(DoanhNghiep));
+	//}
 
 	private void btnTaoYeuCau_Click(object sender, EventArgs e)
 	{
@@ -55,7 +73,7 @@ public partial class GUI_DoanhNghiep : Form
 	private void btnDanhSachThongTinDangTuyen_Click(object sender, EventArgs e)
 	{
 		var gui = new GUI_DanhSachThongTinDangTuyen();
-		gui.HienThi(new Ctrler_DanhSachThongTinDangTuyen(_maDN));
+		gui.HienThi(new Ctrler_DanhSachThongTinDangTuyen(MaDN));
 		SwitchContent(gui);
 	}
 
