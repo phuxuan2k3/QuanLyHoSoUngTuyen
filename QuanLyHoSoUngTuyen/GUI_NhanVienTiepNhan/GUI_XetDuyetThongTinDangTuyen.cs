@@ -33,8 +33,8 @@ namespace GUI.UserControls
 			_tenViTri.Text = thongTinDangTuyen.TenViTri;
 			_soLuong.Text = thongTinDangTuyen.SoLuong.ToString();
 			_yeuCau.Text = thongTinDangTuyen.YeuCau;
-			_trangThai.Text = thongTinDangTuyen.TrangThai.ToString();
-			_tinhTrang.Text = thongTinDangTuyen.TinhTrang.ToString();
+			_trangThai.Text = thongTinDangTuyen.TrangThai.ToDisplayString();
+			_tinhTrang.Text = thongTinDangTuyen.TinhTrang.ToDisplayString();
 		}
 
 		private void btnHopLe_Click(object sender, EventArgs e)

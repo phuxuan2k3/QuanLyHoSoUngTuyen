@@ -54,7 +54,7 @@
             flowLayoutPanel1.Controls.Add(btnDuyetPhieuDangKy);
             flowLayoutPanel1.Location = new Point(0, -5);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(800, 37);
+            flowLayoutPanel1.Size = new Size(917, 37);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // btnDangTuyenTTDT
@@ -91,14 +91,14 @@
             // 
             _container.Location = new Point(0, 38);
             _container.Name = "_container";
-            _container.Size = new Size(1094, 412);
+            _container.Size = new Size(917, 412);
             _container.TabIndex = 2;
             // 
             // GUI_NhanVienNghiepVu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1098, 450);
+            ClientSize = new Size(917, 450);
             Controls.Add(_container);
             Controls.Add(flowLayoutPanel1);
             Name = "GUI_NhanVienNghiepVu";

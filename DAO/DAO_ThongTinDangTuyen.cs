@@ -137,7 +137,8 @@ public class DAO_ThongTinDangTuyen
 
     public static List<DTO_ThongTinDangTuyen> LayDSTTDTCanDangTuyen()
     {
-        string query = $@"select * from {tableName} where TINHTRANG = N'Hợp lệ' AND TRANGTHAI <> N'Đã đăng tuyển'";
+        string query = $@"select THONGTINDANGTUYEN.MATTDT,THOIGIANDANGTUYEN,MADN,MAHTDT,SONGAYDT,THONGTINDANGTUYEN.TRANGTHAI,TINHTRANG,TENVITRI,SOLUONG,YEUCAU from THONGTINDANGTUYEN , HOADON where HOADON.MATTDT = THONGTINDANGTUYEN.MATTDT and HOADON.TRANGTHAI = N'Đã thanh toán hoàn tất' and THONGTINDANGTUYEN.TRANGTHAI = N'Hợp lệ' and THONGTINDANGTUYEN.TINHTRANG <> N'Đã đăng tuyển'
+";
         DataTable dataTable = new DataTable();
         dataTable = SqlSingleton.Instance.ExecuteQuery(query);
         List<DTO_ThongTinDangTuyen> ds = new List<DTO_ThongTinDangTuyen>();
@@ -149,8 +150,8 @@ public class DAO_ThongTinDangTuyen
                 MaDN = row["MADN"].ToString(),
                 SoNgayDangTuyen = Convert.ToInt32(row["SONGAYDT"]),
                 MaHTDT = row["MAHTDT"].ToString(),
-                ThoiGianDangTuyen = DateTime.Now.AddDays(-4),
-                TenViTri = row["TENVITRI"].ToString(),
+                ThoiGianDangTuyen = Convert.ToDateTime(row["THOIGIANDANGTUYEN"]).Date,
+                TenViTri =row["TENVITRI"].ToString(),
                 SoLuong = Convert.ToInt32(row["SOLUONG"]),
                 YeuCau = row["YEUCAU"].ToString(),
 				TrangThai = row["TRANGTHAI"].ToString()!.ToTrangThaiThongTinDangTuyen(),
