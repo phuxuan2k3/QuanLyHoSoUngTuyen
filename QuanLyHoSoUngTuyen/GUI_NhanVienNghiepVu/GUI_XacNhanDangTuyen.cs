@@ -34,8 +34,8 @@ namespace GUI.UserControls
 			_tenViTri.Text = ttdt.TenViTri;
 			_soLuong.Text = ttdt.SoLuong.ToString();
 			_yeuCau.Text = ttdt.YeuCau;
-			_trangThai.Text = ttdt.TrangThai.ToString();
-			_tinhTrang.Text = ttdt.TinhTrang.ToString();
+			_trangThai.Text = ttdt.TrangThai.ToDisplayString();
+			_tinhTrang.Text = ttdt.TinhTrang.ToDisplayString();
 		}
 
 		private void btnQuayLai_Click(object sender, EventArgs e)
