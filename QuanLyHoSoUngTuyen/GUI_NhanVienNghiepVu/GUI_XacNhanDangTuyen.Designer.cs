@@ -489,6 +489,7 @@
             // 
             // btnXacNhan
             // 
+            btnXacNhan.Dock = DockStyle.Left;
             btnXacNhan.Location = new Point(418, 267);
             btnXacNhan.Name = "btnXacNhan";
             btnXacNhan.Size = new Size(95, 29);

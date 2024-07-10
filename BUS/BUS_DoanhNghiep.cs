@@ -46,6 +46,11 @@ namespace BUS
             return DAO_DoanhNghiep.LayDNChuaXacThuc();
         }
 
+        public static int KiemTraMaSoThue(string maDN, string MST)
+        {
+            return DAO_DoanhNghiep.KiemTraMaSoThue(maDN, MST);
+        }
+
 
         public static DTO_DoanhNghiep Lay(string MaDN)
         {
