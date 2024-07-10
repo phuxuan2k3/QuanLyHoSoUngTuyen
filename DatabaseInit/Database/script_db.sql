@@ -249,10 +249,8 @@ select * from CHIENLUOCUUDAI;
 go
 -- Insert   CT_CLUD
 INSERT INTO CT_CLUD (MaChienLuoc, MaDoanhNghiep) VALUES
-(1, 1),
 (2, 2),
-(3,3),
-(4, 4)
+(3,3);
 GO
 select * from CT_CLUD;
 go
@@ -313,3 +311,51 @@ INSERT INTO CT_PDKUT (MaTTDT, MaUV, MaCTBC) VALUES
 GO
 SELECT * FROM CT_PDKUT;
 go
+
+CREATE OR ALTER FUNCTION CHECK_DUPLICATE (@MaUngVien VARCHAR(50), @TENCTBC NVARCHAR(255))
+RETURNS BIT
+AS
+BEGIN
+    DECLARE @Exists BIT;
+    
+    IF EXISTS (SELECT 1 FROM HS_CT_BC WHERE MAUNGVIEN = @MaUngVien AND TENCTBC = @TENCTBC)
+    BEGIN
+        SET @Exists = 0; -- Record exists, can't insert
+    END
+    ELSE
+    BEGIN
+        SET @Exists = 1; -- Record doesn't exist, can insert
+    END
+
+    RETURN @Exists;
+END;
+GO
+
+GO
+CREATE OR ALTER PROCEDURE insert_HSCTBC 
+    @MaUngVien VARCHAR(50), 
+    @TENCTBC NVARCHAR(255)
+AS
+BEGIN
+    DECLARE @count_ INT;
+    DECLARE @CanInsert BIT;
+
+    -- Check for duplicates
+    SET @CanInsert = dbo.CHECK_DUPLICATE(@MaUngVien, @TENCTBC);
+
+    IF @CanInsert = 1
+    BEGIN
+        
+        -- Insert the new record
+        INSERT INTO HS_CT_BC ( MaUngVien, TENCTBC) 
+        VALUES (@MaUngVien, @TENCTBC);
+    END
+    ELSE
+    BEGIN
+        -- Handle duplicate case (optional)
+        RAISERROR('Duplicate record detected', 16, 1);
+    END
+END;
+GO
+
+GO

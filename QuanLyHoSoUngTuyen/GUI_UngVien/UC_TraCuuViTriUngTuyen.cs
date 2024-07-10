@@ -31,10 +31,9 @@ namespace GUI.UC
             }
             else if (BUS_ThongTinDangTuyen.KiemTraViTriUngTuyen(Txt_TimKiem.Text) == 1)
             {
-                SqlDataReader reader = BUS_ThongTinDangTuyen.viewList_ViTri(Txt_TimKiem.Text);
-                DataTable dt = new DataTable();
-                dt.Load(reader);
-                if (dt.Rows.Count > 0) dsCacViTriTimDuoc.DataSource = dt;
+                var lsTTDT = BUS_ThongTinDangTuyen.viewList_ViTri(Txt_TimKiem.Text);
+
+                if (lsTTDT.Count > 0) dsCacViTriTimDuoc.DataSource = lsTTDT;
                 else MessageBox.Show("Không có vị trí nào tìm được!");
             }
             else
@@ -61,14 +60,14 @@ namespace GUI.UC
 
         private void dsCacViTriTimDuoc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             if (e.RowIndex >= 0 && e.RowIndex < dsCacViTriTimDuoc.Rows.Count)
             {
                 DataGridViewRow row = dsCacViTriTimDuoc.Rows[e.RowIndex];
 
-                txt_ViTriUngTuyen.Text = row.Cells[7].Value?.ToString() ?? string.Empty;
-                txt_SoLuongTuyen.Text = row.Cells[8].Value?.ToString() ?? string.Empty;
-                rTxt_YeuCau.Text = row.Cells[9].Value?.ToString() ?? string.Empty;
+                txt_ViTriUngTuyen.Text = row.Cells["TenViTri"].Value?.ToString() ?? string.Empty;
+                txt_SoLuongTuyen.Text = row.Cells["SoLuong"].Value?.ToString() ?? string.Empty;
+                rTxt_YeuCau.Text = row.Cells["YeuCau"].Value?.ToString() ?? string.Empty;
                 txt_CongTy.Text = BUS_DoanhNghiep.LayTenDN(row.Cells[1].Value?.ToString() ?? string.Empty).ToString();
                 dsViTriTimDuoc_MaViTri = row.Cells[0].Value?.ToString() ?? string.Empty.ToString();
                 dsViTriTimDuoc_TenViTri = txt_ViTriUngTuyen.Text.ToString();

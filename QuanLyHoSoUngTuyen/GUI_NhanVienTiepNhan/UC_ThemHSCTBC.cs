@@ -40,7 +40,7 @@ namespace GUI.GUI_UC
             catch (Exception ex)
             {
                 // Handle any exceptions that might occur
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Đã xảy ra lỗi: Không thể thêm Hồ sơ.Vui lòng kiểm tra lại thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

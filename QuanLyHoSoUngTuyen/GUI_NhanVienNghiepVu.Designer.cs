@@ -91,14 +91,14 @@
             // 
             _container.Location = new Point(0, 38);
             _container.Name = "_container";
-            _container.Size = new Size(1094, 412);
+            _container.Size = new Size(1098, 586);
             _container.TabIndex = 2;
             // 
             // GUI_NhanVienNghiepVu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1098, 450);
+            ClientSize = new Size(1098, 624);
             Controls.Add(_container);
             Controls.Add(flowLayoutPanel1);
             Name = "GUI_NhanVienNghiepVu";

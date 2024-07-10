@@ -13,21 +13,28 @@ namespace DAO
         private const string tableName = "UNGVIEN";
         public static bool check_mauv(string mauv)
         {
-            string QueryStr = $"SELECT * FROM UNGVIEN WHERE MAUNGVIEN = '{mauv}';";
-
-            Console.WriteLine(QueryStr);
-            SqlDataReader reader = DatabaseDAO.getQueryStr(QueryStr);
-
-            if (reader.Read())
+            string QueryStr = $"SELECT count(*) FROM {tableName} WHERE MAUNGVIEN = '{mauv}';";
+            var res = SqlSingleton.Instance.ExecuteScalar(QueryStr);
+            if (int.Parse(res.ToString()!) > 0)
             {
-                reader.Close();
                 return true;
             }
-            else
-            {
-                reader.Close();
-                return false;
-            }
+            return false;
+
+
+            //Console.WriteLine(QueryStr);
+            //SqlDataReader reader = DatabaseDAO.getQueryStr(QueryStr);
+
+            //if (reader.Read())
+            //{
+            //    reader.Close();
+            //    return true;
+            //}
+            //else
+            //{
+            //    reader.Close();
+            //    return false;
+            //}
         }
         public static void ThemUngVien(DTO_UngVien ungVien)
         {
@@ -43,21 +50,26 @@ VALUES(@MaUngVien,@TenUngVien, @DiaChi,@Email,@TenTaiKhoan);";
 
         public static bool check_hoten(string mauv, string name)
         {
-            string QueryStr = $"SELECT * FROM UNGVIEN WHERE MAUNGVIEN = '{mauv}' AND TENUNGVIEN = N'{name}';";
-
-            Console.WriteLine(QueryStr);
-            SqlDataReader reader = DatabaseDAO.getQueryStr(QueryStr);
-
-            if (reader.Read())
+            string QueryStr = $"SELECT count(*) FROM {tableName} WHERE MAUNGVIEN = '{mauv}' AND TENUNGVIEN = N'{name}';";
+            var res = SqlSingleton.Instance.ExecuteScalar(QueryStr);
+            if (int.Parse(res.ToString()!) > 0)
             {
-                reader.Close();
                 return true;
             }
-            else
-            {
-                reader.Close();
-                return false;
-            }
+            return false;
+            //Console.WriteLine(QueryStr);
+            //SqlDataReader reader = DatabaseDAO.getQueryStr(QueryStr);
+
+            //if (reader.Read())
+            //{
+            //    reader.Close();
+            //    return true;
+            //}
+            //else
+            //{
+            //    reader.Close();
+            //    return false;
+            //}
         }
     }
 }

@@ -11,6 +11,10 @@ namespace DAO
     {
         public static int Them(int mattdt, string mauv, int mactbc)
         {
+            string QueryStr = $"INSERT INTO CT_PDKUT(MATTDT, MAUV, MACTBC) VALUES({mattdt}, '{mauv}', {mactbc}); ";
+            SqlSingleton.Instance.ExecuteNonQuery(QueryStr);
+            return 1;
+            /*
             using (SqlConnection sqlConn = DatabaseDAO.getConnectionString())
             {
                 try
@@ -31,7 +35,7 @@ namespace DAO
                 }
                 sqlConn.Close();
             }
-            return 0;
+            return 0;*/
         }
     }
 }

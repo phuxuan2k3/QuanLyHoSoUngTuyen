@@ -105,10 +105,9 @@ public class BUS_ThongTinDangTuyen
         }
 
     }
-    public static SqlDataReader viewList_ViTri(string value)
+    public static List<DTO_ThongTinDangTuyen> viewList_ViTri(string value)
     {
-        SqlDataReader reader = DAO_ThongTinDangTuyen.getList(value);
-        return reader;
+        return DAO_ThongTinDangTuyen.getList(value);
     }
 
     public static int check_Dienphieu(string value)

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Net.Http.Headers;
+using System.Reflection.Metadata.Ecma335;
 using Utilis;
 
 namespace DAO;
@@ -153,9 +154,9 @@ public class DAO_ThongTinDangTuyen
                 TenViTri = row["TENVITRI"].ToString(),
                 SoLuong = Convert.ToInt32(row["SOLUONG"]),
                 YeuCau = row["YEUCAU"].ToString(),
-				TrangThai = row["TRANGTHAI"].ToString()!.ToTrangThaiThongTinDangTuyen(),
-				TinhTrang = row["TINHTRANG"].ToString()!.ToTinhTrangThongTinDangTuyen(),
-			};
+                TrangThai = row["TRANGTHAI"].ToString()!.ToTrangThaiThongTinDangTuyen(),
+                TinhTrang = row["TINHTRANG"].ToString()!.ToTinhTrangThongTinDangTuyen(),
+            };
             ds.Add(ttdt);
         }
         return ds;
@@ -226,9 +227,9 @@ public class DAO_ThongTinDangTuyen
                 TenViTri = row["TENVITRI"].ToString(),
                 SoLuong = Convert.ToInt32(row["SOLUONG"]),
                 YeuCau = row["YEUCAU"].ToString(),
-				TrangThai = row["TRANGTHAI"].ToString()!.ToTrangThaiThongTinDangTuyen(),
-				TinhTrang = row["TINHTRANG"].ToString()!.ToTinhTrangThongTinDangTuyen()
-			};
+                TrangThai = row["TRANGTHAI"].ToString()!.ToTrangThaiThongTinDangTuyen(),
+                TinhTrang = row["TINHTRANG"].ToString()!.ToTinhTrangThongTinDangTuyen()
+            };
 
             return doanhNghiep;
         }
@@ -298,9 +299,9 @@ public class DAO_ThongTinDangTuyen
                 TenViTri = row["TENVITRI"].ToString(),
                 SoLuong = Convert.ToInt32(row["SOLUONG"]),
                 YeuCau = row["YEUCAU"].ToString(),
-				TrangThai = row["TRANGTHAI"].ToString()!.ToTrangThaiThongTinDangTuyen(),
-				TinhTrang = row["TINHTRANG"].ToString()!.ToTinhTrangThongTinDangTuyen()
-			};
+                TrangThai = row["TRANGTHAI"].ToString()!.ToTrangThaiThongTinDangTuyen(),
+                TinhTrang = row["TINHTRANG"].ToString()!.ToTinhTrangThongTinDangTuyen()
+            };
             ds.Add(ttdt);
         }
         return ds;
@@ -308,45 +309,58 @@ public class DAO_ThongTinDangTuyen
 
 
 
-    public static Boolean check_Vitri(string value)
+    public static bool check_Vitri(string value)
     {
-        string QueryStr = $"SELECT * FROM THONGTINDANGTUYEN WHERE TENVITRI LIKE N'%{value}%';";
-
-        Console.WriteLine(QueryStr);
-        SqlDataReader reader = DatabaseDAO.getQueryStr(QueryStr);
-
-        if (reader.Read())
+        string QueryStr = $"SELECT Count(*) FROM {tableName} WHERE TENVITRI LIKE N'%{value}%';";
+        var res = SqlSingleton.Instance.ExecuteScalar(QueryStr);
+        if (int.Parse(res.ToString()!) > 0)
         {
-            reader.Close();
             return true;
         }
-        else
-        {
-            reader.Close();
-            return false;
-        }
+        return false;
+
+        //Console.WriteLine(QueryStr);
+        //SqlDataReader reader = DatabaseDAO.getQueryStr(QueryStr);
+
+        //if (reader.Read())
+        //{
+        //    reader.Close();
+        //    return true;
+        //}
+        //else
+        //{
+        //    reader.Close();
+        //    return false;
+        //}
     }
 
-    public static SqlDataReader getList(string value)
+    public static List<DTO_ThongTinDangTuyen> getList(string value)
     {
-        SqlConnection sqlConn = DatabaseDAO.getConnectionString();
-        SqlDataReader reader = null;
-        string QueryStr = $"SELECT * FROM THONGTINDANGTUYEN WHERE TENVITRI LIKE N'%{value}%' AND TINHTRANG = N'Đã đăng tuyển';";
-        try
+        //SqlConnection sqlConn = DatabaseDAO.getConnectionString();
+        //SqlDataReader reader = null;
+        string QueryStr = $"SELECT * FROM {tableName} WHERE TENVITRI LIKE N'%{value}%' AND TINHTRANG = N'Đã đăng tuyển';";
+        var lsTTDT = SqlSingleton.Instance.ExecuteQuery(QueryStr);
+        var thongTinDangTuyens = new List<DTO_ThongTinDangTuyen>();
+        foreach (DataRow row in lsTTDT.Rows)
         {
-            sqlConn.Open();
-            SqlCommand cmd = new SqlCommand(QueryStr, sqlConn);
-            reader = cmd.ExecuteReader(CommandBehavior.CloseConnection); // Ensure the connection is closed when the reader is closed
+            thongTinDangTuyens.Add(ConvertRow(row));
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-            if (sqlConn != null && sqlConn.State == System.Data.ConnectionState.Open)
-            {
-                sqlConn.Close();
-            }
-            throw;
-        }
-        return reader;
+        return thongTinDangTuyens;
+        //try
+        //{
+        //    sqlConn.Open();
+        //    SqlCommand cmd = new SqlCommand(QueryStr, sqlConn);
+        //    reader = cmd.ExecuteReader(CommandBehavior.CloseConnection); // Ensure the connection is closed when the reader is closed
+        //}
+        //catch (Exception ex)
+        //{
+        //    Console.WriteLine(ex.Message);
+        //    if (sqlConn != null && sqlConn.State == System.Data.ConnectionState.Open)
+        //    {
+        //        sqlConn.Close();
+        //    }
+        //    throw;
+        //}
+        //return reader;
     }
 }

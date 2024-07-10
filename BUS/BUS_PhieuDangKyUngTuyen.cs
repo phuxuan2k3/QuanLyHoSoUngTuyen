@@ -16,7 +16,7 @@ public class BUS_PhieuDangKyUngTuyen
     }
     public static int KiemTraMaUV(string value)
     {
-        Boolean check = DAO_UngVien.check_mauv(value);
+        bool check = DAO_UngVien.check_mauv(value);
         if (check == true)
         {
             return 1;
@@ -29,7 +29,7 @@ public class BUS_PhieuDangKyUngTuyen
 
     public static int KiemTraHoTenUV(string mauv, string name)
     {
-        Boolean check = DAO_UngVien.check_hoten(mauv, name);
+        bool check = DAO_UngVien.check_hoten(mauv, name);
         if (check == true)
         {
             return 1;
@@ -42,7 +42,7 @@ public class BUS_PhieuDangKyUngTuyen
 
     public static int KiemTraActtionThem(int mattdt, string mauv)
     {
-        Boolean check = DAO_PhieuDangKyUngTuyen.Them_Phieu(mattdt, mauv);
+        bool check = DAO_PhieuDangKyUngTuyen.Them_Phieu(mattdt, mauv);
         if (check == true)
         {
             return 1;

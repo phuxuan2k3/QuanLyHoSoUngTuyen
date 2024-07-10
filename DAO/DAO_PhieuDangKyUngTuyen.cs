@@ -22,8 +22,12 @@ namespace DAO
             };
         }
 
-        public static Boolean Them_Phieu(int mattdt, string mauv)
+        public static bool Them_Phieu(int mattdt, string mauv)
         {
+            string QueryStr = $"INSERT INTO PHIEUDANGKYUNGTUYEN(MATTDT, MAUV, TRANGTHAI) VALUES({mattdt}, '{mauv}', N'Chưa xét duyệt'); ";
+            SqlSingleton.Instance.ExecuteNonQuery(QueryStr);
+            return true;
+            /*
             // Open the database connection if it's not already open
             using (SqlConnection sqlConn = DatabaseDAO.getConnectionString())
             {
@@ -46,6 +50,7 @@ namespace DAO
                 sqlConn.Close();
             }
             return false;
+            */
         }
 
         public static Boolean Xoa_Phieu(int mattdt, string mauv)
@@ -125,7 +130,7 @@ namespace DAO
             using (SqlCommand cmd = new SqlCommand(query, SqlSingleton.Instance.Connection))
             {
                 cmd.Parameters.AddWithValue("@TrangThai", ttpdk.TrangThai.ToString());
-                cmd.Parameters.AddWithValue("@MaTTDT", Convert.ToInt32( ttpdk.MaTTDT));
+                cmd.Parameters.AddWithValue("@MaTTDT", Convert.ToInt32(ttpdk.MaTTDT));
                 cmd.Parameters.AddWithValue("@MaUV", ttpdk.MaUV);
 
                 SqlSingleton.Instance.Connection.Open();

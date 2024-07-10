@@ -26,40 +26,56 @@ namespace GUI.UC
 
         private void Btn_DienPhieu_Click(object sender, EventArgs e)
         {
-            // Ensure that Txt_MaViTriUngTuyen.Text can be converted to an integer
-            if (int.TryParse(Txt_MaViTriUngTuyen.Text, out int maViTriUngTuyen))
+            Utilis.QuickTryCatch.ExcuteWithTryCatchAndShowMessageBox(() =>
             {
-                // Call the Them_Phieu method and check the result
-                if (BUS_PhieuDangKyUngTuyen.Them_Phieu(maViTriUngTuyen, Txt_CCCD.Text, Txt_HoVaTenUngVien.Text) == 1)
+                // Ensure that Txt_MaViTriUngTuyen.Text can be converted to an integer
+                if (int.TryParse(Txt_MaViTriUngTuyen.Text, out int maViTriUngTuyen))
                 {
-                    // Show the next form
-                    mattdt = Txt_MaViTriUngTuyen.Text;
-                    mauv = Txt_CCCD.Text.ToString();
-                    UC_NopHoSoUngTuyen uc = new UC_NopHoSoUngTuyen();
-                    uc.Dock = DockStyle.Fill;
-                    this.Controls.Clear();
-                    this.Controls.Add(uc);
-                    uc.BringToFront();
+                    // Call the Them_Phieu method and check the result
+                    if (BUS_PhieuDangKyUngTuyen.Them_Phieu(maViTriUngTuyen, Txt_CCCD.Text, Txt_HoVaTenUngVien.Text) == 1)
+                    {
+                        // Show the next form
+                        mattdt = Txt_MaViTriUngTuyen.Text;
+                        mauv = Txt_CCCD.Text.ToString();
+                        UC_NopHoSoUngTuyen uc = new UC_NopHoSoUngTuyen(QuayLaiHome!);
+                        uc.Dock = DockStyle.Fill;
+                        this.Controls.Clear();
+                        this.Controls.Add(uc);
+                        uc.BringToFront();
+                    }
+                    else
+                    {
+                        // Show error message if adding the record failed
+                        MessageBox.Show("Không thể thêm phiếu đăng ký ứng tuyển. Vui lòng kiểm tra lại thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    // Show error message if adding the record failed
-                    MessageBox.Show("Không thể thêm phiếu đăng ký ứng tuyển. Vui lòng kiểm tra lại thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Show error message if Txt_MaViTriUngTuyen.Text is not a valid integer
+                    MessageBox.Show("Mã vị trí ứng tuyển phải là số nguyên hợp lệ.", "Lỗi đầu vào", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
-            {
-                // Show error message if Txt_MaViTriUngTuyen.Text is not a valid integer
-                MessageBox.Show("Mã vị trí ứng tuyển phải là số nguyên hợp lệ.", "Lỗi đầu vào", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }, "Không thể thêm phiếu đăng ký ứng tuyển. Vui lòng kiểm tra lại thông tin.");
+        }
+
+        private void QuayLaiHome(object sender, EventArgs e)
+        {
+            UC_Home_UngVien uc = new UC_Home_UngVien();
+            uc.Dock = DockStyle.Fill;
+            Controls.Clear();
+            Controls.Add(uc);
+            uc.BringToFront();
         }
 
         private void home_button_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Bạn muốn dừng hành động điền phiếu đăng ký?", "Lưu ý", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            this.Controls.Clear();
+
             UC_Home_UngVien uc = new UC_Home_UngVien();
-            uc.Show();
+
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Clear();
+            this.Controls.Add(uc);
+            uc.BringToFront();
         }
     }
 }

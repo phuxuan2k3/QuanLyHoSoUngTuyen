@@ -13,11 +13,14 @@ namespace GUI.UC
 {
     public partial class UC_NopHoSoUngTuyen : UserControl
     {
-        public UC_NopHoSoUngTuyen()
+        private event EventHandler QuayLaiHome;
+        public UC_NopHoSoUngTuyen(EventHandler quayLaiHome)
         {
             InitializeComponent();
             rTxt_yeucau.Text = UC_TraCuuViTriUngTuyen.yeucau;
-       
+
+            QuayLaiHome += quayLaiHome;
+
             Load_HS(UC_DienPhieuDangKyUngTuyen.mauv);
         }
 
@@ -72,23 +75,29 @@ namespace GUI.UC
             MessageBox.Show("Thêm phiếu ứng tuyển thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Hide();
         }
-        
+
         private void home_button_Click(object sender, EventArgs e)
         {
+
             if (int.TryParse(UC_DienPhieuDangKyUngTuyen.mattdt, out int maViTriUngTuyen))
             {
                 // Call the Xoa_Phieu method and check the result
                 Xoa_Phieu(maViTriUngTuyen, UC_DienPhieuDangKyUngTuyen.mauv);
+
+                UC_Home_UngVien uc = new UC_Home_UngVien();
+
+                uc.Dock = DockStyle.Fill;
                 this.Controls.Clear();
-                
-                
+                this.Controls.Add(uc);
+                uc.BringToFront();
+
             }
             else
             {
                 // Show error message if Txt_MaViTriUngTuyen.Text is not a valid integer
                 MessageBox.Show("Mã vị trí ứng tuyển phải là số nguyên hợp lệ.", "Lỗi đầu vào", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
     }
 }
