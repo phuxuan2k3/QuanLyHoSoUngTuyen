@@ -66,46 +66,6 @@ namespace GUI
                 dsDN.DataSource = lsDN;
             }
         }
-        private void LocDoanhNghiep()
-        {
-            foreach (var con in Controls)
-            {
-                if (con is RadioButton radio)
-                {
-                    if (radio.Checked)
-                    {
-                        switch (radio.Text)
-                        {
-                            case "Không hợp lệ":
-                                {
-                                    var lsDN = Ctrler_XemThongTinDoanhNghiep.LayDanhSachDoanhNghiepKhongHopLe();
-                                    dsDN.DataSource = lsDN;
-                                }
-                                break;
-                            case "Hợp lệ":
-                                {
-                                    var lsDN = Ctrler_XemThongTinDoanhNghiep.LayDanhSachDoanhNghiepHopLe();
-                                    dsDN.DataSource = lsDN;
-                                }
-                                break;
-                            case "Chưa xác thực":
-                                {
-                                    var lsDN = Ctrler_XemThongTinDoanhNghiep.LayDanhSachDoanhNghiepChuaXacThuc();
-                                    dsDN.DataSource = lsDN;
-                                }
-                                break;
-                            case "Tiềm năng":
-                                {
-                                    var lsDN = Ctrler_XemThongTinDoanhNghiep.LayDanhSachDoanhNghiepTiemNang();
-                                    dsDN.DataSource = lsDN;
-                                }
-                                break;
-                        }
-                    }
-                    return;
-                }
-            }
-        }
 
         private void dsDN_CellClick(object sender, DataGridViewCellEventArgs e)
         {

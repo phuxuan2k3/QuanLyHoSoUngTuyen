@@ -19,6 +19,7 @@ namespace Ctrler
         {
             BUS_ChienLuocUuDai.XoaTatCaUuDaiCuaDoanhNghiep(maDN);
             BUS_ChienLuocUuDai.ThemUuDaiChoDoanhNghiep(maDN, lsChienLuocUuDai);
+            BUS_DoanhNghiep.LuuDoanhNghiepTiemNang(maDN);
         }
     }
 }

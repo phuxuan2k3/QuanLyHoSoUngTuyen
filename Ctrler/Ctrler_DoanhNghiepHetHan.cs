@@ -16,7 +16,7 @@ namespace Ctrler
         public static void LoadKetQuaUngTuyenCuaDN(string maDN, out List<DTO_KetQuaUngTuyen> lsKetQuaUngTuyen)
         {
             var lsKQUT = new List<DTO_KetQuaUngTuyen>();
-            var lsTTDT = DAO_ThongTinDangTuyen.LayDSTTDT(maDN);
+            var lsTTDT = BUS_ThongTinDangTuyen.LayDanhSachTTDT(maDN);
             foreach (var ttdt in lsTTDT)
             {
                 var ketQuaUngTuyen = BUS_PhieuDangKyUngTuyen.TinhToanKetQuaUngTuyen(ttdt.MaTTDT);
