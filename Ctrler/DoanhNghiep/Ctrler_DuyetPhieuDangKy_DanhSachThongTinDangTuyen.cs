@@ -35,10 +35,10 @@ public class Ctrler_DuyetPhieuDangKy_DanhSachThongTinDangTuyen
         var hinhThucDangTuyen = BUS_HinhThucDangTuyen.Lay(ttdt.MaHTDT);
         return new Ctrler_DuyetPhieuDangKy_ChiTietThongTinDangTuyen(ttdt);
     }
+
     public static List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenDuyetPDK()
     {
         return BUS_ThongTinDangTuyen.LayDSThongTinDangTuyenDuyetPDK();
     }
-
-
+    
 }

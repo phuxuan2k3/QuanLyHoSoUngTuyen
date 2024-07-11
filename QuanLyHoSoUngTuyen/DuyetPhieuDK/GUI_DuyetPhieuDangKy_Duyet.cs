@@ -59,7 +59,6 @@ namespace GUI
 			{
 				// Cập nhật thông tin phiếu đăng ký
 				Ctrler_ChiTietThongTinDangTuyen.CapNhatThongTinPhieuDangKy(ttpdk);
-				GUI_DuyetPhieuDangKy_ChiTietThongTinDangTuyen.doUuTien = ttpdk.UuTien;
 				MessageBox.Show("Lưu thay đổi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 				// Lấy lại chi tiết thông tin đăng tuyển
@@ -67,8 +66,13 @@ namespace GUI
 				GUI_DuyetPhieuDangKy_ChiTietThongTinDangTuyen content = new();
 				content.HienThi(ctrler);
 
-				// Lấy danh sách phiếu đăng ký
-				List<DTO_ThongTinHoSo> dsPhDK = new List<DTO_ThongTinHoSo>();
+                // Lấy danh sách phiếu đăng ký
+                var ctrler2 = Ctrler_DuyetPhieuDangKy_DanhSachThongTinDangTuyen.HienThi_ChiTiet(_MaTTDT.Text);
+                GUI_DuyetPhieuDangKy_ChiTietThongTinDangTuyen content2 = new();
+                content2.HienThi(ctrler2);
+                GUI_NhanVienNghiepVu.Instance.SwitchContent(content);
+
+                List<DTO_ThongTinHoSo> dsPhDK = new List<DTO_ThongTinHoSo>();
 				foreach (DataGridViewRow row in content.dsPhieuDangKy.Rows)
 				{
 					dsPhDK.Add(new DTO_ThongTinHoSo

@@ -51,7 +51,8 @@ namespace GUI
                 int rowId = dsThongTinDangTuyen.Rows.Add();
                 DataGridViewRow row = dsThongTinDangTuyen.Rows[rowId];
                 row.Cells["_maTTDT"].Value = ttdt.MaTTDT;
-                row.Cells["_maDN"].Value = ttdt.MaDN;
+                row.Cells["_tenDN"].Value = ttdt.TenDoanhNghiep;
+                row.Cells["_tenViTri"].Value = ttdt.TenViTri;
                 row.Cells["_soLuong"].Value = ttdt.SoLuong;
             }
         }

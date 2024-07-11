@@ -125,13 +125,15 @@ namespace DAO
         }
         public static void CapNhatThongTinPhieuDangKy(DTO_ThongTinHoSo ttpdk)
         {
-            string query = "UPDATE PHIEUDANGKYUNGTUYEN SET TRANGTHAI = @TrangThai WHERE MATTDT = @MaTTDT AND MAUV = @MaUV";
+            string query = "UPDATE PHIEUDANGKYUNGTUYEN SET TRANGTHAI = @TrangThai WHERE MATTDT = @MaTTDT AND MAUV = @MaUV and DOUUTIEN = @Uutien";
 
             using (SqlCommand cmd = new SqlCommand(query, SqlSingleton.Instance.Connection))
             {
                 cmd.Parameters.AddWithValue("@TrangThai", ttpdk.TrangThai.ToString());
                 cmd.Parameters.AddWithValue("@MaTTDT", Convert.ToInt32(ttpdk.MaTTDT));
                 cmd.Parameters.AddWithValue("@MaUV", ttpdk.MaUV);
+                cmd.Parameters.AddWithValue("@Uutien", Convert.ToInt32(ttpdk.UuTien));
+
 
                 SqlSingleton.Instance.Connection.Open();
                 cmd.ExecuteNonQuery();

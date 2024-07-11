@@ -17,7 +17,6 @@ namespace GUI
 	public partial class GUI_DuyetPhieuDangKy_ChiTietThongTinDangTuyen : UserControl
 	{
 		private Ctrler_DuyetPhieuDangKy_ChiTietThongTinDangTuyen? _ctrler_ChiTietThongTinDangTuyen;
-		public static int doUuTien;
 
 
 		public GUI_DuyetPhieuDangKy_ChiTietThongTinDangTuyen()
@@ -47,7 +46,7 @@ namespace GUI
 				DataGridViewRow row = dsPhieuDangKy.Rows[rowId];
 				row.Cells["_maUV"].Value = pdk.MaUV;
 				row.Cells["_trangThai"].Value = pdk.TrangThai;
-				row.Cells["_uuTien"].Value = doUuTien;
+				row.Cells["_uuTien"].Value = pdk.UuTien;
 
 			}
 
