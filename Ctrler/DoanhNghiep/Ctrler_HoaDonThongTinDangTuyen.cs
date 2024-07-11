@@ -6,13 +6,15 @@ namespace Ctrler.DoanhNghiep
 {
 	public class Ctrler_HoaDonThongTinDangTuyen
 	{
+		private DTO_DoanhNghiep doanhNghiep;
 		private DTO_ThongTinDangTuyen thongTinDangTuyen;
 		private DTO_HoaDon hoaDon;
 		private DTO_HinhThucDangTuyen hinhThucDangTuyen;
 		private List<DTO_ChiTietHoaDon> dsChiTietHoaDon;
 
-		public Ctrler_HoaDonThongTinDangTuyen(DTO_ThongTinDangTuyen thongTinDangTuyen, DTO_HoaDon hoaDon, DTO_HinhThucDangTuyen hinhThucDangTuyen)
+		public Ctrler_HoaDonThongTinDangTuyen(DTO_DoanhNghiep doanhNghiep,DTO_ThongTinDangTuyen thongTinDangTuyen, DTO_HoaDon hoaDon, DTO_HinhThucDangTuyen hinhThucDangTuyen)
 		{
+			this.doanhNghiep = doanhNghiep;
 			this.thongTinDangTuyen = thongTinDangTuyen;
 			this.hoaDon = hoaDon;
 			this.hinhThucDangTuyen = hinhThucDangTuyen;
@@ -37,7 +39,7 @@ namespace Ctrler.DoanhNghiep
 
 		public void XuatPDF(string outPath)
 		{
-			Ctrler_PDF.Xuat(thongTinDangTuyen, hinhThucDangTuyen, hoaDon, dsChiTietHoaDon, outPath);
+			Ctrler_PDF.Xuat(doanhNghiep, thongTinDangTuyen, hinhThucDangTuyen, hoaDon, dsChiTietHoaDon, outPath);
 		}
 	}
 }
