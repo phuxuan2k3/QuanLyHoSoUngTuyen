@@ -119,7 +119,7 @@ namespace DAO
             DTO_ThongTinHoSo phDK = new DTO_ThongTinHoSo(
                 row["MAUV"].ToString(),
                 maTTDT,
-                0,
+                Convert.ToInt32( row["DOUUTIEN"]),
                 row["TENVITRI"].ToString(),
                 row["BangCap"].ToString(),
                 row["TrangThai"].ToString());
