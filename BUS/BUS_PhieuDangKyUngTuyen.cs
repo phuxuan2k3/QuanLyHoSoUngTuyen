@@ -10,7 +10,7 @@ public class BUS_PhieuDangKyUngTuyen
         var lsPhieuDangKyUngTuyen = DAO_PhieuDangKyUngTuyen.LayPDKUT(maTTDT);
         var total = lsPhieuDangKyUngTuyen.Count;
         var countHopLe = lsPhieuDangKyUngTuyen.Count(pdkut => pdkut.TrangThai == TrangThaiPhieuDangKyUngTuyen.HopLe);
-        var countDat = lsPhieuDangKyUngTuyen.Count(pdkut => pdkut.TrangThai == TrangThaiPhieuDangKyUngTuyen.HopLe); //todo: trang thai la cai gi
+        var countDat = lsPhieuDangKyUngTuyen.Count(pdkut => pdkut.TrangThai == TrangThaiPhieuDangKyUngTuyen.Dat); //todo: trang thai la cai gi
 
         return new DTO_KetQuaUngTuyen(maTTDT, "", total, countHopLe, countDat);
     }

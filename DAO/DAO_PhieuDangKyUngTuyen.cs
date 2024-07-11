@@ -14,12 +14,13 @@ namespace DAO
     {
         public static List<DTO_PhieuDangKyUngTuyen> LayPDKUT(string maTTDT)
         {
-            return new List<DTO_PhieuDangKyUngTuyen>
-            {
-                new DTO_PhieuDangKyUngTuyen(TrangThaiPhieuDangKyUngTuyen.KhongHopLe),
-                new DTO_PhieuDangKyUngTuyen(TrangThaiPhieuDangKyUngTuyen.HopLe),
-                new DTO_PhieuDangKyUngTuyen(TrangThaiPhieuDangKyUngTuyen.ChuaXetDuyet),
-            };
+            string query = $"SELECT * FROM PHIEUDANGKYUNGTUYEN WHERE MATTDT = N'{maTTDT}';";
+            var res = SqlSingleton.Instance.ExecuteQuery(query);
+            var lsPDKUT = res.AsEnumerable().Select(x => new DTO_PhieuDangKyUngTuyen(
+                 TrangThaiPDKUTConvert.GetTrangThaiEnum(x.Field<string>("TRANGTHAI")!),
+                 maTTDT,
+                 x.Field<string>("MAUV")!)).ToList();
+            return lsPDKUT;
         }
 
         public static bool Them_Phieu(int mattdt, string mauv)
@@ -27,55 +28,35 @@ namespace DAO
             string QueryStr = $"INSERT INTO PHIEUDANGKYUNGTUYEN(MATTDT, MAUV, TRANGTHAI) VALUES({mattdt}, '{mauv}', N'Chưa xét duyệt'); ";
             SqlSingleton.Instance.ExecuteNonQuery(QueryStr);
             return true;
-            /*
-            // Open the database connection if it's not already open
-            using (SqlConnection sqlConn = DatabaseDAO.getConnectionString())
-            {
-                try
-                {
-                    sqlConn.Open();
-                    string QueryStr = $"INSERT INTO PHIEUDANGKYUNGTUYEN(MATTDT, MAUV, TRANGTHAI) VALUES({mattdt}, '{mauv}', N'Chưa xét duyệt'); ";
-                    using (SqlCommand insert = new SqlCommand(QueryStr, sqlConn))
-                    {
-
-                        insert.ExecuteNonQuery();
-                        return true;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Handle exception (log it, rethrow it, etc.)
-                    Console.WriteLine(ex.Message);
-                }
-                sqlConn.Close();
-            }
-            return false;
-            */
         }
 
-        public static Boolean Xoa_Phieu(int mattdt, string mauv)
+        //todo: fix tthis
+        public static bool Xoa_Phieu(int mattdt, string mauv)
         {
-            using (SqlConnection sqlConn = DatabaseDAO.getConnectionString())
-            {
-                try
-                {
-                    sqlConn.Open();
-                    string QueryStr = $"DELETE FROM PHIEUDANGKYUNGTUYEN WHERE MATTDT = {mattdt} AND MAUV = '{mauv}';";
-                    using (SqlCommand insert = new SqlCommand(QueryStr, sqlConn))
-                    {
+            string QueryStr = $"DELETE FROM PHIEUDANGKYUNGTUYEN WHERE MATTDT = {mattdt} AND MAUV = '{mauv}';";
+            SqlSingleton.Instance.ExecuteNonQuery(QueryStr);
+            return true;
+            //using (SqlConnection sqlConn = DatabaseDAO.getConnectionString())
+            //{
+            //    try
+            //    {
+            //        sqlConn.Open();
+            //        string QueryStr = $"DELETE FROM PHIEUDANGKYUNGTUYEN WHERE MATTDT = {mattdt} AND MAUV = '{mauv}';";
+            //        using (SqlCommand insert = new SqlCommand(QueryStr, sqlConn))
+            //        {
 
-                        insert.ExecuteNonQuery();
-                        return true;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Handle exception (log it, rethrow it, etc.)
-                    Console.WriteLine(ex.Message);
-                }
-                sqlConn.Close();
-            }
-            return false;
+            //            insert.ExecuteNonQuery();
+            //            return true;
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        // Handle exception (log it, rethrow it, etc.)
+            //        Console.WriteLine(ex.Message);
+            //    }
+            //    sqlConn.Close();
+            //}
+            //return false;
         }
 
         public static DTO_ThongTinHoSo LayThongTinDangTuyenTheoMaUV(string maTTDT, string maUV)
