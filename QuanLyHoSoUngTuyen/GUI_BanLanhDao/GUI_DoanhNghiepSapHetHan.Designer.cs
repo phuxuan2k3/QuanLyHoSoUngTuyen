@@ -57,11 +57,12 @@
             // 
             // dsKetQuaUngTuyen
             // 
-            dsKetQuaUngTuyen.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dsKetQuaUngTuyen.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dsKetQuaUngTuyen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dsKetQuaUngTuyen.Location = new Point(602, 83);
             dsKetQuaUngTuyen.Name = "dsKetQuaUngTuyen";
             dsKetQuaUngTuyen.RowHeadersWidth = 51;
+            dsKetQuaUngTuyen.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dsKetQuaUngTuyen.Size = new Size(593, 260);
             dsKetQuaUngTuyen.TabIndex = 12;
             // 

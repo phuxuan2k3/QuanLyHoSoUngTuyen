@@ -150,7 +150,7 @@
             flowLayoutPanel7.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel7.Controls.Add(label13);
             flowLayoutPanel7.Controls.Add(_trangThai);
-            flowLayoutPanel7.Location = new Point(417, 40);
+            flowLayoutPanel7.Location = new Point(424, 40);
             flowLayoutPanel7.Margin = new Padding(2);
             flowLayoutPanel7.Name = "flowLayoutPanel7";
             flowLayoutPanel7.Size = new Size(162, 25);
@@ -252,7 +252,7 @@
             flowLayoutPanel10.Dock = DockStyle.Bottom;
             flowLayoutPanel10.Location = new Point(37, 3);
             flowLayoutPanel10.Name = "flowLayoutPanel10";
-            flowLayoutPanel10.Size = new Size(375, 32);
+            flowLayoutPanel10.Size = new Size(382, 32);
             flowLayoutPanel10.TabIndex = 9;
             // 
             // label6
@@ -315,12 +315,12 @@
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 3;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.466363F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.93464F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 45.6209145F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.46538448F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.8496742F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 44.705883F));
             tableLayoutPanel2.Controls.Add(flowLayoutPanel1, 1, 1);
             tableLayoutPanel2.Controls.Add(flowLayoutPanel2, 1, 2);
-            tableLayoutPanel2.Controls.Add(btnQuayLai, 1, 9);
+            tableLayoutPanel2.Controls.Add(btnQuayLai, 1, 8);
             tableLayoutPanel2.Controls.Add(flowLayoutPanel9, 2, 3);
             tableLayoutPanel2.Controls.Add(flowLayoutPanel8, 2, 2);
             tableLayoutPanel2.Controls.Add(flowLayoutPanel5, 1, 5);
@@ -330,11 +330,11 @@
             tableLayoutPanel2.Controls.Add(flowLayoutPanel6, 1, 6);
             tableLayoutPanel2.Controls.Add(flowLayoutPanel12, 1, 7);
             tableLayoutPanel2.Controls.Add(flowLayoutPanel10, 1, 0);
-            tableLayoutPanel2.Controls.Add(btnXacNhan, 2, 9);
-            tableLayoutPanel2.Location = new Point(41, 85);
+            tableLayoutPanel2.Controls.Add(btnXacNhan, 2, 8);
+            tableLayoutPanel2.Location = new Point(31, 43);
             tableLayoutPanel2.Margin = new Padding(2);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 11;
+            tableLayoutPanel2.RowCount = 9;
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
@@ -343,10 +343,9 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 151F));
-            tableLayoutPanel2.Size = new Size(765, 487);
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.Size = new Size(765, 325);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // flowLayoutPanel1
@@ -421,7 +420,7 @@
             // 
             btnQuayLai.AutoSize = true;
             btnQuayLai.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnQuayLai.Location = new Point(36, 266);
+            btnQuayLai.Location = new Point(36, 243);
             btnQuayLai.Margin = new Padding(2);
             btnQuayLai.Name = "btnQuayLai";
             btnQuayLai.Size = new Size(73, 30);
@@ -437,7 +436,7 @@
             flowLayoutPanel9.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel9.Controls.Add(label17);
             flowLayoutPanel9.Controls.Add(_tinhTrang);
-            flowLayoutPanel9.Location = new Point(417, 98);
+            flowLayoutPanel9.Location = new Point(424, 98);
             flowLayoutPanel9.Margin = new Padding(2);
             flowLayoutPanel9.Name = "flowLayoutPanel9";
             flowLayoutPanel9.Size = new Size(164, 25);
@@ -469,7 +468,7 @@
             // 
             flowLayoutPanel8.AutoSize = true;
             flowLayoutPanel8.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel8.Location = new Point(417, 69);
+            flowLayoutPanel8.Location = new Point(424, 69);
             flowLayoutPanel8.Margin = new Padding(2);
             flowLayoutPanel8.Name = "flowLayoutPanel8";
             flowLayoutPanel8.Size = new Size(0, 0);
@@ -489,10 +488,9 @@
             // 
             // btnXacNhan
             // 
-            btnXacNhan.Dock = DockStyle.Left;
-            btnXacNhan.Location = new Point(418, 267);
+            btnXacNhan.Location = new Point(425, 244);
             btnXacNhan.Name = "btnXacNhan";
-            btnXacNhan.Size = new Size(95, 29);
+            btnXacNhan.Size = new Size(105, 36);
             btnXacNhan.TabIndex = 8;
             btnXacNhan.Tag = "green";
             btnXacNhan.Text = "Xác nhận";
@@ -505,7 +503,7 @@
             Controls.Add(label1);
             Controls.Add(tableLayoutPanel2);
             Name = "GUI_XacNhanDangTuyen";
-            Size = new Size(844, 597);
+            Size = new Size(844, 412);
             flowLayoutPanel3.ResumeLayout(false);
             flowLayoutPanel3.PerformLayout();
             flowLayoutPanel4.ResumeLayout(false);
@@ -562,12 +560,12 @@
         private FlowLayoutPanel flowLayoutPanel2;
         private Label label3;
         private Label _soNgayDangTuyen;
-        private Button btnQuayLai;
         private FlowLayoutPanel flowLayoutPanel9;
         private Label label17;
         private Label _tinhTrang;
         private FlowLayoutPanel flowLayoutPanel8;
         private FlowLayoutPanel flowLayoutPanel5;
+        private Button btnQuayLai;
         private Button btnXacNhan;
     }
 }

@@ -84,6 +84,7 @@ namespace GUI
                 var dnHienTai = (dsDN.DataSource as List<DTO_DoanhNghiep>)![e.RowIndex];
                 var lsUD = Ctrler_XemThongTinDoanhNghiep.LayDanhSachUuDai(dnHienTai.MaDN);
                 dsUD.DataSource = lsUD;
+                dsUD.Columns["MaChienLuoc"].Visible = false;
             }
         }
     }
