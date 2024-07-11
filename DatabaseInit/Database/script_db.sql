@@ -189,19 +189,19 @@ go
 -------------INSERT-------------
 -- Insert   TAIKHOAN
 INSERT INTO TAIKHOAN (TenTaiKhoan, MatKhau, VaiTro) VALUES
-('NV01', 'NV01', N'Nhân viên nghiệp vụ'),
-('NV02', 'NV02', N'Nhân viên tiếp nhận'),
-('NV03', 'NV03', N'Nhân viên thanh toán'),
-('NV04', 'NV04', N'Ban lãnh đạo'),
-('NV05', 'NV05', N'Nhân viên thanh toán'),
-('UV01', '123', N'Ứng viên'),
-('UV02', '111', N'Ứng viên'),
-('UV03', '555', N'Ứng viên'),
-('DN01', 'DN1', N'Doanh nghiệp'),
-('DN02', 'DN2', N'Doanh nghiệp'),
-('UV04', '222', N'Ứng viên'),
-('DN03', 'DN3', N'Doanh nghiệp'),
-('DN04', 'DN4', N'Doanh nghiệp');
+('nvnv', 'nvnv', N'Nhân viên nghiệp vụ'),
+('nvtn', 'nvtn', N'Nhân viên tiếp nhận'),
+('nvtt', 'nvtt', N'Nhân viên thanh toán'),
+('bld', 'bld', N'Ban lãnh đạo'),
+
+('uv1', 'uv1', N'Ứng viên'),
+('uv2', 'uv2', N'Ứng viên'),
+('uv3', 'uv3', N'Ứng viên'),
+('dn1', 'dn1', N'Doanh nghiệp'),
+('dn2', 'dn2', N'Doanh nghiệp'),
+('uv4', 'uv4', N'Ứng viên'),
+('dn3', 'dn3', N'Doanh nghiệp'),
+('dn4', 'dn4', N'Doanh nghiệp');
 GO
 
 SELECT * FROM TAIKHOAN;
@@ -220,37 +220,35 @@ GO
 go
 -- Insert   UNGVIEN
 INSERT INTO UNGVIEN (MaUngVien, TenUngVien, DiaChi,Email, TenTaiKhoan) VALUES
-('082203564448', N'Hoàng Văn Thụ', N'Xã Hương Trạch-Huyện Hương Khê-Tỉnh Hà Tĩnh','HVThuCV@gmailcom', 'UV01'),
-('082203564879', N'Đỗ Kim Hoàng', N'Xã Tân Trung-Huyện Phú Tân-Tỉnh An Giang','DKimHoangCV@gmailcom', 'UV02'),
-('082203656888', N'Vũ Văn Khánh', N'Xã Hòa Sơn-Huyện Krông Bông-Tỉnh Đắk Lắk', 'VuKhanhCV@gmailcom','UV03'),
-('082203666558', N'Ngô Thành Khánh Sơn', N'Xã Giao Xuân-Huyện Giao Thủy-Tỉnh Nam Định','NgKhnhSonCV@gmailcom', 'UV04');
+('082203564448', N'Hoàng Văn Thụ', N'Xã Hương Trạch-Huyện Hương Khê-Tỉnh Hà Tĩnh','HVThuCV@gmailcom', 'uv1'),
+('082203564879', N'Đỗ Kim Hoàng', N'Xã Tân Trung-Huyện Phú Tân-Tỉnh An Giang','DKimHoangCV@gmailcom', 'uv2'),
+('082203656888', N'Vũ Văn Khánh', N'Xã Hòa Sơn-Huyện Krông Bông-Tỉnh Đắk Lắk', 'VuKhanhCV@gmailcom','uv3'),
+('082203666558', N'Ngô Thành Khánh Sơn', N'Xã Giao Xuân-Huyện Giao Thủy-Tỉnh Nam Định','NgKhnhSonCV@gmailcom', 'uv4');
 GO
 select * from ungvien;
 go
 -- Insert   DOANHNGHIEP
 INSERT INTO DOANHNGHIEP (TenDoanhNghiep, MaSoThue, NguoiDaiDien, DiaChi, Email, TrangThai, NgayDK, TenTaiKhoan) VALUES
-( N'Công ty Thành Công', '1234567890', N'Nguyễn Văn Ích', N'Phường Trần Phú-Thành phố Hà Giang-Tỉnh Hà Giang', 'abc@example.com', N'Không hợp lệ', '2023-01-01', 'DN01'),
-( N'Công ty Thái Hà', '0987654321', N'Trần Thị Hà', N'Thị trấn Bình Minh-Huyện Kim Sơn-Tỉnh Ninh Bình', 'xyz@example.com', N'Hợp lệ', '2023-02-01', 'DN02'),
-( N'Công ty Phát Phú', '1122334455', N'Hoàng Văn Khánh', N'Phường Liễu Giai-Quận Ba Đình-Thành phố Hà Nội', 'def@example.com', N'Tiềm năng', '2023-03-01', 'DN03'),
-( N'Công ty Hoàng Văn', '2233445566', N'Vũ Thị Lệ', N'Xã Tân Phong-Huyện Kiến Thuỵ-Thành phố Hải Phòng', 'ghi@example.com', N'Chưa xác thực', '2023-04-01', 'DN04');
+( N'Công ty Thành Công', '1234567890', N'Nguyễn Văn Ích', N'Phường Trần Phú-Thành phố Hà Giang-Tỉnh Hà Giang', 'abc@example.com', N'Không hợp lệ', '2024-07-10', 'dn1'),
+( N'Công ty Thái Hà', '0987654321', N'Trần Thị Hà', N'Thị trấn Bình Minh-Huyện Kim Sơn-Tỉnh Ninh Bình', 'xyz@example.com', N'Hợp lệ', '2023-02-01', 'dn2'),
+( N'Công ty Phát Phú', '1122334455', N'Hoàng Văn Khánh', N'Phường Liễu Giai-Quận Ba Đình-Thành phố Hà Nội', 'def@example.com', N'Tiềm năng', '2023-03-01', 'dn3'),
+( N'Công ty Hoàng Văn', '2233445566', N'Vũ Thị Lệ', N'Xã Tân Phong-Huyện Kiến Thuỵ-Thành phố Hải Phòng', 'ghi@example.com', N'Chưa xác thực', '2023-04-01', 'dn4');
 GO
 select * from DOANHNGHIEP;
 go
 
 -- Insert   CHIENLUOCUUDAI
 INSERT INTO CHIENLUOCUUDAI (TenChienLuoc, MoTa) VALUES
-(N'Chiến lược 1', N'Mô tả chiến lược 1'),
-(N'Chiến lược 2', N'Mô tả chiến lược 2'),
-(N'Chiến lược 3', N'Mô tả chiến lược 3'),
-(N'Chiến lược 4', N'Mô tả chiến lược 4'),
-(N'Chiến lược 5', N'Mô tả chiến lược 5');
+(N'Giảm giá 5%', N'Tất cả hoá đơn sẽ được giảm giá 5% cho doanh nghiệp sở hữu ưu đãi này'),
+(N'Giảm giá 10%', N'Tất cả hoá đơn sẽ được giảm giá 10% cho doanh nghiệp sở hữu ưu đãi này'),
+(N'Giảm giá 20%', N'Tất cả hoá đơn sẽ được giảm giá 20% cho doanh nghiệp sở hữu ưu đãi này')
 GO
 select * from CHIENLUOCUUDAI;
 go
 -- Insert   CT_CLUD
-INSERT INTO CT_CLUD (MaChienLuoc, MaDoanhNghiep) VALUES
-(2, 2),
-(3,3);
+--INSERT INTO CT_CLUD (MaChienLuoc, MaDoanhNghiep) VALUES
+--(2, 2),
+--(3,3);
 GO
 select * from CT_CLUD;
 go
@@ -263,11 +261,11 @@ select * from HINHTHUCDANGTUYEN;
 go
 -- Insert   THONGTINDANGTUYEN
 INSERT INTO THONGTINDANGTUYEN (MaDN, SoNgayDT, MaHTDT, ThoiGianDangTuyen, TINHTRANG, TRANGTHAI, TenViTri, SoLuong, YeuCau) VALUES
-(1, 1, 'HT001', '2024-7-5' , N'Chưa đăng tuyển', N'Chưa xét duyệt', N'Dev,BA,TEST', 3, N'Biết lập trình Java'),
-(2, 1, 'HT001', '2024-7-5', N'Đã đăng tuyển', N'Hợp lệ', N'Kế toán', 2,N'Tốt nghiệp đại học chuyên ngành kế toán'),
-(3, 1, 'HT001', '2024-7-5', N'Chưa đăng tuyển', N'Chưa xét duyệt', N'Thực tập sinh', 5, N'Sinh viên năm cuối'),
-(2, 1, 'HT001', '2024-7-5', N'Chưa đăng tuyển', N'Chưa xét duyệt', N'Nhà thiết kế đồ họa', 1, N'Sử dụng thành thạo Photoshop'),
-(4, 1, 'HT001', '2024-6-5', N'Đã đăng tuyển', N'Hợp lệ', N'Quản lý dự án', 2, N'Kinh nghiệm 3 năm trong quản lý dự án'),
+(2, 364, 'HT001', '2023-7-14' , N'Chưa đăng tuyển', N'Chưa xét duyệt', N'Dev,BA,TEST', 3, N'Biết lập trình Java'),
+(2, 4, 'HT001', '2024-7-10', N'Đã đăng tuyển', N'Hợp lệ', N'Kế toán', 2,N'Tốt nghiệp đại học chuyên ngành kế toán'),
+(3, 6, 'HT001', '2024-7-5', N'Chưa đăng tuyển', N'Chưa xét duyệt', N'Thực tập sinh', 5, N'Sinh viên năm cuối'),
+(3, 1, 'HT001', '2024-7-5', N'Chưa đăng tuyển', N'Chưa xét duyệt', N'Nhà thiết kế đồ họa', 1, N'Sử dụng thành thạo Photoshop'),
+(2, 1, 'HT001', '2024-6-5', N'Đã đăng tuyển', N'Hợp lệ', N'Quản lý dự án', 2, N'Kinh nghiệm 3 năm trong quản lý dự án'),
 (2, 1, 'HT001', '2024-6-5', N'Đã đăng tuyển', N'Hợp lệ', N'Chuyên viên tư vấn', 3, N'Có kỹ năng giao tiếp tốt');
 go
 INSERT INTO HOADON (MaTTDT, TongTien, CachThuc, TrangThai, NgayLap) VALUES
@@ -278,10 +276,10 @@ select * from HOADON;
 go
 -- Insert   HS_CT_BC
 INSERT INTO HS_CT_BC (MaUngVien, TenCTBC) VALUES
-( '082203564448', N'Chứng chỉ CCNA  Cisco Certified Network Associate'),
-( '082203656888', N'Chứng chỉ CCIE  Cisco Certified Internetwork Expert'),
-( '082203656888', N'Chứng chỉ CISA  Certified Information Systems Auditor'),
-( '082203564448', N'Chứng chỉ CISSP  Certified Information Systems Security Professional');
+( '082203564448', N'Bằng cử nhân CNTT Đại học Khoa học Tự nhiên'),
+( '082203656888', N'IELTS 9.0'),
+( '082203656888', N'TOEIC 650'),
+( '082203564448', N'Chứng chỉ hành nghề sư phạm Toán học');
 GO
 select * from HS_CT_BC;
 go

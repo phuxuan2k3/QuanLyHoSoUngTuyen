@@ -13,7 +13,12 @@ public class BUS_ThongTinDangTuyen
         var lsTTDTSapHetHan = lsTTDT.Where(ttdt =>
         {
             var ngayHetHan = ttdt.ThoiGianDangTuyen.AddDays(ttdt.SoNgayDangTuyen);
-            return Math.Abs((ngayHetHan - DateTime.Now).TotalDays) < 3.0;
+            var soNgayConLai = (ngayHetHan - DateTime.Now).TotalDays;
+            if (soNgayConLai > 0)
+            {
+                return soNgayConLai < 3.0;
+            }
+            return false;
         }).ToList();
         return lsTTDTSapHetHan;
     }

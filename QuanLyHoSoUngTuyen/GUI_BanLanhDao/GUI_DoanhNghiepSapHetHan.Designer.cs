@@ -151,7 +151,6 @@
             Controls.Add(tableLayoutPanel1);
             Name = "GUI_DoanhNghiepSapHetHan";
             Size = new Size(1203, 395);
-            Load += GUI_DoanhNghiepSapHetHan_Load;
             ((System.ComponentModel.ISupportInitialize)dsKetQuaUngTuyen).EndInit();
             ((System.ComponentModel.ISupportInitialize)dsDNHetHan).EndInit();
             tableLayoutPanel1.ResumeLayout(false);

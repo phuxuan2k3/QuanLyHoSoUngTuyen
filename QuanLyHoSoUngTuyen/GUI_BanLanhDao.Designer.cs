@@ -85,7 +85,6 @@
             Controls.Add(pnContent);
             Name = "GUI_BanLanhDao";
             Text = "GUI_BanLanhDao_Base";
-            Load += GUI_BanLanhDao_Load;
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
