@@ -138,7 +138,7 @@ public class DAO_ThongTinDangTuyen
 
 	public static List<DTO_ThongTinDangTuyen> LayDSTTDTCanDangTuyen()
 	{
-		string query = $@"select * from {tableName} where TINHTRANG = N'Hợp lệ' AND TRANGTHAI <> N'Đã đăng tuyển'";
+		string query = $@"select THONGTINDANGTUYEN.MATTDT,THOIGIANDANGTUYEN,MADN,MAHTDT,SONGAYDT,THONGTINDANGTUYEN.TRANGTHAI,TINHTRANG,TENVITRI,SOLUONG,YEUCAU from THONGTINDANGTUYEN , HOADON where HOADON.MATTDT = THONGTINDANGTUYEN.MATTDT and HOADON.TRANGTHAI = N'Đã thanh toán hoàn tất' and THONGTINDANGTUYEN.TRANGTHAI = N'Hợp lệ' and THONGTINDANGTUYEN.TINHTRANG <> N'Đã đăng tuyển'";
 		DataTable dataTable = new DataTable();
 		dataTable = SqlSingleton.Instance.ExecuteQuery(query);
 		List<DTO_ThongTinDangTuyen> ds = new List<DTO_ThongTinDangTuyen>();
