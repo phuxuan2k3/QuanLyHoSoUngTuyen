@@ -2,14 +2,35 @@
 using DAO.Exceptions;
 using DTO;
 using System.Data.SqlClient;
+using Utilis;
 
 namespace Ctrler.NhanVienThanhToan
 {
 	public class Ctrler_DanhSachHoaDonDangTuyen
 	{
-		public void Load(ref List<DTO_HoaDon> hoaDons)
+		private List<DTO_HoaDon_TenViTri_TenDoanhNghiep> dsHoaDon_TenViTri_TenDoanhNghiep;
+
+		public Ctrler_DanhSachHoaDonDangTuyen()
 		{
-			hoaDons = BUS_HoaDon.LayTatCaChuaThanhToan();
+			this.dsHoaDon_TenViTri_TenDoanhNghiep = new();
+		}
+
+		public void Load(ref List<DTO_HoaDon_TenViTri_TenDoanhNghiep> hoaDon_TenViTris)
+		{
+			hoaDon_TenViTris = BUS_HoaDon.LayTatCa_ChuaThanhToan_HopLe();
+			this.dsHoaDon_TenViTri_TenDoanhNghiep = hoaDon_TenViTris;
+		}
+
+		public List<DTO_HoaDon_TenViTri_TenDoanhNghiep> LocKetQua(string tenViTri, string tenDoanhNghiep)
+		{
+			return dsHoaDon_TenViTri_TenDoanhNghiep.Where((x) =>
+			{
+				var destTenViTri = x.TenViTri.RemoveVietnameseAccent().ToLower().Trim();
+				var destTenDoanhNghiep = x.TenDN.RemoveVietnameseAccent().ToLower().Trim();
+				var srcTenViTri = tenViTri.RemoveVietnameseAccent().ToLower().Trim();
+				var srcTenDoanhNghiep = tenDoanhNghiep.RemoveVietnameseAccent().ToLower().Trim();
+				return destTenViTri.Contains(srcTenViTri) && destTenDoanhNghiep.Contains(srcTenDoanhNghiep);
+			}).ToList();
 		}
 
 		public DTO_HoaDon? TruyVanHoaDon(string maTTDT)
