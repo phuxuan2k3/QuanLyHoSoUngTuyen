@@ -52,7 +52,7 @@ namespace GUI.UserControls
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
 			saveFileDialog.Filter = "PDF Files|*.pdf";
 			saveFileDialog.Title = "Save a PDF File";
-			saveFileDialog.FileName = "document.pdf";
+			saveFileDialog.FileName = "bill.pdf";
 
 			if (saveFileDialog.ShowDialog() == DialogResult.OK)
 			{

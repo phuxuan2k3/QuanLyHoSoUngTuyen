@@ -1,7 +1,5 @@
 ﻿using DTO;
 using iText.IO.Font;
-using iText.IO.Font.Constants;
-using iText.Kernel.Exceptions;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
