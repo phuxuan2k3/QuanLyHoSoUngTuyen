@@ -48,7 +48,7 @@
             dsDN.Name = "dsDN";
             dsDN.RowHeadersWidth = 51;
             dsDN.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dsDN.Size = new Size(596, 353);
+            dsDN.Size = new Size(489, 353);
             dsDN.TabIndex = 0;
             dsDN.CellClick += dsDN_CellClick;
             // 
@@ -57,7 +57,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(147, -1);
+            label1.Location = new Point(58, -1);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(279, 31);
@@ -69,7 +69,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(628, 0);
+            label2.Location = new Point(530, 10);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(81, 31);
@@ -79,7 +79,7 @@
             // radChuaXacThuc
             // 
             radChuaXacThuc.AutoSize = true;
-            radChuaXacThuc.Location = new Point(739, 44);
+            radChuaXacThuc.Location = new Point(601, 49);
             radChuaXacThuc.Name = "radChuaXacThuc";
             radChuaXacThuc.Size = new Size(123, 24);
             radChuaXacThuc.TabIndex = 3;
@@ -91,7 +91,7 @@
             // radKhongHopLe
             // 
             radKhongHopLe.AutoSize = true;
-            radKhongHopLe.Location = new Point(739, 74);
+            radKhongHopLe.Location = new Point(601, 79);
             radKhongHopLe.Name = "radKhongHopLe";
             radKhongHopLe.Size = new Size(119, 24);
             radKhongHopLe.TabIndex = 4;
@@ -103,7 +103,7 @@
             // radHopLe
             // 
             radHopLe.AutoSize = true;
-            radHopLe.Location = new Point(739, 104);
+            radHopLe.Location = new Point(601, 109);
             radHopLe.Name = "radHopLe";
             radHopLe.Size = new Size(75, 24);
             radHopLe.TabIndex = 5;
@@ -115,7 +115,7 @@
             // radTiemNang
             // 
             radTiemNang.AutoSize = true;
-            radTiemNang.Location = new Point(739, 134);
+            radTiemNang.Location = new Point(601, 139);
             radTiemNang.Name = "radTiemNang";
             radTiemNang.Size = new Size(100, 24);
             radTiemNang.TabIndex = 6;
@@ -128,10 +128,10 @@
             // 
             dsUD.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dsUD.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dsUD.Location = new Point(628, 213);
+            dsUD.Location = new Point(530, 213);
             dsUD.Name = "dsUD";
             dsUD.RowHeadersWidth = 51;
-            dsUD.Size = new Size(452, 184);
+            dsUD.Size = new Size(370, 184);
             dsUD.TabIndex = 7;
             // 
             // label3
@@ -139,12 +139,12 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(628, 169);
+            label3.Location = new Point(530, 166);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(316, 31);
+            label3.Size = new Size(203, 31);
             label3.TabIndex = 8;
-            label3.Text = "Danh sách chiến lược ưu đãi";
+            label3.Text = "Chiến lược ưu đãi";
             // 
             // GUI_XemThongTinDoanhNghiep
             // 
@@ -160,7 +160,7 @@
             Controls.Add(label1);
             Controls.Add(dsDN);
             Name = "GUI_XemThongTinDoanhNghiep";
-            Size = new Size(1094, 412);
+            Size = new Size(917, 412);
             ((System.ComponentModel.ISupportInitialize)dsDN).EndInit();
             ((System.ComponentModel.ISupportInitialize)dsUD).EndInit();
             ResumeLayout(false);

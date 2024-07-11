@@ -67,7 +67,7 @@
             // 
             // dsDNHetHan
             // 
-            dsDNHetHan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dsDNHetHan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dsDNHetHan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dsDNHetHan.Location = new Point(3, 83);
             dsDNHetHan.Name = "dsDNHetHan";
