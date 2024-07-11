@@ -62,7 +62,6 @@ public partial class GUI_DuyetPhieuDangKy_DN : UserControl
 		{
 			// Cập nhật thông tin phiếu đăng ký
 			Ctrler_ChiTietThongTinDangTuyen.CapNhatThongTinPhieuDangKy(ttpdk);
-			GUI_DuyetPhieuDangKy_ChiTietThongTinDangTuyen.doUuTien = ttpdk.UuTien;
 			MessageBox.Show("Lưu thay đổi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 			// Lấy lại chi tiết thông tin đăng tuyển
@@ -91,7 +90,7 @@ public partial class GUI_DuyetPhieuDangKy_DN : UserControl
 				row.Cells["_trangThai"].Value = pdk.TrangThai;
 				row.Cells["_uuTien"].Value = pdk.UuTien == int.MaxValue ? "" : pdk.UuTien.ToString(); // Hiển thị giá trị ưu tiên nếu có
 			}
-
+            
 			// Hiển thị nội dung đã cập nhật
 			GUI_DoanhNghiep.Instance.SwitchContent(content);
 		}

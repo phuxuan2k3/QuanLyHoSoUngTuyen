@@ -152,7 +152,7 @@ public class DAO_ThongTinDangTuyen
 
 	public static List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenChoDNDuyet()
 	{
-		string query = "SELECT MATTDT,MADN,SoLuong FROM THONGTINDANGTUYEN " +
+		string query = "SELECT MATTDT,TENVITRI,SoLuong FROM THONGTINDANGTUYEN " +
 			"WHERE SOLUONG <= (SELECT COUNT(*) FROM PHIEUDANGKYUNGTUYEN WHERE PHIEUDANGKYUNGTUYEN.MATTDT = THONGTINDANGTUYEN.MATTDT and TRANGTHAI In (N'Đã xử lý',N'Đạt',N'Không đạt'))";
 
 		DataTable dataTable = new DataTable();
@@ -165,7 +165,7 @@ public class DAO_ThongTinDangTuyen
 			DTO_DuyetPhieuDangKy_ThongTinDangTuyen ttdt = new DTO_DuyetPhieuDangKy_ThongTinDangTuyen
 			{
 				MaTTDT = row["MATTDT"].ToString(),
-				MaDN = row["MADN"].ToString(),
+				TenViTri = row["TENVITRI"].ToString(),
 				SoLuong = Convert.ToInt32(row["SoLuong"]),
 			};
 
@@ -175,10 +175,11 @@ public class DAO_ThongTinDangTuyen
 	}
 	public static List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> LayDSThongTinDangTuyenDuyetPDK()
 	{
-		string query = "SELECT MATTDT,MADN,SoLuong FROM THONGTINDANGTUYEN " +
-			"WHERE SOLUONG <= (SELECT COUNT(*) FROM PHIEUDANGKYUNGTUYEN WHERE PHIEUDANGKYUNGTUYEN.MATTDT = THONGTINDANGTUYEN.MATTDT )";
+		string query = "SELECT t.MATTDT,d.TenDoanhNghiep,t.TENVITRI,t.SOLUONG FROM THONGTINDANGTUYEN t, doanhnghiep d " +
+            "WHERE t.SOLUONG <= (SELECT COUNT(*) FROM PHIEUDANGKYUNGTUYEN WHERE PHIEUDANGKYUNGTUYEN.MATTDT = t.MATTDT ) and t.MADN = d.MaDoanhNghiep\r\n";
 
-		DataTable dataTable = new DataTable();
+
+        DataTable dataTable = new DataTable();
 		dataTable = SqlSingleton.Instance.ExecuteQuery(query);
 
 		List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen> ds = new List<DTO_DuyetPhieuDangKy_ThongTinDangTuyen>();
@@ -187,9 +188,10 @@ public class DAO_ThongTinDangTuyen
 		{
 			DTO_DuyetPhieuDangKy_ThongTinDangTuyen ttdt = new DTO_DuyetPhieuDangKy_ThongTinDangTuyen
 			{
-				MaTTDT = row["MATTDT"].ToString(),
-				MaDN = row["MADN"].ToString(),
-				SoLuong = Convert.ToInt32(row["SoLuong"]),
+				MaTTDT = row["MaTTDT"].ToString(),
+				TenDoanhNghiep = row["TenDoanhNghiep"].ToString(),
+                TenViTri = row["TenViTri"].ToString(),
+                SoLuong = Convert.ToInt32(row["SoLuong"]),
 			};
 
 			ds.Add(ttdt);
