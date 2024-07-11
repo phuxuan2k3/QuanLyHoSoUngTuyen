@@ -40,6 +40,7 @@ namespace GUI
 			_SoLuong.Text = ttdt.SoLuong.ToString();
 			_YeuCau.Text = ttdt.YeuCau;
 			_MoTa.Text = ttdt.TinhTrang.ToString();
+           
 			foreach (var pdk in ttpdk)
 			{
 				int rowId = dsPhieuDangKy.Rows.Add();
@@ -47,7 +48,6 @@ namespace GUI
 				row.Cells["_maUV"].Value = pdk.MaUV;
 				row.Cells["_trangThai"].Value = pdk.TrangThai;
 				row.Cells["_uuTien"].Value = pdk.UuTien;
-
 			}
 
 		}

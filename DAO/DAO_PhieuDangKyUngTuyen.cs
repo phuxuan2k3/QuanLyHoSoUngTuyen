@@ -85,7 +85,8 @@ namespace DAO
                 p.MAUV,
                 p.TRANGTHAI,
                 STRING_AGG(b.TENCTBC, ', ') AS BangCap,
-                t.TENVITRI
+                t.TENVITRI,
+                p.DOUUTIEN
             FROM 
                 PHIEUDANGKYUNGTUYEN p
             JOIN 
@@ -99,6 +100,8 @@ namespace DAO
             GROUP BY 
                 p.MAUV,
                 p.TRANGTHAI,
+                p.DOUUTIEN,
+
                 t.TENVITRI";
 
 
@@ -125,7 +128,7 @@ namespace DAO
         }
         public static void CapNhatThongTinPhieuDangKy(DTO_ThongTinHoSo ttpdk)
         {
-            string query = "UPDATE PHIEUDANGKYUNGTUYEN SET TRANGTHAI = @TrangThai WHERE MATTDT = @MaTTDT AND MAUV = @MaUV and DOUUTIEN = @Uutien";
+            string query = "UPDATE PHIEUDANGKYUNGTUYEN SET TRANGTHAI = @TrangThai, DOUUTIEN = @Uutien WHERE MATTDT = @MaTTDT AND MAUV = @MaUV ";
 
             using (SqlCommand cmd = new SqlCommand(query, SqlSingleton.Instance.Connection))
             {
