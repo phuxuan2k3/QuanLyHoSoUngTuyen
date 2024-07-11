@@ -21,6 +21,22 @@ public class DAO_HoaDon
 		return htdt;
 	}
 
+	// Alias HD cho HOADON, TTDT cho THONGTINDANGTUYEN
+	private static DTO_HoaDon_TenViTri_TenDoanhNghiep RowConvert_TTDT(DataRow row)
+	{
+		DTO_HoaDon_TenViTri_TenDoanhNghiep htdt = new DTO_HoaDon_TenViTri_TenDoanhNghiep
+		{
+			MaTTDT = row["MATTDT"].ToString()!,
+			TongTien = row.IsNull("TONGTIEN") ? -1 : Convert.ToSingle(row["TONGTIEN"]),
+			CachThucThanhToan = row["CACHTHUC"].ToString()!.ToCachThucThanhToan(),
+			TrangThaiThanhToan = row["TRANGTHAI"].ToString()!.ToTrangThaiThanhToan(),
+			NgayLap = row.IsNull("TONGTIEN") ? DateTime.MinValue : (DateTime)row["NGAYLAP"],
+			TenViTri = row["TENVITRI"].ToString()!,
+			TenDN = row["TENDOANHNGHIEP"].ToString()!,
+		};
+		return htdt;
+	}
+
 	public static DTO_HoaDon? Lay(string maTTDT)
 	{
 		var query = @$"SELECT * FROM {tableName} WHERE MATTDT = @MaTTDT";
@@ -32,14 +48,14 @@ public class DAO_HoaDon
 		return RowConvert(data.Rows[0]);
 	}
 
-	public static List<DTO_HoaDon> LayTatCaChuaThanhToan()
+	public static List<DTO_HoaDon_TenViTri_TenDoanhNghiep> LayTatCa_ChuaThanhToan_HopLe()
 	{
-		var query = $@"SELECT * FROM {tableName} WHERE TRANGTHAI IN (N'Chưa thanh toán', N'Chưa thanh toán hoàn tất')";
+		var query = $@"SELECT * FROM {tableName} HD JOIN THONGTINDANGTUYEN TTDT ON HD.MATTDT = TTDT.MATTDT JOIN DOANHNGHIEP DN ON DN.MADOANHNGHIEP = TTDT.MADN WHERE HD.TRANGTHAI IN (N'Chưa thanh toán', N'Chưa thanh toán hoàn tất') AND TTDT.TRANGTHAI = N'Hợp lệ'";
 		var data = SqlSingleton.Instance.ExecuteQuery(query);
-		var dtos = new List<DTO_HoaDon>();
+		var dtos = new List<DTO_HoaDon_TenViTri_TenDoanhNghiep>();
 		foreach (DataRow row in data.Rows)
 		{
-			dtos.Add(RowConvert(row));
+			dtos.Add(RowConvert_TTDT(row));
 		}
 		return dtos;
 	}

@@ -27,26 +27,26 @@ namespace GUI.UserControls
 			DTO_HinhThucDangTuyen hinhThucDangTuyen = new();
 			float tongTien = -1;
 			bool coTheThanhToanNhieuDot = true;
-			_thanhToanToanBo.Checked = true;
+			rbtnThanhToanToanBo.Checked = true;
 			ctrler_XacNhanThanhToan.Load(ref thongTinDangTuyen, ref hinhThucDangTuyen, ref tongTien, ref coTheThanhToanNhieuDot);
 			_soNgayDangTuyen.Text = thongTinDangTuyen.SoNgayDangTuyen.ToString();
 			_hinhThucDangTuyen.Text = hinhThucDangTuyen.TenHinhThuc;
 			_tongChiPhi.Text = tongTien.ToVNDString();
 			if (!coTheThanhToanNhieuDot)
 			{
-				_thanhToanThanhNhieuDot.Hide();
+				rbtnThanhToanThanhNhieuDot.Hide();
 			}
 		}
 
 		private void btnXacNhan_Click(object sender, EventArgs e)
 		{
-			if (_thanhToanThanhNhieuDot.Checked || _thanhToanToanBo.Checked)
+			if (rbtnThanhToanThanhNhieuDot.Checked || rbtnThanhToanToanBo.Checked)
 			{
-				if (_thanhToanThanhNhieuDot.Checked)
+				if (rbtnThanhToanThanhNhieuDot.Checked)
 				{
 					Ctrler.XacNhanThanhToan(CachThucThanhToan.NhieuDot);
 				}
-				else if (_thanhToanToanBo.Checked)
+				else if (rbtnThanhToanToanBo.Checked)
 				{
 					Ctrler.XacNhanThanhToan(CachThucThanhToan.ToanBo);
 				}

@@ -15,9 +15,9 @@ public class BUS_HoaDon
 		return DAO_ChiTietHoaDon.LayTatCaCuaHoaDon(maTTDT);
 	}
 
-	public static List<DTO_HoaDon> LayTatCaChuaThanhToan()
+	public static List<DTO_HoaDon_TenViTri_TenDoanhNghiep> LayTatCa_ChuaThanhToan_HopLe()
 	{
-		return DAO_HoaDon.LayTatCaChuaThanhToan();
+		return DAO_HoaDon.LayTatCa_ChuaThanhToan_HopLe();
 	}
 
 	public static void Them(DTO_HoaDon hoaDon)

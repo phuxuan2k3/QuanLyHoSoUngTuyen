@@ -82,10 +82,10 @@
             flowLayoutPanel3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel3.Controls.Add(label5);
             flowLayoutPanel3.Controls.Add(_thoiGianDangTuyen);
-            flowLayoutPanel3.Location = new Point(36, 98);
+            flowLayoutPanel3.Location = new Point(44, 108);
             flowLayoutPanel3.Margin = new Padding(2);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(257, 25);
+            flowLayoutPanel3.Size = new Size(266, 25);
             flowLayoutPanel3.TabIndex = 2;
             // 
             // label5
@@ -103,10 +103,10 @@
             // 
             _thoiGianDangTuyen.Anchor = AnchorStyles.Left;
             _thoiGianDangTuyen.AutoSize = true;
-            _thoiGianDangTuyen.Location = new Point(205, 2);
+            _thoiGianDangTuyen.Location = new Point(205, 0);
             _thoiGianDangTuyen.Margin = new Padding(2, 0, 2, 0);
             _thoiGianDangTuyen.Name = "_thoiGianDangTuyen";
-            _thoiGianDangTuyen.Size = new Size(50, 20);
+            _thoiGianDangTuyen.Size = new Size(59, 25);
             _thoiGianDangTuyen.TabIndex = 1;
             _thoiGianDangTuyen.Text = "label3";
             // 
@@ -116,10 +116,10 @@
             flowLayoutPanel4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel4.Controls.Add(label7);
             flowLayoutPanel4.Controls.Add(_hinhThuc);
-            flowLayoutPanel4.Location = new Point(36, 127);
+            flowLayoutPanel4.Location = new Point(44, 137);
             flowLayoutPanel4.Margin = new Padding(2);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Size = new Size(160, 25);
+            flowLayoutPanel4.Size = new Size(169, 25);
             flowLayoutPanel4.TabIndex = 2;
             // 
             // label7
@@ -137,10 +137,10 @@
             // 
             _hinhThuc.Anchor = AnchorStyles.Left;
             _hinhThuc.AutoSize = true;
-            _hinhThuc.Location = new Point(108, 2);
+            _hinhThuc.Location = new Point(108, 0);
             _hinhThuc.Margin = new Padding(2, 0, 2, 0);
             _hinhThuc.Name = "_hinhThuc";
-            _hinhThuc.Size = new Size(50, 20);
+            _hinhThuc.Size = new Size(59, 25);
             _hinhThuc.TabIndex = 1;
             _hinhThuc.Text = "label3";
             // 
@@ -150,10 +150,10 @@
             flowLayoutPanel7.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel7.Controls.Add(label13);
             flowLayoutPanel7.Controls.Add(_trangThai);
-            flowLayoutPanel7.Location = new Point(417, 40);
+            flowLayoutPanel7.Location = new Point(521, 50);
             flowLayoutPanel7.Margin = new Padding(2);
             flowLayoutPanel7.Name = "flowLayoutPanel7";
-            flowLayoutPanel7.Size = new Size(162, 25);
+            flowLayoutPanel7.Size = new Size(171, 25);
             flowLayoutPanel7.TabIndex = 4;
             // 
             // label13
@@ -171,10 +171,10 @@
             // 
             _trangThai.Anchor = AnchorStyles.Left;
             _trangThai.AutoSize = true;
-            _trangThai.Location = new Point(110, 2);
+            _trangThai.Location = new Point(110, 0);
             _trangThai.Margin = new Padding(2, 0, 2, 0);
             _trangThai.Name = "_trangThai";
-            _trangThai.Size = new Size(50, 20);
+            _trangThai.Size = new Size(59, 25);
             _trangThai.TabIndex = 1;
             _trangThai.Text = "label3";
             // 
@@ -204,10 +204,10 @@
             // 
             _soLuong.Anchor = AnchorStyles.Left;
             _soLuong.AutoSize = true;
-            _soLuong.Location = new Point(99, 2);
+            _soLuong.Location = new Point(99, 0);
             _soLuong.Margin = new Padding(2, 0, 2, 0);
             _soLuong.Name = "_soLuong";
-            _soLuong.Size = new Size(50, 20);
+            _soLuong.Size = new Size(59, 25);
             _soLuong.TabIndex = 1;
             _soLuong.Text = "label3";
             // 
@@ -217,10 +217,10 @@
             flowLayoutPanel12.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel12.Controls.Add(label4);
             flowLayoutPanel12.Controls.Add(_yeuCau);
-            flowLayoutPanel12.Location = new Point(36, 214);
+            flowLayoutPanel12.Location = new Point(44, 224);
             flowLayoutPanel12.Margin = new Padding(2);
             flowLayoutPanel12.Name = "flowLayoutPanel12";
-            flowLayoutPanel12.Size = new Size(140, 25);
+            flowLayoutPanel12.Size = new Size(149, 25);
             flowLayoutPanel12.TabIndex = 7;
             // 
             // label4
@@ -238,10 +238,10 @@
             // 
             _yeuCau.Anchor = AnchorStyles.Left;
             _yeuCau.AutoSize = true;
-            _yeuCau.Location = new Point(88, 2);
+            _yeuCau.Location = new Point(88, 0);
             _yeuCau.Margin = new Padding(2, 0, 2, 0);
             _yeuCau.Name = "_yeuCau";
-            _yeuCau.Size = new Size(50, 20);
+            _yeuCau.Size = new Size(59, 25);
             _yeuCau.TabIndex = 1;
             _yeuCau.Text = "label3";
             // 
@@ -250,9 +250,10 @@
             flowLayoutPanel10.Controls.Add(label6);
             flowLayoutPanel10.Controls.Add(_TenDN);
             flowLayoutPanel10.Dock = DockStyle.Bottom;
-            flowLayoutPanel10.Location = new Point(37, 3);
+            flowLayoutPanel10.Location = new Point(46, 4);
+            flowLayoutPanel10.Margin = new Padding(4, 4, 4, 4);
             flowLayoutPanel10.Name = "flowLayoutPanel10";
-            flowLayoutPanel10.Size = new Size(375, 32);
+            flowLayoutPanel10.Size = new Size(469, 40);
             flowLayoutPanel10.TabIndex = 9;
             // 
             // label6
@@ -270,10 +271,10 @@
             // 
             _TenDN.Anchor = AnchorStyles.Left;
             _TenDN.AutoSize = true;
-            _TenDN.Location = new Point(176, 2);
+            _TenDN.Location = new Point(176, 0);
             _TenDN.Margin = new Padding(2, 0, 2, 0);
             _TenDN.Name = "_TenDN";
-            _TenDN.Size = new Size(50, 20);
+            _TenDN.Size = new Size(59, 25);
             _TenDN.TabIndex = 2;
             _TenDN.Text = "label3";
             // 
@@ -283,10 +284,10 @@
             flowLayoutPanel6.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel6.Controls.Add(label11);
             flowLayoutPanel6.Controls.Add(_soLuong);
-            flowLayoutPanel6.Location = new Point(36, 185);
+            flowLayoutPanel6.Location = new Point(44, 195);
             flowLayoutPanel6.Margin = new Padding(2);
             flowLayoutPanel6.Name = "flowLayoutPanel6";
-            flowLayoutPanel6.Size = new Size(151, 25);
+            flowLayoutPanel6.Size = new Size(160, 25);
             flowLayoutPanel6.TabIndex = 3;
             // 
             // label1
@@ -305,10 +306,10 @@
             // 
             _tenViTri.Anchor = AnchorStyles.Left;
             _tenViTri.AutoSize = true;
-            _tenViTri.Location = new Point(97, 2);
+            _tenViTri.Location = new Point(97, 0);
             _tenViTri.Margin = new Padding(2, 0, 2, 0);
             _tenViTri.Name = "_tenViTri";
-            _tenViTri.Size = new Size(50, 20);
+            _tenViTri.Size = new Size(59, 25);
             _tenViTri.TabIndex = 1;
             _tenViTri.Text = "label3";
             // 
@@ -331,7 +332,7 @@
             tableLayoutPanel2.Controls.Add(flowLayoutPanel12, 1, 7);
             tableLayoutPanel2.Controls.Add(flowLayoutPanel10, 1, 0);
             tableLayoutPanel2.Controls.Add(btnXacNhan, 2, 9);
-            tableLayoutPanel2.Location = new Point(41, 85);
+            tableLayoutPanel2.Location = new Point(51, 106);
             tableLayoutPanel2.Margin = new Padding(2);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 11;
@@ -343,10 +344,10 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 151F));
-            tableLayoutPanel2.Size = new Size(765, 487);
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 189F));
+            tableLayoutPanel2.Size = new Size(956, 609);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // flowLayoutPanel1
@@ -355,10 +356,10 @@
             flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.Controls.Add(label2);
             flowLayoutPanel1.Controls.Add(_maTTDT);
-            flowLayoutPanel1.Location = new Point(36, 40);
+            flowLayoutPanel1.Location = new Point(44, 50);
             flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(152, 25);
+            flowLayoutPanel1.Size = new Size(161, 25);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // label2
@@ -376,10 +377,10 @@
             // 
             _maTTDT.Anchor = AnchorStyles.Left;
             _maTTDT.AutoSize = true;
-            _maTTDT.Location = new Point(100, 2);
+            _maTTDT.Location = new Point(100, 0);
             _maTTDT.Margin = new Padding(2, 0, 2, 0);
             _maTTDT.Name = "_maTTDT";
-            _maTTDT.Size = new Size(50, 20);
+            _maTTDT.Size = new Size(59, 25);
             _maTTDT.TabIndex = 1;
             _maTTDT.Text = "label3";
             // 
@@ -389,10 +390,10 @@
             flowLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel2.Controls.Add(label3);
             flowLayoutPanel2.Controls.Add(_soNgayDangTuyen);
-            flowLayoutPanel2.Location = new Point(36, 69);
+            flowLayoutPanel2.Location = new Point(44, 79);
             flowLayoutPanel2.Margin = new Padding(2);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(245, 25);
+            flowLayoutPanel2.Size = new Size(254, 25);
             flowLayoutPanel2.TabIndex = 2;
             // 
             // label3
@@ -410,10 +411,10 @@
             // 
             _soNgayDangTuyen.Anchor = AnchorStyles.Left;
             _soNgayDangTuyen.AutoSize = true;
-            _soNgayDangTuyen.Location = new Point(193, 2);
+            _soNgayDangTuyen.Location = new Point(193, 0);
             _soNgayDangTuyen.Margin = new Padding(2, 0, 2, 0);
             _soNgayDangTuyen.Name = "_soNgayDangTuyen";
-            _soNgayDangTuyen.Size = new Size(50, 20);
+            _soNgayDangTuyen.Size = new Size(59, 25);
             _soNgayDangTuyen.TabIndex = 1;
             _soNgayDangTuyen.Text = "label3";
             // 
@@ -421,10 +422,10 @@
             // 
             btnQuayLai.AutoSize = true;
             btnQuayLai.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnQuayLai.Location = new Point(36, 266);
+            btnQuayLai.Location = new Point(44, 282);
             btnQuayLai.Margin = new Padding(2);
             btnQuayLai.Name = "btnQuayLai";
-            btnQuayLai.Size = new Size(73, 30);
+            btnQuayLai.Size = new Size(86, 35);
             btnQuayLai.TabIndex = 0;
             btnQuayLai.Tag = "blue";
             btnQuayLai.Text = "Quay lại";
@@ -437,10 +438,10 @@
             flowLayoutPanel9.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel9.Controls.Add(label17);
             flowLayoutPanel9.Controls.Add(_tinhTrang);
-            flowLayoutPanel9.Location = new Point(417, 98);
+            flowLayoutPanel9.Location = new Point(521, 108);
             flowLayoutPanel9.Margin = new Padding(2);
             flowLayoutPanel9.Name = "flowLayoutPanel9";
-            flowLayoutPanel9.Size = new Size(164, 25);
+            flowLayoutPanel9.Size = new Size(173, 25);
             flowLayoutPanel9.TabIndex = 2;
             // 
             // label17
@@ -458,10 +459,10 @@
             // 
             _tinhTrang.Anchor = AnchorStyles.Left;
             _tinhTrang.AutoSize = true;
-            _tinhTrang.Location = new Point(112, 2);
+            _tinhTrang.Location = new Point(112, 0);
             _tinhTrang.Margin = new Padding(2, 0, 2, 0);
             _tinhTrang.Name = "_tinhTrang";
-            _tinhTrang.Size = new Size(50, 20);
+            _tinhTrang.Size = new Size(59, 25);
             _tinhTrang.TabIndex = 1;
             _tinhTrang.Text = "label3";
             // 
@@ -469,7 +470,7 @@
             // 
             flowLayoutPanel8.AutoSize = true;
             flowLayoutPanel8.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel8.Location = new Point(417, 69);
+            flowLayoutPanel8.Location = new Point(521, 79);
             flowLayoutPanel8.Margin = new Padding(2);
             flowLayoutPanel8.Name = "flowLayoutPanel8";
             flowLayoutPanel8.Size = new Size(0, 0);
@@ -481,18 +482,19 @@
             flowLayoutPanel5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel5.Controls.Add(label9);
             flowLayoutPanel5.Controls.Add(_tenViTri);
-            flowLayoutPanel5.Location = new Point(36, 156);
+            flowLayoutPanel5.Location = new Point(44, 166);
             flowLayoutPanel5.Margin = new Padding(2);
             flowLayoutPanel5.Name = "flowLayoutPanel5";
-            flowLayoutPanel5.Size = new Size(149, 25);
+            flowLayoutPanel5.Size = new Size(158, 25);
             flowLayoutPanel5.TabIndex = 2;
             // 
             // btnXacNhan
             // 
             btnXacNhan.Dock = DockStyle.Left;
-            btnXacNhan.Location = new Point(418, 267);
+            btnXacNhan.Location = new Point(523, 284);
+            btnXacNhan.Margin = new Padding(4, 4, 4, 4);
             btnXacNhan.Name = "btnXacNhan";
-            btnXacNhan.Size = new Size(95, 29);
+            btnXacNhan.Size = new Size(119, 41);
             btnXacNhan.TabIndex = 8;
             btnXacNhan.Tag = "green";
             btnXacNhan.Text = "Xác nhận";
@@ -500,12 +502,13 @@
             // 
             // GUI_XacNhanDangTuyen
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
             Controls.Add(tableLayoutPanel2);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "GUI_XacNhanDangTuyen";
-            Size = new Size(844, 597);
+            Size = new Size(1055, 746);
             flowLayoutPanel3.ResumeLayout(false);
             flowLayoutPanel3.PerformLayout();
             flowLayoutPanel4.ResumeLayout(false);

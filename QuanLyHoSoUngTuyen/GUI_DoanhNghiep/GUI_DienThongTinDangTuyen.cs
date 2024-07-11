@@ -26,44 +26,44 @@ namespace GUI.UserControls
 			var thongTinDangTuyen = new DTO_ThongTinDangTuyen();
 			var hinhThucDangTuyen = new List<DTO_HinhThucDangTuyen>();
 			Ctrler.Load(ref thongTinDangTuyen, ref hinhThucDangTuyen);
-			_soNgayDangTuyen.Value = thongTinDangTuyen.SoNgayDangTuyen;
-			_hinhThucDangTuyen.DataSource = hinhThucDangTuyen;
-			_hinhThucDangTuyen.ValueMember = "MaHTDT";
-			_hinhThucDangTuyen.DisplayMember = "TenHinhThuc";
+			nudSoNgayDangTuyen.Value = thongTinDangTuyen.SoNgayDangTuyen;
+			cbbHinhThucDangTuyen.DataSource = hinhThucDangTuyen;
+			cbbHinhThucDangTuyen.ValueMember = "MaHTDT";
+			cbbHinhThucDangTuyen.DisplayMember = "TenHinhThuc";
 			var httdIndex = hinhThucDangTuyen.FindIndex(x => x.MaHTDT == thongTinDangTuyen.MaHTDT);
-			_hinhThucDangTuyen.SelectedIndex = httdIndex == -1 ? 0 : httdIndex;
-			_hinhThucDangTuyen.DropDownStyle = ComboBoxStyle.DropDownList;
-			_thoiGianDangTuyen.MinDate = DateTime.Now.AddDays(1).Date;
-			_thoiGianDangTuyen.Value = thongTinDangTuyen.ThoiGianDangTuyen;
-			_tenViTri.Text = thongTinDangTuyen.TenViTri;
-			_soLuong.Value = thongTinDangTuyen.SoLuong;
-			_yeuCau.Text = thongTinDangTuyen.YeuCau;
+			cbbHinhThucDangTuyen.SelectedIndex = httdIndex == -1 ? 0 : httdIndex;
+			cbbHinhThucDangTuyen.DropDownStyle = ComboBoxStyle.DropDownList;
+			dtpThoiGianDangTuyen.MinDate = DateTime.Now.AddDays(1).Date;
+			dtpThoiGianDangTuyen.Value = thongTinDangTuyen.ThoiGianDangTuyen;
+			txtTenViTri.Text = thongTinDangTuyen.TenViTri;
+			nudSoLuong.Value = thongTinDangTuyen.SoLuong;
+			txtYeuCau.Text = thongTinDangTuyen.YeuCau;
 		}
 
 		private void btnXacNhan_Click(object sender, EventArgs e)
 		{
 			var errorTitle = "Thông tin không hợp lệ";
-			if (_soNgayDangTuyen.Value < 1)
+			if (nudSoNgayDangTuyen.Value < 1)
 			{
 				MessageBox.Show("Số ngày đăng tuyển phải lớn hơn hoặc bằng 1.", errorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			else if (_soLuong.Value < 1)
+			else if (nudSoLuong.Value < 1)
 			{
 				MessageBox.Show("Số lượng ứng tuyển phải lớn hơn hoặc bằng 1.", errorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			else if (_thoiGianDangTuyen.Value < DateTime.Now.AddDays(1).Date)
+			else if (dtpThoiGianDangTuyen.Value < DateTime.Now.AddDays(1).Date)
 			{
 				MessageBox.Show($"Thời gian đăng tuyển ít nhất là từ ngày mai. ({DateTime.Now.AddDays(1).Date:dd/MM/yyyy})", errorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			else if (_hinhThucDangTuyen.SelectedValue == null)
+			else if (cbbHinhThucDangTuyen.SelectedValue == null)
 			{
 				MessageBox.Show($"Chưa chọn hình thức đăng tuyển.", errorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			else if (string.IsNullOrEmpty(_tenViTri.Text) == true)
+			else if (string.IsNullOrEmpty(txtTenViTri.Text) == true)
 			{
 				MessageBox.Show($"Tên vị trí không được để trống.", errorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			else if (string.IsNullOrEmpty(_yeuCau.Text) == true)
+			else if (string.IsNullOrEmpty(txtYeuCau.Text) == true)
 			{
 				MessageBox.Show($"Yêu cầu cho vị trí không được để trống.", errorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
@@ -72,12 +72,12 @@ namespace GUI.UserControls
 				DTO_ThongTinDangTuyen thongTinDangTuyen = new DTO_ThongTinDangTuyen(
 					"",
 					GUI_DoanhNghiep.Instance.MaDN,
-					(int)_soNgayDangTuyen.Value,
-					_hinhThucDangTuyen.SelectedValue.ToString() ?? throw new Exception("Invalid HinhThucDangTuyen"),
-					_thoiGianDangTuyen.Value,
-					_tenViTri.Text,
-					(int)_soLuong.Value,
-					_yeuCau.Text
+					(int)nudSoNgayDangTuyen.Value,
+					cbbHinhThucDangTuyen.SelectedValue.ToString() ?? throw new Exception("Invalid HinhThucDangTuyen"),
+					dtpThoiGianDangTuyen.Value,
+					txtTenViTri.Text,
+					(int)nudSoLuong.Value,
+					txtYeuCau.Text
 					);
 				var gui = new GUI_XacNhanThanhToan();
 				var ctrler = new Ctrler_XacNhanThanhToan(thongTinDangTuyen);

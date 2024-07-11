@@ -29,9 +29,9 @@ public partial class GUI_HieuChinhThongTinDangTuyen : UserControl
 		_soNgayDangTuyen.Text = ttdt.SoNgayDangTuyen.ToString();
 		_hinhThucDangTuyen.Text = htdt.TenHinhThuc;
 		_thoiGianDangTuyen.Text = ttdt.ThoiGianDangTuyen.ToDateString();
-		_tenViTri.Text = ttdt.TenViTri;
-		_soLuong.Value = ttdt.SoLuong;
-		_yeuCau.Text = ttdt.YeuCau;
+		txtTenViTri.Text = ttdt.TenViTri;
+		nudSoLuong.Value = ttdt.SoLuong;
+		txtYeuCau.Text = ttdt.YeuCau;
 		if (ttdt.ThoiGianDangTuyen.AddDays(3) < DateTime.Today)
 		{
 			MessageBox.Show($@"Thông tin đăng tuyển đã quá hạn hiệu chỉnh ({ttdt.ThoiGianDangTuyen.ToDateString()} - {ttdt.ThoiGianDangTuyen.AddDays(3).ToDateString()})", "Quá hạn hiệu chỉnh", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -47,15 +47,15 @@ public partial class GUI_HieuChinhThongTinDangTuyen : UserControl
 	private void btnXacNhan_Click(object sender, EventArgs e)
 	{
 		var errorTitle = "Thông tin không hợp lệ";
-		if (string.IsNullOrEmpty(_tenViTri.Text) == true)
+		if (string.IsNullOrEmpty(txtTenViTri.Text) == true)
 		{
 			MessageBox.Show($"Tên vị trí không được để trống.", errorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
-		else if (_soLuong.Value < 1)
+		else if (nudSoLuong.Value < 1)
 		{
 			MessageBox.Show("Số lượng ứng tuyển phải lớn hơn hoặc bằng 1.", errorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
-		else if (string.IsNullOrEmpty(_yeuCau.Text) == true)
+		else if (string.IsNullOrEmpty(txtYeuCau.Text) == true)
 		{
 			MessageBox.Show($"Yêu cầu cho vị trí không được để trống.", errorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
@@ -65,9 +65,9 @@ public partial class GUI_HieuChinhThongTinDangTuyen : UserControl
 			if (res == DialogResult.Yes)
 			{
 				DTO_ThongTinDangTuyen thongTinDangTuyen = new DTO_ThongTinDangTuyen(
-					tenViTri: _tenViTri.Text,
-					soLuong: (int)_soLuong.Value,
-					yeuCau: _yeuCau.Text
+					tenViTri: txtTenViTri.Text,
+					soLuong: (int)nudSoLuong.Value,
+					yeuCau: txtYeuCau.Text
 					);
 				Ctrler.XacNhanHieuChinh(thongTinDangTuyen);
 				MessageBox.Show($"Đã gửi yêu cầu hiệu chỉnh đến hệ thống.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
