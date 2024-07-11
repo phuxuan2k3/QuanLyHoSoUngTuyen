@@ -163,18 +163,19 @@
 			txtMaTTDT.Anchor = AnchorStyles.Left | AnchorStyles.Right;
 			txtMaTTDT.Location = new Point(223, 3);
 			txtMaTTDT.Name = "txtMaTTDT";
-			txtMaTTDT.Size = new Size(503, 31);
+			txtMaTTDT.Size = new Size(552, 31);
 			txtMaTTDT.TabIndex = 4;
+			txtMaTTDT.KeyDown += txtMaTTDT_KeyDown;
 			// 
 			// btnTraCuu
 			// 
-			btnTraCuu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			btnTraCuu.Anchor = AnchorStyles.Right;
 			btnTraCuu.AutoSize = true;
 			btnTraCuu.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-			btnTraCuu.Location = new Point(734, 0);
+			btnTraCuu.Location = new Point(817, 1);
 			btnTraCuu.Margin = new Padding(5, 0, 0, 0);
 			btnTraCuu.Name = "btnTraCuu";
-			btnTraCuu.Size = new Size(161, 37);
+			btnTraCuu.Size = new Size(78, 35);
 			btnTraCuu.TabIndex = 5;
 			btnTraCuu.Tag = "blue";
 			btnTraCuu.Text = "Tra cứu";
@@ -186,11 +187,11 @@
 			label3.Anchor = AnchorStyles.Right;
 			label3.AutoSize = true;
 			label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Italic);
-			label3.Location = new Point(732, 396);
+			label3.Location = new Point(781, 396);
 			label3.Name = "label3";
-			label3.Size = new Size(160, 25);
+			label3.Size = new Size(111, 25);
 			label3.TabIndex = 6;
-			label3.Text = "Đơn vị: 1.000 VND";
+			label3.Text = "Đơn vị: VND";
 			// 
 			// GUI_DanhSachHoaDonDangTuyen
 			// 

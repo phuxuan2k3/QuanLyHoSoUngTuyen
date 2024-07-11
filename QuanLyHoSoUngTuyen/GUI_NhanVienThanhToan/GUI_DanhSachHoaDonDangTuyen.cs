@@ -1,4 +1,5 @@
 ﻿using Ctrler.NhanVienThanhToan;
+using DAO.Exceptions;
 using DTO;
 using GUI.GUIException;
 using Utilis;
@@ -39,12 +40,39 @@ public partial class GUI_DanhSachHoaDonDangTuyen : UserControl
 
 	private void dsHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
 	{
+		if (dsHoaDon.CurrentCell == null || dsHoaDon.CurrentCell.Value == null || e.RowIndex == -1)
+		{
+			return;
+		}
 		if (dsHoaDon.Rows[e.RowIndex].Cells["_maTTDT"].Value is string maTTDT)
+		{
+			ChiTiet(maTTDT);
+		}
+	}
+
+	private void btnTraCuu_Click(object sender, EventArgs e)
+	{
+		var maTTDT = txtMaTTDT.Text;
+		ChiTiet(maTTDT);
+	}
+
+	private void txtMaTTDT_KeyDown(object sender, KeyEventArgs e)
+	{
+		if (e.KeyCode == Keys.Enter)
+		{
+			var maTTDT = txtMaTTDT.Text;
+			ChiTiet(maTTDT);
+		}
+	}
+
+	private void ChiTiet(string maTTDT)
+	{
+		try
 		{
 			var hoaDon = Ctrler.TruyVanHoaDon(maTTDT);
 			if (hoaDon == null)
 			{
-				MessageBox.Show($"Không tìm thấy hóa đơn \"{maTTDT}\"", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				MessageBox.Show($"Không tìm thấy hóa đơn \"{maTTDT}\"", "Không tìm thấy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 			else if (hoaDon.TrangThaiThanhToan == TrangThaiThanhToan.DaThanhToanHoanTat)
 			{
@@ -62,30 +90,10 @@ public partial class GUI_DanhSachHoaDonDangTuyen : UserControl
 				GUI_NhanVienThanhToan.Instance.SwitchContent(gui);
 			}
 		}
-	}
-
-	private void btnTraCuu_Click(object sender, EventArgs e)
-	{
-		var maTTDT = txtMaTTDT.Text;
-		var hoaDon = Ctrler.TruyVanHoaDon(maTTDT);
-		if (hoaDon == null)
+		catch (QueryException ex)
 		{
-			MessageBox.Show($"Không tìm thấy hóa đơn \"{maTTDT}\"", "Không tìm thấy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			MessageBox.Show($"{ex.Message}", "Try vấn hóa đơn không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
-		else if (hoaDon.TrangThaiThanhToan == TrangThaiThanhToan.DaThanhToanHoanTat)
-		{
-			MessageBox.Show($"Hóa đơn \"{maTTDT}\" đã thanh toán", "Đã thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Information);
-		}
-		else
-		{
-			DTO_ThongTinDangTuyen thongTinDangTuyen = new();
-			List<DTO_ChiTietHoaDon> chiTietHoaDons = new();
-			DTO_DoanhNghiep doanhNghiep = new();
-			Ctrler.LoadChiTietHoaDon(maTTDT, ref thongTinDangTuyen, ref chiTietHoaDons, ref doanhNghiep);
-			var gui = new GUI_DongPhiChoHoaDon();
-			var ctrler = new Ctrler_DongPhiChoHoaDon(thongTinDangTuyen, hoaDon, doanhNghiep, chiTietHoaDons);
-			gui.HienThi(ctrler!);
-			GUI_NhanVienThanhToan.Instance.SwitchContent(gui);
-		}
+		
 	}
 }
