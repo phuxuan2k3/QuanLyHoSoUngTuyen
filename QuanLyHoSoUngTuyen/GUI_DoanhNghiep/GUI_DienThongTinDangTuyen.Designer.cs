@@ -155,13 +155,13 @@
             tableLayoutPanel6.Controls.Add(flowLayoutPanel2, 0, 0);
             tableLayoutPanel6.Controls.Add(tableLayoutPanel5, 0, 1);
             tableLayoutPanel6.Dock = DockStyle.Fill;
-            tableLayoutPanel6.Location = new Point(361, 378);
+            tableLayoutPanel6.Location = new Point(361, 376);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 3;
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
             tableLayoutPanel6.RowStyles.Add(new RowStyle());
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel6.Size = new Size(558, 104);
+            tableLayoutPanel6.Size = new Size(558, 106);
             tableLayoutPanel6.TabIndex = 7;
             // 
             // flowLayoutPanel2
@@ -169,7 +169,7 @@
             flowLayoutPanel2.Anchor = AnchorStyles.Right;
             flowLayoutPanel2.AutoSize = true;
             flowLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel2.Location = new Point(555, 21);
+            flowLayoutPanel2.Location = new Point(555, 22);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(0, 0);
             flowLayoutPanel2.TabIndex = 0;
@@ -185,7 +185,7 @@
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
             tableLayoutPanel5.Controls.Add(btnXacNhan, 0, 0);
             tableLayoutPanel5.Controls.Add(btnHuy, 2, 0);
-            tableLayoutPanel5.Location = new Point(287, 46);
+            tableLayoutPanel5.Location = new Point(287, 47);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new RowStyle());
@@ -225,7 +225,7 @@
             // 
             label3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(108, 55);
+            label3.Location = new Point(108, 56);
             label3.Margin = new Padding(6);
             label3.Name = "label3";
             label3.Size = new Size(244, 28);
@@ -236,7 +236,7 @@
             // 
             label4.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(108, 101);
+            label4.Location = new Point(108, 102);
             label4.Margin = new Padding(6);
             label4.Name = "label4";
             label4.Size = new Size(244, 28);
@@ -247,7 +247,7 @@
             // 
             label5.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new Point(108, 148);
+            label5.Location = new Point(108, 147);
             label5.Margin = new Padding(6);
             label5.Name = "label5";
             label5.Size = new Size(244, 28);
@@ -258,7 +258,7 @@
             // 
             label6.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new Point(108, 195);
+            label6.Location = new Point(108, 193);
             label6.Margin = new Padding(6);
             label6.Name = "label6";
             label6.Size = new Size(244, 28);
@@ -269,7 +269,7 @@
             // 
             label7.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label7.AutoSize = true;
-            label7.Location = new Point(108, 241);
+            label7.Location = new Point(108, 239);
             label7.Margin = new Padding(6);
             label7.Name = "label7";
             label7.Size = new Size(244, 28);
@@ -280,7 +280,7 @@
             // 
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label8.AutoSize = true;
-            label8.Location = new Point(108, 284);
+            label8.Location = new Point(108, 282);
             label8.Margin = new Padding(6);
             label8.Name = "label8";
             label8.Size = new Size(244, 28);
@@ -290,7 +290,7 @@
             // txtTenViTri
             // 
             txtTenViTri.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtTenViTri.Location = new Point(364, 192);
+            txtTenViTri.Location = new Point(364, 190);
             txtTenViTri.Margin = new Padding(6);
             txtTenViTri.Name = "txtTenViTri";
             txtTenViTri.Size = new Size(552, 34);
@@ -299,7 +299,7 @@
             // txtYeuCau
             // 
             txtYeuCau.Dock = DockStyle.Fill;
-            txtYeuCau.Location = new Point(364, 284);
+            txtYeuCau.Location = new Point(364, 282);
             txtYeuCau.Margin = new Padding(6);
             txtYeuCau.Multiline = true;
             txtYeuCau.Name = "txtYeuCau";
@@ -311,7 +311,7 @@
             dtpThoiGianDangTuyen.CustomFormat = "dd/MM/yyyy";
             dtpThoiGianDangTuyen.Dock = DockStyle.Fill;
             dtpThoiGianDangTuyen.Format = DateTimePickerFormat.Custom;
-            dtpThoiGianDangTuyen.Location = new Point(364, 98);
+            dtpThoiGianDangTuyen.Location = new Point(364, 99);
             dtpThoiGianDangTuyen.Margin = new Padding(6);
             dtpThoiGianDangTuyen.MinDate = new DateTime(2024, 6, 30, 11, 18, 56, 0);
             dtpThoiGianDangTuyen.Name = "dtpThoiGianDangTuyen";
@@ -322,7 +322,7 @@
             // nudSoNgayDangTuyen
             // 
             nudSoNgayDangTuyen.Dock = DockStyle.Fill;
-            nudSoNgayDangTuyen.Location = new Point(364, 52);
+            nudSoNgayDangTuyen.Location = new Point(364, 53);
             nudSoNgayDangTuyen.Margin = new Padding(6);
             nudSoNgayDangTuyen.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             nudSoNgayDangTuyen.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
@@ -334,8 +334,10 @@
             // cbbHinhThucDangTuyen
             // 
             cbbHinhThucDangTuyen.Dock = DockStyle.Fill;
+            cbbHinhThucDangTuyen.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbbHinhThucDangTuyen.FlatStyle = FlatStyle.Flat;
             cbbHinhThucDangTuyen.FormattingEnabled = true;
-            cbbHinhThucDangTuyen.Location = new Point(364, 144);
+            cbbHinhThucDangTuyen.Location = new Point(364, 145);
             cbbHinhThucDangTuyen.Margin = new Padding(6);
             cbbHinhThucDangTuyen.Name = "cbbHinhThucDangTuyen";
             cbbHinhThucDangTuyen.Size = new Size(552, 36);
@@ -344,7 +346,7 @@
             // nudSoLuong
             // 
             nudSoLuong.Dock = DockStyle.Fill;
-            nudSoLuong.Location = new Point(364, 238);
+            nudSoLuong.Location = new Point(364, 236);
             nudSoLuong.Margin = new Padding(6);
             nudSoLuong.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             nudSoLuong.Minimum = new decimal(new int[] { 1, 0, 0, 0 });

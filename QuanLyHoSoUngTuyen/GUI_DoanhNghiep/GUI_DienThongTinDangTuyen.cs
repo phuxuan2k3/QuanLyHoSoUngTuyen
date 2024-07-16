@@ -32,7 +32,6 @@ namespace GUI.UserControls
 			cbbHinhThucDangTuyen.DisplayMember = "TenHinhThuc";
 			var httdIndex = hinhThucDangTuyen.FindIndex(x => x.MaHTDT == thongTinDangTuyen.MaHTDT);
 			cbbHinhThucDangTuyen.SelectedIndex = httdIndex == -1 ? 0 : httdIndex;
-			cbbHinhThucDangTuyen.DropDownStyle = ComboBoxStyle.DropDownList;
 			dtpThoiGianDangTuyen.MinDate = DateTime.Now.AddDays(1).Date;
 			dtpThoiGianDangTuyen.Value = thongTinDangTuyen.ThoiGianDangTuyen;
 			txtTenViTri.Text = thongTinDangTuyen.TenViTri;
