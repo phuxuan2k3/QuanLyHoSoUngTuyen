@@ -10,7 +10,7 @@ namespace GUI;
 
 public partial class GUI_DoanhNghiep : Form
 {
-	public DTO_DoanhNghiep doanhNghiep = new();
+	private DTO_DoanhNghiep doanhNghiep = new();
 	public DTO_DoanhNghiep DoanhNghiep
 	{
 		get => doanhNghiep;
