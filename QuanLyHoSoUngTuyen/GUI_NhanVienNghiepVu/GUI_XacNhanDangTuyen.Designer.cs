@@ -345,7 +345,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 16F));
-            tableLayoutPanel2.Size = new Size(612, 260);
+            tableLayoutPanel2.Size = new Size(612, 275);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // flowLayoutPanel1
@@ -491,7 +491,7 @@
             btnXacNhan.Location = new Point(340, 237);
             btnXacNhan.Margin = new Padding(2);
             btnXacNhan.Name = "btnXacNhan";
-            btnXacNhan.Size = new Size(84, 29);
+            btnXacNhan.Size = new Size(108, 38);
             btnXacNhan.TabIndex = 8;
             btnXacNhan.Tag = "green";
             btnXacNhan.Text = "Xác nhận";

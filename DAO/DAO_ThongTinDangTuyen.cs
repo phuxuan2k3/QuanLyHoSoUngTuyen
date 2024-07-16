@@ -241,7 +241,7 @@ public class DAO_ThongTinDangTuyen
 
     public static List<DTO_ThongTinHoSo> DanhSachHoSo(string maTTDT)
     {
-        string query = "SELECT \r\n    p.MAUV,\r\n    u.TenUngVien,\r\n    p.TRANGTHAI \r\nFROM \r\n    PHIEUDANGKYUNGTUYEN p\r\nJOIN \r\n    UNGVIEN u ON p.MAUV = u.MaUngVien\r\nWHERE \r\n  p.TRANGTHAI in( N'Đạt',N'Đã xử lý',N'Không đạt') and  p.MATTDT = " + maTTDT;
+        string query = "SELECT \r\n    p.MAUV,\r\n    u.TenUngVien,\r\n    p.TRANGTHAI \r\n, p.DOUUTIEN \r\n FROM \r\n    PHIEUDANGKYUNGTUYEN p\r\nJOIN \r\n    UNGVIEN u ON p.MAUV = u.MaUngVien\r\nWHERE \r\n  p.TRANGTHAI in( N'Đạt',N'Đã xử lý',N'Không đạt') and  p.MATTDT = " + maTTDT;
         DataTable dataTable = new DataTable();
         dataTable = SqlSingleton.Instance.ExecuteQuery(query);
 
@@ -252,7 +252,8 @@ public class DAO_ThongTinDangTuyen
             DTO_ThongTinHoSo phDK = new DTO_ThongTinHoSo
             {
                 MaUV = row["MAUV"].ToString(),
-                TrangThai = row["TRANGTHAI"].ToString()
+                TrangThai = row["TRANGTHAI"].ToString(),
+                UuTien = Convert.ToInt32(row.IsNull("DOUUTIEN") ? 0 : row["DOUUTIEN"])
             };
 
             dsPhDK.Add(phDK);

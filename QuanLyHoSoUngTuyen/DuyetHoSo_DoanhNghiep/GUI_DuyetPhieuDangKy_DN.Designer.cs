@@ -56,7 +56,7 @@
             lb1.Anchor = AnchorStyles.Left;
             lb1.AutoSize = true;
             lb1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            lb1.Location = new Point(113, 39);
+            lb1.Location = new Point(85, 39);
             lb1.Margin = new Padding(4, 0, 4, 0);
             lb1.Name = "lb1";
             lb1.Size = new Size(329, 37);
@@ -86,7 +86,7 @@
             cbxTinhTrang.Location = new Point(117, 4);
             cbxTinhTrang.Margin = new Padding(4);
             cbxTinhTrang.Name = "cbxTinhTrang";
-            cbxTinhTrang.Size = new Size(312, 36);
+            cbxTinhTrang.Size = new Size(282, 36);
             cbxTinhTrang.TabIndex = 23;
             // 
             // lbTinhTrang
@@ -104,11 +104,11 @@
             // _viTri
             // 
             _viTri.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            _viTri.Location = new Point(540, 4);
+            _viTri.Location = new Point(510, 4);
             _viTri.Margin = new Padding(4);
             _viTri.Name = "_viTri";
             _viTri.ReadOnly = true;
-            _viTri.Size = new Size(328, 34);
+            _viTri.Size = new Size(298, 34);
             _viTri.TabIndex = 12;
             // 
             // _MaUV
@@ -118,7 +118,7 @@
             _MaUV.Margin = new Padding(4);
             _MaUV.Name = "_MaUV";
             _MaUV.ReadOnly = true;
-            _MaUV.Size = new Size(328, 34);
+            _MaUV.Size = new Size(298, 34);
             _MaUV.TabIndex = 10;
             // 
             // _bangCap
@@ -130,14 +130,14 @@
             _bangCap.Multiline = true;
             _bangCap.Name = "_bangCap";
             _bangCap.ReadOnly = true;
-            _bangCap.Size = new Size(729, 143);
+            _bangCap.Size = new Size(669, 147);
             _bangCap.TabIndex = 10;
             // 
             // lbVtriUV
             // 
             lbVtriUV.Anchor = AnchorStyles.Left;
             lbVtriUV.AutoSize = true;
-            lbVtriUV.Location = new Point(475, 7);
+            lbVtriUV.Location = new Point(445, 7);
             lbVtriUV.Margin = new Padding(4, 0, 4, 0);
             lbVtriUV.Name = "lbVtriUV";
             lbVtriUV.Size = new Size(57, 28);
@@ -169,7 +169,7 @@
             // 
             btnHuy.Anchor = AnchorStyles.Right;
             btnHuy.BackColor = Color.Red;
-            btnHuy.Location = new Point(295, 93);
+            btnHuy.Location = new Point(265, 93);
             btnHuy.Margin = new Padding(4);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(134, 40);
@@ -191,10 +191,10 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.333333F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 41.6666679F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 41.6666679F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.333333F));
             tableLayoutPanel1.Controls.Add(lb1, 1, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 2);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 2, 3);
@@ -207,7 +207,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tableLayoutPanel1.Size = new Size(1099, 627);
+            tableLayoutPanel1.Size = new Size(982, 627);
             tableLayoutPanel1.TabIndex = 27;
             // 
             // tableLayoutPanel2
@@ -225,13 +225,13 @@
             tableLayoutPanel2.Controls.Add(_MaUV, 1, 0);
             tableLayoutPanel2.Controls.Add(lbVtriUV, 2, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(112, 199);
+            tableLayoutPanel2.Location = new Point(84, 199);
             tableLayoutPanel2.Margin = new Padding(3, 34, 3, 3);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.Size = new Size(872, 193);
+            tableLayoutPanel2.Size = new Size(812, 193);
             tableLayoutPanel2.TabIndex = 20;
             // 
             // tableLayoutPanel3
@@ -243,11 +243,11 @@
             tableLayoutPanel3.Controls.Add(button1, 0, 0);
             tableLayoutPanel3.Controls.Add(btnHuy, 2, 0);
             tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(551, 398);
+            tableLayoutPanel3.Location = new Point(493, 398);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
-            tableLayoutPanel3.Size = new Size(433, 226);
+            tableLayoutPanel3.Size = new Size(403, 226);
             tableLayoutPanel3.TabIndex = 21;
             // 
             // tableLayoutPanel4
@@ -260,11 +260,11 @@
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel4.Controls.Add(lbTinhTrang, 0, 0);
             tableLayoutPanel4.Controls.Add(cbxTinhTrang, 1, 0);
-            tableLayoutPanel4.Location = new Point(551, 118);
+            tableLayoutPanel4.Location = new Point(493, 118);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 1;
             tableLayoutPanel4.RowStyles.Add(new RowStyle());
-            tableLayoutPanel4.Size = new Size(433, 44);
+            tableLayoutPanel4.Size = new Size(403, 44);
             tableLayoutPanel4.TabIndex = 24;
             // 
             // GUI_DuyetPhieuDangKy_DN
@@ -276,7 +276,7 @@
             Font = new Font("Segoe UI", 12F);
             Margin = new Padding(4);
             Name = "GUI_DuyetPhieuDangKy_DN";
-            Size = new Size(1099, 627);
+            Size = new Size(982, 627);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);

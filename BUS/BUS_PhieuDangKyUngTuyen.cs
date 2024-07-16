@@ -65,5 +65,9 @@ public class BUS_PhieuDangKyUngTuyen
     public static void CapNhatThongTinPhieuDangKy(DTO_ThongTinHoSo ttpdk)
     {
         DAO_PhieuDangKyUngTuyen.CapNhatThongTinPhieuDangKy(ttpdk);
+    }   
+    public static void CapNhatThongTinPhieuDangKy_DN(DTO_ThongTinHoSo ttpdk)
+    {
+        DAO_PhieuDangKyUngTuyen.CapNhatThongTinPhieuDangKy_DoanhNghiep(ttpdk);
     }
 }

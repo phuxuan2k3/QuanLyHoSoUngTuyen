@@ -26,5 +26,9 @@ public class Ctrler_ChiTietThongTinDangTuyen
     public static void CapNhatThongTinPhieuDangKy(DTO_ThongTinHoSo ttpdk)
     {
          BUS_PhieuDangKyUngTuyen.CapNhatThongTinPhieuDangKy(ttpdk);
+    }    
+	public static void CapNhatThongTinPhieuDangKy_DN(DTO_ThongTinHoSo ttpdk)
+    {
+         BUS_PhieuDangKyUngTuyen.CapNhatThongTinPhieuDangKy_DN(ttpdk);
     }
 }
