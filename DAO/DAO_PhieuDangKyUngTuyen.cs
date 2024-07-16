@@ -66,7 +66,8 @@ namespace DAO
                 p.MAUV,
                 p.TRANGTHAI,
                 STRING_AGG(b.TENCTBC, ', ') AS BangCap,
-                t.TENVITRI
+                t.TENVITRI,
+                p.DOUUTIEN
             FROM 
                 PHIEUDANGKYUNGTUYEN p
             JOIN 
@@ -80,6 +81,8 @@ namespace DAO
             GROUP BY 
                 p.MAUV,
                 p.TRANGTHAI,
+                p.DOUUTIEN,
+
                 t.TENVITRI";
 
 
@@ -97,7 +100,7 @@ namespace DAO
             DTO_ThongTinHoSo phDK = new DTO_ThongTinHoSo(
                 row["MAUV"].ToString(),
                 maTTDT,
-                0,
+                Convert.ToInt32( row["DOUUTIEN"]),
                 row["TENVITRI"].ToString(),
                 row["BangCap"].ToString(),
                 row["TrangThai"].ToString());
@@ -106,7 +109,7 @@ namespace DAO
         }
         public static void CapNhatThongTinPhieuDangKy(DTO_ThongTinHoSo ttpdk)
         {
-            string query = "UPDATE PHIEUDANGKYUNGTUYEN SET TRANGTHAI = @TrangThai WHERE MATTDT = @MaTTDT " +
+            string query = "UPDATE PHIEUDANGKYUNGTUYEN SET TRANGTHAI = @TrangThai, DOUUTIEN = @Uutien WHERE MATTDT = @MaTTDT " +
                 "AND MAUV = @MaUV";
 
             SqlSingleton.Instance.ExecuteNonQuery(query, [
@@ -115,6 +118,7 @@ namespace DAO
                 new SqlParameter("MaUV", ttpdk.MaUV),
             new SqlParameter("Uutien", Convert.ToInt32(ttpdk.UuTien))
                 ]);
+           // string query = "UPDATE PHIEUDANGKYUNGTUYEN SET TRANGTHAI = @TrangThai, DOUUTIEN = @Uutien WHERE MATTDT = @MaTTDT AND MAUV = @MaUV ";
 
             //using (SqlCommand cmd = new SqlCommand(query, SqlSingleton.Instance.Connection))
             //{
