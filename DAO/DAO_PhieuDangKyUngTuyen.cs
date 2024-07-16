@@ -106,21 +106,29 @@ namespace DAO
         }
         public static void CapNhatThongTinPhieuDangKy(DTO_ThongTinHoSo ttpdk)
         {
-            string query = "UPDATE PHIEUDANGKYUNGTUYEN SET TRANGTHAI = @TrangThai WHERE MATTDT = @MaTTDT AND MAUV = @MaUV and DOUUTIEN = @Uutien";
+            string query = "UPDATE PHIEUDANGKYUNGTUYEN SET TRANGTHAI = @TrangThai WHERE MATTDT = @MaTTDT " +
+                "AND MAUV = @MaUV";
 
-            using (SqlCommand cmd = new SqlCommand(query, SqlSingleton.Instance.Connection))
-            {
-                cmd.Parameters.AddWithValue("@TrangThai", ttpdk.TrangThai.ToString());
-                cmd.Parameters.AddWithValue("@MaTTDT", Convert.ToInt32(ttpdk.MaTTDT));
-                cmd.Parameters.AddWithValue("@MaUV", ttpdk.MaUV);
-                cmd.Parameters.AddWithValue("@Uutien", Convert.ToInt32(ttpdk.UuTien));
+            SqlSingleton.Instance.ExecuteNonQuery(query, [
+                 new SqlParameter("TrangThai", ttpdk.TrangThai.ToString()),
+                new SqlParameter("MaTTDT", Convert.ToInt32(ttpdk.MaTTDT)),
+                new SqlParameter("MaUV", ttpdk.MaUV),
+            new SqlParameter("Uutien", Convert.ToInt32(ttpdk.UuTien))
+                ]);
+
+            //using (SqlCommand cmd = new SqlCommand(query, SqlSingleton.Instance.Connection))
+            //{
+            //    cmd.Parameters.AddWithValue("@TrangThai", ttpdk.TrangThai.ToString());
+            //    cmd.Parameters.AddWithValue("@MaTTDT", Convert.ToInt32(ttpdk.MaTTDT));
+            //    cmd.Parameters.AddWithValue("@MaUV", ttpdk.MaUV);
+            //    cmd.Parameters.AddWithValue("@Uutien", Convert.ToInt32(ttpdk.UuTien));
 
 
-                SqlSingleton.Instance.Connection.Open();
-                cmd.ExecuteNonQuery();
-                SqlSingleton.Instance.Connection.Close();
+            //    SqlSingleton.Instance.Connection.Open();
+            //    cmd.ExecuteNonQuery();
+            //    SqlSingleton.Instance.Connection.Close();
 
-            }
+            //}
         }
         public static List<DTO_UngVienDat> LayDanhSachUngVienDat(string maTTDT)
         {
