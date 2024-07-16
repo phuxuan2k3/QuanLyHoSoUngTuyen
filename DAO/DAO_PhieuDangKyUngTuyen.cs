@@ -100,7 +100,7 @@ namespace DAO
             DTO_ThongTinHoSo phDK = new DTO_ThongTinHoSo(
                 row["MAUV"].ToString(),
                 maTTDT,
-                Convert.ToInt32( row["DOUUTIEN"]),
+                Convert.ToInt32(row.IsNull("DOUUTIEN") ? 0 : row["DOUUTIEN"]),
                 row["TENVITRI"].ToString(),
                 row["BangCap"].ToString(),
                 row["TrangThai"].ToString());
@@ -118,7 +118,7 @@ namespace DAO
                 new SqlParameter("MaUV", ttpdk.MaUV),
             new SqlParameter("Uutien", Convert.ToInt32(ttpdk.UuTien))
                 ]);
-           // string query = "UPDATE PHIEUDANGKYUNGTUYEN SET TRANGTHAI = @TrangThai, DOUUTIEN = @Uutien WHERE MATTDT = @MaTTDT AND MAUV = @MaUV ";
+            // string query = "UPDATE PHIEUDANGKYUNGTUYEN SET TRANGTHAI = @TrangThai, DOUUTIEN = @Uutien WHERE MATTDT = @MaTTDT AND MAUV = @MaUV ";
 
             //using (SqlCommand cmd = new SqlCommand(query, SqlSingleton.Instance.Connection))
             //{
