@@ -1,9 +1,6 @@
 ﻿using DTO;
 using System.Data;
 using System.Data.SqlClient;
-using System.Net.Http.Headers;
-using System.Reflection.Metadata.Ecma335;
-using Utilis;
 
 namespace DAO;
 
@@ -52,7 +49,7 @@ public class DAO_ThongTinDangTuyen
         var idRaw = SqlSingleton.Instance.ExecuteScalar(query, [
             new SqlParameter("MaDN", thongTinDangTuyen.MaDN),
             new SqlParameter("SoNgayDT", thongTinDangTuyen.SoNgayDangTuyen),
-            new SqlParameter("ThoiGianDangTuyen", thongTinDangTuyen.ThoiGianDangTuyen.ToString()),
+            new SqlParameter("ThoiGianDangTuyen", thongTinDangTuyen.ThoiGianDangTuyen),
             new SqlParameter("MaHTDT", thongTinDangTuyen.MaHTDT),
             new SqlParameter("TrangThai", thongTinDangTuyen.TrangThai.ToDisplayString()),
             new SqlParameter("TinhTrang", thongTinDangTuyen.TinhTrang.ToDisplayString()),
@@ -83,7 +80,7 @@ public class DAO_ThongTinDangTuyen
             new SqlParameter("MaTTDT", thongTinDangTuyen.MaTTDT),
             new SqlParameter("MaDN", thongTinDangTuyen.MaDN),
             new SqlParameter("SoNgayDT", thongTinDangTuyen.SoNgayDangTuyen),
-            new SqlParameter("ThoiGianDangTuyen", thongTinDangTuyen.ThoiGianDangTuyen.ToString()),
+            new SqlParameter("ThoiGianDangTuyen", thongTinDangTuyen.ThoiGianDangTuyen),
             new SqlParameter("MaHTDT", thongTinDangTuyen.MaHTDT),
             new SqlParameter("TrangThai", thongTinDangTuyen.TrangThai.ToDisplayString()),
             new SqlParameter("TinhTrang", thongTinDangTuyen.TinhTrang.ToDisplayString()),

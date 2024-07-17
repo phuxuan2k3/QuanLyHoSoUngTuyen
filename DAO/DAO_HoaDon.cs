@@ -68,7 +68,7 @@ public class DAO_HoaDon
 			new SqlParameter("TONGTIEN", hoaDon.TongTien),
 			new SqlParameter("CACHTHUC", hoaDon.CachThucThanhToan.ToDisplayString()),
 			new SqlParameter("TRANGTHAI", hoaDon.TrangThaiThanhToan.ToDisplayString() ),
-			new SqlParameter("NGAYLAP", hoaDon.NgayLap.ToString()),
+			new SqlParameter("NGAYLAP", hoaDon.NgayLap),
 			]);
 	}
 
@@ -80,7 +80,7 @@ public class DAO_HoaDon
 			new ("TONGTIEN", hoaDon.TongTien),
 			new ("CACHTHUC", hoaDon.CachThucThanhToan.ToDisplayString()),
 			new ("TRANGTHAI", hoaDon.TrangThaiThanhToan.ToDisplayString()),
-			new ("NGAYLAP", hoaDon.NgayLap.ToString()),
+			new ("NGAYLAP", hoaDon.NgayLap),
 			]);
 	}
 }

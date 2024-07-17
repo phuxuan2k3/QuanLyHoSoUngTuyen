@@ -39,7 +39,7 @@ public class DAO_ChiTietHoaDon
 			new("MATTDT", chiTietHoaDon.MaTTDT),
 			new("LANTT", chiTietHoaDon.LanThanhToan),
 			new("SOTIENCANTHANHTOAN", chiTietHoaDon.SoTienCanThanhToan),
-			new("NGAYTHANHTOAN", chiTietHoaDon.NgayThanhToan.ToString())
+			new("NGAYTHANHTOAN", chiTietHoaDon.NgayThanhToan)
 			]);
 	}
 }
